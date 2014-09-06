@@ -1,0 +1,30 @@
+1º Seminario: (19/09/2014)
+- Escopo do Produto
+- Escopo do Projeto
+- Estimativas de Esforço e Custo
+- Orçamento
+- Cronograma
+- Análise de Riscos
+- Monitoramento e Controle
+- Visão Parcial do Produto
+
+Diagramas necessário para o 1º Seminário:
+- Casos de Uso
+- Diagrama de Classes
+- Diagrama de Transição de Estados?
+- Diagrama de Atividades?
+- (acrescentar mais)
+
+
+//////////////////////////////////////
+2º Seminário (24/10/2014)
+- Ferramentas e técnicas de gerência de configuração adotadas
+- Conteúdo do repositório
+- Monitoramento e controle
+- Versão parcial do produto
+
+3º Seminário (14/11/2014)
+- Ferramentas e técnicas de testes adotadas
+- Casos de teste e resultados da sua execução
+- Monitoramento e controle
+- Versão final do produto
