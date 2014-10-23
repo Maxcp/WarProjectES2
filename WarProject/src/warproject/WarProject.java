@@ -6,10 +6,6 @@
 
 package warproject;
 
-import jplay.GameImage;
-import jplay.Keyboard;
-import jplay.Window;
-
 /**
  *
  * @author Igor
@@ -22,24 +18,6 @@ public class WarProject {
     public static void main(String[] args) {
         // TODO code application logic here
         
-        Window gameWindow = new Window(800, 600);
-        Keyboard gameKeyboard = gameWindow.getKeyboard();
-        GameImage background = new GameImage("img/background.png");
-        boolean execute = true;
-        
-        while(execute)
-        {
-            if(gameKeyboard.keyDown(Keyboard.ESCAPE_KEY))
-            {
-                execute = false;
-            }
-            
-            background.draw();
-            
-            gameWindow.update();
-        }
-        
-        gameWindow.exit();
     }
     
 }
