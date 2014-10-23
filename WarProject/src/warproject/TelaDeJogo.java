@@ -29,7 +29,8 @@ public class TelaDeJogo extends javax.swing.JFrame {
     private void initComponents() {
 
         telaInteira = new javax.swing.JPanel();
-        separadorMapa = new javax.swing.JSeparator();
+        jLabel2 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         logConsole = new javax.swing.JTextPane();
         console = new javax.swing.JLabel();
@@ -87,14 +88,15 @@ public class TelaDeJogo extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         telaInteira.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        telaInteira.add(separadorMapa, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 250, 830, -1));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/warproject/Mapa.png"))); // NOI18N
+        telaInteira.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jScrollPane1.setViewportView(logConsole);
 
-        telaInteira.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 280, 360, 150));
-
         console.setText("Console");
-        telaInteira.add(console, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, -1, -1));
 
         labelPossui.setText("Você possui:");
 
@@ -124,7 +126,7 @@ public class TelaDeJogo extends javax.swing.JFrame {
                         .addComponent(qntExercitos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(labelSoldados)
-                        .addGap(0, 75, Short.MAX_VALUE))
+                        .addGap(0, 180, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, distribuirLayout.createSequentialGroup()
                         .addComponent(reverter)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -293,7 +295,7 @@ public class TelaDeJogo extends javax.swing.JFrame {
                                 .addGroup(movimentarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(paisPara, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(enviaExercitos))))
-                        .addGap(0, 78, Short.MAX_VALUE)))
+                        .addGap(0, 136, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         movimentarLayout.setVerticalGroup(
@@ -312,7 +314,7 @@ public class TelaDeJogo extends javax.swing.JFrame {
                     .addComponent(numEx)
                     .addComponent(qtdExercitos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(enviaExercitos))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
                 .addComponent(passarMovimentacao)
                 .addContainerGap())
         );
@@ -430,7 +432,7 @@ public class TelaDeJogo extends javax.swing.JFrame {
                         .addGroup(cartasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(cartaTres)
                             .addComponent(cartaObjetivo))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 130, Short.MAX_VALUE)
                         .addGroup(cartasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(cartaQuatro)
                             .addComponent(cartaUm))
@@ -456,26 +458,57 @@ public class TelaDeJogo extends javax.swing.JFrame {
                     .addComponent(jLabel6)
                     .addComponent(cartaQuatro)
                     .addComponent(cartaTres))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
                 .addComponent(jButton1)
                 .addContainerGap())
         );
 
         painelOpcoes.addTab("Cartas", cartas);
 
-        telaInteira.add(painelOpcoes, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 260, 400, 180));
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(console)
+                        .addGap(0, 643, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1))
+                .addGap(18, 18, 18)
+                .addComponent(painelOpcoes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(console)
+                        .addGap(6, 6, 6)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(painelOpcoes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(25, Short.MAX_VALUE))
+        );
+
+        telaInteira.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 520, 1140, 230));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(telaInteira, javax.swing.GroupLayout.DEFAULT_SIZE, 822, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(telaInteira, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(telaInteira, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(telaInteira, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
@@ -562,7 +595,9 @@ public class TelaDeJogo extends javax.swing.JFrame {
     private javax.swing.JPanel distribuir;
     private javax.swing.JButton enviaExercitos;
     private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lPais;
     private javax.swing.JLabel lPaisD;
@@ -585,7 +620,6 @@ public class TelaDeJogo extends javax.swing.JFrame {
     private javax.swing.JTextField qntExercitos;
     private javax.swing.JFormattedTextField qtdExercitos;
     private javax.swing.JButton reverter;
-    private javax.swing.JSeparator separadorMapa;
     private javax.swing.JPanel telaInteira;
     private javax.swing.JLabel x;
     private javax.swing.JLabel xD;
