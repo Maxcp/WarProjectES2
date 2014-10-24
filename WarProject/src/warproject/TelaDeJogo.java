@@ -29,7 +29,6 @@ public class TelaDeJogo extends javax.swing.JFrame {
     private void initComponents() {
 
         telaInteira = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         logConsole = new javax.swing.JTextPane();
@@ -84,13 +83,53 @@ public class TelaDeJogo extends javax.swing.JFrame {
         cartaQuatro = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
+        jLabel27 = new javax.swing.JLabel();
+        jLabel26 = new javax.swing.JLabel();
+        jLabel28 = new javax.swing.JLabel();
+        jLabel29 = new javax.swing.JLabel();
+        jLabel30 = new javax.swing.JLabel();
+        jLabel31 = new javax.swing.JLabel();
+        jLabel32 = new javax.swing.JLabel();
+        jLabel33 = new javax.swing.JLabel();
+        jLabel34 = new javax.swing.JLabel();
+        jLabel35 = new javax.swing.JLabel();
+        jLabel36 = new javax.swing.JLabel();
+        jLabel37 = new javax.swing.JLabel();
+        jLabel38 = new javax.swing.JLabel();
+        jLabel39 = new javax.swing.JLabel();
+        jLabel40 = new javax.swing.JLabel();
+        jLabel41 = new javax.swing.JLabel();
+        jLabel42 = new javax.swing.JLabel();
+        jLabel43 = new javax.swing.JLabel();
+        jLabel44 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         telaInteira.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/warproject/Mapa.png"))); // NOI18N
-        telaInteira.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
@@ -126,7 +165,7 @@ public class TelaDeJogo extends javax.swing.JFrame {
                         .addComponent(qntExercitos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(labelSoldados)
-                        .addGap(0, 180, Short.MAX_VALUE))
+                        .addGap(0, 191, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, distribuirLayout.createSequentialGroup()
                         .addComponent(reverter)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -207,7 +246,7 @@ public class TelaDeJogo extends javax.swing.JFrame {
                         .addGroup(atacarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(paisDefesa, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(dadoUmDefesa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 24, Short.MAX_VALUE))
+                        .addGap(0, 86, Short.MAX_VALUE))
                     .addGroup(atacarLayout.createSequentialGroup()
                         .addComponent(dadpDoisDefesa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -295,7 +334,7 @@ public class TelaDeJogo extends javax.swing.JFrame {
                                 .addGroup(movimentarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(paisPara, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(enviaExercitos))))
-                        .addGap(0, 136, Short.MAX_VALUE)))
+                        .addGap(0, 147, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         movimentarLayout.setVerticalGroup(
@@ -377,7 +416,7 @@ public class TelaDeJogo extends javax.swing.JFrame {
                             .addComponent(paisDefesaD, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(dadoUmDefesa1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(dadpDoisDefesaD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 24, Short.MAX_VALUE)))
+                        .addGap(0, 86, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         defenderLayout.setVerticalGroup(
@@ -432,7 +471,7 @@ public class TelaDeJogo extends javax.swing.JFrame {
                         .addGroup(cartasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(cartaTres)
                             .addComponent(cartaObjetivo))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 130, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 141, Short.MAX_VALUE)
                         .addGroup(cartasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(cartaQuatro)
                             .addComponent(cartaUm))
@@ -472,13 +511,11 @@ public class TelaDeJogo extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(19, 19, 19)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(console)
-                        .addGap(0, 643, Short.MAX_VALUE))
-                    .addComponent(jScrollPane1))
+                    .addComponent(console)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 659, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(painelOpcoes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18))
+                .addComponent(painelOpcoes, javax.swing.GroupLayout.PREFERRED_SIZE, 411, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(19, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -493,7 +530,179 @@ public class TelaDeJogo extends javax.swing.JFrame {
                 .addContainerGap(25, Short.MAX_VALUE))
         );
 
-        telaInteira.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 520, 1140, 230));
+        telaInteira.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 520, 1130, 230));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/warproject/botao-semdono.png"))); // NOI18N
+        jLabel1.setName("btnLugdunensis"); // NOI18N
+        telaInteira.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 130, -1, -1));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/warproject/botao-semdono.png"))); // NOI18N
+        jLabel3.setName("btnGermaniaSuperior"); // NOI18N
+        telaInteira.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 80, -1, -1));
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/warproject/botao-semdono.png"))); // NOI18N
+        jLabel4.setName("btnAquitania"); // NOI18N
+        telaInteira.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 170, -1, -1));
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/warproject/botao-semdono.png"))); // NOI18N
+        jLabel5.setName("btnTarraconensis"); // NOI18N
+        telaInteira.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 230, -1, -1));
+
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/warproject/botao-semdono.png"))); // NOI18N
+        jLabel7.setName("btnLusitania"); // NOI18N
+        telaInteira.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, -1, -1));
+
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/warproject/botao-semdono.png"))); // NOI18N
+        jLabel8.setName("btnGermaniaInferior"); // NOI18N
+        telaInteira.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 110, -1, -1));
+
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/warproject/botao-semdono.png"))); // NOI18N
+        jLabel9.setName("btnRaetia"); // NOI18N
+        telaInteira.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 140, -1, -1));
+
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/warproject/botao-semdono.png"))); // NOI18N
+        jLabel10.setName("btnBaetica"); // NOI18N
+        telaInteira.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 290, -1, -1));
+
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/warproject/botao-semdono.png"))); // NOI18N
+        jLabel11.setName("btnNarbonensis"); // NOI18N
+        telaInteira.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 200, -1, -1));
+
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/warproject/botao-semdono.png"))); // NOI18N
+        jLabel12.setName("btnBritania"); // NOI18N
+        telaInteira.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 60, -1, -1));
+
+        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/warproject/botao-semdono.png"))); // NOI18N
+        jLabel13.setName("btnThracia"); // NOI18N
+        telaInteira.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 220, -1, -1));
+
+        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/warproject/botao-semdono.png"))); // NOI18N
+        jLabel14.setName("btnItalia"); // NOI18N
+        telaInteira.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 220, -1, -1));
+
+        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/warproject/botao-semdono.png"))); // NOI18N
+        jLabel15.setName("btnCorsica"); // NOI18N
+        telaInteira.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 230, -1, -1));
+
+        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/warproject/botao-semdono.png"))); // NOI18N
+        jLabel16.setName("btnSicilia"); // NOI18N
+        telaInteira.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 300, -1, -1));
+
+        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/warproject/botao-semdono.png"))); // NOI18N
+        jLabel17.setName("btnMauritania"); // NOI18N
+        telaInteira.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 320, -1, -1));
+
+        jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/warproject/botao-semdono.png"))); // NOI18N
+        jLabel18.setName("btnNumidia"); // NOI18N
+        telaInteira.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 340, -1, -1));
+
+        jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/warproject/botao-semdono.png"))); // NOI18N
+        jLabel19.setName("btnAfrica"); // NOI18N
+        telaInteira.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 330, -1, -1));
+
+        jLabel20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/warproject/botao-semdono.png"))); // NOI18N
+        jLabel20.setName("btnCyrenaica"); // NOI18N
+        telaInteira.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 410, -1, -1));
+
+        jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/warproject/botao-semdono.png"))); // NOI18N
+        jLabel21.setName("btnAegyptus"); // NOI18N
+        telaInteira.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 420, -1, -1));
+
+        jLabel22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/warproject/botao-semdono.png"))); // NOI18N
+        jLabel22.setName("btnCreta"); // NOI18N
+        telaInteira.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 330, -1, -1));
+
+        jLabel23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/warproject/botao-semdono.png"))); // NOI18N
+        jLabel23.setName("btnAchaca"); // NOI18N
+        telaInteira.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 300, -1, -1));
+
+        jLabel24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/warproject/botao-semdono.png"))); // NOI18N
+        jLabel24.setName("btnMacedonia"); // NOI18N
+        telaInteira.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 250, -1, -1));
+
+        jLabel25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/warproject/botao-semdono.png"))); // NOI18N
+        jLabel25.setName("btnIllyricum"); // NOI18N
+        telaInteira.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 200, -1, -1));
+
+        jLabel27.setIcon(new javax.swing.ImageIcon(getClass().getResource("/warproject/botao-semdono.png"))); // NOI18N
+        jLabel27.setName("btnDacia"); // NOI18N
+        telaInteira.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 160, -1, -1));
+
+        jLabel26.setIcon(new javax.swing.ImageIcon(getClass().getResource("/warproject/botao-semdono.png"))); // NOI18N
+        jLabel26.setName("btnCappadocia"); // NOI18N
+        telaInteira.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 240, -1, -1));
+
+        jLabel28.setIcon(new javax.swing.ImageIcon(getClass().getResource("/warproject/botao-semdono.png"))); // NOI18N
+        jLabel28.setName("btnTaurica"); // NOI18N
+        telaInteira.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 150, -1, -1));
+
+        jLabel29.setIcon(new javax.swing.ImageIcon(getClass().getResource("/warproject/botao-semdono.png"))); // NOI18N
+        jLabel29.setName("btnBithynia"); // NOI18N
+        telaInteira.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 220, -1, -1));
+
+        jLabel30.setIcon(new javax.swing.ImageIcon(getClass().getResource("/warproject/botao-semdono.png"))); // NOI18N
+        jLabel30.setName("btnGalatia"); // NOI18N
+        telaInteira.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 240, -1, -1));
+
+        jLabel31.setIcon(new javax.swing.ImageIcon(getClass().getResource("/warproject/botao-semdono.png"))); // NOI18N
+        jLabel31.setName("btnAsia"); // NOI18N
+        telaInteira.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 270, -1, -1));
+
+        jLabel32.setIcon(new javax.swing.ImageIcon(getClass().getResource("/warproject/botao-semdono.png"))); // NOI18N
+        jLabel32.setName("btnCyprus"); // NOI18N
+        telaInteira.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 320, -1, -1));
+
+        jLabel33.setIcon(new javax.swing.ImageIcon(getClass().getResource("/warproject/botao-semdono.png"))); // NOI18N
+        jLabel33.setName("btnAssyria"); // NOI18N
+        telaInteira.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 260, -1, -1));
+
+        jLabel34.setIcon(new javax.swing.ImageIcon(getClass().getResource("/warproject/botao-semdono.png"))); // NOI18N
+        jLabel34.setName("btnLycia"); // NOI18N
+        telaInteira.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 290, -1, -1));
+
+        jLabel35.setIcon(new javax.swing.ImageIcon(getClass().getResource("/warproject/botao-semdono.png"))); // NOI18N
+        jLabel35.setName("btnSyria"); // NOI18N
+        telaInteira.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 310, -1, -1));
+
+        jLabel36.setIcon(new javax.swing.ImageIcon(getClass().getResource("/warproject/botao-semdono.png"))); // NOI18N
+        jLabel36.setName("btnArabiaPetrae"); // NOI18N
+        telaInteira.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 350, -1, -1));
+
+        jLabel37.setIcon(new javax.swing.ImageIcon(getClass().getResource("/warproject/botao-semdono.png"))); // NOI18N
+        jLabel37.setName("btnJudaca"); // NOI18N
+        telaInteira.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 350, -1, -1));
+
+        jLabel38.setIcon(new javax.swing.ImageIcon(getClass().getResource("/warproject/botao-semdono.png"))); // NOI18N
+        jLabel38.setName("btnMesopotamia"); // NOI18N
+        telaInteira.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 280, -1, -1));
+
+        jLabel39.setIcon(new javax.swing.ImageIcon(getClass().getResource("/warproject/botao-semdono.png"))); // NOI18N
+        jLabel39.setName("btnPonfus"); // NOI18N
+        telaInteira.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 200, -1, -1));
+
+        jLabel40.setIcon(new javax.swing.ImageIcon(getClass().getResource("/warproject/botao-semdono.png"))); // NOI18N
+        jLabel40.setName("btnArmenia"); // NOI18N
+        telaInteira.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 230, -1, -1));
+
+        jLabel41.setIcon(new javax.swing.ImageIcon(getClass().getResource("/warproject/botao-semdono.png"))); // NOI18N
+        jLabel41.setName("btnPandomia"); // NOI18N
+        telaInteira.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 160, -1, -1));
+
+        jLabel42.setIcon(new javax.swing.ImageIcon(getClass().getResource("/warproject/botao-semdono.png"))); // NOI18N
+        jLabel42.setName("btnMoesia"); // NOI18N
+        telaInteira.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 200, -1, -1));
+
+        jLabel43.setIcon(new javax.swing.ImageIcon(getClass().getResource("/warproject/botao-semdono.png"))); // NOI18N
+        jLabel43.setName("btnSardina"); // NOI18N
+        telaInteira.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 260, -1, -1));
+
+        jLabel44.setIcon(new javax.swing.ImageIcon(getClass().getResource("/warproject/botao-semdono.png"))); // NOI18N
+        jLabel44.setName("btnBelgica"); // NOI18N
+        telaInteira.add(jLabel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 110, -1, -1));
+
+        jLabel2.setBackground(null);
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/warproject/Mapa.png"))); // NOI18N
+        telaInteira.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -501,7 +710,7 @@ public class TelaDeJogo extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(telaInteira, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(telaInteira, javax.swing.GroupLayout.DEFAULT_SIZE, 1150, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -595,8 +804,50 @@ public class TelaDeJogo extends javax.swing.JFrame {
     private javax.swing.JPanel distribuir;
     private javax.swing.JButton enviaExercitos;
     private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel41;
+    private javax.swing.JLabel jLabel42;
+    private javax.swing.JLabel jLabel43;
+    private javax.swing.JLabel jLabel44;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lPais;
