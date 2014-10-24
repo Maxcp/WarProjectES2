@@ -95,7 +95,7 @@
                                   <Component id="qntExercitos" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="labelSoldados" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="0" pref="180" max="32767" attributes="0"/>
+                                  <EmptySpace min="0" pref="75" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <Component id="reverter" min="-2" max="-2" attributes="0"/>
@@ -430,7 +430,7 @@
                                       </Group>
                                       <EmptySpace min="0" pref="136" max="32767" attributes="0"/>
                                   </Group>
-                                  <EmptySpace min="0" pref="136" max="32767" attributes="0"/>
+                                  <EmptySpace min="0" pref="78" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
@@ -677,7 +677,7 @@
                                       <Component id="cartaTres" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="cartaObjetivo" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="130" max="32767" attributes="0"/>
+                                  <EmptySpace pref="64" max="32767" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="cartaQuatro" min="-2" max="-2" attributes="0"/>
                                       <Component id="cartaUm" min="-2" max="-2" attributes="0"/>
