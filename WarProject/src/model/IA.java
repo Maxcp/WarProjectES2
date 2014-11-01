@@ -3,17 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package warproject;
-
-import java.util.List;
+package model;
 
 /**
  *
  * @author Matheus
  */
-public class Gerenciador {
-    List<Jogador> jogadores;
-    List<Objetivo> objetivos;
-    List<Territorio> territorios;
-    List<Continente> continentes;
+public class IA extends Jogador {
+    void ataque() {
+    
+    }
+    
+    void movimentacao() {
+    
+    }
 }

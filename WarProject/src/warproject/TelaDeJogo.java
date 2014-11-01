@@ -6,6 +6,8 @@
 
 package warproject;
 
+import controller.Gerenciador;
+
 /**
  *
  * @author 13221098774
@@ -16,6 +18,7 @@ public class TelaDeJogo extends javax.swing.JFrame {
      * Creates new form TelaInicial
      */
     public TelaDeJogo() {
+        Gerenciador gerenciador = Gerenciador.getInstance();
         initComponents();
     }
 
