@@ -83,49 +83,49 @@ public class TelaDeJogo extends javax.swing.JFrame {
         cartaQuatro = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
-        jLabel19 = new javax.swing.JLabel();
-        jLabel20 = new javax.swing.JLabel();
-        jLabel21 = new javax.swing.JLabel();
-        jLabel22 = new javax.swing.JLabel();
-        jLabel23 = new javax.swing.JLabel();
-        jLabel24 = new javax.swing.JLabel();
-        jLabel25 = new javax.swing.JLabel();
         jLabel27 = new javax.swing.JLabel();
-        jLabel26 = new javax.swing.JLabel();
-        jLabel28 = new javax.swing.JLabel();
-        jLabel29 = new javax.swing.JLabel();
-        jLabel30 = new javax.swing.JLabel();
-        jLabel31 = new javax.swing.JLabel();
-        jLabel32 = new javax.swing.JLabel();
-        jLabel33 = new javax.swing.JLabel();
-        jLabel34 = new javax.swing.JLabel();
-        jLabel35 = new javax.swing.JLabel();
-        jLabel36 = new javax.swing.JLabel();
-        jLabel37 = new javax.swing.JLabel();
-        jLabel38 = new javax.swing.JLabel();
-        jLabel39 = new javax.swing.JLabel();
-        jLabel40 = new javax.swing.JLabel();
-        jLabel41 = new javax.swing.JLabel();
-        jLabel42 = new javax.swing.JLabel();
-        jLabel43 = new javax.swing.JLabel();
-        jLabel44 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
+        btnTaurica = new javax.swing.JButton();
+        btnBithynia = new javax.swing.JButton();
+        btnDacia = new javax.swing.JButton();
+        btnMoesia = new javax.swing.JButton();
+        btnThracia = new javax.swing.JButton();
+        btnMacedonia = new javax.swing.JButton();
+        btnAchaca = new javax.swing.JButton();
+        btnCreta = new javax.swing.JButton();
+        btnAsia = new javax.swing.JButton();
+        btnAssyria = new javax.swing.JButton();
+        btnGalatia = new javax.swing.JButton();
+        btnCappadocia = new javax.swing.JButton();
+        btnPonfus = new javax.swing.JButton();
+        btnArmenia = new javax.swing.JButton();
+        btnMesopotamia = new javax.swing.JButton();
+        btnSyria = new javax.swing.JButton();
+        btnArabiaPetrae = new javax.swing.JButton();
+        btnJudaca = new javax.swing.JButton();
+        btnAegyptus = new javax.swing.JButton();
+        btnCyrenaica = new javax.swing.JButton();
+        btnNumidia = new javax.swing.JButton();
+        btnMauritania = new javax.swing.JButton();
+        btnAfrica = new javax.swing.JButton();
+        btnSicilia = new javax.swing.JButton();
+        btnItalia = new javax.swing.JButton();
+        btnSardina = new javax.swing.JButton();
+        btnCorsica = new javax.swing.JButton();
+        btnRaetia = new javax.swing.JButton();
+        btnGermaniaInferior = new javax.swing.JButton();
+        btnBelgica = new javax.swing.JButton();
+        btnLugdunensis = new javax.swing.JButton();
+        btnAquitania = new javax.swing.JButton();
+        btnLusitania = new javax.swing.JButton();
+        btnTarraconensis = new javax.swing.JButton();
+        btnBaetica = new javax.swing.JButton();
+        btnNarbonensis = new javax.swing.JButton();
+        btnBritania = new javax.swing.JButton();
+        btnGermaniaSuperior = new javax.swing.JButton();
+        btnPandomia = new javax.swing.JButton();
+        btnIllyricum = new javax.swing.JButton();
+        btnLycia = new javax.swing.JButton();
+        btnCyprus = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -521,7 +521,7 @@ public class TelaDeJogo extends javax.swing.JFrame {
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 659, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(painelOpcoes, javax.swing.GroupLayout.PREFERRED_SIZE, 411, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -538,189 +538,516 @@ public class TelaDeJogo extends javax.swing.JFrame {
 
         telaInteira.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 470, 1130, 210));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/warproject/botao-semdono.png"))); // NOI18N
-        jLabel1.setName("btnLugdunensis"); // NOI18N
-        telaInteira.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 110, -1, -1));
-
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/warproject/botao-semdono.png"))); // NOI18N
-        jLabel3.setName("btnGermaniaSuperior"); // NOI18N
-        telaInteira.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 60, -1, -1));
-
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/warproject/botao-semdono.png"))); // NOI18N
-        jLabel4.setName("btnAquitania"); // NOI18N
-        telaInteira.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 160, -1, -1));
-
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/warproject/botao-semdono.png"))); // NOI18N
-        jLabel5.setName("btnTarraconensis"); // NOI18N
-        telaInteira.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 210, -1, -1));
-
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/warproject/botao-semdono.png"))); // NOI18N
-        jLabel7.setName("btnLusitania"); // NOI18N
-        telaInteira.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, -1, -1));
-
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/warproject/botao-semdono.png"))); // NOI18N
-        jLabel8.setName("btnGermaniaInferior"); // NOI18N
-        telaInteira.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 90, -1, -1));
-
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/warproject/botao-semdono.png"))); // NOI18N
-        jLabel9.setName("btnRaetia"); // NOI18N
-        telaInteira.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 130, -1, -1));
-
-        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/warproject/botao-semdono.png"))); // NOI18N
-        jLabel10.setName("btnBaetica"); // NOI18N
-        telaInteira.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 270, -1, -1));
-
-        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/warproject/botao-semdono.png"))); // NOI18N
-        jLabel11.setName("btnNarbonensis"); // NOI18N
-        telaInteira.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 180, -1, -1));
-
-        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/warproject/botao-semdono.png"))); // NOI18N
-        jLabel12.setName("btnBritania"); // NOI18N
-        telaInteira.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 50, -1, -1));
-
-        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/warproject/botao-semdono.png"))); // NOI18N
-        jLabel13.setName("btnThracia"); // NOI18N
-        telaInteira.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 210, -1, -1));
-
-        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/warproject/botao-semdono.png"))); // NOI18N
-        jLabel14.setName("btnItalia"); // NOI18N
-        telaInteira.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 200, -1, -1));
-
-        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/warproject/botao-semdono.png"))); // NOI18N
-        jLabel15.setName("btnCorsica"); // NOI18N
-        telaInteira.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 210, -1, -1));
-
-        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/warproject/botao-semdono.png"))); // NOI18N
-        jLabel16.setName("btnSicilia"); // NOI18N
-        telaInteira.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 290, -1, -1));
-
-        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/warproject/botao-semdono.png"))); // NOI18N
-        jLabel17.setName("btnMauritania"); // NOI18N
-        telaInteira.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 300, -1, -1));
-
-        jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/warproject/botao-semdono.png"))); // NOI18N
-        jLabel18.setName("btnNumidia"); // NOI18N
-        telaInteira.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 320, -1, -1));
-
-        jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/warproject/botao-semdono.png"))); // NOI18N
-        jLabel19.setName("btnAfrica"); // NOI18N
-        telaInteira.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 310, -1, -1));
-
-        jLabel20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/warproject/botao-semdono.png"))); // NOI18N
-        jLabel20.setName("btnCyrenaica"); // NOI18N
-        telaInteira.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 380, -1, -1));
-
-        jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/warproject/botao-semdono.png"))); // NOI18N
-        jLabel21.setName("btnAegyptus"); // NOI18N
-        telaInteira.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 400, -1, -1));
-
-        jLabel22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/warproject/botao-semdono.png"))); // NOI18N
-        jLabel22.setName("btnCreta"); // NOI18N
-        telaInteira.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 310, -1, -1));
-
-        jLabel23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/warproject/botao-semdono.png"))); // NOI18N
-        jLabel23.setName("btnAchaca"); // NOI18N
-        telaInteira.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 280, -1, -1));
-
-        jLabel24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/warproject/botao-semdono.png"))); // NOI18N
-        jLabel24.setName("btnMacedonia"); // NOI18N
-        telaInteira.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 230, -1, -1));
-
-        jLabel25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/warproject/botao-semdono.png"))); // NOI18N
-        jLabel25.setName("btnIllyricum"); // NOI18N
-        telaInteira.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 180, -1, -1));
-
         jLabel27.setBackground(new java.awt.Color(255, 153, 153));
         jLabel27.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel27.setName("btnDacia"); // NOI18N
         telaInteira.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 0, 70, 70));
 
-        jLabel26.setIcon(new javax.swing.ImageIcon(getClass().getResource("/warproject/botao-semdono.png"))); // NOI18N
-        jLabel26.setName("btnCappadocia"); // NOI18N
-        telaInteira.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 220, -1, -1));
-
-        jLabel28.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel28.setIcon(new javax.swing.ImageIcon(getClass().getResource("/warproject/botao-semdono.png"))); // NOI18N
-        jLabel28.setToolTipText("");
-        jLabel28.setName("btnTaurica"); // NOI18N
-        telaInteira.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 130, -1, -1));
-
-        jLabel29.setIcon(new javax.swing.ImageIcon(getClass().getResource("/warproject/botao-semdono.png"))); // NOI18N
-        jLabel29.setName("btnBithynia"); // NOI18N
-        telaInteira.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 200, -1, -1));
-
-        jLabel30.setIcon(new javax.swing.ImageIcon(getClass().getResource("/warproject/botao-semdono.png"))); // NOI18N
-        jLabel30.setName("btnGalatia"); // NOI18N
-        telaInteira.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 230, -1, -1));
-
-        jLabel31.setIcon(new javax.swing.ImageIcon(getClass().getResource("/warproject/botao-semdono.png"))); // NOI18N
-        jLabel31.setName("btnAsia"); // NOI18N
-        telaInteira.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 260, -1, -1));
-
-        jLabel32.setIcon(new javax.swing.ImageIcon(getClass().getResource("/warproject/botao-semdono.png"))); // NOI18N
-        jLabel32.setName("btnCyprus"); // NOI18N
-        telaInteira.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 300, -1, -1));
-
-        jLabel33.setIcon(new javax.swing.ImageIcon(getClass().getResource("/warproject/botao-semdono.png"))); // NOI18N
-        jLabel33.setName("btnAssyria"); // NOI18N
-        telaInteira.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 240, -1, -1));
-
-        jLabel34.setIcon(new javax.swing.ImageIcon(getClass().getResource("/warproject/botao-semdono.png"))); // NOI18N
-        jLabel34.setName("btnLycia"); // NOI18N
-        telaInteira.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 270, -1, -1));
-
-        jLabel35.setIcon(new javax.swing.ImageIcon(getClass().getResource("/warproject/botao-semdono.png"))); // NOI18N
-        jLabel35.setName("btnSyria"); // NOI18N
-        telaInteira.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 280, -1, -1));
-
-        jLabel36.setIcon(new javax.swing.ImageIcon(getClass().getResource("/warproject/botao-semdono.png"))); // NOI18N
-        jLabel36.setName("btnArabiaPetrae"); // NOI18N
-        telaInteira.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 340, -1, -1));
-
-        jLabel37.setIcon(new javax.swing.ImageIcon(getClass().getResource("/warproject/botao-semdono.png"))); // NOI18N
-        jLabel37.setName("btnJudaca"); // NOI18N
-        telaInteira.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 340, -1, -1));
-
-        jLabel38.setIcon(new javax.swing.ImageIcon(getClass().getResource("/warproject/botao-semdono.png"))); // NOI18N
-        jLabel38.setName("btnMesopotamia"); // NOI18N
-        telaInteira.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 270, -1, -1));
-
-        jLabel39.setIcon(new javax.swing.ImageIcon(getClass().getResource("/warproject/botao-semdono.png"))); // NOI18N
-        jLabel39.setName("btnPonfus"); // NOI18N
-        telaInteira.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 180, -1, -1));
-
-        jLabel40.setIcon(new javax.swing.ImageIcon(getClass().getResource("/warproject/botao-semdono.png"))); // NOI18N
-        jLabel40.setName("btnArmenia"); // NOI18N
-        telaInteira.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 210, -1, -1));
-
-        jLabel41.setIcon(new javax.swing.ImageIcon(getClass().getResource("/warproject/botao-semdono.png"))); // NOI18N
-        jLabel41.setName("btnPandomia"); // NOI18N
-        telaInteira.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 140, -1, -1));
-
-        jLabel42.setIcon(new javax.swing.ImageIcon(getClass().getResource("/warproject/botao-semdono.png"))); // NOI18N
-        jLabel42.setName("btnMoesia"); // NOI18N
-        telaInteira.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 180, -1, -1));
-
-        jLabel43.setIcon(new javax.swing.ImageIcon(getClass().getResource("/warproject/botao-semdono.png"))); // NOI18N
-        jLabel43.setName("btnSardina"); // NOI18N
-        telaInteira.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 240, -1, -1));
-
-        jLabel44.setIcon(new javax.swing.ImageIcon(getClass().getResource("/warproject/botao-semdono.png"))); // NOI18N
-        jLabel44.setName("btnBelgica"); // NOI18N
-        telaInteira.add(jLabel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 90, -1, -1));
-
-        jButton2.setBackground(new java.awt.Color(0, 255, 204));
-        jButton2.setText("1");
-        jButton2.setActionCommand("1");
-        jButton2.setBorder(null);
-        jButton2.setBorderPainted(false);
-        jButton2.setContentAreaFilled(black);
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnTaurica.setBackground(new java.awt.Color(255, 255, 255));
+        btnTaurica.setText("0");
+        btnTaurica.setActionCommand("0");
+        btnTaurica.setBorder(null);
+        btnTaurica.setBorderPainted(false);
+        btnTaurica.setName("btnTaurica"); // NOI18N
+        btnTaurica.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnTauricaActionPerformed(evt);
             }
         });
-        telaInteira.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 140, 20, 20));
+        telaInteira.add(btnTaurica, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 130, 18, 18));
+
+        btnBithynia.setBackground(new java.awt.Color(255, 255, 255));
+        btnBithynia.setText("0");
+        btnBithynia.setActionCommand("0");
+        btnBithynia.setBorder(null);
+        btnBithynia.setBorderPainted(false);
+        btnBithynia.setName("btnBithynia"); // NOI18N
+        btnBithynia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBithyniaActionPerformed(evt);
+            }
+        });
+        telaInteira.add(btnBithynia, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 190, 18, 18));
+
+        btnDacia.setBackground(new java.awt.Color(255, 255, 255));
+        btnDacia.setText("0");
+        btnDacia.setBorder(null);
+        btnDacia.setBorderPainted(false);
+        btnDacia.setName("btnDacia"); // NOI18N
+        btnDacia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDaciaActionPerformed(evt);
+            }
+        });
+        telaInteira.add(btnDacia, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 140, 18, 18));
+
+        btnMoesia.setBackground(new java.awt.Color(255, 255, 255));
+        btnMoesia.setText("0");
+        btnMoesia.setBorder(null);
+        btnMoesia.setBorderPainted(false);
+        btnMoesia.setName("btnMoesia"); // NOI18N
+        btnMoesia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMoesiaActionPerformed(evt);
+            }
+        });
+        telaInteira.add(btnMoesia, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 180, 18, 18));
+
+        btnThracia.setBackground(new java.awt.Color(255, 255, 255));
+        btnThracia.setText("0");
+        btnThracia.setBorder(null);
+        btnThracia.setBorderPainted(false);
+        btnThracia.setName("btnThracia"); // NOI18N
+        btnThracia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnThraciaActionPerformed(evt);
+            }
+        });
+        telaInteira.add(btnThracia, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 200, 18, 18));
+
+        btnMacedonia.setBackground(new java.awt.Color(255, 255, 255));
+        btnMacedonia.setText("0");
+        btnMacedonia.setBorder(null);
+        btnMacedonia.setBorderPainted(false);
+        btnMacedonia.setName("btnMacedonia"); // NOI18N
+        btnMacedonia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMacedoniaActionPerformed(evt);
+            }
+        });
+        telaInteira.add(btnMacedonia, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 230, 18, 18));
+
+        btnAchaca.setBackground(new java.awt.Color(255, 255, 255));
+        btnAchaca.setText("0");
+        btnAchaca.setBorder(null);
+        btnAchaca.setBorderPainted(false);
+        btnAchaca.setName("btnAchaca"); // NOI18N
+        btnAchaca.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAchacaActionPerformed(evt);
+            }
+        });
+        telaInteira.add(btnAchaca, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 280, 18, 18));
+
+        btnCreta.setBackground(new java.awt.Color(255, 255, 255));
+        btnCreta.setText("0");
+        btnCreta.setBorder(null);
+        btnCreta.setBorderPainted(false);
+        btnCreta.setName("btnCreta"); // NOI18N
+        btnCreta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCretaActionPerformed(evt);
+            }
+        });
+        telaInteira.add(btnCreta, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 320, 18, 18));
+
+        btnAsia.setBackground(new java.awt.Color(255, 255, 255));
+        btnAsia.setText("0");
+        btnAsia.setBorder(null);
+        btnAsia.setBorderPainted(false);
+        btnAsia.setName("btnAsia"); // NOI18N
+        btnAsia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAsiaActionPerformed(evt);
+            }
+        });
+        telaInteira.add(btnAsia, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 260, 18, 18));
+
+        btnAssyria.setBackground(new java.awt.Color(255, 255, 255));
+        btnAssyria.setText("0");
+        btnAssyria.setBorder(null);
+        btnAssyria.setBorderPainted(false);
+        btnAssyria.setName("btnAssyria"); // NOI18N
+        btnAssyria.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAssyriaActionPerformed(evt);
+            }
+        });
+        telaInteira.add(btnAssyria, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 250, 18, 18));
+
+        btnGalatia.setBackground(new java.awt.Color(255, 255, 255));
+        btnGalatia.setText("0");
+        btnGalatia.setBorder(null);
+        btnGalatia.setBorderPainted(false);
+        btnGalatia.setName("btnGalatia"); // NOI18N
+        btnGalatia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGalatiaActionPerformed(evt);
+            }
+        });
+        telaInteira.add(btnGalatia, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 220, 18, 18));
+
+        btnCappadocia.setBackground(new java.awt.Color(255, 255, 255));
+        btnCappadocia.setText("0");
+        btnCappadocia.setBorder(null);
+        btnCappadocia.setBorderPainted(false);
+        btnCappadocia.setName("btnCappadocia"); // NOI18N
+        btnCappadocia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCappadociaActionPerformed(evt);
+            }
+        });
+        telaInteira.add(btnCappadocia, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 220, 18, 18));
+
+        btnPonfus.setBackground(new java.awt.Color(255, 255, 255));
+        btnPonfus.setText("0");
+        btnPonfus.setBorder(null);
+        btnPonfus.setBorderPainted(false);
+        btnPonfus.setName("btnPonfus"); // NOI18N
+        btnPonfus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPonfusActionPerformed(evt);
+            }
+        });
+        telaInteira.add(btnPonfus, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 180, 18, 18));
+
+        btnArmenia.setBackground(new java.awt.Color(255, 255, 255));
+        btnArmenia.setText("0");
+        btnArmenia.setBorder(null);
+        btnArmenia.setBorderPainted(false);
+        btnArmenia.setName("btnArmenia"); // NOI18N
+        btnArmenia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnArmeniaActionPerformed(evt);
+            }
+        });
+        telaInteira.add(btnArmenia, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 200, 18, 18));
+
+        btnMesopotamia.setBackground(new java.awt.Color(255, 255, 255));
+        btnMesopotamia.setText("0");
+        btnMesopotamia.setBorder(null);
+        btnMesopotamia.setBorderPainted(false);
+        btnMesopotamia.setName("btnMesopotamia"); // NOI18N
+        btnMesopotamia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMesopotamiaActionPerformed(evt);
+            }
+        });
+        telaInteira.add(btnMesopotamia, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 270, 18, 18));
+
+        btnSyria.setBackground(new java.awt.Color(255, 255, 255));
+        btnSyria.setText("0");
+        btnSyria.setBorder(null);
+        btnSyria.setBorderPainted(false);
+        btnSyria.setName("btnSyria"); // NOI18N
+        btnSyria.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSyriaActionPerformed(evt);
+            }
+        });
+        telaInteira.add(btnSyria, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 290, 18, 18));
+
+        btnArabiaPetrae.setBackground(new java.awt.Color(255, 255, 255));
+        btnArabiaPetrae.setText("0");
+        btnArabiaPetrae.setBorder(null);
+        btnArabiaPetrae.setBorderPainted(false);
+        btnArabiaPetrae.setName("btnArabiaPetrae"); // NOI18N
+        btnArabiaPetrae.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnArabiaPetraeActionPerformed(evt);
+            }
+        });
+        telaInteira.add(btnArabiaPetrae, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 340, 18, 18));
+
+        btnJudaca.setBackground(new java.awt.Color(255, 255, 255));
+        btnJudaca.setText("0");
+        btnJudaca.setBorder(null);
+        btnJudaca.setBorderPainted(false);
+        btnJudaca.setName("btnJudaca"); // NOI18N
+        btnJudaca.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnJudacaActionPerformed(evt);
+            }
+        });
+        telaInteira.add(btnJudaca, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 340, 18, 18));
+
+        btnAegyptus.setBackground(new java.awt.Color(255, 255, 255));
+        btnAegyptus.setText("0");
+        btnAegyptus.setBorder(null);
+        btnAegyptus.setBorderPainted(false);
+        btnAegyptus.setName("btnAegyptus"); // NOI18N
+        btnAegyptus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAegyptusActionPerformed(evt);
+            }
+        });
+        telaInteira.add(btnAegyptus, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 410, 18, 18));
+
+        btnCyrenaica.setBackground(new java.awt.Color(255, 255, 255));
+        btnCyrenaica.setText("0");
+        btnCyrenaica.setBorder(null);
+        btnCyrenaica.setBorderPainted(false);
+        btnCyrenaica.setName("btnCyrenaica"); // NOI18N
+        btnCyrenaica.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCyrenaicaActionPerformed(evt);
+            }
+        });
+        telaInteira.add(btnCyrenaica, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 390, 18, 18));
+
+        btnNumidia.setBackground(new java.awt.Color(255, 255, 255));
+        btnNumidia.setText("0");
+        btnNumidia.setBorder(null);
+        btnNumidia.setBorderPainted(false);
+        btnNumidia.setName("btnNumidia"); // NOI18N
+        btnNumidia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNumidiaActionPerformed(evt);
+            }
+        });
+        telaInteira.add(btnNumidia, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 330, 18, 18));
+
+        btnMauritania.setBackground(new java.awt.Color(255, 255, 255));
+        btnMauritania.setText("0");
+        btnMauritania.setBorder(null);
+        btnMauritania.setBorderPainted(false);
+        btnMauritania.setName("btnMauritania"); // NOI18N
+        btnMauritania.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMauritaniaActionPerformed(evt);
+            }
+        });
+        telaInteira.add(btnMauritania, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 310, 18, 18));
+
+        btnAfrica.setBackground(new java.awt.Color(255, 255, 255));
+        btnAfrica.setText("0");
+        btnAfrica.setBorder(null);
+        btnAfrica.setBorderPainted(false);
+        btnAfrica.setName("btnAfrica"); // NOI18N
+        btnAfrica.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAfricaActionPerformed(evt);
+            }
+        });
+        telaInteira.add(btnAfrica, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 320, 18, 18));
+
+        btnSicilia.setBackground(new java.awt.Color(255, 255, 255));
+        btnSicilia.setText("0");
+        btnSicilia.setBorder(null);
+        btnSicilia.setBorderPainted(false);
+        btnSicilia.setName("btnSicilia"); // NOI18N
+        btnSicilia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSiciliaActionPerformed(evt);
+            }
+        });
+        telaInteira.add(btnSicilia, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 290, 18, 18));
+
+        btnItalia.setBackground(new java.awt.Color(255, 255, 255));
+        btnItalia.setText("0");
+        btnItalia.setBorder(null);
+        btnItalia.setBorderPainted(false);
+        btnItalia.setName("btnItalia"); // NOI18N
+        btnItalia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnItaliaActionPerformed(evt);
+            }
+        });
+        telaInteira.add(btnItalia, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 190, 18, 18));
+
+        btnSardina.setBackground(new java.awt.Color(255, 255, 255));
+        btnSardina.setText("0");
+        btnSardina.setBorder(null);
+        btnSardina.setBorderPainted(false);
+        btnSardina.setName("btnSardina"); // NOI18N
+        btnSardina.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSardinaActionPerformed(evt);
+            }
+        });
+        telaInteira.add(btnSardina, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 250, 18, 18));
+
+        btnCorsica.setBackground(new java.awt.Color(255, 255, 255));
+        btnCorsica.setText("0");
+        btnCorsica.setBorder(null);
+        btnCorsica.setBorderPainted(false);
+        btnCorsica.setName("btnCorsica"); // NOI18N
+        btnCorsica.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCorsicaActionPerformed(evt);
+            }
+        });
+        telaInteira.add(btnCorsica, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 210, 18, 18));
+
+        btnRaetia.setBackground(new java.awt.Color(255, 255, 255));
+        btnRaetia.setText("0");
+        btnRaetia.setBorder(null);
+        btnRaetia.setBorderPainted(false);
+        btnRaetia.setName("btnRaetia"); // NOI18N
+        btnRaetia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRaetiaActionPerformed(evt);
+            }
+        });
+        telaInteira.add(btnRaetia, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 130, 18, 18));
+
+        btnGermaniaInferior.setBackground(new java.awt.Color(255, 255, 255));
+        btnGermaniaInferior.setText("0");
+        btnGermaniaInferior.setBorder(null);
+        btnGermaniaInferior.setBorderPainted(false);
+        btnGermaniaInferior.setName("btnGermaniaInferior"); // NOI18N
+        btnGermaniaInferior.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGermaniaInferiorActionPerformed(evt);
+            }
+        });
+        telaInteira.add(btnGermaniaInferior, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 100, 18, 18));
+
+        btnBelgica.setBackground(new java.awt.Color(255, 255, 255));
+        btnBelgica.setText("0");
+        btnBelgica.setBorder(null);
+        btnBelgica.setBorderPainted(false);
+        btnBelgica.setName("btnBelgica"); // NOI18N
+        btnBelgica.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBelgicaActionPerformed(evt);
+            }
+        });
+        telaInteira.add(btnBelgica, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 90, 18, 18));
+
+        btnLugdunensis.setBackground(new java.awt.Color(255, 255, 255));
+        btnLugdunensis.setText("0");
+        btnLugdunensis.setBorder(null);
+        btnLugdunensis.setBorderPainted(false);
+        btnLugdunensis.setName("btnLugdunensis"); // NOI18N
+        btnLugdunensis.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLugdunensisActionPerformed(evt);
+            }
+        });
+        telaInteira.add(btnLugdunensis, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 110, 18, 18));
+
+        btnAquitania.setBackground(new java.awt.Color(255, 255, 255));
+        btnAquitania.setText("0");
+        btnAquitania.setBorder(null);
+        btnAquitania.setBorderPainted(false);
+        btnAquitania.setName("btnAquitania"); // NOI18N
+        btnAquitania.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAquitaniaActionPerformed(evt);
+            }
+        });
+        telaInteira.add(btnAquitania, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 160, 18, 18));
+
+        btnLusitania.setBackground(new java.awt.Color(255, 255, 255));
+        btnLusitania.setText("0");
+        btnLusitania.setBorder(null);
+        btnLusitania.setBorderPainted(false);
+        btnLusitania.setName("btnLusitania"); // NOI18N
+        btnLusitania.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLusitaniaActionPerformed(evt);
+            }
+        });
+        telaInteira.add(btnLusitania, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, 18, 18));
+
+        btnTarraconensis.setBackground(new java.awt.Color(255, 255, 255));
+        btnTarraconensis.setText("0");
+        btnTarraconensis.setBorder(null);
+        btnTarraconensis.setBorderPainted(false);
+        btnTarraconensis.setName("btnTarraconensis"); // NOI18N
+        btnTarraconensis.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTarraconensisActionPerformed(evt);
+            }
+        });
+        telaInteira.add(btnTarraconensis, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 210, 18, 18));
+
+        btnBaetica.setBackground(new java.awt.Color(255, 255, 255));
+        btnBaetica.setText("0");
+        btnBaetica.setBorder(null);
+        btnBaetica.setBorderPainted(false);
+        btnBaetica.setName("btnBaetica"); // NOI18N
+        btnBaetica.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBaeticaActionPerformed(evt);
+            }
+        });
+        telaInteira.add(btnBaetica, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 270, 18, 18));
+
+        btnNarbonensis.setBackground(new java.awt.Color(255, 255, 255));
+        btnNarbonensis.setText("0");
+        btnNarbonensis.setBorder(null);
+        btnNarbonensis.setBorderPainted(false);
+        btnNarbonensis.setName("btnNarbonensis"); // NOI18N
+        btnNarbonensis.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNarbonensisActionPerformed(evt);
+            }
+        });
+        telaInteira.add(btnNarbonensis, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 190, 18, 18));
+
+        btnBritania.setBackground(new java.awt.Color(255, 255, 255));
+        btnBritania.setText("0");
+        btnBritania.setBorder(null);
+        btnBritania.setBorderPainted(false);
+        btnBritania.setName("btnBritania"); // NOI18N
+        btnBritania.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBritaniaActionPerformed(evt);
+            }
+        });
+        telaInteira.add(btnBritania, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 50, 18, 18));
+
+        btnGermaniaSuperior.setBackground(new java.awt.Color(255, 255, 255));
+        btnGermaniaSuperior.setText("0");
+        btnGermaniaSuperior.setBorder(null);
+        btnGermaniaSuperior.setBorderPainted(false);
+        btnGermaniaSuperior.setName("btnGermaniaSuperior"); // NOI18N
+        btnGermaniaSuperior.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGermaniaSuperiorActionPerformed(evt);
+            }
+        });
+        telaInteira.add(btnGermaniaSuperior, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 60, 18, 18));
+
+        btnPandomia.setBackground(new java.awt.Color(255, 255, 255));
+        btnPandomia.setText("0");
+        btnPandomia.setBorder(null);
+        btnPandomia.setBorderPainted(false);
+        btnPandomia.setName("btnPandomia"); // NOI18N
+        btnPandomia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPandomiaActionPerformed(evt);
+            }
+        });
+        telaInteira.add(btnPandomia, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 150, 18, 18));
+
+        btnIllyricum.setBackground(new java.awt.Color(255, 255, 255));
+        btnIllyricum.setText("0");
+        btnIllyricum.setBorder(null);
+        btnIllyricum.setBorderPainted(false);
+        btnIllyricum.setName("btnIllyricum"); // NOI18N
+        btnIllyricum.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnIllyricumActionPerformed(evt);
+            }
+        });
+        telaInteira.add(btnIllyricum, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 180, 18, 18));
+
+        btnLycia.setBackground(new java.awt.Color(255, 255, 255));
+        btnLycia.setText("0");
+        btnLycia.setBorder(null);
+        btnLycia.setBorderPainted(false);
+        btnLycia.setName("btnLycia"); // NOI18N
+        btnLycia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLyciaActionPerformed(evt);
+            }
+        });
+        telaInteira.add(btnLycia, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 270, 18, 18));
+
+        btnCyprus.setBackground(new java.awt.Color(255, 255, 255));
+        btnCyprus.setText("0");
+        btnCyprus.setBorder(null);
+        btnCyprus.setBorderPainted(false);
+        btnCyprus.setName("btnCyprus"); // NOI18N
+        btnCyprus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCyprusActionPerformed(evt);
+            }
+        });
+        telaInteira.add(btnCyprus, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 310, 18, 18));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/warproject/Mapa.png"))); // NOI18N
         telaInteira.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 460));
@@ -763,9 +1090,173 @@ public class TelaDeJogo extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_paisAtaqueActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btnTauricaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTauricaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btnTauricaActionPerformed
+
+    private void btnBithyniaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBithyniaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnBithyniaActionPerformed
+
+    private void btnDaciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDaciaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnDaciaActionPerformed
+
+    private void btnMoesiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMoesiaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnMoesiaActionPerformed
+
+    private void btnThraciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThraciaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnThraciaActionPerformed
+
+    private void btnMacedoniaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMacedoniaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnMacedoniaActionPerformed
+
+    private void btnAchacaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAchacaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAchacaActionPerformed
+
+    private void btnCretaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCretaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCretaActionPerformed
+
+    private void btnAsiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAsiaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAsiaActionPerformed
+
+    private void btnAssyriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAssyriaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAssyriaActionPerformed
+
+    private void btnGalatiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGalatiaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnGalatiaActionPerformed
+
+    private void btnCappadociaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCappadociaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCappadociaActionPerformed
+
+    private void btnPonfusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPonfusActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnPonfusActionPerformed
+
+    private void btnArmeniaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnArmeniaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnArmeniaActionPerformed
+
+    private void btnMesopotamiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMesopotamiaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnMesopotamiaActionPerformed
+
+    private void btnSyriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSyriaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnSyriaActionPerformed
+
+    private void btnArabiaPetraeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnArabiaPetraeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnArabiaPetraeActionPerformed
+
+    private void btnJudacaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnJudacaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnJudacaActionPerformed
+
+    private void btnAegyptusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAegyptusActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAegyptusActionPerformed
+
+    private void btnCyrenaicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCyrenaicaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCyrenaicaActionPerformed
+
+    private void btnNumidiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNumidiaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnNumidiaActionPerformed
+
+    private void btnMauritaniaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMauritaniaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnMauritaniaActionPerformed
+
+    private void btnAfricaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAfricaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAfricaActionPerformed
+
+    private void btnSiciliaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSiciliaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnSiciliaActionPerformed
+
+    private void btnItaliaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnItaliaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnItaliaActionPerformed
+
+    private void btnSardinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSardinaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnSardinaActionPerformed
+
+    private void btnCorsicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCorsicaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCorsicaActionPerformed
+
+    private void btnRaetiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRaetiaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnRaetiaActionPerformed
+
+    private void btnGermaniaInferiorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGermaniaInferiorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnGermaniaInferiorActionPerformed
+
+    private void btnBelgicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBelgicaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnBelgicaActionPerformed
+
+    private void btnLugdunensisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLugdunensisActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnLugdunensisActionPerformed
+
+    private void btnAquitaniaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAquitaniaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAquitaniaActionPerformed
+
+    private void btnTarraconensisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTarraconensisActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnTarraconensisActionPerformed
+
+    private void btnLusitaniaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLusitaniaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnLusitaniaActionPerformed
+
+    private void btnBaeticaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBaeticaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnBaeticaActionPerformed
+
+    private void btnNarbonensisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNarbonensisActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnNarbonensisActionPerformed
+
+    private void btnBritaniaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBritaniaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnBritaniaActionPerformed
+
+    private void btnGermaniaSuperiorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGermaniaSuperiorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnGermaniaSuperiorActionPerformed
+
+    private void btnPandomiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPandomiaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnPandomiaActionPerformed
+
+    private void btnIllyricumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIllyricumActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnIllyricumActionPerformed
+
+    private void btnLyciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLyciaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnLyciaActionPerformed
+
+    private void btnCyprusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCyprusActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCyprusActionPerformed
 
     /**
      * @param args the command line arguments
@@ -806,9 +1297,51 @@ public class TelaDeJogo extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Continuar;
     private javax.swing.JPanel atacar;
+    private javax.swing.JButton btnAchaca;
+    private javax.swing.JButton btnAegyptus;
+    private javax.swing.JButton btnAfrica;
+    private javax.swing.JButton btnAquitania;
+    private javax.swing.JButton btnArabiaPetrae;
+    private javax.swing.JButton btnArmenia;
+    private javax.swing.JButton btnAsia;
+    private javax.swing.JButton btnAssyria;
     private javax.swing.JButton btnAtacar;
+    private javax.swing.JButton btnBaetica;
+    private javax.swing.JButton btnBelgica;
+    private javax.swing.JButton btnBithynia;
+    private javax.swing.JButton btnBritania;
+    private javax.swing.JButton btnCappadocia;
+    private javax.swing.JButton btnCorsica;
+    private javax.swing.JButton btnCreta;
+    private javax.swing.JButton btnCyprus;
+    private javax.swing.JButton btnCyrenaica;
+    private javax.swing.JButton btnDacia;
     private javax.swing.JButton btnDefenderD;
+    private javax.swing.JButton btnGalatia;
+    private javax.swing.JButton btnGermaniaInferior;
+    private javax.swing.JButton btnGermaniaSuperior;
+    private javax.swing.JButton btnIllyricum;
+    private javax.swing.JButton btnItalia;
+    private javax.swing.JButton btnJudaca;
+    private javax.swing.JButton btnLugdunensis;
+    private javax.swing.JButton btnLusitania;
+    private javax.swing.JButton btnLycia;
+    private javax.swing.JButton btnMacedonia;
+    private javax.swing.JButton btnMauritania;
+    private javax.swing.JButton btnMesopotamia;
+    private javax.swing.JButton btnMoesia;
+    private javax.swing.JButton btnNarbonensis;
+    private javax.swing.JButton btnNumidia;
+    private javax.swing.JButton btnPandomia;
     private javax.swing.JButton btnPassarAtaque;
+    private javax.swing.JButton btnPonfus;
+    private javax.swing.JButton btnRaetia;
+    private javax.swing.JButton btnSardina;
+    private javax.swing.JButton btnSicilia;
+    private javax.swing.JButton btnSyria;
+    private javax.swing.JButton btnTarraconensis;
+    private javax.swing.JButton btnTaurica;
+    private javax.swing.JButton btnThracia;
     private javax.swing.JLabel cartaDois;
     private javax.swing.JLabel cartaObjetivo;
     private javax.swing.JLabel cartaQuatro;
@@ -832,51 +1365,9 @@ public class TelaDeJogo extends javax.swing.JFrame {
     private javax.swing.JPanel distribuir;
     private javax.swing.JButton enviaExercitos;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
-    private javax.swing.JLabel jLabel25;
-    private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
-    private javax.swing.JLabel jLabel28;
-    private javax.swing.JLabel jLabel29;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel30;
-    private javax.swing.JLabel jLabel31;
-    private javax.swing.JLabel jLabel32;
-    private javax.swing.JLabel jLabel33;
-    private javax.swing.JLabel jLabel34;
-    private javax.swing.JLabel jLabel35;
-    private javax.swing.JLabel jLabel36;
-    private javax.swing.JLabel jLabel37;
-    private javax.swing.JLabel jLabel38;
-    private javax.swing.JLabel jLabel39;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel40;
-    private javax.swing.JLabel jLabel41;
-    private javax.swing.JLabel jLabel42;
-    private javax.swing.JLabel jLabel43;
-    private javax.swing.JLabel jLabel44;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lPais;
