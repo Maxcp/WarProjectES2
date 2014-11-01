@@ -86,7 +86,6 @@ public class TelaDeJogo extends javax.swing.JFrame {
         cartaQuatro = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        jLabel27 = new javax.swing.JLabel();
         btnTaurica = new javax.swing.JButton();
         btnBithynia = new javax.swing.JButton();
         btnDacia = new javax.swing.JButton();
@@ -129,7 +128,7 @@ public class TelaDeJogo extends javax.swing.JFrame {
         btnIllyricum = new javax.swing.JButton();
         btnLycia = new javax.swing.JButton();
         btnCyprus = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
+        mapaDoJogo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -541,14 +540,8 @@ public class TelaDeJogo extends javax.swing.JFrame {
 
         telaInteira.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 470, 1130, 210));
 
-        jLabel27.setBackground(new java.awt.Color(255, 153, 153));
-        jLabel27.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel27.setName("btnDacia"); // NOI18N
-        telaInteira.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 0, 70, 70));
-
         btnTaurica.setBackground(new java.awt.Color(255, 255, 255));
         btnTaurica.setText("0");
-        btnTaurica.setActionCommand("0");
         btnTaurica.setBorder(null);
         btnTaurica.setBorderPainted(false);
         btnTaurica.setName("btnTaurica"); // NOI18N
@@ -561,7 +554,6 @@ public class TelaDeJogo extends javax.swing.JFrame {
 
         btnBithynia.setBackground(new java.awt.Color(255, 255, 255));
         btnBithynia.setText("0");
-        btnBithynia.setActionCommand("0");
         btnBithynia.setBorder(null);
         btnBithynia.setBorderPainted(false);
         btnBithynia.setName("btnBithynia"); // NOI18N
@@ -1052,8 +1044,8 @@ public class TelaDeJogo extends javax.swing.JFrame {
         });
         telaInteira.add(btnCyprus, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 310, 18, 18));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/warproject/Mapa.png"))); // NOI18N
-        telaInteira.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 460));
+        mapaDoJogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/warproject/Mapa.png"))); // NOI18N
+        telaInteira.add(mapaDoJogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 460));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -1368,8 +1360,6 @@ public class TelaDeJogo extends javax.swing.JFrame {
     private javax.swing.JPanel distribuir;
     private javax.swing.JButton enviaExercitos;
     private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
@@ -1381,6 +1371,7 @@ public class TelaDeJogo extends javax.swing.JFrame {
     private javax.swing.JLabel lbPais;
     private javax.swing.JLabel lbPara;
     private javax.swing.JTextPane logConsole;
+    private javax.swing.JLabel mapaDoJogo;
     private javax.swing.JPanel movimentar;
     private javax.swing.JLabel numEx;
     private javax.swing.JTabbedPane painelOpcoes;

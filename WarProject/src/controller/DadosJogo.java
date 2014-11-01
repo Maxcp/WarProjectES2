@@ -40,8 +40,45 @@ public class DadosJogo {
         nomeTerritorios[11] = "Pandomia";
         nomeTerritorios[12] = "Illyricum";
         nomeContinentes[1] = "Europa Central";
+
+        nomeTerritorios[13] = "Itália";
+        nomeTerritorios[14] = "Corsica";
+        nomeTerritorios[15] = "Sardinia";
+        nomeTerritorios[16] = "Sicília";
+        nomeContinentes[2] = "Península Itálica";
+
+        nomeTerritorios[17] = "Mauritania";
+        nomeTerritorios[18] = "Africa";
+        nomeTerritorios[19] = "Numidia";
+        nomeTerritorios[20] = "Cyrenaica";
+        nomeContinentes[3] = "Península Itálica";
+
+        nomeTerritorios[21] = "Dacia";
+        nomeTerritorios[22] = "Moesia";
+        nomeTerritorios[23] = "Thracia";
+        nomeTerritorios[24] = "Macedônia";
+        nomeTerritorios[25] = "Achaca";
+        nomeTerritorios[26] = "Creta";
+        nomeTerritorios[27] = "Asia";
+        nomeTerritorios[28] = "Galatia";
+        nomeTerritorios[29] = "Bithynia";
+        nomeTerritorios[30] = "Taurica";
+        nomeContinentes[4] = "Europa Oriental";
+
+        nomeTerritorios[31] = "Cyprus";
+        nomeTerritorios[32] = "Lycia";
+        nomeTerritorios[33] = "Cappadocia";
+        nomeTerritorios[34] = "Ponfus";
+        nomeTerritorios[35] = "Armenia";
+        nomeTerritorios[36] = "Assyria";
+        nomeTerritorios[37] = "Mesopotamia";
+        nomeContinentes[4] = "Ásia Menor";
         
-        
+        nomeTerritorios[38] = "Syria";
+        nomeTerritorios[39] = "Judaca";
+        nomeTerritorios[40] = "Arabia Petrae";
+        nomeTerritorios[41] = "Aegyptus";
+        nomeContinentes[5] = "Médio Oriente";
 
     }
 
