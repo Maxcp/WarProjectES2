@@ -13,14 +13,18 @@ import java.util.List;
 
 public class Gerenciador {
 
-    List<Jogador> jogadores;
-    List<Objetivo> objetivos;
-    List<Territorio> territorios;
-    List<Continente> continentes;
+    Jogador jogadores[];
+    Objetivo objetivos[];
+    Territorio territorios[];
+    Continente continentes[];
 
     private static Gerenciador instancia;
 
     private Gerenciador() {
+        DadosJogo data = DadosJogo.getInstance();
+        for (int i = 0; i < data.nomeTerritorios.length; i++) {
+            territorios[i] = new Territorio(i, data.nomeTerritorios[i], null, null, 0);
+        }
     }
     
     public static synchronized Gerenciador getInstance(){

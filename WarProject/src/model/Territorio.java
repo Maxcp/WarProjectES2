@@ -19,6 +19,14 @@ public class Territorio {
     Jogador conquistador;
     int exercitosPosicionados;
 
+    public Territorio(int id, String nome, List<Territorio> vizinhos, Jogador conquistador, int exercitosPosicionados) {
+        this.id = id;
+        this.nome = nome;
+        this.vizinhos = vizinhos;
+        this.conquistador = conquistador;
+        this.exercitosPosicionados = exercitosPosicionados;
+    }
+    
     public int getId() {
         return id;
     }
