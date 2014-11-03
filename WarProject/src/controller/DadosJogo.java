@@ -46,7 +46,7 @@ public class DadosJogo {
             {23, 27, 28, 30, 33, 34},//29 Bithynia
             {21, 29},//30 Taurica
             {32},//31 Cyprus
-            {26, 27, 33, 38},//32 Lycia
+            {26, 27, 31, 33, 38},//32 Lycia
             {27, 28, 29, 32, 34, 35, 37, 38},//33 Cappadocia
             {29, 33, 35},//34 Ponfus
             {33, 34, 36, 37},//35 Armenia
@@ -67,6 +67,8 @@ public class DadosJogo {
         return instancia;
     }
 
+
+                    
     private DadosJogo() {
         nomeTerritorios[0] = "Baeticia";
         nomeTerritorios[1] = "Lusitania";
@@ -77,14 +79,14 @@ public class DadosJogo {
         nomeTerritorios[6] = "Narbonensis";
         nomeTerritorios[7] = "Bélgica";
         nomeContinentes[0] = "Europa Ocidental";
-
+            
         nomeTerritorios[8] = "Germania Superior";
         nomeTerritorios[9] = "Germania Inferior";
         nomeTerritorios[10] = "Raetia";
         nomeTerritorios[11] = "Pandomia";
         nomeTerritorios[12] = "Illyricum";
         nomeContinentes[1] = "Europa Central";
-
+            
         nomeTerritorios[13] = "Itália";
         nomeTerritorios[14] = "Corsica";
         nomeTerritorios[15] = "Sardinia";
@@ -108,7 +110,7 @@ public class DadosJogo {
         nomeTerritorios[29] = "Bithynia";
         nomeTerritorios[30] = "Taurica";
         nomeContinentes[4] = "Europa Oriental";
-
+            
         nomeTerritorios[31] = "Cyprus";
         nomeTerritorios[32] = "Lycia";
         nomeTerritorios[33] = "Cappadocia";
