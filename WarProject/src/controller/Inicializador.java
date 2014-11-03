@@ -5,7 +5,7 @@
  */
 package controller;
 
-
+import controller.DadosJogo;
 import warproject.*;
 
 /**
@@ -15,9 +15,10 @@ import warproject.*;
 public class Inicializador {
 
     public static void main(String[] args) {
-        
-        TelaInicial tela = new TelaInicial();
-        tela.setVisible(true);
+
+        Gerenciador.getInstance();
+        //TelaInicial tela = new TelaInicial();
+        // tela.setVisible(true);
     }
 
 }

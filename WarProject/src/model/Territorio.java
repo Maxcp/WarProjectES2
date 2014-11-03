@@ -5,6 +5,7 @@
  */
 package model;
 
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -15,11 +16,11 @@ public class Territorio {
 
     int id;
     String nome;
-    List<Territorio> vizinhos;
+    Territorio vizinhos[];
     Jogador conquistador;
     int exercitosPosicionados;
 
-    public Territorio(int id, String nome, List<Territorio> vizinhos, Jogador conquistador, int exercitosPosicionados) {
+    public Territorio(int id, String nome, Territorio vizinhos[], Jogador conquistador, int exercitosPosicionados) {
         this.id = id;
         this.nome = nome;
         this.vizinhos = vizinhos;
@@ -43,11 +44,11 @@ public class Territorio {
         this.nome = nome;
     }
 
-    public List<Territorio> getVizinhos() {
+    public Territorio[] getVizinhos() {
         return vizinhos;
     }
 
-    public void setVizinhos(List<Territorio> vizinhos) {
+    public void setVizinhos(Territorio[] vizinhos) {
         this.vizinhos = vizinhos;
     }
 
@@ -66,4 +67,18 @@ public class Territorio {
     public void setExercitosPosicionados(int exercitosPosicionados) {
         this.exercitosPosicionados = exercitosPosicionados;
     }
+    
+        @Override
+    public String toString() {
+        return "Territorio{" + "id=" + id + ", nome=" + nome + ", vizinhos= [" + exibeVizinhosIds() + "]" + ", conquistador=" + conquistador + ", exercitosPosicionados=" + exercitosPosicionados + '}';
+    }
+    
+    public String exibeVizinhosIds(){
+        String vizinhosString = "";
+        for (int i = 0; i < vizinhos.length; i++) {
+            vizinhosString = vizinhos[i].toString();
+        }
+        return vizinhosString;
+    }
+
 }

@@ -10,7 +10,7 @@ package controller;
  * @author Samsung
  */
 public class DadosJogo {
-
+    public static int qtdTerritorios = 42;
     public static String[] nomeTerritorios;
     public static String[] nomeContinentes;
     public static int[][] vinzihosDoTerritorio = {

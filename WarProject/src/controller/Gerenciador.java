@@ -5,11 +5,11 @@
  */
 package controller;
 
+import controller.DadosJogo;
+import model.Continente;
 import model.Jogador;
 import model.Objetivo;
 import model.Territorio;
-import model.Continente;
-import java.util.List;
 
 public class Gerenciador {
 
@@ -21,10 +21,24 @@ public class Gerenciador {
     private static Gerenciador instancia;
 
     private Gerenciador() {
-        DadosJogo data = DadosJogo.getInstance();
-        for (int i = 0; i < data.nomeTerritorios.length; i++) {
-            territorios[i] = new Territorio(i, data.nomeTerritorios[i], null, null, 0);
+        // INICIANDO PREENCHIMENTO DE TERRITORIOS
+        territorios = new Territorio[DadosJogo.qtdTerritorios];
+        for (int i = 0; i < DadosJogo.qtdTerritorios; i++) {
+            territorios[i] = new Territorio(i, DadosJogo.nomeTerritorios[i], null, null, 0);
         }
+        
+        for (int i = 0; i < DadosJogo.qtdTerritorios; i++) {
+            Territorio[] vizinhosDoTerritorio = new Territorio[DadosJogo.nomeTerritorios[i].length()];
+            for (int j = 0; j < DadosJogo.vinzihosDoTerritorio[i].length; j++) {
+                vizinhosDoTerritorio[i] = territorios[j];
+            }
+            territorios[i].setVizinhos(vizinhosDoTerritorio);
+        }
+        // FIM DO PREENCHIMENTO DE TERRITORIOS
+         for (int i = 0; i < DadosJogo.nomeTerritorios.length; i++) {
+             System.out.println(territorios[i].toString());
+        }
+        
     }
     
     public static synchronized Gerenciador getInstance(){
