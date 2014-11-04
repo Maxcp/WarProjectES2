@@ -28,16 +28,13 @@ public class Gerenciador {
         }
         
         for (int i = 0; i < DadosJogo.qtdTerritorios; i++) {
-            Territorio[] vizinhosDoTerritorio = new Territorio[DadosJogo.nomeTerritorios[i].length()];
+            Territorio vizinhosDoTerritorio[] = new Territorio[DadosJogo.vinzihosDoTerritorio[i].length];
             for (int j = 0; j < DadosJogo.vinzihosDoTerritorio[i].length; j++) {
-                vizinhosDoTerritorio[i] = territorios[j];
+                vizinhosDoTerritorio[j] = territorios[DadosJogo.vinzihosDoTerritorio[i][j]];
             }
             territorios[i].setVizinhos(vizinhosDoTerritorio);
         }
         // FIM DO PREENCHIMENTO DE TERRITORIOS
-         for (int i = 0; i < DadosJogo.nomeTerritorios.length; i++) {
-             System.out.println(territorios[i].toString());
-        }
         
     }
     
