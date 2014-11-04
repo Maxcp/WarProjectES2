@@ -34,7 +34,12 @@ public class Gerenciador {
             }
             territorios[i].setVizinhos(vizinhosDoTerritorio);
         }
+        
+        Objetivo objetivo1 = new Objetivo(null);
+        System.out.println(objetivo1.getDescricao());
         // FIM DO PREENCHIMENTO DE TERRITORIOS
+        
+        //CRIACAO DE UM OBJETIVO ALEATORIO
         
     }
     

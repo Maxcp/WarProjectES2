@@ -13,17 +13,53 @@ public class DadosJogo {
 
     public static int qtdTerritorios = 42;
     
-    final int legiaoVermelha = 0;
-    final int legiaoVerde = 1;
-    final int legiaoBege = 2;
-    final int legiaoPreta = 3;
+    final static int legiaoVermelha = 0;
+    final static int legiaoVerde = 1;
+    final static int legiaoBege = 2;
+    final static int legiaoPreta = 3;
     
-    public String[] listaDeObjetivos;
-    public int[][] objetivosTipo1 = new int[4][1];
-    public int[][] objetivosTipo2 = new int[3][2];
-    public int[][] objetivosTipo3 = new int[4][2];
-    public int[] objetivosTipo4 = new int[1];
-    public int[] objetivosTipo5 = new int[2];
+    public static String[] descricaoDeObjetivos = {
+        //Tipo1
+        "Destrua totalmente as legioes vermelhas",
+        "Destrua totalmente as legioes verdes",
+        "Destrua totalmente as legioes beges",
+        "Destrua totalmente as legioes pretas",
+        //Tipo2
+        "Conquiste na totalidade a EUROPA OCIDENTAL e a ASIA MENOR",
+        "Conquiste na totalidade a EUROPA ORIENTAL e a PENINSULA ITALICA",
+        "Conquiste na totalidade a EUROPA ORIENTAL e a AFRICA SETENTRIONAL",
+        //Tipo3
+        "Conquiste na totalidade a EUROPA OCIDENTAL e o MEDIO ORIENTE e mais uma terceira regiao a sua escolha",
+        "Conquiste na totalidade a EUROPA CENTRAL, o MEDIO ORIENTE e mais uma terceira regiao a sua escolha",
+        "Conquiste na totalidade a EUROPA CENTRAL, a AFRICA SETENTRIONAL e mais uma terceira regiao a sua escolha",
+        "Conquiste na totalidade a ASIA MENOR, a PENINSULA ITALICA e mais uma terceira regiao a sua escolha",
+        //Tipo4
+        "Conquiste 24 provincias a sua escolha",
+        //Tipo5
+        "Conquiste 18 provincias a sua escolha e ocupe cada uma delas com pelo menos 2 legioes",
+        "Conquiste 18 provincias a sua escolha e ocupe cada uma delas com pelo menos 2 legioes",
+    };
+    //EUROPA OCIDENTAL=0---EUROPA CENTRAL=1---PENINSULA ITALICA=2---AFRICA SETENTRIONAL=3---EUROPA ORIENTAL=4---ASIA MENOR=5---MEDIO ORIENTE=6;
+    public static int[] objetivosTipo1 = {
+        legiaoVermelha,
+        legiaoVerde,
+        legiaoBege,
+        legiaoPreta
+    };
+    public static int[][] objetivosTipo2 = {
+        {0, 5}, //EUROPA OCIDENTAL e a ASIA MENOR
+        {4, 2}, //EUROPA ORIENTAL e a PENINSULA ITALICA
+        {4, 3}  //EUROPA ORIENTAL e a AFRICA SETENTRIONAL
+    };
+    public static int[][] objetivosTipo3 = {
+        {0, 6}, //EUROPA OCIDENTAL e o MEDIO ORIENTE
+        {1, 6}, //EUROPA CENTRAL, o MEDIO ORIENTE
+        {1, 3}, //EUROPA CENTRAL, a AFRICA SETENTRIONAL
+        {5, 2} //ASIA MENOR, a PENINSULA ITALICA
+    };
+    public static int[] objetivosTipo4 = {24};
+    
+    public static int[] objetivosTipo5 = {18,18};
     
     public static String[] nomeTerritorios = {
         "Baeticia", //0
@@ -137,47 +173,9 @@ public class DadosJogo {
         }
         return instancia;
     }
-
-    private DadosJogo() {
-        //Tipo1
-        listaDeObjetivos[0] = "Destrua totalmente as legioes vermelhas";
-        listaDeObjetivos[1] = "Destrua totalmente as legioes verdes";
-        listaDeObjetivos[2] = "Destrua totalmente as legioes beges";
-        listaDeObjetivos[3] = "Destrua totalmente as legioes pretas";
-        //Tipo2
-        listaDeObjetivos[4] = "Conquiste na totalidade a EUROPA OCIDENTAL e a ASIA MENOR";
-        listaDeObjetivos[5] = "Conquiste na totalidade a EUROPA ORIENTAL e a PENINSULA ITALICA";
-        listaDeObjetivos[6] = "Conquiste na totalidade a EUROPA ORIENTAL e a AFRICA SETENTRIONAL";
-        //Tipo3
-        listaDeObjetivos[7] = "Conquiste na totalidade a EUROPA OCIDENTAL e o MEDIO ORIENTE e mais uma terceira regiao a sua escolha";
-        listaDeObjetivos[8] = "Conquiste na totalidade a EUROPA CENTRAL, o MEDIO ORIENTE e mais uma terceira regiao a sua escolha";
-        listaDeObjetivos[9] = "Conquiste na totalidade a EUROPA CENTRAL, a AFRICA SETENTRIONAL e mais uma terceira regiao a sua escolha";
-        listaDeObjetivos[10] = "Conquiste na totalidade a ASIA MENOR, a PENINSULA ITALICA e mais uma terceira regiao a sua escolha";
-        //Tipo4
-        listaDeObjetivos[11] = "Conquiste 24 provincias a sua escolha";
-        //Tipo5
-        listaDeObjetivos[12] = "Conquiste 18 provincias a sua escolha e ocupe cada uma delas com pelo menos 2 legioes";
-        listaDeObjetivos[13] = "Conquiste 18 provincias a sua escolha e ocupe cada uma delas com pelo menos 2 legioes";
+    
+    public DadosJogo() {
         
-        //EUROPA OCIDENTAL=0---EUROPA CENTRAL=1---PENINSULA ITALICA=2---AFRICA SETENTRIONAL=3---EUROPA ORIENTAL=4---ASIA MENOR=5---MEDIO ORIENTE=6;
-        objetivosTipo1[0][0] = legiaoVermelha;
-        objetivosTipo1[1][1] = legiaoVerde;
-        objetivosTipo1[2][2] = legiaoBege;
-        objetivosTipo1[3][3] = legiaoPreta;
-        
-        objetivosTipo2[0][0] = 0; objetivosTipo2[0][1] = 5; //EUROPA OCIDENTAL e a ASIA MENOR
-        objetivosTipo2[1][0] = 4; objetivosTipo2[1][1] = 2; //EUROPA ORIENTAL e a PENINSULA ITALICA
-        objetivosTipo2[2][0] = 4; objetivosTipo2[2][1] = 3; //EUROPA ORIENTAL e a AFRICA SETENTRIONAL
-        
-        objetivosTipo3[0][0] = 0; objetivosTipo3[0][1] = 6; //EUROPA OCIDENTAL e o MEDIO ORIENTE
-        objetivosTipo3[1][0] = 1; objetivosTipo3[1][1] = 6; //EUROPA CENTRAL, o MEDIO ORIENTE
-        objetivosTipo3[2][0] = 1; objetivosTipo3[2][1] = 3; //EUROPA CENTRAL, a AFRICA SETENTRIONAL
-        objetivosTipo3[3][0] = 5; objetivosTipo3[2][1] = 2; //ASIA MENOR, a PENINSULA ITALICA
-        
-        objetivosTipo4[0] = 24;
-        
-        objetivosTipo5[0] = 18;
-        objetivosTipo5[1] = 18;
     }
 
 }
