@@ -15,10 +15,8 @@ import warproject.*;
 public class Inicializador {
 
     public static void main(String[] args) {
-
-        Gerenciador.getInstance();
-        //TelaInicial tela = new TelaInicial();
-        // tela.setVisible(true);
+        TelaInicial tela = new TelaInicial();
+        tela.setVisible(true);
     }
 
 }

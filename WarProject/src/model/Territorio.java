@@ -68,17 +68,4 @@ public class Territorio {
         this.exercitosPosicionados = exercitosPosicionados;
     }
     
-        @Override
-    public String toString() {
-        return "Territorio{" + "id=" + id + ", nome=" + nome + ", vizinhos= [" + exibeVizinhosIds() + "]" + ", conquistador=" + conquistador + ", exercitosPosicionados=" + exercitosPosicionados + '}';
-    }
-    
-    public String exibeVizinhosIds(){
-        String vizinhosString = "";
-        for (int i = 0; i < vizinhos.length; i++) {
-            vizinhosString = vizinhos[i].toString();
-        }
-        return vizinhosString;
-    }
-
 }
