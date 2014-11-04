@@ -47,6 +47,14 @@ public class Territorio {
     public Territorio[] getVizinhos() {
         return vizinhos;
     }
+    public boolean isVizinho(Territorio t){
+        for(int i = 0; i < vizinhos.length; i++) {
+            if(vizinhos[i]==t){
+            return true;
+            }
+        }
+        return false;
+    }
 
     public void setVizinhos(Territorio[] vizinhos) {
         this.vizinhos = vizinhos;
