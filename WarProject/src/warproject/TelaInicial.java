@@ -33,42 +33,52 @@ public class TelaInicial extends javax.swing.JFrame {
         apelido = new javax.swing.JLabel();
         textoApelido = new javax.swing.JTextField();
         iniciarJogo = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        apelido.setText("Apelido:");
-        jPanel1.add(apelido, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 260, -1, -1));
+        apelido.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        apelido.setText("DIGITE SEU APELIDO:");
+        jPanel1.add(apelido, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 200, -1, -1));
 
         textoApelido.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 textoApelidoActionPerformed(evt);
             }
         });
-        jPanel1.add(textoApelido, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 260, 330, -1));
+        jPanel1.add(textoApelido, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 240, 330, -1));
 
+        iniciarJogo.setBackground(new java.awt.Color(102, 0, 0));
+        iniciarJogo.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        iniciarJogo.setForeground(new java.awt.Color(255, 255, 255));
         iniciarJogo.setText("Entrar");
+        iniciarJogo.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         iniciarJogo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 iniciarJogoActionPerformed(evt);
             }
         });
-        jPanel1.add(iniciarJogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, -1, -1));
+        jPanel1.add(iniciarJogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 270, 160, 30));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("/home/13221098774/NetBeansNovo/WarProjectES2/WarProject/img/jogo-war-grow-ref-02000-16824-MLB20127465064_072014-O.jpg")); // NOI18N
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 10, 250, 210));
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/warproject/fundo-gladiadores.png"))); // NOI18N
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 532, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 357, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 321, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -123,7 +133,7 @@ public class TelaInicial extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel apelido;
     private javax.swing.JButton iniciarJogo;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField textoApelido;
     // End of variables declaration//GEN-END:variables

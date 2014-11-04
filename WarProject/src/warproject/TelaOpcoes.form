@@ -117,6 +117,7 @@
             <BevelBorder/>
           </Border>
         </Property>
+        <Property name="focusable" type="boolean" value="false"/>
       </Properties>
       <AccessibilityProperties>
         <Property name="AccessibleContext.accessibleParent" type="javax.accessibility.Accessible" editor="org.netbeans.modules.form.ComponentChooserEditor">
@@ -144,6 +145,7 @@
             <BevelBorder/>
           </Border>
         </Property>
+        <Property name="focusable" type="boolean" value="false"/>
         <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="[73, 21]"/>
         </Property>
@@ -175,6 +177,7 @@
             <BevelBorder/>
           </Border>
         </Property>
+        <Property name="focusable" type="boolean" value="false"/>
         <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="[73, 21]"/>
         </Property>
@@ -206,6 +209,7 @@
             <BevelBorder/>
           </Border>
         </Property>
+        <Property name="focusable" type="boolean" value="false"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCreditosActionPerformed"/>
@@ -228,6 +232,7 @@
             <BevelBorder/>
           </Border>
         </Property>
+        <Property name="focusable" type="boolean" value="false"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSairActionPerformed"/>

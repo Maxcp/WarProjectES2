@@ -63,6 +63,7 @@ public class TelaOpcoes extends javax.swing.JFrame {
         btnInicio.setForeground(new java.awt.Color(255, 255, 255));
         btnInicio.setText("Iniciar Partida");
         btnInicio.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnInicio.setFocusable(false);
         btnInicio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnInicioActionPerformed(evt);
@@ -74,6 +75,7 @@ public class TelaOpcoes extends javax.swing.JFrame {
         btnInstrucoes.setForeground(new java.awt.Color(255, 255, 255));
         btnInstrucoes.setText("Instruções");
         btnInstrucoes.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnInstrucoes.setFocusable(false);
         btnInstrucoes.setMaximumSize(new java.awt.Dimension(73, 21));
         btnInstrucoes.setMinimumSize(new java.awt.Dimension(73, 21));
         btnInstrucoes.setPreferredSize(new java.awt.Dimension(73, 21));
@@ -88,6 +90,7 @@ public class TelaOpcoes extends javax.swing.JFrame {
         btnRanking.setForeground(new java.awt.Color(255, 255, 255));
         btnRanking.setText("Ranking");
         btnRanking.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnRanking.setFocusable(false);
         btnRanking.setMaximumSize(new java.awt.Dimension(73, 21));
         btnRanking.setMinimumSize(new java.awt.Dimension(73, 21));
         btnRanking.setPreferredSize(new java.awt.Dimension(73, 21));
@@ -102,6 +105,7 @@ public class TelaOpcoes extends javax.swing.JFrame {
         btnCreditos.setForeground(new java.awt.Color(255, 255, 255));
         btnCreditos.setText("Créditos");
         btnCreditos.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnCreditos.setFocusable(false);
         btnCreditos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCreditosActionPerformed(evt);
@@ -113,6 +117,7 @@ public class TelaOpcoes extends javax.swing.JFrame {
         btnSair.setForeground(new java.awt.Color(255, 255, 255));
         btnSair.setText("Sair");
         btnSair.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnSair.setFocusable(false);
         btnSair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSairActionPerformed(evt);
