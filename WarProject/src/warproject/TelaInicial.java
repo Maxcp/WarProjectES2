@@ -17,6 +17,7 @@ public class TelaInicial extends javax.swing.JFrame {
      */
     public TelaInicial() {
         initComponents();
+        this.setLocationRelativeTo(null); 
     }
 
     /**
@@ -80,6 +81,7 @@ public class TelaInicial extends javax.swing.JFrame {
     private void iniciarJogoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iniciarJogoActionPerformed
        TelaOpcoes tela = new TelaOpcoes();
        tela.setVisible(true);
+       tela.setLocationRelativeTo(null); 
        dispose();
     }//GEN-LAST:event_iniciarJogoActionPerformed
 

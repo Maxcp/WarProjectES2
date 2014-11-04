@@ -5,6 +5,9 @@
  */
 package warproject;
 
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+
 /**
  *
  * @author 13221098774
@@ -27,102 +30,137 @@ public class TelaOpcoes extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        jFrame1 = new javax.swing.JFrame();
+        jLabel1 = new javax.swing.JLabel();
         btnInicio = new javax.swing.JButton();
+        btnInstrucoes = new javax.swing.JButton();
         btnRanking = new javax.swing.JButton();
         btnCreditos = new javax.swing.JButton();
         btnSair = new javax.swing.JButton();
-        btnInstrucoes = new javax.swing.JButton();
-        lbNomeJogo = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+
+        javax.swing.GroupLayout jFrame1Layout = new javax.swing.GroupLayout(jFrame1.getContentPane());
+        jFrame1.getContentPane().setLayout(jFrame1Layout);
+        jFrame1Layout.setHorizontalGroup(
+            jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        jFrame1Layout.setVerticalGroup(
+            jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(102, 0, 0));
+        setMaximumSize(null);
+        setMinimumSize(null);
+        setResizable(false);
 
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/warproject/fundo-menu-pronto1.png"))); // NOI18N
+
+        btnInicio.setBackground(new java.awt.Color(102, 0, 0));
+        btnInicio.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        btnInicio.setForeground(new java.awt.Color(255, 255, 255));
         btnInicio.setText("Iniciar Partida");
+        btnInicio.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnInicio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnInicioActionPerformed(evt);
             }
         });
 
-        btnRanking.setText("Ranking");
-        btnRanking.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRankingActionPerformed(evt);
-            }
-        });
-
-        btnCreditos.setText("Créditos");
-        btnCreditos.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCreditosActionPerformed(evt);
-            }
-        });
-
-        btnSair.setText("Sair");
-        btnSair.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSairActionPerformed(evt);
-            }
-        });
-
+        btnInstrucoes.setBackground(new java.awt.Color(102, 0, 0));
+        btnInstrucoes.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        btnInstrucoes.setForeground(new java.awt.Color(255, 255, 255));
         btnInstrucoes.setText("Instruções");
+        btnInstrucoes.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnInstrucoes.setMaximumSize(new java.awt.Dimension(73, 21));
+        btnInstrucoes.setMinimumSize(new java.awt.Dimension(73, 21));
+        btnInstrucoes.setPreferredSize(new java.awt.Dimension(73, 21));
         btnInstrucoes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnInstrucoesActionPerformed(evt);
             }
         });
 
-        lbNomeJogo.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        lbNomeJogo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbNomeJogo.setText("WAR IMPÉRIO ROMANO");
-        lbNomeJogo.setToolTipText("");
+        btnRanking.setBackground(new java.awt.Color(102, 0, 0));
+        btnRanking.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        btnRanking.setForeground(new java.awt.Color(255, 255, 255));
+        btnRanking.setText("Ranking");
+        btnRanking.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnRanking.setMaximumSize(new java.awt.Dimension(73, 21));
+        btnRanking.setMinimumSize(new java.awt.Dimension(73, 21));
+        btnRanking.setPreferredSize(new java.awt.Dimension(73, 21));
+        btnRanking.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRankingActionPerformed(evt);
+            }
+        });
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(69, 69, 69)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnInstrucoes, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnSair, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnCreditos, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnRanking, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnInicio, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(76, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lbNomeJogo)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(49, 49, 49)
-                .addComponent(lbNomeJogo, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnInicio)
-                .addGap(18, 18, 18)
-                .addComponent(btnInstrucoes)
-                .addGap(18, 18, 18)
-                .addComponent(btnRanking)
-                .addGap(18, 18, 18)
-                .addComponent(btnCreditos)
-                .addGap(18, 18, 18)
-                .addComponent(btnSair)
-                .addContainerGap(88, Short.MAX_VALUE))
-        );
+        btnCreditos.setBackground(new java.awt.Color(102, 0, 0));
+        btnCreditos.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        btnCreditos.setForeground(new java.awt.Color(255, 255, 255));
+        btnCreditos.setText("Créditos");
+        btnCreditos.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnCreditos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCreditosActionPerformed(evt);
+            }
+        });
+
+        btnSair.setBackground(new java.awt.Color(102, 0, 0));
+        btnSair.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        btnSair.setForeground(new java.awt.Color(255, 255, 255));
+        btnSair.setText("Sair");
+        btnSair.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnSair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSairActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/warproject/fundo-menu-pronto2.png"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(btnCreditos, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnRanking, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnInstrucoes, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnInicio, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSair, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnInicio, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnInstrucoes, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnRanking, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnCreditos, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnSair, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(9, 9, 9)))
+                .addContainerGap())
         );
+
+        btnInicio.getAccessibleContext().setAccessibleParent(jLabel1);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -136,11 +174,13 @@ public class TelaOpcoes extends javax.swing.JFrame {
 
     private void btnRankingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRankingActionPerformed
         TelaDeRanking telaRank = new TelaDeRanking();
+        telaRank.setLocationRelativeTo(null); 
         telaRank.setVisible(true);
     }//GEN-LAST:event_btnRankingActionPerformed
 
     private void btnInstrucoesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInstrucoesActionPerformed
         TelaDeInstrucoes telaInstrucoes = new TelaDeInstrucoes();
+        telaInstrucoes.setLocationRelativeTo(null); 
         telaInstrucoes.setVisible(true);
     }//GEN-LAST:event_btnInstrucoesActionPerformed
 
@@ -150,6 +190,7 @@ public class TelaOpcoes extends javax.swing.JFrame {
 
     private void btnCreditosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreditosActionPerformed
         TelaDeCreditos telaCred = new TelaDeCreditos();
+        telaCred.setLocationRelativeTo(null); 
         telaCred.setVisible(true);
     }//GEN-LAST:event_btnCreditosActionPerformed
 
@@ -194,7 +235,8 @@ public class TelaOpcoes extends javax.swing.JFrame {
     private javax.swing.JButton btnInstrucoes;
     private javax.swing.JButton btnRanking;
     private javax.swing.JButton btnSair;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JLabel lbNomeJogo;
+    private javax.swing.JFrame jFrame1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 }
