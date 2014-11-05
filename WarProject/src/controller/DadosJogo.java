@@ -12,6 +12,7 @@ package controller;
 public class DadosJogo {
 
     public static int qtdTerritorios = 42;
+    public static int qtdContinentes = 42;
     
     final static int legiaoVermelha = 0;
     final static int legiaoVerde = 1;
@@ -112,13 +113,24 @@ public class DadosJogo {
         "Aegyptus" //41
     };
 
-    public static String[] nomeContinentes = {"Europa Ocidental",//0
+    public static String[] nomeContinentes = {
+        "Europa Ocidental",//0
         "Europa Central",//1
         "Península Itálica",//2
         "Africa Setentrional",//3
         "Europa Oriental",//4
         "Ásia Menor",//5
         "Médio Oriente"};//6
+    
+    public static int[][] territoriosDoContinente = {
+        {0,1,2,3,4,5,6,7},
+        {8,9,10,11,12},
+        {13,14,15,16},
+        {17,18,19,20},
+        {21,22,23,24,25,26,27,28,29,30},
+        {31,32,33,34,35,36,37},
+        {38,39,40,41}
+    };
 
     public static int vinzihosDoTerritorio[][] = {
         {1, 2, 17}, //0 Baeticia

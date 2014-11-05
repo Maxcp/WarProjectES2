@@ -9,7 +9,21 @@ package model;
  *
  * @author Matheus
  */
-class CartasTerritorio {
+public class CartasTerritorio {
+    
+    private static final String formasGeometricasPossiveis[] = {
+     "Quadrado", //0
+     "Triangulo", //1
+     "Circulo" //2
+    };
+        
+    Territorio territorio;
+    int formaGeometrica;
+
+    public CartasTerritorio(Territorio territorio, int formaGeometrica) {
+        this.territorio = territorio;
+        this.formaGeometrica = formaGeometrica;
+    }
 
     public Territorio getTerritorio() {
         return territorio;
@@ -26,6 +40,5 @@ class CartasTerritorio {
     public void setFormaGeometrica(int formaGeometrica) {
         this.formaGeometrica = formaGeometrica;
     }
-    Territorio territorio;
-    int formaGeometrica;
+
 }

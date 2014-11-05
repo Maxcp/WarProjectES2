@@ -5,8 +5,6 @@
  */
 package model;
 
-import java.util.List;
-
 /**
  *
  * @author Matheus
@@ -14,8 +12,20 @@ import java.util.List;
 public class Continente {
 
     String nome;
-    String cor;
-    List<Territorio> territorios;
+    Territorio territorios[];
+    
+    public Continente(String nome,  Territorio[] territorios) {
+        this.nome = nome;
+        this.territorios = territorios;
+    }    
+
+    public Territorio[] getTerritorios() {
+        return territorios;
+    }
+
+    public void setTerritorios(Territorio[] territorios) {
+        this.territorios = territorios;
+    }
 
     public String getNome() {
         return nome;
@@ -23,22 +33,6 @@ public class Continente {
 
     public void setNome(String nome) {
         this.nome = nome;
-    }
-
-    public String getCor() {
-        return cor;
-    }
-
-    public void setCor(String cor) {
-        this.cor = cor;
-    }
-
-    public List<Territorio> getTerritorios() {
-        return territorios;
-    }
-
-    public void setTerritorios(List<Territorio> territorios) {
-        this.territorios = territorios;
     }
 
 }
