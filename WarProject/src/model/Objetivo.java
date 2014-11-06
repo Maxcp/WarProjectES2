@@ -21,12 +21,15 @@ public class Objetivo {
         id_objetivo = geraObjetivoAleatorio(restricoes);
         tipo_objetivo = verificaTipoDoObjetivo(id_objetivo);
     }
+    
     public String getDescricao() {
         return DadosJogo.descricaoDeObjetivos[id_objetivo];
     }
+    
     public int getID(){
         return id_objetivo;
     }
+    
     public List<Territorio> getTerritoriosNecessarios() {
         return territoriosNecessarios;
     }
@@ -34,6 +37,7 @@ public class Objetivo {
     public void setTerritoriosNecessarios(List<Territorio> territoriosNecessarios) {
         this.territoriosNecessarios = territoriosNecessarios;
     }
+    
     public static int verificaTipoDoObjetivo(int num){
         if(num>=0 && num <=3)
             return TIPO_UM;
@@ -47,6 +51,7 @@ public class Objetivo {
             return TIPO_UM;
         return -1;
     }
+    
     public static int geraObjetivoAleatorio(int[] restricoes){ //SE NAO TEM RESTRICAO, PARAMETRO TEM QUE SER NULO
         boolean valido = false;
         int num = (int)(Math.random() * 14);//GERA VALOR ENTRE 0-14;
@@ -64,6 +69,7 @@ public class Objetivo {
         }
         return num;
     }
+    
     public boolean verificaSeObjetivoFoiAtingido(){
         if (tipo_objetivo == 1){
             
@@ -86,5 +92,28 @@ public class Objetivo {
             }
         }
         return false;
+    }
+
+    //METODOS ESTATICOS AUXILIARES
+    
+    public static void geraQuatroObjetivos(Objetivo objetivo1, Objetivo objetivo2, Objetivo objetivo3, Objetivo objetivo4){
+        
+        objetivo1 = new Objetivo(null);
+        
+        int[] vetorAuxiliar = new int[1];
+        vetorAuxiliar[0] = objetivo1.getID();
+        objetivo2 = new Objetivo(vetorAuxiliar);
+        
+        vetorAuxiliar = new int[2];
+        vetorAuxiliar[0] = objetivo1.getID();
+        vetorAuxiliar[1] = objetivo2.getID();
+        objetivo3 = new Objetivo(vetorAuxiliar);
+        
+        vetorAuxiliar = new int[3];
+        vetorAuxiliar[0] = objetivo1.getID();
+        vetorAuxiliar[1] = objetivo2.getID();
+        vetorAuxiliar[2] = objetivo3.getID();
+        objetivo4 = new Objetivo(vetorAuxiliar);
+        
     }
 }

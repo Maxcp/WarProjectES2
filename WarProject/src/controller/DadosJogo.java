@@ -12,7 +12,7 @@ package controller;
 public class DadosJogo {
 
     public static int qtdTerritorios = 42;
-    public static int qtdContinentes = 42;
+    public static int qtdContinentes = 7;
     
     final static int legiaoVermelha = 0;
     final static int legiaoVerde = 1;
