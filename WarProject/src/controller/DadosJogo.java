@@ -16,14 +16,14 @@ public class DadosJogo {
     
     final static int legiaoVermelha = 0;
     final static int legiaoVerde = 1;
-    final static int legiaoBege = 2;
+    final static int legiaoAzul = 2;
     final static int legiaoPreta = 3;
     
     public static String[] descricaoDeObjetivos = {
         //Tipo1
         "Destrua totalmente as legioes vermelhas",
         "Destrua totalmente as legioes verdes",
-        "Destrua totalmente as legioes beges",
+        "Destrua totalmente as legioes azuis",
         "Destrua totalmente as legioes pretas",
         //Tipo2
         "Conquiste na totalidade a EUROPA OCIDENTAL e a ASIA MENOR",
@@ -44,7 +44,7 @@ public class DadosJogo {
     public static int[] objetivosTipo1 = {
         legiaoVermelha,
         legiaoVerde,
-        legiaoBege,
+        legiaoAzul,
         legiaoPreta
     };
     public static int[][] objetivosTipo2 = {
