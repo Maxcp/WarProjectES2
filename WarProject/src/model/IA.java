@@ -5,11 +5,17 @@
  */
 package model;
 
+import java.util.List;
+
 /**
  *
  * @author Matheus
  */
 public class IA extends Jogador {
+
+    public IA(String nome, int cor, Objetivo objetivo, List<Territorio> territorios) {
+        super(nome, cor, objetivo, territorios);
+    }
     void ataque() {
     
     }

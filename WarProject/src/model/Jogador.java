@@ -5,6 +5,8 @@
  */
 package model;
 
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -13,43 +15,68 @@ import java.util.List;
  */
 public class Jogador {
 
-    String nome;
-    String cor;
-    List<Territorio> territorios;
-    List<CartasTerritorio> cartas;
-    int pontuacao;
-    Objetivo objetivo;
+    private String nome;
+    private int cor;
+    private List<Territorio> territorios = new ArrayList();
+    private List<CartasTerritorio> cartas = new ArrayList();
+    private Objetivo objetivo;
+    private int pontuacao;
 
+    public Jogador(String nome, int cor, Objetivo objetivo, List<Territorio> territorios) {
+        this.nome = nome;
+        this.cor = cor;
+        this.territorios = territorios;
+        this.objetivo = objetivo;
+    }
+        
     public String getNome() {
         return nome;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public String getCor() {
+    public int getCor() {
         return cor;
-    }
-
-    public void setCor(String cor) {
-        this.cor = cor;
     }
 
     public List<Territorio> getTerritorios() {
         return territorios;
     }
-
-    public void setTerritorios(List<Territorio> territorios) {
-        this.territorios = territorios;
+    
+    public void addTerritorios(List<Territorio> territorios) {
+        this.territorios.addAll(territorios);//Adiciona todas as novos territorios para a lista atual
+    }
+    
+    public void addTerritorio(Territorio territorio){
+        this.territorios.add(territorio);
+    }
+    
+    public void removeTerritorio(Territorio territorio){//remove a primeira ocorrencia do territorio
+        boolean naoAchou = true;
+        Iterator<Territorio> it = territorios.iterator();
+        while(it.hasNext() && naoAchou){
+            if(it.next().equals(territorio)){
+                it.remove();
+                naoAchou = false;
+            }
+        }
     }
 
-    public List<CartasTerritorio> getCartas() {
-        return cartas;
+    public void addCartas(List<CartasTerritorio> cartas) {
+        this.cartas.addAll(cartas);//Adiciona todas as novas cartas territorios para a lista atual
     }
-
-    public void setCartas(List<CartasTerritorio> cartas) {
-        this.cartas = cartas;
+    
+    public void addCarta(CartasTerritorio carta){
+        this.cartas.add(carta);
+    }
+    
+    public void removeCarta(CartasTerritorio carta){//remove a primeira ocorrencia da carta
+        boolean naoAchou = true;
+        Iterator<CartasTerritorio> it = cartas.iterator();
+        while(it.hasNext() && naoAchou){
+            if(it.next().equals(carta)){
+                it.remove();
+                naoAchou = false;
+            }
+        }
     }
 
     public int getPontuacao() {
@@ -62,9 +89,5 @@ public class Jogador {
 
     public Objetivo getObjetivo() {
         return objetivo;
-    }
-
-    public void setObjetivo(Objetivo objetivo) {
-        this.objetivo = objetivo;
     }
 }
