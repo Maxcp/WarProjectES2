@@ -12,6 +12,8 @@ package warproject;
  */
 public class TelaInicial extends javax.swing.JFrame {
 
+    int Maquina = 0;
+    int Player = 1;
     /**
      * Creates new form TelaInicial
      */
@@ -31,24 +33,50 @@ public class TelaInicial extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         apelido = new javax.swing.JLabel();
-        textoApelido = new javax.swing.JTextField();
+        textoApelido1 = new javax.swing.JTextField();
         iniciarJogo = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
+        apelido1 = new javax.swing.JLabel();
+        apelido2 = new javax.swing.JLabel();
+        cbEscolhaCor1 = new javax.swing.JComboBox();
+        apelido3 = new javax.swing.JLabel();
+        cbEscolhaModo1 = new javax.swing.JComboBox();
+        apelido4 = new javax.swing.JLabel();
+        apelido5 = new javax.swing.JLabel();
+        cbEscolhaModo2 = new javax.swing.JComboBox();
+        apelido6 = new javax.swing.JLabel();
+        textoApelido2 = new javax.swing.JTextField();
+        apelido7 = new javax.swing.JLabel();
+        cbEscolhaCor2 = new javax.swing.JComboBox();
+        apelido8 = new javax.swing.JLabel();
+        apelido9 = new javax.swing.JLabel();
+        cbEscolhaModo3 = new javax.swing.JComboBox();
+        apelido10 = new javax.swing.JLabel();
+        textoApelido3 = new javax.swing.JTextField();
+        apelido11 = new javax.swing.JLabel();
+        cbEscolhaCor3 = new javax.swing.JComboBox();
+        apelido12 = new javax.swing.JLabel();
+        apelido13 = new javax.swing.JLabel();
+        cbEscolhaModo4 = new javax.swing.JComboBox();
+        apelido14 = new javax.swing.JLabel();
+        textoApelido4 = new javax.swing.JTextField();
+        apelido15 = new javax.swing.JLabel();
+        cbEscolhaCor4 = new javax.swing.JComboBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        apelido.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        apelido.setText("DIGITE SEU APELIDO:");
-        jPanel1.add(apelido, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 200, -1, -1));
+        apelido.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        apelido.setText("Opcao:");
+        jPanel1.add(apelido, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, -1, -1));
 
-        textoApelido.addActionListener(new java.awt.event.ActionListener() {
+        textoApelido1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textoApelidoActionPerformed(evt);
+                textoApelido1ActionPerformed(evt);
             }
         });
-        jPanel1.add(textoApelido, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 240, 330, -1));
+        jPanel1.add(textoApelido1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 240, 170, -1));
 
         iniciarJogo.setBackground(new java.awt.Color(102, 0, 0));
         iniciarJogo.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
@@ -60,10 +88,171 @@ public class TelaInicial extends javax.swing.JFrame {
                 iniciarJogoActionPerformed(evt);
             }
         });
-        jPanel1.add(iniciarJogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 270, 160, 30));
+        jPanel1.add(iniciarJogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 440, 160, 30));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/warproject/fundo-gladiadores.png"))); // NOI18N
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        apelido1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        apelido1.setForeground(new java.awt.Color(102, 102, 102));
+        apelido1.setText("Jogador 1:");
+        jPanel1.add(apelido1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, -1, -1));
+
+        apelido2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        apelido2.setText("cor:");
+        jPanel1.add(apelido2, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 240, -1, -1));
+
+        cbEscolhaCor1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Vermelho", "Verde", "Azul", "Preto" }));
+        cbEscolhaCor1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbEscolhaCor1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(cbEscolhaCor1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 240, -1, -1));
+
+        apelido3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        apelido3.setText("Apelido:");
+        jPanel1.add(apelido3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 240, -1, -1));
+
+        cbEscolhaModo1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Maquina", "Player" }));
+        cbEscolhaModo1.setSelectedIndex(1);
+        cbEscolhaModo1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbEscolhaModo1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(cbEscolhaModo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 240, -1, -1));
+
+        apelido4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        apelido4.setForeground(new java.awt.Color(102, 102, 102));
+        apelido4.setText("Jogador 2:");
+        jPanel1.add(apelido4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, -1, -1));
+
+        apelido5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        apelido5.setText("Opcao:");
+        jPanel1.add(apelido5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, -1, -1));
+
+        cbEscolhaModo2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Maquina", "Player" }));
+        cbEscolhaModo2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbEscolhaModo2ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(cbEscolhaModo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 290, -1, -1));
+
+        apelido6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        apelido6.setText("Apelido:");
+        jPanel1.add(apelido6, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 290, -1, -1));
+
+        textoApelido2.setText("Maquina 2");
+        textoApelido2.setEnabled(false);
+        textoApelido2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textoApelido2ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(textoApelido2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 290, 170, -1));
+
+        apelido7.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        apelido7.setText("cor:");
+        jPanel1.add(apelido7, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 290, -1, -1));
+
+        cbEscolhaCor2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Vermelho", "Verde", "Azul", "Preto" }));
+        cbEscolhaCor2.setSelectedIndex(1);
+        cbEscolhaCor2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbEscolhaCor2ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(cbEscolhaCor2, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 290, -1, -1));
+
+        apelido8.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        apelido8.setForeground(new java.awt.Color(102, 102, 102));
+        apelido8.setText("Jogador 3:");
+        jPanel1.add(apelido8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 320, -1, -1));
+
+        apelido9.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        apelido9.setText("Opcao:");
+        jPanel1.add(apelido9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 340, -1, -1));
+
+        cbEscolhaModo3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Maquina", "Player" }));
+        cbEscolhaModo3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbEscolhaModo3ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(cbEscolhaModo3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 340, -1, -1));
+
+        apelido10.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        apelido10.setText("Apelido:");
+        jPanel1.add(apelido10, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 340, -1, -1));
+
+        textoApelido3.setText("Maquina 3");
+        textoApelido3.setEnabled(false);
+        textoApelido3.setMaximumSize(null);
+        textoApelido3.setMinimumSize(null);
+        textoApelido3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textoApelido3ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(textoApelido3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 340, 170, -1));
+
+        apelido11.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        apelido11.setText("cor:");
+        jPanel1.add(apelido11, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 340, -1, -1));
+
+        cbEscolhaCor3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Vermelho", "Verde", "Azul", "Preto" }));
+        cbEscolhaCor3.setSelectedIndex(2);
+        cbEscolhaCor3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbEscolhaCor3ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(cbEscolhaCor3, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 340, -1, -1));
+
+        apelido12.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        apelido12.setForeground(new java.awt.Color(102, 102, 102));
+        apelido12.setText("Jogador 4:");
+        jPanel1.add(apelido12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 370, -1, -1));
+
+        apelido13.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        apelido13.setText("Opcao:");
+        jPanel1.add(apelido13, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 390, -1, -1));
+
+        cbEscolhaModo4.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Maquina", "Player" }));
+        cbEscolhaModo4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbEscolhaModo4ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(cbEscolhaModo4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 390, -1, -1));
+
+        apelido14.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        apelido14.setText("Apelido:");
+        jPanel1.add(apelido14, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 390, -1, -1));
+
+        textoApelido4.setText("Maquina 4");
+        textoApelido4.setEnabled(false);
+        textoApelido4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textoApelido4ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(textoApelido4, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 390, 170, -1));
+
+        apelido15.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        apelido15.setText("cor:");
+        jPanel1.add(apelido15, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 390, -1, -1));
+
+        cbEscolhaCor4.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Vermelho", "Verde", "Azul", "Preto" }));
+        cbEscolhaCor4.setSelectedIndex(3);
+        cbEscolhaCor4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbEscolhaCor4ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(cbEscolhaCor4, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 390, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -71,29 +260,122 @@ public class TelaInicial extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0))
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 321, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 485, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void textoApelidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textoApelidoActionPerformed
+    private void textoApelido1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textoApelido1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_textoApelidoActionPerformed
+    }//GEN-LAST:event_textoApelido1ActionPerformed
 
     private void iniciarJogoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iniciarJogoActionPerformed
-       TelaOpcoes tela = new TelaOpcoes();
+       String escolhaModo1 = cbEscolhaModo1.getSelectedIndex() + "";  
+       String escolhaModo2 = cbEscolhaModo2.getSelectedIndex() + "";  
+       String escolhaModo3 = cbEscolhaModo3.getSelectedIndex() + "";  
+       String escolhaModo4 = cbEscolhaModo4.getSelectedIndex() + "";  
+       
+       String escolhaCor1 = cbEscolhaCor1.getSelectedIndex() + "";  
+       String escolhaCor2 = cbEscolhaCor2.getSelectedIndex() + "";  
+       String escolhaCor3 = cbEscolhaCor3.getSelectedIndex() + "";  
+       String escolhaCor4 = cbEscolhaCor4.getSelectedIndex() + "";  
+       
+       String apelido1 = textoApelido1.getText();
+       String apelido2 = textoApelido2.getText();
+       String apelido3 = textoApelido3.getText();
+       String apelido4 = textoApelido4.getText();
+       
+       String[][] paramentros ={
+           {escolhaModo1, apelido1, escolhaCor1},
+           {escolhaModo2, apelido2, escolhaCor2},
+           {escolhaModo3, apelido3, escolhaCor3},
+           {escolhaModo4, apelido4, escolhaCor4}
+       };       
+       
+       TelaOpcoes tela = new TelaOpcoes(paramentros);
        tela.setVisible(true);
        tela.setLocationRelativeTo(null); 
        dispose();
     }//GEN-LAST:event_iniciarJogoActionPerformed
+
+    private void cbEscolhaCor1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbEscolhaCor1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbEscolhaCor1ActionPerformed
+
+    private void cbEscolhaModo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbEscolhaModo1ActionPerformed
+      if (cbEscolhaModo1.getSelectedIndex() == Maquina){
+          textoApelido1.setEnabled(false);
+          textoApelido1.setText("Maquina 1");
+          
+      }else{
+          textoApelido1.setEnabled(true);
+          textoApelido1.setText("");
+      }
+    }//GEN-LAST:event_cbEscolhaModo1ActionPerformed
+
+    private void cbEscolhaModo2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbEscolhaModo2ActionPerformed
+      if (cbEscolhaModo2.getSelectedIndex() == Maquina){
+          textoApelido2.setEnabled(false);
+          textoApelido2.setText("Maquina 2");
+          
+      }else{
+          textoApelido2.setEnabled(true);
+          textoApelido2.setText("");
+      }
+    }//GEN-LAST:event_cbEscolhaModo2ActionPerformed
+
+    private void textoApelido2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textoApelido2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textoApelido2ActionPerformed
+
+    private void cbEscolhaCor2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbEscolhaCor2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbEscolhaCor2ActionPerformed
+
+    private void cbEscolhaModo3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbEscolhaModo3ActionPerformed
+      if (cbEscolhaModo3.getSelectedIndex() == Maquina){
+          textoApelido3.setEnabled(false);
+          textoApelido3.setText("Maquina 3");
+          
+      }else{
+          textoApelido3.setEnabled(true);
+          textoApelido3.setText("");
+      }
+    }//GEN-LAST:event_cbEscolhaModo3ActionPerformed
+
+    private void textoApelido3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textoApelido3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textoApelido3ActionPerformed
+
+    private void cbEscolhaCor3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbEscolhaCor3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbEscolhaCor3ActionPerformed
+
+    private void cbEscolhaModo4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbEscolhaModo4ActionPerformed
+      if (cbEscolhaModo4.getSelectedIndex() == Maquina){
+          textoApelido4.setEnabled(false);
+          textoApelido4.setText("Maquina 4");
+          
+      }else{
+          textoApelido4.setEnabled(true);
+          textoApelido4.setText("");
+      }
+    }//GEN-LAST:event_cbEscolhaModo4ActionPerformed
+
+    private void textoApelido4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textoApelido4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textoApelido4ActionPerformed
+
+    private void cbEscolhaCor4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbEscolhaCor4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbEscolhaCor4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -132,9 +414,35 @@ public class TelaInicial extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel apelido;
+    private javax.swing.JLabel apelido1;
+    private javax.swing.JLabel apelido10;
+    private javax.swing.JLabel apelido11;
+    private javax.swing.JLabel apelido12;
+    private javax.swing.JLabel apelido13;
+    private javax.swing.JLabel apelido14;
+    private javax.swing.JLabel apelido15;
+    private javax.swing.JLabel apelido2;
+    private javax.swing.JLabel apelido3;
+    private javax.swing.JLabel apelido4;
+    private javax.swing.JLabel apelido5;
+    private javax.swing.JLabel apelido6;
+    private javax.swing.JLabel apelido7;
+    private javax.swing.JLabel apelido8;
+    private javax.swing.JLabel apelido9;
+    private javax.swing.JComboBox cbEscolhaCor1;
+    private javax.swing.JComboBox cbEscolhaCor2;
+    private javax.swing.JComboBox cbEscolhaCor3;
+    private javax.swing.JComboBox cbEscolhaCor4;
+    private javax.swing.JComboBox cbEscolhaModo1;
+    private javax.swing.JComboBox cbEscolhaModo2;
+    private javax.swing.JComboBox cbEscolhaModo3;
+    private javax.swing.JComboBox cbEscolhaModo4;
     private javax.swing.JButton iniciarJogo;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField textoApelido;
+    private javax.swing.JTextField textoApelido1;
+    private javax.swing.JTextField textoApelido2;
+    private javax.swing.JTextField textoApelido3;
+    private javax.swing.JTextField textoApelido4;
     // End of variables declaration//GEN-END:variables
 }

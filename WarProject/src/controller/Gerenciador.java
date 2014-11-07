@@ -10,6 +10,7 @@ import java.util.List;
 import model.*;
 
 public class Gerenciador {
+    String[][] parametrosDosJogadores;
 
     Jogador jogadores[];
     Objetivo objetivos[];
@@ -24,36 +25,57 @@ public class Gerenciador {
 
     private static Gerenciador instancia;
 
-    private Gerenciador() {
+    public static Gerenciador getInstance(String[][] paramentros) {//Se ta mandando os parametros do usuario significa
+        //que eh a primeira vez que o Gerenciador eh chamado, logo, precisa criar a instancia
+        instancia = new Gerenciador(paramentros);
+        return instancia;
+    }
+    public static Gerenciador getInstance() {
+        if (instancia == null) {
+            instancia = new Gerenciador();
+        }
+        return instancia;
+    }
+    private Gerenciador() {//Nao possui os parametros, ja foi inicializado anteriormente
+       gerenciaJogo();
+    }
+    private Gerenciador(String[][] parametros){
+        //Parametro com dados do jogador
+        parametrosDosJogadores = parametros;
+        gerenciaJogo();
+    }
+    private void gerenciaJogo(){
         inicializaTerritorios();
         inicializaContinentes();
         inicializaCartasTerritorios();
-        inicializaJogadores();
+        inicializaJogadores();   
     }
 
     private void inicializaJogadores() {
-        
         List<Territorio> territorios1 = new ArrayList(), territorios2 = new ArrayList(), territorios3 = new ArrayList(), territorios4 = new ArrayList();
         Objetivo objetivo1 = new Objetivo(null), objetivo2 = new Objetivo(null), objetivo3 = new Objetivo(null), objetivo4 = new Objetivo(null);
         
         Territorio.distribuiTerritorio(territorios, territorios1, territorios2, territorios3, territorios4);
         Objetivo.geraQuatroObjetivos(objetivo1, objetivo2, objetivo3, objetivo4);
 
-        String nome1="Jogador 1", nome2="Jogador 2", nome3="Jogador 3", nome4="Jogador 4"; 
-        int cor1=DadosJogo.legiaoVermelha, cor2=DadosJogo.legiaoVerde, cor3=DadosJogo.legiaoAzul, cor4=DadosJogo.legiaoPreta;
+        String nome1=parametrosDosJogadores[0][1], nome2=parametrosDosJogadores[1][1], nome3=parametrosDosJogadores[2][1], nome4=parametrosDosJogadores[3][1]; 
+        int cor1= Integer.parseInt(parametrosDosJogadores[0][2]);
+        int cor2=Integer.parseInt(parametrosDosJogadores[1][2]); 
+        int cor3=Integer.parseInt(parametrosDosJogadores[2][2]);
+        int cor4=Integer.parseInt(parametrosDosJogadores[3][2]);
         
         jogador1 = new Jogador(nome1, cor1, objetivo1, territorios1);
         jogador2 = new Jogador(nome2, cor2, objetivo2, territorios2);
         jogador3 = new Jogador(nome3, cor3, objetivo3, territorios3);
         jogador4 = new Jogador(nome4, cor4, objetivo4, territorios4);
+        
+        System.out.println("Nome: " + jogador1.getNome());
+        System.out.println("cor: " + jogador1.getCor());
+        
+        System.out.println("Nome: " + jogador2.getNome());
+        System.out.println("cor: " + jogador2.getCor());
     }
-
-    public static synchronized Gerenciador getInstance() {
-        if (instancia == null) {
-            instancia = new Gerenciador();
-        }
-        return instancia;
-    }
+    
     
     private void inicializaTerritorios() {
         territorios = new Territorio[DadosJogo.qtdTerritorios];
