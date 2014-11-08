@@ -814,6 +814,7 @@
               <Border info="null"/>
             </Property>
             <Property name="borderPainted" type="boolean" value="false"/>
+            <Property name="focusable" type="boolean" value="false"/>
             <Property name="name" type="java.lang.String" value="btnTaurica" noResource="true"/>
           </Properties>
           <Events>
@@ -835,6 +836,7 @@
               <Border info="null"/>
             </Property>
             <Property name="borderPainted" type="boolean" value="false"/>
+            <Property name="focusable" type="boolean" value="false"/>
             <Property name="name" type="java.lang.String" value="btnBithynia" noResource="true"/>
           </Properties>
           <Events>
@@ -856,6 +858,7 @@
               <Border info="null"/>
             </Property>
             <Property name="borderPainted" type="boolean" value="false"/>
+            <Property name="focusable" type="boolean" value="false"/>
             <Property name="name" type="java.lang.String" value="btnDacia" noResource="true"/>
           </Properties>
           <Events>
@@ -877,6 +880,7 @@
               <Border info="null"/>
             </Property>
             <Property name="borderPainted" type="boolean" value="false"/>
+            <Property name="focusable" type="boolean" value="false"/>
             <Property name="name" type="java.lang.String" value="btnMoesia" noResource="true"/>
           </Properties>
           <Events>
@@ -898,6 +902,7 @@
               <Border info="null"/>
             </Property>
             <Property name="borderPainted" type="boolean" value="false"/>
+            <Property name="focusable" type="boolean" value="false"/>
             <Property name="name" type="java.lang.String" value="btnThracia" noResource="true"/>
           </Properties>
           <Events>
@@ -919,6 +924,7 @@
               <Border info="null"/>
             </Property>
             <Property name="borderPainted" type="boolean" value="false"/>
+            <Property name="focusable" type="boolean" value="false"/>
             <Property name="name" type="java.lang.String" value="btnMacedonia" noResource="true"/>
           </Properties>
           <Events>
@@ -940,6 +946,7 @@
               <Border info="null"/>
             </Property>
             <Property name="borderPainted" type="boolean" value="false"/>
+            <Property name="focusable" type="boolean" value="false"/>
             <Property name="name" type="java.lang.String" value="btnAchaca" noResource="true"/>
           </Properties>
           <Events>
@@ -961,6 +968,7 @@
               <Border info="null"/>
             </Property>
             <Property name="borderPainted" type="boolean" value="false"/>
+            <Property name="focusable" type="boolean" value="false"/>
             <Property name="name" type="java.lang.String" value="btnCreta" noResource="true"/>
           </Properties>
           <Events>
@@ -982,6 +990,7 @@
               <Border info="null"/>
             </Property>
             <Property name="borderPainted" type="boolean" value="false"/>
+            <Property name="focusable" type="boolean" value="false"/>
             <Property name="name" type="java.lang.String" value="btnAsia" noResource="true"/>
           </Properties>
           <Events>
@@ -1003,6 +1012,7 @@
               <Border info="null"/>
             </Property>
             <Property name="borderPainted" type="boolean" value="false"/>
+            <Property name="focusable" type="boolean" value="false"/>
             <Property name="name" type="java.lang.String" value="btnAssyria" noResource="true"/>
           </Properties>
           <Events>
@@ -1024,6 +1034,7 @@
               <Border info="null"/>
             </Property>
             <Property name="borderPainted" type="boolean" value="false"/>
+            <Property name="focusable" type="boolean" value="false"/>
             <Property name="name" type="java.lang.String" value="btnGalatia" noResource="true"/>
           </Properties>
           <Events>
@@ -1045,6 +1056,7 @@
               <Border info="null"/>
             </Property>
             <Property name="borderPainted" type="boolean" value="false"/>
+            <Property name="focusable" type="boolean" value="false"/>
             <Property name="name" type="java.lang.String" value="btnCappadocia" noResource="true"/>
           </Properties>
           <Events>
@@ -1066,6 +1078,7 @@
               <Border info="null"/>
             </Property>
             <Property name="borderPainted" type="boolean" value="false"/>
+            <Property name="focusable" type="boolean" value="false"/>
             <Property name="name" type="java.lang.String" value="btnPonfus" noResource="true"/>
           </Properties>
           <Events>
@@ -1087,6 +1100,7 @@
               <Border info="null"/>
             </Property>
             <Property name="borderPainted" type="boolean" value="false"/>
+            <Property name="focusable" type="boolean" value="false"/>
             <Property name="name" type="java.lang.String" value="btnArmenia" noResource="true"/>
           </Properties>
           <Events>
@@ -1108,6 +1122,7 @@
               <Border info="null"/>
             </Property>
             <Property name="borderPainted" type="boolean" value="false"/>
+            <Property name="focusable" type="boolean" value="false"/>
             <Property name="name" type="java.lang.String" value="btnMesopotamia" noResource="true"/>
           </Properties>
           <Events>
@@ -1129,6 +1144,7 @@
               <Border info="null"/>
             </Property>
             <Property name="borderPainted" type="boolean" value="false"/>
+            <Property name="focusable" type="boolean" value="false"/>
             <Property name="name" type="java.lang.String" value="btnSyria" noResource="true"/>
           </Properties>
           <Events>
@@ -1150,6 +1166,7 @@
               <Border info="null"/>
             </Property>
             <Property name="borderPainted" type="boolean" value="false"/>
+            <Property name="focusable" type="boolean" value="false"/>
             <Property name="name" type="java.lang.String" value="btnArabiaPetrae" noResource="true"/>
           </Properties>
           <Events>
@@ -1171,6 +1188,7 @@
               <Border info="null"/>
             </Property>
             <Property name="borderPainted" type="boolean" value="false"/>
+            <Property name="focusable" type="boolean" value="false"/>
             <Property name="name" type="java.lang.String" value="btnJudaca" noResource="true"/>
           </Properties>
           <Events>
@@ -1192,6 +1210,7 @@
               <Border info="null"/>
             </Property>
             <Property name="borderPainted" type="boolean" value="false"/>
+            <Property name="focusable" type="boolean" value="false"/>
             <Property name="name" type="java.lang.String" value="btnAegyptus" noResource="true"/>
           </Properties>
           <Events>
@@ -1213,6 +1232,7 @@
               <Border info="null"/>
             </Property>
             <Property name="borderPainted" type="boolean" value="false"/>
+            <Property name="focusable" type="boolean" value="false"/>
             <Property name="name" type="java.lang.String" value="btnCyrenaica" noResource="true"/>
           </Properties>
           <Events>
@@ -1234,6 +1254,7 @@
               <Border info="null"/>
             </Property>
             <Property name="borderPainted" type="boolean" value="false"/>
+            <Property name="focusable" type="boolean" value="false"/>
             <Property name="name" type="java.lang.String" value="btnNumidia" noResource="true"/>
           </Properties>
           <Events>
@@ -1255,6 +1276,7 @@
               <Border info="null"/>
             </Property>
             <Property name="borderPainted" type="boolean" value="false"/>
+            <Property name="focusable" type="boolean" value="false"/>
             <Property name="name" type="java.lang.String" value="btnMauritania" noResource="true"/>
           </Properties>
           <Events>
@@ -1276,6 +1298,7 @@
               <Border info="null"/>
             </Property>
             <Property name="borderPainted" type="boolean" value="false"/>
+            <Property name="focusable" type="boolean" value="false"/>
             <Property name="name" type="java.lang.String" value="btnAfrica" noResource="true"/>
           </Properties>
           <Events>
@@ -1297,6 +1320,7 @@
               <Border info="null"/>
             </Property>
             <Property name="borderPainted" type="boolean" value="false"/>
+            <Property name="focusable" type="boolean" value="false"/>
             <Property name="name" type="java.lang.String" value="btnSicilia" noResource="true"/>
           </Properties>
           <Events>
@@ -1318,6 +1342,7 @@
               <Border info="null"/>
             </Property>
             <Property name="borderPainted" type="boolean" value="false"/>
+            <Property name="focusable" type="boolean" value="false"/>
             <Property name="name" type="java.lang.String" value="btnItalia" noResource="true"/>
           </Properties>
           <Events>
@@ -1339,6 +1364,7 @@
               <Border info="null"/>
             </Property>
             <Property name="borderPainted" type="boolean" value="false"/>
+            <Property name="focusable" type="boolean" value="false"/>
             <Property name="name" type="java.lang.String" value="btnSardina" noResource="true"/>
           </Properties>
           <Events>
@@ -1360,6 +1386,7 @@
               <Border info="null"/>
             </Property>
             <Property name="borderPainted" type="boolean" value="false"/>
+            <Property name="focusable" type="boolean" value="false"/>
             <Property name="name" type="java.lang.String" value="btnCorsica" noResource="true"/>
           </Properties>
           <Events>
@@ -1381,6 +1408,7 @@
               <Border info="null"/>
             </Property>
             <Property name="borderPainted" type="boolean" value="false"/>
+            <Property name="focusable" type="boolean" value="false"/>
             <Property name="name" type="java.lang.String" value="btnRaetia" noResource="true"/>
           </Properties>
           <Events>
@@ -1402,6 +1430,7 @@
               <Border info="null"/>
             </Property>
             <Property name="borderPainted" type="boolean" value="false"/>
+            <Property name="focusable" type="boolean" value="false"/>
             <Property name="name" type="java.lang.String" value="btnGermaniaInferior" noResource="true"/>
           </Properties>
           <Events>
@@ -1423,6 +1452,7 @@
               <Border info="null"/>
             </Property>
             <Property name="borderPainted" type="boolean" value="false"/>
+            <Property name="focusable" type="boolean" value="false"/>
             <Property name="name" type="java.lang.String" value="btnBelgica" noResource="true"/>
           </Properties>
           <Events>
@@ -1444,6 +1474,7 @@
               <Border info="null"/>
             </Property>
             <Property name="borderPainted" type="boolean" value="false"/>
+            <Property name="focusable" type="boolean" value="false"/>
             <Property name="name" type="java.lang.String" value="btnLugdunensis" noResource="true"/>
           </Properties>
           <Events>
@@ -1465,6 +1496,7 @@
               <Border info="null"/>
             </Property>
             <Property name="borderPainted" type="boolean" value="false"/>
+            <Property name="focusable" type="boolean" value="false"/>
             <Property name="name" type="java.lang.String" value="btnAquitania" noResource="true"/>
           </Properties>
           <Events>
@@ -1486,6 +1518,7 @@
               <Border info="null"/>
             </Property>
             <Property name="borderPainted" type="boolean" value="false"/>
+            <Property name="focusable" type="boolean" value="false"/>
             <Property name="name" type="java.lang.String" value="btnLusitania" noResource="true"/>
           </Properties>
           <Events>
@@ -1507,6 +1540,7 @@
               <Border info="null"/>
             </Property>
             <Property name="borderPainted" type="boolean" value="false"/>
+            <Property name="focusable" type="boolean" value="false"/>
             <Property name="name" type="java.lang.String" value="btnTarraconensis" noResource="true"/>
           </Properties>
           <Events>
@@ -1528,6 +1562,7 @@
               <Border info="null"/>
             </Property>
             <Property name="borderPainted" type="boolean" value="false"/>
+            <Property name="focusable" type="boolean" value="false"/>
             <Property name="name" type="java.lang.String" value="btnBaetica" noResource="true"/>
           </Properties>
           <Events>
@@ -1549,6 +1584,7 @@
               <Border info="null"/>
             </Property>
             <Property name="borderPainted" type="boolean" value="false"/>
+            <Property name="focusable" type="boolean" value="false"/>
             <Property name="name" type="java.lang.String" value="btnNarbonensis" noResource="true"/>
           </Properties>
           <Events>
@@ -1570,6 +1606,7 @@
               <Border info="null"/>
             </Property>
             <Property name="borderPainted" type="boolean" value="false"/>
+            <Property name="focusable" type="boolean" value="false"/>
             <Property name="name" type="java.lang.String" value="btnBritania" noResource="true"/>
           </Properties>
           <Events>
@@ -1591,6 +1628,7 @@
               <Border info="null"/>
             </Property>
             <Property name="borderPainted" type="boolean" value="false"/>
+            <Property name="focusable" type="boolean" value="false"/>
             <Property name="name" type="java.lang.String" value="btnGermaniaSuperior" noResource="true"/>
           </Properties>
           <Events>
@@ -1612,6 +1650,7 @@
               <Border info="null"/>
             </Property>
             <Property name="borderPainted" type="boolean" value="false"/>
+            <Property name="focusable" type="boolean" value="false"/>
             <Property name="name" type="java.lang.String" value="btnPandomia" noResource="true"/>
           </Properties>
           <Events>
@@ -1633,6 +1672,7 @@
               <Border info="null"/>
             </Property>
             <Property name="borderPainted" type="boolean" value="false"/>
+            <Property name="focusable" type="boolean" value="false"/>
             <Property name="name" type="java.lang.String" value="btnIllyricum" noResource="true"/>
           </Properties>
           <Events>
@@ -1654,6 +1694,7 @@
               <Border info="null"/>
             </Property>
             <Property name="borderPainted" type="boolean" value="false"/>
+            <Property name="focusable" type="boolean" value="false"/>
             <Property name="name" type="java.lang.String" value="btnLycia" noResource="true"/>
           </Properties>
           <Events>
@@ -1675,6 +1716,7 @@
               <Border info="null"/>
             </Property>
             <Property name="borderPainted" type="boolean" value="false"/>
+            <Property name="focusable" type="boolean" value="false"/>
             <Property name="name" type="java.lang.String" value="btnCyprus" noResource="true"/>
           </Properties>
           <Events>

@@ -20,10 +20,6 @@ public class Gerenciador {
     Continente continentes[];
     List<CartasTerritorio> cartasDisponiveis = new ArrayList();
 
-    Jogador jogador1;
-    Jogador jogador2;
-    Jogador jogador3;
-    Jogador jogador4;
     Jogador jogadores[] = new Jogador[4];
 
     int jogadorDaRodada = 0;
@@ -53,7 +49,13 @@ public class Gerenciador {
         parametrosDosJogadores = parametros;
         gerenciaJogo();
     }
-
+    
+    public int getFaseDaRodada(){
+        return faseDaRodada;
+    }
+    public void setFaseDaRodada(int novaFase){
+        faseDaRodada = novaFase;
+    }
     private void gerenciaJogo() {
         inicializaTerritorios();
         inicializaContinentes();
@@ -74,10 +76,10 @@ public class Gerenciador {
         int cor3 = Integer.parseInt(parametrosDosJogadores[2][2]);
         int cor4 = Integer.parseInt(parametrosDosJogadores[3][2]);
 
-        jogador1 = new Jogador(nome1, cor1, objetivo1, territorios1);
-        jogador2 = new Jogador(nome2, cor2, objetivo2, territorios2);
-        jogador3 = new Jogador(nome3, cor3, objetivo3, territorios3);
-        jogador4 = new Jogador(nome4, cor4, objetivo4, territorios4);
+        Jogador jogador1 = new Jogador(nome1, cor1, objetivo1, territorios1);
+        Jogador jogador2 = new Jogador(nome2, cor2, objetivo2, territorios2);
+        Jogador jogador3 = new Jogador(nome3, cor3, objetivo3, territorios3);
+        Jogador jogador4 = new Jogador(nome4, cor4, objetivo4, territorios4);
         jogadores[0] = jogador1;
         jogadores[1] = jogador2;
         jogadores[2] = jogador3;
@@ -125,15 +127,15 @@ public class Gerenciador {
     public Jogador pegaJogadorDaRodada() {
         switch (jogadorDaRodada) {
             case 0:
-                return jogador1;
+                return jogadores[0];
             case 1:
-                return jogador2;
+                return jogadores[1];
             case 2:
-                return jogador3;
+                return jogadores[2];
             case 3:
-                return jogador4;
+                return jogadores[3];
             default:
-                return jogador1;
+                return jogadores[4];
         }
     }
     public void setEditavelApenasTerritoriosDoJogadorAtual(JButton[] btnterritorios){

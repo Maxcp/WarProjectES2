@@ -5,6 +5,7 @@
  */
 package warproject;
 
+import controller.DadosJogo;
 import controller.Gerenciador;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
@@ -16,6 +17,9 @@ import javax.swing.JOptionPane;
 public class TelaDeJogo extends javax.swing.JFrame {
 
     Gerenciador gerenciador = Gerenciador.getInstance();
+    int faseDaRodada = 0;
+    JButton btnterritorios[];
+    int quantidadeDeTerritorios = 10;
 
     /**
      * Creates new form TelaInicial
@@ -609,6 +613,7 @@ public class TelaDeJogo extends javax.swing.JFrame {
         btnTaurica.setText("0");
         btnTaurica.setBorder(null);
         btnTaurica.setBorderPainted(false);
+        btnTaurica.setFocusable(false);
         btnTaurica.setName("btnTaurica"); // NOI18N
         btnTaurica.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -621,6 +626,7 @@ public class TelaDeJogo extends javax.swing.JFrame {
         btnBithynia.setText("0");
         btnBithynia.setBorder(null);
         btnBithynia.setBorderPainted(false);
+        btnBithynia.setFocusable(false);
         btnBithynia.setName("btnBithynia"); // NOI18N
         btnBithynia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -633,6 +639,7 @@ public class TelaDeJogo extends javax.swing.JFrame {
         btnDacia.setText("0");
         btnDacia.setBorder(null);
         btnDacia.setBorderPainted(false);
+        btnDacia.setFocusable(false);
         btnDacia.setName("btnDacia"); // NOI18N
         btnDacia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -645,6 +652,7 @@ public class TelaDeJogo extends javax.swing.JFrame {
         btnMoesia.setText("0");
         btnMoesia.setBorder(null);
         btnMoesia.setBorderPainted(false);
+        btnMoesia.setFocusable(false);
         btnMoesia.setName("btnMoesia"); // NOI18N
         btnMoesia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -657,6 +665,7 @@ public class TelaDeJogo extends javax.swing.JFrame {
         btnThracia.setText("0");
         btnThracia.setBorder(null);
         btnThracia.setBorderPainted(false);
+        btnThracia.setFocusable(false);
         btnThracia.setName("btnThracia"); // NOI18N
         btnThracia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -669,6 +678,7 @@ public class TelaDeJogo extends javax.swing.JFrame {
         btnMacedonia.setText("0");
         btnMacedonia.setBorder(null);
         btnMacedonia.setBorderPainted(false);
+        btnMacedonia.setFocusable(false);
         btnMacedonia.setName("btnMacedonia"); // NOI18N
         btnMacedonia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -681,6 +691,7 @@ public class TelaDeJogo extends javax.swing.JFrame {
         btnAchaca.setText("0");
         btnAchaca.setBorder(null);
         btnAchaca.setBorderPainted(false);
+        btnAchaca.setFocusable(false);
         btnAchaca.setName("btnAchaca"); // NOI18N
         btnAchaca.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -693,6 +704,7 @@ public class TelaDeJogo extends javax.swing.JFrame {
         btnCreta.setText("0");
         btnCreta.setBorder(null);
         btnCreta.setBorderPainted(false);
+        btnCreta.setFocusable(false);
         btnCreta.setName("btnCreta"); // NOI18N
         btnCreta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -705,6 +717,7 @@ public class TelaDeJogo extends javax.swing.JFrame {
         btnAsia.setText("0");
         btnAsia.setBorder(null);
         btnAsia.setBorderPainted(false);
+        btnAsia.setFocusable(false);
         btnAsia.setName("btnAsia"); // NOI18N
         btnAsia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -717,6 +730,7 @@ public class TelaDeJogo extends javax.swing.JFrame {
         btnAssyria.setText("0");
         btnAssyria.setBorder(null);
         btnAssyria.setBorderPainted(false);
+        btnAssyria.setFocusable(false);
         btnAssyria.setName("btnAssyria"); // NOI18N
         btnAssyria.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -729,6 +743,7 @@ public class TelaDeJogo extends javax.swing.JFrame {
         btnGalatia.setText("0");
         btnGalatia.setBorder(null);
         btnGalatia.setBorderPainted(false);
+        btnGalatia.setFocusable(false);
         btnGalatia.setName("btnGalatia"); // NOI18N
         btnGalatia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -741,6 +756,7 @@ public class TelaDeJogo extends javax.swing.JFrame {
         btnCappadocia.setText("0");
         btnCappadocia.setBorder(null);
         btnCappadocia.setBorderPainted(false);
+        btnCappadocia.setFocusable(false);
         btnCappadocia.setName("btnCappadocia"); // NOI18N
         btnCappadocia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -753,6 +769,7 @@ public class TelaDeJogo extends javax.swing.JFrame {
         btnPonfus.setText("0");
         btnPonfus.setBorder(null);
         btnPonfus.setBorderPainted(false);
+        btnPonfus.setFocusable(false);
         btnPonfus.setName("btnPonfus"); // NOI18N
         btnPonfus.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -765,6 +782,7 @@ public class TelaDeJogo extends javax.swing.JFrame {
         btnArmenia.setText("0");
         btnArmenia.setBorder(null);
         btnArmenia.setBorderPainted(false);
+        btnArmenia.setFocusable(false);
         btnArmenia.setName("btnArmenia"); // NOI18N
         btnArmenia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -777,6 +795,7 @@ public class TelaDeJogo extends javax.swing.JFrame {
         btnMesopotamia.setText("0");
         btnMesopotamia.setBorder(null);
         btnMesopotamia.setBorderPainted(false);
+        btnMesopotamia.setFocusable(false);
         btnMesopotamia.setName("btnMesopotamia"); // NOI18N
         btnMesopotamia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -789,6 +808,7 @@ public class TelaDeJogo extends javax.swing.JFrame {
         btnSyria.setText("0");
         btnSyria.setBorder(null);
         btnSyria.setBorderPainted(false);
+        btnSyria.setFocusable(false);
         btnSyria.setName("btnSyria"); // NOI18N
         btnSyria.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -801,6 +821,7 @@ public class TelaDeJogo extends javax.swing.JFrame {
         btnArabiaPetrae.setText("0");
         btnArabiaPetrae.setBorder(null);
         btnArabiaPetrae.setBorderPainted(false);
+        btnArabiaPetrae.setFocusable(false);
         btnArabiaPetrae.setName("btnArabiaPetrae"); // NOI18N
         btnArabiaPetrae.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -813,6 +834,7 @@ public class TelaDeJogo extends javax.swing.JFrame {
         btnJudaca.setText("0");
         btnJudaca.setBorder(null);
         btnJudaca.setBorderPainted(false);
+        btnJudaca.setFocusable(false);
         btnJudaca.setName("btnJudaca"); // NOI18N
         btnJudaca.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -825,6 +847,7 @@ public class TelaDeJogo extends javax.swing.JFrame {
         btnAegyptus.setText("0");
         btnAegyptus.setBorder(null);
         btnAegyptus.setBorderPainted(false);
+        btnAegyptus.setFocusable(false);
         btnAegyptus.setName("btnAegyptus"); // NOI18N
         btnAegyptus.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -837,6 +860,7 @@ public class TelaDeJogo extends javax.swing.JFrame {
         btnCyrenaica.setText("0");
         btnCyrenaica.setBorder(null);
         btnCyrenaica.setBorderPainted(false);
+        btnCyrenaica.setFocusable(false);
         btnCyrenaica.setName("btnCyrenaica"); // NOI18N
         btnCyrenaica.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -849,6 +873,7 @@ public class TelaDeJogo extends javax.swing.JFrame {
         btnNumidia.setText("0");
         btnNumidia.setBorder(null);
         btnNumidia.setBorderPainted(false);
+        btnNumidia.setFocusable(false);
         btnNumidia.setName("btnNumidia"); // NOI18N
         btnNumidia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -861,6 +886,7 @@ public class TelaDeJogo extends javax.swing.JFrame {
         btnMauritania.setText("0");
         btnMauritania.setBorder(null);
         btnMauritania.setBorderPainted(false);
+        btnMauritania.setFocusable(false);
         btnMauritania.setName("btnMauritania"); // NOI18N
         btnMauritania.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -873,6 +899,7 @@ public class TelaDeJogo extends javax.swing.JFrame {
         btnAfrica.setText("0");
         btnAfrica.setBorder(null);
         btnAfrica.setBorderPainted(false);
+        btnAfrica.setFocusable(false);
         btnAfrica.setName("btnAfrica"); // NOI18N
         btnAfrica.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -885,6 +912,7 @@ public class TelaDeJogo extends javax.swing.JFrame {
         btnSicilia.setText("0");
         btnSicilia.setBorder(null);
         btnSicilia.setBorderPainted(false);
+        btnSicilia.setFocusable(false);
         btnSicilia.setName("btnSicilia"); // NOI18N
         btnSicilia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -897,6 +925,7 @@ public class TelaDeJogo extends javax.swing.JFrame {
         btnItalia.setText("0");
         btnItalia.setBorder(null);
         btnItalia.setBorderPainted(false);
+        btnItalia.setFocusable(false);
         btnItalia.setName("btnItalia"); // NOI18N
         btnItalia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -909,6 +938,7 @@ public class TelaDeJogo extends javax.swing.JFrame {
         btnSardina.setText("0");
         btnSardina.setBorder(null);
         btnSardina.setBorderPainted(false);
+        btnSardina.setFocusable(false);
         btnSardina.setName("btnSardina"); // NOI18N
         btnSardina.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -921,6 +951,7 @@ public class TelaDeJogo extends javax.swing.JFrame {
         btnCorsica.setText("0");
         btnCorsica.setBorder(null);
         btnCorsica.setBorderPainted(false);
+        btnCorsica.setFocusable(false);
         btnCorsica.setName("btnCorsica"); // NOI18N
         btnCorsica.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -933,6 +964,7 @@ public class TelaDeJogo extends javax.swing.JFrame {
         btnRaetia.setText("0");
         btnRaetia.setBorder(null);
         btnRaetia.setBorderPainted(false);
+        btnRaetia.setFocusable(false);
         btnRaetia.setName("btnRaetia"); // NOI18N
         btnRaetia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -945,6 +977,7 @@ public class TelaDeJogo extends javax.swing.JFrame {
         btnGermaniaInferior.setText("0");
         btnGermaniaInferior.setBorder(null);
         btnGermaniaInferior.setBorderPainted(false);
+        btnGermaniaInferior.setFocusable(false);
         btnGermaniaInferior.setName("btnGermaniaInferior"); // NOI18N
         btnGermaniaInferior.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -957,6 +990,7 @@ public class TelaDeJogo extends javax.swing.JFrame {
         btnBelgica.setText("0");
         btnBelgica.setBorder(null);
         btnBelgica.setBorderPainted(false);
+        btnBelgica.setFocusable(false);
         btnBelgica.setName("btnBelgica"); // NOI18N
         btnBelgica.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -969,6 +1003,7 @@ public class TelaDeJogo extends javax.swing.JFrame {
         btnLugdunensis.setText("0");
         btnLugdunensis.setBorder(null);
         btnLugdunensis.setBorderPainted(false);
+        btnLugdunensis.setFocusable(false);
         btnLugdunensis.setName("btnLugdunensis"); // NOI18N
         btnLugdunensis.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -981,6 +1016,7 @@ public class TelaDeJogo extends javax.swing.JFrame {
         btnAquitania.setText("0");
         btnAquitania.setBorder(null);
         btnAquitania.setBorderPainted(false);
+        btnAquitania.setFocusable(false);
         btnAquitania.setName("btnAquitania"); // NOI18N
         btnAquitania.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -993,6 +1029,7 @@ public class TelaDeJogo extends javax.swing.JFrame {
         btnLusitania.setText("0");
         btnLusitania.setBorder(null);
         btnLusitania.setBorderPainted(false);
+        btnLusitania.setFocusable(false);
         btnLusitania.setName("btnLusitania"); // NOI18N
         btnLusitania.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1005,6 +1042,7 @@ public class TelaDeJogo extends javax.swing.JFrame {
         btnTarraconensis.setText("0");
         btnTarraconensis.setBorder(null);
         btnTarraconensis.setBorderPainted(false);
+        btnTarraconensis.setFocusable(false);
         btnTarraconensis.setName("btnTarraconensis"); // NOI18N
         btnTarraconensis.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1017,6 +1055,7 @@ public class TelaDeJogo extends javax.swing.JFrame {
         btnBaetica.setText("0");
         btnBaetica.setBorder(null);
         btnBaetica.setBorderPainted(false);
+        btnBaetica.setFocusable(false);
         btnBaetica.setName("btnBaetica"); // NOI18N
         btnBaetica.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1029,6 +1068,7 @@ public class TelaDeJogo extends javax.swing.JFrame {
         btnNarbonensis.setText("0");
         btnNarbonensis.setBorder(null);
         btnNarbonensis.setBorderPainted(false);
+        btnNarbonensis.setFocusable(false);
         btnNarbonensis.setName("btnNarbonensis"); // NOI18N
         btnNarbonensis.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1041,6 +1081,7 @@ public class TelaDeJogo extends javax.swing.JFrame {
         btnBritania.setText("0");
         btnBritania.setBorder(null);
         btnBritania.setBorderPainted(false);
+        btnBritania.setFocusable(false);
         btnBritania.setName("btnBritania"); // NOI18N
         btnBritania.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1053,6 +1094,7 @@ public class TelaDeJogo extends javax.swing.JFrame {
         btnGermaniaSuperior.setText("0");
         btnGermaniaSuperior.setBorder(null);
         btnGermaniaSuperior.setBorderPainted(false);
+        btnGermaniaSuperior.setFocusable(false);
         btnGermaniaSuperior.setName("btnGermaniaSuperior"); // NOI18N
         btnGermaniaSuperior.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1065,6 +1107,7 @@ public class TelaDeJogo extends javax.swing.JFrame {
         btnPandomia.setText("0");
         btnPandomia.setBorder(null);
         btnPandomia.setBorderPainted(false);
+        btnPandomia.setFocusable(false);
         btnPandomia.setName("btnPandomia"); // NOI18N
         btnPandomia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1077,6 +1120,7 @@ public class TelaDeJogo extends javax.swing.JFrame {
         btnIllyricum.setText("0");
         btnIllyricum.setBorder(null);
         btnIllyricum.setBorderPainted(false);
+        btnIllyricum.setFocusable(false);
         btnIllyricum.setName("btnIllyricum"); // NOI18N
         btnIllyricum.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1089,6 +1133,7 @@ public class TelaDeJogo extends javax.swing.JFrame {
         btnLycia.setText("0");
         btnLycia.setBorder(null);
         btnLycia.setBorderPainted(false);
+        btnLycia.setFocusable(false);
         btnLycia.setName("btnLycia"); // NOI18N
         btnLycia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1101,6 +1146,7 @@ public class TelaDeJogo extends javax.swing.JFrame {
         btnCyprus.setText("0");
         btnCyprus.setBorder(null);
         btnCyprus.setBorderPainted(false);
+        btnCyprus.setFocusable(false);
         btnCyprus.setName("btnCyprus"); // NOI18N
         btnCyprus.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1143,171 +1189,171 @@ public class TelaDeJogo extends javax.swing.JFrame {
     }//GEN-LAST:event_dadoUmDefesa1ActionPerformed
 
     private void btnTauricaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTauricaActionPerformed
-        // TODO add your handling code here:
+        metodoDosBotoes(btnTaurica);
     }//GEN-LAST:event_btnTauricaActionPerformed
 
     private void btnBithyniaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBithyniaActionPerformed
-        // TODO add your handling code here:
+        metodoDosBotoes(btnBithynia);
     }//GEN-LAST:event_btnBithyniaActionPerformed
 
     private void btnDaciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDaciaActionPerformed
-        // TODO add your handling code here:
+        metodoDosBotoes(btnDacia);
     }//GEN-LAST:event_btnDaciaActionPerformed
 
     private void btnMoesiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMoesiaActionPerformed
-        // TODO add your handling code here:
+        metodoDosBotoes(btnMoesia);
     }//GEN-LAST:event_btnMoesiaActionPerformed
 
     private void btnThraciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThraciaActionPerformed
-        // TODO add your handling code here:
+        metodoDosBotoes(btnThracia);
     }//GEN-LAST:event_btnThraciaActionPerformed
 
     private void btnMacedoniaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMacedoniaActionPerformed
-        // TODO add your handling code here:
+        metodoDosBotoes(btnMacedonia);
     }//GEN-LAST:event_btnMacedoniaActionPerformed
 
     private void btnAchacaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAchacaActionPerformed
-        // TODO add your handling code here:
+        metodoDosBotoes(btnAchaca);
     }//GEN-LAST:event_btnAchacaActionPerformed
 
     private void btnCretaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCretaActionPerformed
-        // TODO add your handling code here:
+        metodoDosBotoes(btnCreta);
     }//GEN-LAST:event_btnCretaActionPerformed
 
     private void btnAsiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAsiaActionPerformed
-        // TODO add your handling code here:
+        metodoDosBotoes(btnAsia);
     }//GEN-LAST:event_btnAsiaActionPerformed
 
     private void btnAssyriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAssyriaActionPerformed
-        // TODO add your handling code here:
+        metodoDosBotoes(btnAssyria);
     }//GEN-LAST:event_btnAssyriaActionPerformed
 
     private void btnGalatiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGalatiaActionPerformed
-        // TODO add your handling code here:
+        metodoDosBotoes(btnGalatia);
     }//GEN-LAST:event_btnGalatiaActionPerformed
 
     private void btnCappadociaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCappadociaActionPerformed
-        // TODO add your handling code here:
+        metodoDosBotoes(btnCappadocia);
     }//GEN-LAST:event_btnCappadociaActionPerformed
 
     private void btnPonfusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPonfusActionPerformed
-        // TODO add your handling code here:
+        metodoDosBotoes(btnPonfus);
     }//GEN-LAST:event_btnPonfusActionPerformed
 
     private void btnArmeniaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnArmeniaActionPerformed
-        // TODO add your handling code here:
+        metodoDosBotoes(btnArmenia);
     }//GEN-LAST:event_btnArmeniaActionPerformed
 
     private void btnMesopotamiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMesopotamiaActionPerformed
-        // TODO add your handling code here:
+        metodoDosBotoes(btnMesopotamia);
     }//GEN-LAST:event_btnMesopotamiaActionPerformed
 
     private void btnSyriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSyriaActionPerformed
-        // TODO add your handling code here:
+        metodoDosBotoes(btnSyria);
     }//GEN-LAST:event_btnSyriaActionPerformed
 
     private void btnArabiaPetraeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnArabiaPetraeActionPerformed
-        // TODO add your handling code here:
+        metodoDosBotoes(btnArabiaPetrae);
     }//GEN-LAST:event_btnArabiaPetraeActionPerformed
 
     private void btnJudacaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnJudacaActionPerformed
-        // TODO add your handling code here:
+        metodoDosBotoes(btnJudaca);
     }//GEN-LAST:event_btnJudacaActionPerformed
 
     private void btnAegyptusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAegyptusActionPerformed
-        // TODO add your handling code here:
+        metodoDosBotoes(btnAegyptus);
     }//GEN-LAST:event_btnAegyptusActionPerformed
 
     private void btnCyrenaicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCyrenaicaActionPerformed
-        // TODO add your handling code here:
+        metodoDosBotoes(btnCyrenaica);
     }//GEN-LAST:event_btnCyrenaicaActionPerformed
 
     private void btnNumidiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNumidiaActionPerformed
-        // TODO add your handling code here:
+        metodoDosBotoes(btnNumidia);
     }//GEN-LAST:event_btnNumidiaActionPerformed
 
     private void btnMauritaniaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMauritaniaActionPerformed
-        // TODO add your handling code here:
+        metodoDosBotoes(btnMauritania);
     }//GEN-LAST:event_btnMauritaniaActionPerformed
 
     private void btnAfricaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAfricaActionPerformed
-        // TODO add your handling code here:
+        metodoDosBotoes(btnAfrica);
     }//GEN-LAST:event_btnAfricaActionPerformed
 
     private void btnSiciliaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSiciliaActionPerformed
-        // TODO add your handling code here:
+        metodoDosBotoes(btnSicilia);
     }//GEN-LAST:event_btnSiciliaActionPerformed
 
     private void btnItaliaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnItaliaActionPerformed
-        // TODO add your handling code here:
+        metodoDosBotoes(btnItalia);
     }//GEN-LAST:event_btnItaliaActionPerformed
 
     private void btnSardinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSardinaActionPerformed
-        // TODO add your handling code here:
+        metodoDosBotoes(btnSardina);
     }//GEN-LAST:event_btnSardinaActionPerformed
 
     private void btnCorsicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCorsicaActionPerformed
-        // TODO add your handling code here:
+        metodoDosBotoes(btnCorsica);
     }//GEN-LAST:event_btnCorsicaActionPerformed
 
     private void btnRaetiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRaetiaActionPerformed
-        // TODO add your handling code here:
+        metodoDosBotoes(btnRaetia);
     }//GEN-LAST:event_btnRaetiaActionPerformed
 
     private void btnGermaniaInferiorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGermaniaInferiorActionPerformed
-        // TODO add your handling code here:
+        metodoDosBotoes(btnGermaniaInferior);
     }//GEN-LAST:event_btnGermaniaInferiorActionPerformed
 
     private void btnBelgicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBelgicaActionPerformed
-        // TODO add your handling code here:
+        metodoDosBotoes(btnBelgica);
     }//GEN-LAST:event_btnBelgicaActionPerformed
 
     private void btnLugdunensisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLugdunensisActionPerformed
-        // TODO add your handling code here:
+        metodoDosBotoes(btnLugdunensis);
     }//GEN-LAST:event_btnLugdunensisActionPerformed
 
     private void btnAquitaniaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAquitaniaActionPerformed
-        // TODO add your handling code here:
+        metodoDosBotoes(btnAquitania);
     }//GEN-LAST:event_btnAquitaniaActionPerformed
 
     private void btnTarraconensisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTarraconensisActionPerformed
-        // TODO add your handling code here:
+        metodoDosBotoes(btnTarraconensis);
     }//GEN-LAST:event_btnTarraconensisActionPerformed
 
     private void btnLusitaniaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLusitaniaActionPerformed
-        // TODO add your handling code here:
+        metodoDosBotoes(btnLusitania);
     }//GEN-LAST:event_btnLusitaniaActionPerformed
 
     private void btnBaeticaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBaeticaActionPerformed
-        // TODO add your handling code here:
+        metodoDosBotoes(btnBaetica);
     }//GEN-LAST:event_btnBaeticaActionPerformed
 
     private void btnNarbonensisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNarbonensisActionPerformed
-        // TODO add your handling code here:
+        metodoDosBotoes(btnNarbonensis);
     }//GEN-LAST:event_btnNarbonensisActionPerformed
 
     private void btnBritaniaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBritaniaActionPerformed
-        // TODO add your handling code here:
+        metodoDosBotoes(btnBritania);
     }//GEN-LAST:event_btnBritaniaActionPerformed
 
     private void btnGermaniaSuperiorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGermaniaSuperiorActionPerformed
-        // TODO add your handling code here:
+        metodoDosBotoes(btnGermaniaSuperior);
     }//GEN-LAST:event_btnGermaniaSuperiorActionPerformed
 
     private void btnPandomiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPandomiaActionPerformed
-        // TODO add your handling code here:
+        metodoDosBotoes(btnPandomia);
     }//GEN-LAST:event_btnPandomiaActionPerformed
 
     private void btnIllyricumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIllyricumActionPerformed
-        // TODO add your handling code here:
+        metodoDosBotoes(btnIllyricum);
     }//GEN-LAST:event_btnIllyricumActionPerformed
 
     private void btnLyciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLyciaActionPerformed
-        // TODO add your handling code here:
+        metodoDosBotoes(btnLycia);
     }//GEN-LAST:event_btnLyciaActionPerformed
 
     private void btnCyprusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCyprusActionPerformed
-        // TODO add your handling code here:
+        metodoDosBotoes(btnCyprus);
     }//GEN-LAST:event_btnCyprusActionPerformed
 
     private void ContinuarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ContinuarActionPerformed
@@ -1480,7 +1526,7 @@ public class TelaDeJogo extends javax.swing.JFrame {
     private javax.swing.JLabel x;
     private javax.swing.JLabel xD;
     // End of variables declaration//GEN-END:variables
-
+   
     private void meuInitComponents() {
         textNomeDoJogador.setText(gerenciador.pegaJogadorDaRodada().getNome());
         textCorDoJogador.setText(gerenciador.pegaJogadorDaRodada().getNomeCor());
@@ -1529,13 +1575,34 @@ public class TelaDeJogo extends javax.swing.JFrame {
             btnArabiaPetrae,
             btnAegyptus
         };
+        this.btnterritorios = btnterritorios;
+        
         gerenciador.setTerritoriosJogadores(btnterritorios);
+        gerenciador.setEditavelApenasTerritoriosDoJogadorAtual(btnterritorios);
+        
         painelOpcoes.setEnabledAt(1, false);
         painelOpcoes.setEnabledAt(2, false);
         painelOpcoes.setEnabledAt(3, false);
-<<<<<<< HEAD
-        gerenciador.setEditavelApenasTerritoriosDoJogadorAtual(btnterritorios);
-=======
->>>>>>> origin/master
+        
+    }
+    public void metodoDosBotoes(JButton button){
+        //Pega o indice
+        int indice=0;
+        for (int i = 0; i < btnterritorios.length; i++) {
+            if(button.equals(btnterritorios[i])){
+                indice = i;
+            }
+        }
+        faseDaRodada = gerenciador.getFaseDaRodada();
+        if (faseDaRodada == 0){
+            int quantidadeAtual;
+            int aux;
+            if(quantidadeDeTerritorios >0){
+                quantidadeAtual = Integer.parseInt(button.getText());
+                aux = quantidadeAtual+1;
+                button.setText(aux + "");
+                quantidadeDeTerritorios--;
+            }
+        }
     }
 }
