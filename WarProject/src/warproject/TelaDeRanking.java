@@ -17,6 +17,7 @@ public class TelaDeRanking extends javax.swing.JFrame {
      */
     public TelaDeRanking() {
         initComponents();
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
     }
 
     /**

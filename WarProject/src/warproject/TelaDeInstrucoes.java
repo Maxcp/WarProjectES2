@@ -17,6 +17,7 @@ public class TelaDeInstrucoes extends javax.swing.JFrame {
      */
     public TelaDeInstrucoes() {
         initComponents();
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
     }
 
     /**

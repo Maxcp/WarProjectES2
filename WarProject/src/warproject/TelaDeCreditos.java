@@ -17,6 +17,7 @@ public class TelaDeCreditos extends javax.swing.JFrame {
      */
     public TelaDeCreditos() {
         initComponents();
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
     }
 
     /**
