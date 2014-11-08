@@ -1604,6 +1604,5 @@ public class TelaDeJogo extends javax.swing.JFrame {
                 quantidadeDeTerritorios--;
             }
         }
-        gerenciador.setEditavelApenasTerritoriosDoJogadorAtual(btnterritorios);
     }
 }
