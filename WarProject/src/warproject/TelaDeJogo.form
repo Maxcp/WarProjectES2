@@ -76,7 +76,7 @@
                           </Group>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="painelOpcoes" min="-2" pref="411" max="-2" attributes="0"/>
+                      <Component id="painelOpcoes" min="-2" pref="388" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -147,7 +147,7 @@
                                       <Component id="qntExercitos" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="labelSoldados" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="0" pref="191" max="32767" attributes="0"/>
+                                      <EmptySpace min="0" pref="168" max="32767" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="1" attributes="0">
                                       <Component id="reverter" min="-2" max="-2" attributes="0"/>
@@ -251,7 +251,7 @@
                                           <Component id="paisDefesa" min="-2" pref="122" max="-2" attributes="0"/>
                                           <Component id="dadoUmDefesa" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <EmptySpace min="0" pref="86" max="32767" attributes="0"/>
+                                      <EmptySpace min="0" pref="63" max="32767" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="dadpDoisDefesa" min="-2" max="-2" attributes="0"/>
@@ -408,7 +408,7 @@
                                               </Group>
                                           </Group>
                                       </Group>
-                                      <EmptySpace min="0" pref="147" max="32767" attributes="0"/>
+                                      <EmptySpace min="0" pref="124" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
@@ -537,7 +537,7 @@
                                           <Component id="dadoUmDefesa1" alignment="0" min="-2" max="-2" attributes="0"/>
                                           <Component id="dadpDoisDefesaD" alignment="0" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <EmptySpace min="0" pref="86" max="32767" attributes="0"/>
+                                      <EmptySpace min="0" pref="63" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
@@ -656,7 +656,7 @@
                                           <Component id="cartaTres" alignment="0" min="-2" max="-2" attributes="0"/>
                                           <Component id="cartaObjetivo" alignment="0" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <EmptySpace pref="141" max="32767" attributes="0"/>
+                                      <EmptySpace pref="118" max="32767" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="cartaQuatro" min="-2" max="-2" attributes="0"/>
                                           <Component id="cartaUm" min="-2" max="-2" attributes="0"/>
