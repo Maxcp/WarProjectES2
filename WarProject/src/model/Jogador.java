@@ -38,6 +38,21 @@ public class Jogador {
     public int getCor() {
         return cor;
     }
+    public String getNomeCor(){
+
+        switch (cor) {
+            case DadosJogo.legiaoVermelha:
+                return "Vermelho";
+            case DadosJogo.legiaoVerde:
+                return "Verde";
+            case DadosJogo.legiaoAzul:
+                return "Azul";
+            case DadosJogo.legiaoPreta:
+                return "Preto";
+            default:
+                return "Vermelho";
+        }
+    }
     
     public Color getColor() {
         switch(cor){

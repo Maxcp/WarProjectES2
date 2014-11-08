@@ -20,6 +20,8 @@ public class TelaDeJogo extends javax.swing.JFrame {
     public TelaDeJogo() {
         initComponents();
         meuInitComponents();
+        textNomeDoJogador.setText(gerenciador.pegaJogadorDaRodada().getNome());
+        textCorDoJogador.setText(gerenciador.pegaJogadorDaRodada().getNomeCor());
     }
 
     /**
@@ -87,7 +89,9 @@ public class TelaDeJogo extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         btnTrocar = new javax.swing.JButton();
         lblAtual = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        textNomeDoJogador = new javax.swing.JTextField();
+        lblAtual1 = new javax.swing.JLabel();
+        textCorDoJogador = new javax.swing.JTextField();
         btnTaurica = new javax.swing.JButton();
         btnBithynia = new javax.swing.JButton();
         btnDacia = new javax.swing.JButton();
@@ -516,8 +520,11 @@ public class TelaDeJogo extends javax.swing.JFrame {
 
         lblAtual.setText("Jogador Atual:");
 
-        jTextField1.setEditable(false);
-        jTextField1.setText("Max Pereira. COR VERMELHA");
+        textNomeDoJogador.setEditable(false);
+
+        lblAtual1.setText("Cor:");
+
+        textCorDoJogador.setEditable(false);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -526,14 +533,20 @@ public class TelaDeJogo extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(19, 19, 19)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(console)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(lblAtual1)
+                        .addGap(223, 223, 223))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 452, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblAtual)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(18, 18, 18)
+                            .addComponent(console)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 452, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblAtual)
+                                    .addComponent(textNomeDoJogador, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(textCorDoJogador, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(18, 18, 18)))
                 .addComponent(painelOpcoes, javax.swing.GroupLayout.PREFERRED_SIZE, 388, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -550,7 +563,11 @@ public class TelaDeJogo extends javax.swing.JFrame {
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(lblAtual)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(textNomeDoJogador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(lblAtual1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(textCorDoJogador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addComponent(painelOpcoes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -1380,7 +1397,6 @@ public class TelaDeJogo extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel lPais;
     private javax.swing.JLabel lPaisD;
     private javax.swing.JLabel labelPossui;
@@ -1389,6 +1405,7 @@ public class TelaDeJogo extends javax.swing.JFrame {
     private javax.swing.JLabel lbPais;
     private javax.swing.JLabel lbPara;
     private javax.swing.JLabel lblAtual;
+    private javax.swing.JLabel lblAtual1;
     private javax.swing.JTextPane logConsole;
     private javax.swing.JLabel mapaDoJogo;
     private javax.swing.JPanel movimentar;
@@ -1405,6 +1422,8 @@ public class TelaDeJogo extends javax.swing.JFrame {
     private javax.swing.JFormattedTextField qtdExercitos;
     private javax.swing.JButton reverter;
     private javax.swing.JPanel telaInteira;
+    private javax.swing.JTextField textCorDoJogador;
+    private javax.swing.JTextField textNomeDoJogador;
     private javax.swing.JLabel x;
     private javax.swing.JLabel xD;
     // End of variables declaration//GEN-END:variables
