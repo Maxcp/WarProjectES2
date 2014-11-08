@@ -6,6 +6,8 @@
 
 package warproject;
 
+import controller.Gerenciador;
+
 /**
  *
  * @author 13221098774
@@ -298,8 +300,8 @@ public class TelaInicial extends javax.swing.JFrame {
            {escolhaModo3, apelido3, escolhaCor3},
            {escolhaModo4, apelido4, escolhaCor4}
        };       
-       
-       TelaOpcoes tela = new TelaOpcoes(paramentros);
+       Gerenciador gerenciador = Gerenciador.getInstance(paramentros);
+       TelaOpcoes tela = new TelaOpcoes();
        tela.setVisible(true);
        tela.setLocationRelativeTo(null); 
        dispose();

@@ -21,11 +21,6 @@ public class TelaDeJogo extends javax.swing.JFrame {
         initComponents();
     }
 
-    TelaDeJogo(String[][] paramentros) {
-        Gerenciador gerenciador = Gerenciador.getInstance(paramentros);
-        initComponents();
-    }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

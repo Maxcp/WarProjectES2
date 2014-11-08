@@ -68,12 +68,6 @@ public class Gerenciador {
         jogador2 = new Jogador(nome2, cor2, objetivo2, territorios2);
         jogador3 = new Jogador(nome3, cor3, objetivo3, territorios3);
         jogador4 = new Jogador(nome4, cor4, objetivo4, territorios4);
-        
-        System.out.println("Nome: " + jogador1.getNome());
-        System.out.println("cor: " + jogador1.getCor());
-        
-        System.out.println("Nome: " + jogador2.getNome());
-        System.out.println("cor: " + jogador2.getCor());
     }
     
     

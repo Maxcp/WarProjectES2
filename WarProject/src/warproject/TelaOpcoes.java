@@ -13,16 +13,10 @@ import javax.swing.JLabel;
  * @author 13221098774
  */
 public class TelaOpcoes extends javax.swing.JFrame {
-    String[][] parametrosDosJogadores;
     /**
      * Creates new form TelaOpcoes
      */
     public TelaOpcoes() {
-        initComponents();
-    }
-
-    TelaOpcoes(String[][] paramentros) {
-        parametrosDosJogadores = paramentros;
         initComponents();
     }
 
@@ -176,7 +170,7 @@ public class TelaOpcoes extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInicioActionPerformed
-        TelaDeJogo telaJogo = new TelaDeJogo(parametrosDosJogadores);
+        TelaDeJogo telaJogo = new TelaDeJogo();
         telaJogo.setVisible(true);
         dispose();
                 
