@@ -222,10 +222,8 @@ public class TelaDeJogo extends javax.swing.JFrame {
             }
         });
 
-        dadoUmAtaque.setEditable(false);
         dadoUmAtaque.setText("0");
 
-        dadoUmDefesa.setEditable(false);
         dadoUmDefesa.setText("0");
         dadoUmDefesa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -233,16 +231,12 @@ public class TelaDeJogo extends javax.swing.JFrame {
             }
         });
 
-        dadpDoisDefesa.setEditable(false);
         dadpDoisDefesa.setText("0");
 
-        dadoTresDefesa.setEditable(false);
         dadoTresDefesa.setText("0");
 
-        dadoDoisAtaque.setEditable(false);
         dadoDoisAtaque.setText("0");
 
-        dadoTresAtaque.setEditable(false);
         dadoTresAtaque.setText("0");
 
         btnAtacar.setText("Atacar");
@@ -284,10 +278,10 @@ public class TelaDeJogo extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addGroup(atacarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(paisDefesa, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(dadoTresDefesa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(atacarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                         .addComponent(dadpDoisDefesa, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(dadoUmDefesa, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(dadoTresDefesa, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                        .addComponent(dadoUmDefesa, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(atacarLayout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -611,7 +605,7 @@ public class TelaDeJogo extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        telaInteira.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 470, 1130, 210));
+        telaInteira.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 470, 1130, 220));
 
         btnTaurica.setBackground(new java.awt.Color(255, 255, 255));
         btnTaurica.setText("0");

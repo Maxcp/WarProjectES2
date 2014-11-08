@@ -55,7 +55,7 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="0" y="470" width="1130" height="210"/>
+              <AbsoluteConstraints x="0" y="470" width="1130" height="220"/>
             </Constraint>
           </Constraints>
 
@@ -266,10 +266,10 @@
                                               <EmptySpace type="separate" max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="0" attributes="0">
                                                   <Component id="paisDefesa" min="-2" pref="122" max="-2" attributes="0"/>
+                                                  <Component id="dadoTresDefesa" alignment="0" min="-2" max="-2" attributes="0"/>
                                                   <Group type="103" alignment="0" groupAlignment="1" attributes="0">
                                                       <Component id="dadpDoisDefesa" alignment="1" min="-2" pref="20" max="-2" attributes="0"/>
                                                       <Component id="dadoUmDefesa" alignment="0" min="-2" pref="20" max="-2" attributes="0"/>
-                                                      <Component id="dadoTresDefesa" alignment="1" min="-2" pref="20" max="-2" attributes="0"/>
                                                   </Group>
                                               </Group>
                                           </Group>
@@ -357,13 +357,11 @@
                     </Component>
                     <Component class="javax.swing.JTextField" name="dadoUmAtaque">
                       <Properties>
-                        <Property name="editable" type="boolean" value="false"/>
                         <Property name="text" type="java.lang.String" value="0"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JTextField" name="dadoUmDefesa">
                       <Properties>
-                        <Property name="editable" type="boolean" value="false"/>
                         <Property name="text" type="java.lang.String" value="0"/>
                       </Properties>
                       <Events>
@@ -372,25 +370,21 @@
                     </Component>
                     <Component class="javax.swing.JTextField" name="dadpDoisDefesa">
                       <Properties>
-                        <Property name="editable" type="boolean" value="false"/>
                         <Property name="text" type="java.lang.String" value="0"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JTextField" name="dadoTresDefesa">
                       <Properties>
-                        <Property name="editable" type="boolean" value="false"/>
                         <Property name="text" type="java.lang.String" value="0"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JTextField" name="dadoDoisAtaque">
                       <Properties>
-                        <Property name="editable" type="boolean" value="false"/>
                         <Property name="text" type="java.lang.String" value="0"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JTextField" name="dadoTresAtaque">
                       <Properties>
-                        <Property name="editable" type="boolean" value="false"/>
                         <Property name="text" type="java.lang.String" value="0"/>
                       </Properties>
                     </Component>
