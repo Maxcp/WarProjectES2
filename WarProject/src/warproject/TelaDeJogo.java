@@ -20,8 +20,6 @@ public class TelaDeJogo extends javax.swing.JFrame {
     public TelaDeJogo() {
         initComponents();
         meuInitComponents();
-        textNomeDoJogador.setText(gerenciador.pegaJogadorDaRodada().getNome());
-        textCorDoJogador.setText(gerenciador.pegaJogadorDaRodada().getNomeCor());
     }
 
     /**
@@ -1429,6 +1427,9 @@ public class TelaDeJogo extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     private void meuInitComponents() {
+        textNomeDoJogador.setText(gerenciador.pegaJogadorDaRodada().getNome());
+        textCorDoJogador.setText(gerenciador.pegaJogadorDaRodada().getNomeCor());
+        
         JButton btnterritorios[] = {
             btnBaetica,
             btnLusitania,
@@ -1474,5 +1475,6 @@ public class TelaDeJogo extends javax.swing.JFrame {
             btnAegyptus
         };
         gerenciador.setTerritoriosJogadores(btnterritorios);
+        gerenciador.setEditavelApenasTerritoriosDoJogadorAtual(btnterritorios);
     }
 }

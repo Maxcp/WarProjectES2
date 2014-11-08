@@ -136,7 +136,16 @@ public class Gerenciador {
                 return jogador1;
         }
     }
-
+    public void setEditavelApenasTerritoriosDoJogadorAtual(JButton[] btnterritorios){
+        Jogador jogador_atual = pegaJogadorDaRodada();
+        for (int i = 0; i < btnterritorios.length; i++) {
+            btnterritorios[i].setEnabled(false);
+        }
+        for (int i = 0; i < jogador_atual.getTerritorios().size(); i++) {
+            Territorio t = jogador_atual.getTerritorios().get(i);
+            btnterritorios[t.getId()].setEnabled(true);
+        }
+    }
     public void setTerritoriosJogadores(JButton[] btnterritorios) {
         for (Jogador jogador : jogadores) {
             for (int i = 0; i < jogador.getTerritorios().size(); i++) {
