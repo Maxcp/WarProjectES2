@@ -5,6 +5,8 @@
  */
 package model;
 
+import controller.DadosJogo;
+import java.awt.Color;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -35,6 +37,21 @@ public class Jogador {
 
     public int getCor() {
         return cor;
+    }
+    
+    public Color getColor() {
+        switch(cor){
+            case DadosJogo.legiaoVermelha:
+                return Color.red;
+            case DadosJogo.legiaoVerde:
+                return Color.green;
+            case DadosJogo.legiaoAzul:
+                return Color.blue;
+            case DadosJogo.legiaoPreta:
+                return Color.black;
+            default:
+                return Color.white;
+        }
     }
 
     public List<Territorio> getTerritorios() {

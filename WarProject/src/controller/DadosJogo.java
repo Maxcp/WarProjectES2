@@ -14,10 +14,10 @@ public class DadosJogo {
     public static int qtdTerritorios = 42;
     public static int qtdContinentes = 7;
     
-    final static int legiaoVermelha = 0;
-    final static int legiaoVerde = 1;
-    final static int legiaoAzul = 2;
-    final static int legiaoPreta = 3;
+    public final static int legiaoVermelha = 0;
+    public final static int legiaoVerde = 1;
+    public final static int legiaoAzul = 2;
+    public final static int legiaoPreta = 3;
     
     public static String[] descricaoDeObjetivos = {
         //Tipo1

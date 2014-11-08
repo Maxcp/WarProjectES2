@@ -5,7 +5,6 @@
  */
 package controller;
 
-import java.awt.Color;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JButton;
@@ -15,7 +14,6 @@ public class Gerenciador {
 
     String[][] parametrosDosJogadores;
 
-    Jogador jogadores[];
     Objetivo objetivos[];
     Territorio territorios[];
     Continente continentes[];
@@ -25,7 +23,9 @@ public class Gerenciador {
     Jogador jogador2;
     Jogador jogador3;
     Jogador jogador4;
-    int jogadorDaRodada = 1;
+    Jogador jogadores[] = new Jogador[4];
+
+    int jogadorDaRodada = 0;
     int faseDaRodada = 0;
 
     private static Gerenciador instancia;
@@ -77,6 +77,10 @@ public class Gerenciador {
         jogador2 = new Jogador(nome2, cor2, objetivo2, territorios2);
         jogador3 = new Jogador(nome3, cor3, objetivo3, territorios3);
         jogador4 = new Jogador(nome4, cor4, objetivo4, territorios4);
+        jogadores[0] = jogador1;
+        jogadores[1] = jogador2;
+        jogadores[2] = jogador3;
+        jogadores[3] = jogador4;
     }
 
     private void inicializaTerritorios() {
@@ -133,26 +137,12 @@ public class Gerenciador {
     }
 
     public void setTerritoriosJogadores(JButton[] btnterritorios) {
-        for (int i = 0; i < jogador1.getTerritorios().size(); i++) {
-            Territorio t = jogador1.getTerritorios().get(i);
-            btnterritorios[t.getId()].setText("" + t.getExercitosPosicionados());
-            btnterritorios[t.getId()].setBackground(Color.red);
-        }
-        for (int i = 0; i < jogador2.getTerritorios().size(); i++) {
-            Territorio t = jogador2.getTerritorios().get(i);
-            btnterritorios[t.getId()].setText("" + t.getExercitosPosicionados());
-            btnterritorios[t.getId()].setBackground(Color.blue);
-
-        }
-        for (int i = 0; i < jogador3.getTerritorios().size(); i++) {
-            Territorio t = jogador3.getTerritorios().get(i);
-            btnterritorios[t.getId()].setText("" + t.getExercitosPosicionados());
-            btnterritorios[t.getId()].setBackground(Color.ORANGE);
-        }
-        for (int i = 0; i < jogador4.getTerritorios().size(); i++) {
-            Territorio t = jogador4.getTerritorios().get(i);
-            btnterritorios[t.getId()].setText("" + t.getExercitosPosicionados());
-            btnterritorios[t.getId()].setBackground(Color.PINK);
+        for (Jogador jogador : jogadores) {
+            for (int i = 0; i < jogador.getTerritorios().size(); i++) {
+                Territorio t = jogador.getTerritorios().get(i);
+                btnterritorios[t.getId()].setText("" + t.getExercitosPosicionados());
+                btnterritorios[t.getId()].setBackground(jogador.getColor());
+            }
         }
     }
 
