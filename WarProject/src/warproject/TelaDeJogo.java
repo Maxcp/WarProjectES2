@@ -86,6 +86,8 @@ public class TelaDeJogo extends javax.swing.JFrame {
         cartaQuatro = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         btnTrocar = new javax.swing.JButton();
+        lblAtual = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
         btnTaurica = new javax.swing.JButton();
         btnBithynia = new javax.swing.JButton();
         btnDacia = new javax.swing.JButton();
@@ -512,6 +514,11 @@ public class TelaDeJogo extends javax.swing.JFrame {
 
         painelOpcoes.addTab("Cartas", cartas);
 
+        lblAtual.setText("Jogador Atual:");
+
+        jTextField1.setEditable(false);
+        jTextField1.setText("Max Pereira. COR VERMELHA");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -520,7 +527,12 @@ public class TelaDeJogo extends javax.swing.JFrame {
                 .addGap(19, 19, 19)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(console)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 659, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 452, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblAtual)
+                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(18, 18, 18)
                 .addComponent(painelOpcoes, javax.swing.GroupLayout.PREFERRED_SIZE, 411, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -533,7 +545,12 @@ public class TelaDeJogo extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(console)
                         .addGap(6, 6, 6)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(lblAtual)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addComponent(painelOpcoes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -1363,6 +1380,7 @@ public class TelaDeJogo extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel lPais;
     private javax.swing.JLabel lPaisD;
     private javax.swing.JLabel labelPossui;
@@ -1370,6 +1388,7 @@ public class TelaDeJogo extends javax.swing.JFrame {
     private javax.swing.JLabel lbMovimentacao;
     private javax.swing.JLabel lbPais;
     private javax.swing.JLabel lbPara;
+    private javax.swing.JLabel lblAtual;
     private javax.swing.JTextPane logConsole;
     private javax.swing.JLabel mapaDoJogo;
     private javax.swing.JPanel movimentar;
