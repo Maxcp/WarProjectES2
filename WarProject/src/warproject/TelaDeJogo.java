@@ -7,13 +7,16 @@ package warproject;
 
 import controller.Gerenciador;
 import javax.swing.JButton;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author 13221098774
  */
 public class TelaDeJogo extends javax.swing.JFrame {
+
     Gerenciador gerenciador = Gerenciador.getInstance();
+
     /**
      * Creates new form TelaInicial
      */
@@ -60,7 +63,7 @@ public class TelaDeJogo extends javax.swing.JFrame {
         btnPassarAtaque = new javax.swing.JButton();
         movimentar = new javax.swing.JPanel();
         lbMovimentacao = new javax.swing.JLabel();
-        passarMovimentacao = new javax.swing.JButton();
+        btnPassarMovimentacao = new javax.swing.JButton();
         lbPais = new javax.swing.JLabel();
         paisDe = new javax.swing.JTextField();
         paisPara = new javax.swing.JTextField();
@@ -148,6 +151,7 @@ public class TelaDeJogo extends javax.swing.JFrame {
 
         labelPossui.setText("Você possui:");
 
+        qntExercitos.setEditable(false);
         qntExercitos.setText("0");
         qntExercitos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -158,6 +162,11 @@ public class TelaDeJogo extends javax.swing.JFrame {
         labelSoldados.setText("soldados para distribuir.");
 
         Continuar.setText("Continuar");
+        Continuar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ContinuarActionPerformed(evt);
+            }
+        });
 
         reverter.setText("Reverter");
 
@@ -171,10 +180,10 @@ public class TelaDeJogo extends javax.swing.JFrame {
                     .addGroup(distribuirLayout.createSequentialGroup()
                         .addComponent(labelPossui)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(qntExercitos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(qntExercitos, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(labelSoldados)
-                        .addGap(0, 168, Short.MAX_VALUE))
+                        .addGap(0, 157, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, distribuirLayout.createSequentialGroup()
                         .addComponent(reverter)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -198,20 +207,34 @@ public class TelaDeJogo extends javax.swing.JFrame {
 
         painelOpcoes.addTab("Distribuir", distribuir);
 
+        atacar.setLayout(null);
+
         lPais.setText("Pais:");
+        atacar.add(lPais);
+        lPais.setBounds(25, 14, 23, 14);
 
         x.setText("X");
+        atacar.add(x);
+        x.setBounds(178, 14, 6, 14);
 
+        paisDefesa.setEditable(false);
         paisDefesa.setText("Aegyptus");
+        atacar.add(paisDefesa);
+        paisDefesa.setBounds(188, 11, 122, 20);
 
+        paisAtaque.setEditable(false);
         paisAtaque.setText("Cyrenaica");
         paisAtaque.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 paisAtaqueActionPerformed(evt);
             }
         });
+        atacar.add(paisAtaque);
+        paisAtaque.setBounds(52, 11, 122, 20);
 
         dadoUmAtaque.setText("0");
+        atacar.add(dadoUmAtaque);
+        dadoUmAtaque.setBounds(162, 37, 12, 20);
 
         dadoUmDefesa.setText("0");
         dadoUmDefesa.addActionListener(new java.awt.event.ActionListener() {
@@ -219,90 +242,55 @@ public class TelaDeJogo extends javax.swing.JFrame {
                 dadoUmDefesaActionPerformed(evt);
             }
         });
+        atacar.add(dadoUmDefesa);
+        dadoUmDefesa.setBounds(188, 37, 12, 20);
 
         dadpDoisDefesa.setText("0");
+        atacar.add(dadpDoisDefesa);
+        dadpDoisDefesa.setBounds(188, 64, 12, 20);
 
         dadoTresDefesa.setText("0");
+        atacar.add(dadoTresDefesa);
+        dadoTresDefesa.setBounds(188, 97, 12, 20);
 
         dadoDoisAtaque.setText("0");
+        atacar.add(dadoDoisAtaque);
+        dadoDoisAtaque.setBounds(162, 64, 12, 20);
 
         dadoTresAtaque.setText("0");
+        atacar.add(dadoTresAtaque);
+        dadoTresAtaque.setBounds(162, 97, 12, 20);
 
         btnAtacar.setText("Atacar");
+        atacar.add(btnAtacar);
+        btnAtacar.setBounds(308, 63, 65, 23);
 
         btnPassarAtaque.setText("Passar");
-
-        javax.swing.GroupLayout atacarLayout = new javax.swing.GroupLayout(atacar);
-        atacar.setLayout(atacarLayout);
-        atacarLayout.setHorizontalGroup(
-            atacarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(atacarLayout.createSequentialGroup()
-                .addGroup(atacarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(atacarLayout.createSequentialGroup()
-                        .addGap(25, 25, 25)
-                        .addGroup(atacarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(dadoUmAtaque, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(atacarLayout.createSequentialGroup()
-                                .addComponent(lPais)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(paisAtaque, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(dadoDoisAtaque, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(dadoTresAtaque, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(x)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(atacarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(atacarLayout.createSequentialGroup()
-                        .addComponent(dadoTresDefesa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnAtacar))
-                    .addGroup(atacarLayout.createSequentialGroup()
-                        .addGroup(atacarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(paisDefesa, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(dadoUmDefesa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 63, Short.MAX_VALUE))
-                    .addGroup(atacarLayout.createSequentialGroup()
-                        .addComponent(dadpDoisDefesa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnPassarAtaque)))
-                .addContainerGap())
-        );
-        atacarLayout.setVerticalGroup(
-            atacarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(atacarLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(atacarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lPais)
-                    .addComponent(x)
-                    .addComponent(paisDefesa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(paisAtaque, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(atacarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(dadoUmAtaque, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(dadoUmDefesa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(atacarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(dadpDoisDefesa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(dadoDoisAtaque, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnPassarAtaque))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(atacarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(dadoTresDefesa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(dadoTresAtaque, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnAtacar))
-                .addContainerGap())
-        );
+        btnPassarAtaque.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPassarAtaqueActionPerformed(evt);
+            }
+        });
+        atacar.add(btnPassarAtaque);
+        btnPassarAtaque.setBounds(308, 128, 65, 23);
 
         painelOpcoes.addTab("Atacar", atacar);
 
         lbMovimentacao.setText("Movimentação");
 
-        passarMovimentacao.setText("Passar");
+        btnPassarMovimentacao.setText("Passar");
+        btnPassarMovimentacao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPassarMovimentacaoActionPerformed(evt);
+            }
+        });
 
         lbPais.setText("Do pais");
 
+        paisDe.setEditable(false);
         paisDe.setText("Africa");
 
+        paisPara.setEditable(false);
         paisPara.setText("Sicilia");
         paisPara.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -328,7 +316,7 @@ public class TelaDeJogo extends javax.swing.JFrame {
                 .addGroup(movimentarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, movimentarLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(passarMovimentacao))
+                        .addComponent(btnPassarMovimentacao))
                     .addGroup(movimentarLayout.createSequentialGroup()
                         .addGroup(movimentarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lbMovimentacao)
@@ -367,8 +355,8 @@ public class TelaDeJogo extends javax.swing.JFrame {
                     .addComponent(numEx)
                     .addComponent(qtdExercitos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(enviaExercitos))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
-                .addComponent(passarMovimentacao)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
+                .addComponent(btnPassarMovimentacao)
                 .addContainerGap())
         );
 
@@ -511,7 +499,7 @@ public class TelaDeJogo extends javax.swing.JFrame {
                     .addComponent(jLabel6)
                     .addComponent(cartaQuatro)
                     .addComponent(cartaTres))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
                 .addComponent(btnTrocar)
                 .addContainerGap())
         );
@@ -1287,6 +1275,28 @@ public class TelaDeJogo extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnCyprusActionPerformed
 
+    private void ContinuarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ContinuarActionPerformed
+        if (true == true) {
+            painelOpcoes.setEnabledAt(0, false);
+            painelOpcoes.setEnabledAt(1, true);
+            painelOpcoes.setSelectedIndex(1);
+        } else {
+            JOptionPane.showInputDialog("Distribua Todos os exercitos para atacar.");
+        }
+    }//GEN-LAST:event_ContinuarActionPerformed
+
+    private void btnPassarAtaqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPassarAtaqueActionPerformed
+        painelOpcoes.setEnabledAt(1, false);
+        painelOpcoes.setEnabledAt(2, true);
+        painelOpcoes.setSelectedIndex(2);
+    }//GEN-LAST:event_btnPassarAtaqueActionPerformed
+
+    private void btnPassarMovimentacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPassarMovimentacaoActionPerformed
+        painelOpcoes.setEnabledAt(2, false);
+        painelOpcoes.setEnabledAt(0, true);
+        painelOpcoes.setSelectedIndex(0);
+    }//GEN-LAST:event_btnPassarMovimentacaoActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1363,6 +1373,7 @@ public class TelaDeJogo extends javax.swing.JFrame {
     private javax.swing.JButton btnNumidia;
     private javax.swing.JButton btnPandomia;
     private javax.swing.JButton btnPassarAtaque;
+    private javax.swing.JButton btnPassarMovimentacao;
     private javax.swing.JButton btnPonfus;
     private javax.swing.JButton btnRaetia;
     private javax.swing.JButton btnSardina;
@@ -1417,7 +1428,6 @@ public class TelaDeJogo extends javax.swing.JFrame {
     private javax.swing.JTextField paisDefesa;
     private javax.swing.JTextField paisDefesaD;
     private javax.swing.JTextField paisPara;
-    private javax.swing.JButton passarMovimentacao;
     private javax.swing.JTextField qntExercitos;
     private javax.swing.JFormattedTextField qtdExercitos;
     private javax.swing.JButton reverter;
@@ -1474,5 +1484,8 @@ public class TelaDeJogo extends javax.swing.JFrame {
             btnAegyptus
         };
         gerenciador.setTerritoriosJogadores(btnterritorios);
+        painelOpcoes.setEnabledAt(1, false);
+        painelOpcoes.setEnabledAt(2, false);
+        painelOpcoes.setEnabledAt(3, false);
     }
 }
