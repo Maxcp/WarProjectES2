@@ -31,7 +31,7 @@ public class Territorio {
         this.nome = nome;
         this.vizinhos = vizinhos;
         this.conquistador = conquistador;
-        this.exercitosPosicionados = exercitosPosicionados;
+        this.exercitosPosicionados = 1;
     }
     
     public int getId() {
