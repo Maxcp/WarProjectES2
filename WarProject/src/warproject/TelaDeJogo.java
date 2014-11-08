@@ -1582,11 +1582,7 @@ public class TelaDeJogo extends javax.swing.JFrame {
         
         painelOpcoes.setEnabledAt(1, false);
         painelOpcoes.setEnabledAt(2, false);
-        painelOpcoes.setEnabledAt(3, false);
-<<<<<<< HEAD
-        gerenciador.setEditavelApenasTerritoriosDoJogadorAtual(btnterritorios);
-=======
-        
+        painelOpcoes.setEnabledAt(3, false);  
     }
     public void metodoDosBotoes(JButton button){
         //Pega o indice
@@ -1607,6 +1603,5 @@ public class TelaDeJogo extends javax.swing.JFrame {
                 quantidadeDeTerritorios--;
             }
         }
->>>>>>> Adicionando funcionalidade de adicionar mais exercitos  ao territorio clicando no botao
     }
 }
