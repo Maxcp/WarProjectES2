@@ -57,11 +57,11 @@ public class Jogador {
     public Color getColor() {
         switch(cor){
             case DadosJogo.legiaoVermelha:
-                return Color.red;
+                return new Color(204,0,0);
             case DadosJogo.legiaoVerde:
-                return Color.green;
+                return new Color(0,153,51);
             case DadosJogo.legiaoAzul:
-                return Color.blue;
+                return new Color(51,51,255);
             case DadosJogo.legiaoPreta:
                 return Color.black;
             default:

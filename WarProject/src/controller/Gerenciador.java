@@ -5,6 +5,7 @@
  */
 package controller;
 
+import java.awt.Color;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JButton;
@@ -142,6 +143,7 @@ public class Gerenciador {
                 Territorio t = jogador.getTerritorios().get(i);
                 btnterritorios[t.getId()].setText("" + t.getExercitosPosicionados());
                 btnterritorios[t.getId()].setBackground(jogador.getColor());
+                btnterritorios[t.getId()].setForeground(Color.white);
             }
         }
     }
