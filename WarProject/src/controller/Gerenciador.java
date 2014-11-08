@@ -24,6 +24,7 @@ public class Gerenciador {
 
     int jogadorDaRodada = 0;
     int faseDaRodada = 0;
+    int qtdExercitosParaDistribuirJogadorAtual = 0;
 
     private static Gerenciador instancia;
 
@@ -125,19 +126,9 @@ public class Gerenciador {
     }
 
     public Jogador pegaJogadorDaRodada() {
-        switch (jogadorDaRodada) {
-            case 0:
-                return jogadores[0];
-            case 1:
-                return jogadores[1];
-            case 2:
-                return jogadores[2];
-            case 3:
-                return jogadores[3];
-            default:
-                return jogadores[4];
-        }
+                return jogadores[jogadorDaRodada];
     }
+    
     public void setEditavelApenasTerritoriosDoJogadorAtual(JButton[] btnterritorios){
         Jogador jogador_atual = pegaJogadorDaRodada();
         for (int i = 0; i < btnterritorios.length; i++) {
@@ -157,6 +148,18 @@ public class Gerenciador {
                 btnterritorios[t.getId()].setForeground(Color.white);
             }
         }
+    }
+
+    public int getQtdExercitosParaDistribuirJogadorAtual() {
+        return qtdExercitosParaDistribuirJogadorAtual;
+    }
+
+    public void atualizaQtdExercitosParaDistribuirJogadorAtual() {
+        qtdExercitosParaDistribuirJogadorAtual = pegaJogadorDaRodada().qtdExercitosParaDistribuir();
+    }
+
+    public void reduzQtdExercitosParaDistribuirJogadorAtual() {
+        qtdExercitosParaDistribuirJogadorAtual--;
     }
 
 }

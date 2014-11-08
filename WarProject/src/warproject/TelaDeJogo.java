@@ -19,14 +19,14 @@ public class TelaDeJogo extends javax.swing.JFrame {
     Gerenciador gerenciador = Gerenciador.getInstance();
     int faseDaRodada = 0;
     JButton btnterritorios[];
-    int quantidadeDeTerritorios = 10;
-
     /**
      * Creates new form TelaInicial
      */
     public TelaDeJogo() {
         initComponents();
         meuInitComponents();
+        gerenciador.atualizaQtdExercitosParaDistribuirJogadorAtual();
+        qntExercitos.setText(""+gerenciador.getQtdExercitosParaDistribuirJogadorAtual());
     }
 
     /**
@@ -86,13 +86,13 @@ public class TelaDeJogo extends javax.swing.JFrame {
         dadpDoisDefesaD = new javax.swing.JTextField();
         dadoUmDefesa1 = new javax.swing.JTextField();
         cartas = new javax.swing.JPanel();
-        cartaObjetivo = new javax.swing.JLabel();
-        cartaUm = new javax.swing.JLabel();
-        cartaDois = new javax.swing.JLabel();
-        cartaTres = new javax.swing.JLabel();
-        cartaQuatro = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
         btnTrocar = new javax.swing.JButton();
+        btnCartaObjetivo = new javax.swing.JButton();
+        btnCartaUm = new javax.swing.JButton();
+        btnCartaDois = new javax.swing.JButton();
+        btnCartaTres = new javax.swing.JButton();
+        btnCartaQuatro = new javax.swing.JButton();
+        btnCartaCinco = new javax.swing.JButton();
         lblAtual = new javax.swing.JLabel();
         textNomeDoJogador = new javax.swing.JTextField();
         lblAtual1 = new javax.swing.JLabel();
@@ -178,19 +178,16 @@ public class TelaDeJogo extends javax.swing.JFrame {
             distribuirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(distribuirLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(distribuirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(distribuirLayout.createSequentialGroup()
-                        .addComponent(labelPossui)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(qntExercitos, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(labelSoldados)
-                        .addGap(0, 157, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, distribuirLayout.createSequentialGroup()
-                        .addComponent(reverter)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(Continuar)))
-                .addContainerGap())
+                .addComponent(labelPossui)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(qntExercitos, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(labelSoldados)
+                .addContainerGap(167, Short.MAX_VALUE))
+            .addGroup(distribuirLayout.createSequentialGroup()
+                .addComponent(reverter)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Continuar))
         );
         distribuirLayout.setVerticalGroup(
             distribuirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -200,11 +197,12 @@ public class TelaDeJogo extends javax.swing.JFrame {
                     .addComponent(labelPossui)
                     .addComponent(qntExercitos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(labelSoldados))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(131, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, distribuirLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(distribuirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Continuar)
-                    .addComponent(reverter))
-                .addContainerGap())
+                    .addComponent(reverter)))
         );
 
         painelOpcoes.addTab("Distribuir", distribuir);
@@ -224,8 +222,10 @@ public class TelaDeJogo extends javax.swing.JFrame {
             }
         });
 
+        dadoUmAtaque.setEditable(false);
         dadoUmAtaque.setText("0");
 
+        dadoUmDefesa.setEditable(false);
         dadoUmDefesa.setText("0");
         dadoUmDefesa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -233,12 +233,16 @@ public class TelaDeJogo extends javax.swing.JFrame {
             }
         });
 
+        dadpDoisDefesa.setEditable(false);
         dadpDoisDefesa.setText("0");
 
+        dadoTresDefesa.setEditable(false);
         dadoTresDefesa.setText("0");
 
+        dadoDoisAtaque.setEditable(false);
         dadoDoisAtaque.setText("0");
 
+        dadoTresAtaque.setEditable(false);
         dadoTresAtaque.setText("0");
 
         btnAtacar.setText("Atacar");
@@ -257,38 +261,34 @@ public class TelaDeJogo extends javax.swing.JFrame {
             .addGroup(atacarLayout.createSequentialGroup()
                 .addGroup(atacarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(atacarLayout.createSequentialGroup()
-                        .addGroup(atacarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(atacarLayout.createSequentialGroup()
-                                .addGap(308, 308, 308)
-                                .addComponent(btnPassarAtaque))
-                            .addGroup(atacarLayout.createSequentialGroup()
-                                .addGroup(atacarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(atacarLayout.createSequentialGroup()
-                                        .addGap(25, 25, 25)
-                                        .addComponent(lPais)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(paisAtaque, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(x))
-                                    .addGroup(atacarLayout.createSequentialGroup()
-                                        .addGap(154, 154, 154)
-                                        .addGroup(atacarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(dadoTresAtaque, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGroup(atacarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                .addComponent(dadoDoisAtaque, javax.swing.GroupLayout.DEFAULT_SIZE, 20, Short.MAX_VALUE)
-                                                .addComponent(dadoUmAtaque)))))
-                                .addGap(18, 18, 18)
-                                .addGroup(atacarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(paisDefesa, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(dadoTresDefesa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(atacarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(dadpDoisDefesa, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(dadoUmDefesa, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                        .addGap(0, 0, Short.MAX_VALUE))
+                        .addGap(25, 25, 25)
+                        .addComponent(lPais)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(paisAtaque, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(x))
                     .addGroup(atacarLayout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnAtacar)))
-                .addGap(10, 10, 10))
+                        .addGap(154, 154, 154)
+                        .addGroup(atacarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(dadoTresAtaque, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(atacarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(dadoDoisAtaque, javax.swing.GroupLayout.DEFAULT_SIZE, 20, Short.MAX_VALUE)
+                                .addComponent(dadoUmAtaque)))))
+                .addGap(18, 18, 18)
+                .addGroup(atacarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(atacarLayout.createSequentialGroup()
+                        .addComponent(paisDefesa, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(45, Short.MAX_VALUE))
+                    .addGroup(atacarLayout.createSequentialGroup()
+                        .addGroup(atacarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(dadpDoisDefesa, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(dadoUmDefesa, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(dadoTresDefesa, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnAtacar))))
+            .addGroup(atacarLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(btnPassarAtaque))
         );
         atacarLayout.setVerticalGroup(
             atacarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -311,15 +311,16 @@ public class TelaDeJogo extends javax.swing.JFrame {
                         .addGroup(atacarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(dadoDoisAtaque, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(dadpDoisDefesa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(13, 13, 13)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(atacarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(dadoTresAtaque, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(dadoTresDefesa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(11, 11, 11))
+                        .addGap(18, 18, 18))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, atacarLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnAtacar)
                         .addGap(30, 30, 30)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
                 .addComponent(btnPassarAtaque))
         );
 
@@ -363,30 +364,27 @@ public class TelaDeJogo extends javax.swing.JFrame {
             .addGroup(movimentarLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(movimentarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, movimentarLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(btnPassarMovimentacao))
+                    .addComponent(lbMovimentacao)
                     .addGroup(movimentarLayout.createSequentialGroup()
-                        .addGroup(movimentarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lbMovimentacao)
-                            .addGroup(movimentarLayout.createSequentialGroup()
-                                .addGroup(movimentarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, movimentarLayout.createSequentialGroup()
-                                        .addComponent(numEx)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(qtdExercitos))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, movimentarLayout.createSequentialGroup()
-                                        .addComponent(lbPais)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(paisDe, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(lbPara)))
+                        .addGroup(movimentarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, movimentarLayout.createSequentialGroup()
+                                .addComponent(numEx)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(movimentarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(paisPara, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(enviaExercitos))))
-                        .addGap(0, 124, Short.MAX_VALUE)))
-                .addContainerGap())
+                                .addComponent(qtdExercitos))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, movimentarLayout.createSequentialGroup()
+                                .addComponent(lbPais)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(paisDe, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(lbPara)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(movimentarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(paisPara, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(enviaExercitos))))
+                .addContainerGap(134, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, movimentarLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(btnPassarMovimentacao))
         );
         movimentarLayout.setVerticalGroup(
             movimentarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -404,9 +402,8 @@ public class TelaDeJogo extends javax.swing.JFrame {
                     .addComponent(numEx)
                     .addComponent(qtdExercitos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(enviaExercitos))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
-                .addComponent(btnPassarMovimentacao)
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
+                .addComponent(btnPassarMovimentacao))
         );
 
         painelOpcoes.addTab("Movimentar", movimentar);
@@ -459,16 +456,15 @@ public class TelaDeJogo extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(defenderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(defenderLayout.createSequentialGroup()
-                        .addComponent(dadoTresDefesaD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnDefenderD))
-                    .addGroup(defenderLayout.createSequentialGroup()
                         .addGroup(defenderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(paisDefesaD, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(dadoUmDefesa1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(dadpDoisDefesaD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 63, Short.MAX_VALUE)))
-                .addContainerGap())
+                        .addContainerGap(73, Short.MAX_VALUE))
+                    .addGroup(defenderLayout.createSequentialGroup()
+                        .addComponent(dadoTresDefesaD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnDefenderD))))
         );
         defenderLayout.setVerticalGroup(
             defenderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -479,78 +475,103 @@ public class TelaDeJogo extends javax.swing.JFrame {
                     .addComponent(xD)
                     .addComponent(paisDefesaD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(paisAtaqueD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(defenderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(dadoUmAtaqueD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(dadoUmDefesa1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(defenderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(dadpDoisDefesaD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(dadoDoisAtaqueD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(defenderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(dadoTresDefesaD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(dadoTresAtaqueD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnDefenderD))
-                .addContainerGap())
+                .addGroup(defenderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(defenderLayout.createSequentialGroup()
+                        .addGroup(defenderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(dadoUmAtaqueD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(dadoUmDefesa1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(defenderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(dadpDoisDefesaD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(dadoDoisAtaqueD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
+                        .addGroup(defenderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(dadoTresDefesaD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(dadoTresAtaqueD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, defenderLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(btnDefenderD))))
         );
 
         painelOpcoes.addTab("Defender", defender);
 
-        cartaObjetivo.setText("Carta Objetivo");
-
-        cartaUm.setText("Carta1");
-
-        cartaDois.setText("Carta2");
-
-        cartaTres.setText("Carta3");
-
-        cartaQuatro.setText("Carta4");
-
-        jLabel6.setText("Carta5");
-
         btnTrocar.setText("Trocar");
+
+        btnCartaObjetivo.setText("Objetivo");
+        btnCartaObjetivo.setMaximumSize(new java.awt.Dimension(97, 23));
+        btnCartaObjetivo.setMinimumSize(new java.awt.Dimension(97, 23));
+        btnCartaObjetivo.setPreferredSize(new java.awt.Dimension(97, 23));
+
+        btnCartaUm.setText("Carta Um");
+        btnCartaUm.setMaximumSize(new java.awt.Dimension(97, 23));
+        btnCartaUm.setMinimumSize(new java.awt.Dimension(97, 23));
+        btnCartaUm.setPreferredSize(new java.awt.Dimension(97, 23));
+        btnCartaUm.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCartaUmActionPerformed(evt);
+            }
+        });
+
+        btnCartaDois.setText("Carta Dois");
+        btnCartaDois.setMaximumSize(new java.awt.Dimension(97, 23));
+        btnCartaDois.setMinimumSize(new java.awt.Dimension(97, 23));
+        btnCartaDois.setPreferredSize(new java.awt.Dimension(97, 23));
+
+        btnCartaTres.setText("Carta Três");
+        btnCartaTres.setMaximumSize(new java.awt.Dimension(97, 23));
+        btnCartaTres.setMinimumSize(new java.awt.Dimension(97, 23));
+        btnCartaTres.setPreferredSize(new java.awt.Dimension(97, 23));
+
+        btnCartaQuatro.setText("Carta Quatro");
+        btnCartaQuatro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCartaQuatroActionPerformed(evt);
+            }
+        });
+
+        btnCartaCinco.setText("Carta Cinco");
+        btnCartaCinco.setMaximumSize(new java.awt.Dimension(97, 23));
+        btnCartaCinco.setMinimumSize(new java.awt.Dimension(97, 23));
 
         javax.swing.GroupLayout cartasLayout = new javax.swing.GroupLayout(cartas);
         cartas.setLayout(cartasLayout);
         cartasLayout.setHorizontalGroup(
             cartasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(cartasLayout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnTrocar))
+            .addGroup(cartasLayout.createSequentialGroup()
+                .addGroup(cartasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnCartaTres, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCartaObjetivo, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(cartasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(cartasLayout.createSequentialGroup()
-                        .addGroup(cartasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(cartaTres)
-                            .addComponent(cartaObjetivo))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 118, Short.MAX_VALUE)
-                        .addGroup(cartasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(cartaQuatro)
-                            .addComponent(cartaUm))
-                        .addGap(108, 108, 108)
-                        .addGroup(cartasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(cartaDois, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cartasLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(btnTrocar)))
-                .addContainerGap())
+                        .addComponent(btnCartaQuatro)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnCartaCinco, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(cartasLayout.createSequentialGroup()
+                        .addComponent(btnCartaUm, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnCartaDois, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(57, Short.MAX_VALUE))
         );
         cartasLayout.setVerticalGroup(
             cartasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(cartasLayout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(15, 15, 15)
                 .addGroup(cartasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cartaObjetivo)
-                    .addComponent(cartaUm)
-                    .addComponent(cartaDois))
-                .addGap(46, 46, 46)
+                    .addComponent(btnCartaDois, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCartaUm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCartaObjetivo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(35, 35, 35)
                 .addGroup(cartasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(cartaQuatro)
-                    .addComponent(cartaTres))
+                    .addComponent(btnCartaTres, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCartaCinco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCartaQuatro))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
-                .addComponent(btnTrocar)
-                .addContainerGap())
+                .addComponent(btnTrocar))
         );
 
         painelOpcoes.addTab("Cartas", cartas);
@@ -570,7 +591,6 @@ public class TelaDeJogo extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(19, 19, 19)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblAtual1)
                     .addComponent(console)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 452, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -578,7 +598,8 @@ public class TelaDeJogo extends javax.swing.JFrame {
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblAtual)
                             .addComponent(textNomeDoJogador, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(textCorDoJogador, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(textCorDoJogador, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblAtual1))))
                 .addGap(18, 18, 18)
                 .addComponent(painelOpcoes, javax.swing.GroupLayout.PREFERRED_SIZE, 388, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -1357,12 +1378,12 @@ public class TelaDeJogo extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCyprusActionPerformed
 
     private void ContinuarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ContinuarActionPerformed
-        if (true == true) {
+        if (gerenciador.getQtdExercitosParaDistribuirJogadorAtual() == 0) {
             painelOpcoes.setEnabledAt(0, false);
             painelOpcoes.setEnabledAt(1, true);
             painelOpcoes.setSelectedIndex(1);
         } else {
-            JOptionPane.showInputDialog("Distribua Todos os exercitos para atacar.");
+            JOptionPane.showMessageDialog(null, "Para começar o ataque distribua todos os Exercitos.");
         }
     }//GEN-LAST:event_ContinuarActionPerformed
 
@@ -1385,6 +1406,14 @@ public class TelaDeJogo extends javax.swing.JFrame {
     private void paisAtaqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_paisAtaqueActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_paisAtaqueActionPerformed
+
+    private void btnCartaQuatroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCartaQuatroActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCartaQuatroActionPerformed
+
+    private void btnCartaUmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCartaUmActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCartaUmActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1439,6 +1468,12 @@ public class TelaDeJogo extends javax.swing.JFrame {
     private javax.swing.JButton btnBithynia;
     private javax.swing.JButton btnBritania;
     private javax.swing.JButton btnCappadocia;
+    private javax.swing.JButton btnCartaCinco;
+    private javax.swing.JButton btnCartaDois;
+    private javax.swing.JButton btnCartaObjetivo;
+    private javax.swing.JButton btnCartaQuatro;
+    private javax.swing.JButton btnCartaTres;
+    private javax.swing.JButton btnCartaUm;
     private javax.swing.JButton btnCorsica;
     private javax.swing.JButton btnCreta;
     private javax.swing.JButton btnCyprus;
@@ -1472,11 +1507,6 @@ public class TelaDeJogo extends javax.swing.JFrame {
     private javax.swing.JButton btnTaurica;
     private javax.swing.JButton btnThracia;
     private javax.swing.JButton btnTrocar;
-    private javax.swing.JLabel cartaDois;
-    private javax.swing.JLabel cartaObjetivo;
-    private javax.swing.JLabel cartaQuatro;
-    private javax.swing.JLabel cartaTres;
-    private javax.swing.JLabel cartaUm;
     private javax.swing.JPanel cartas;
     private javax.swing.JLabel console;
     private javax.swing.JTextField dadoDoisAtaque;
@@ -1494,7 +1524,6 @@ public class TelaDeJogo extends javax.swing.JFrame {
     private javax.swing.JPanel defender;
     private javax.swing.JPanel distribuir;
     private javax.swing.JButton enviaExercitos;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lPais;
@@ -1596,12 +1625,19 @@ public class TelaDeJogo extends javax.swing.JFrame {
         if (faseDaRodada == 0){
             int quantidadeAtual;
             int aux;
+            int quantidadeDeTerritorios = gerenciador.getQtdExercitosParaDistribuirJogadorAtual();
             if(quantidadeDeTerritorios >0){
                 quantidadeAtual = Integer.parseInt(button.getText());
                 aux = quantidadeAtual+1;
                 button.setText(aux + "");
                 quantidadeDeTerritorios--;
+                gerenciador.reduzQtdExercitosParaDistribuirJogadorAtual();
+                atualizaQntExercitos();
             }
         }
+    }
+
+    private void atualizaQntExercitos() {
+        qntExercitos.setText(""+gerenciador.getQtdExercitosParaDistribuirJogadorAtual());
     }
 }
