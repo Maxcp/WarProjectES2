@@ -7,6 +7,7 @@ package controller;
 
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.JButton;
 import model.*;
 
 public class Gerenciador {
@@ -22,6 +23,8 @@ public class Gerenciador {
     Jogador jogador2;
     Jogador jogador3;
     Jogador jogador4;
+    int jogadorDaRodada = 1;
+    int faseDaRodada = 0;
 
     private static Gerenciador instancia;
 
@@ -116,6 +119,26 @@ public class Gerenciador {
     }
 
 
+    public Jogador pegaJogadorDaRodada(){
+        switch (jogadorDaRodada){
+            case 1:
+                return jogador1;
+            case 2:
+                return jogador2;
+            case 3:
+                return jogador3;
+            case 4:
+                return jogador4;
+            default:
+             return jogador1;   
+        }
+    }
+
+    public void setTerritoriosJogadores(JButton[] btnterritorios) {
+        for (int i = 0; i < btnterritorios.length; i++) {
+            
+        }
+    }
 
 
 }
