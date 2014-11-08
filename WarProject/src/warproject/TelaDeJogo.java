@@ -1578,11 +1578,11 @@ public class TelaDeJogo extends javax.swing.JFrame {
         this.btnterritorios = btnterritorios;
         
         gerenciador.setTerritoriosJogadores(btnterritorios);
-        gerenciador.setEditavelApenasTerritoriosDoJogadorAtual(btnterritorios);
         
         painelOpcoes.setEnabledAt(1, false);
         painelOpcoes.setEnabledAt(2, false);
         painelOpcoes.setEnabledAt(3, false);
+        gerenciador.setEditavelApenasTerritoriosDoJogadorAtual(btnterritorios);
         
     }
     public void metodoDosBotoes(JButton button){
@@ -1604,6 +1604,6 @@ public class TelaDeJogo extends javax.swing.JFrame {
                 quantidadeDeTerritorios--;
             }
         }
-        gerenciador.setEditavelApenasTerritoriosDoJogadorAtual(btnterritorios);
+>>>>>>> Adicionando funcionalidade de adicionar mais exercitos  ao territorio clicando no botao
     }
 }
