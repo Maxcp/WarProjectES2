@@ -123,13 +123,13 @@ public class Gerenciador {
 
     public Jogador pegaJogadorDaRodada() {
         switch (jogadorDaRodada) {
-            case 1:
+            case 0:
                 return jogador1;
-            case 2:
+            case 1:
                 return jogador2;
-            case 3:
+            case 2:
                 return jogador3;
-            case 4:
+            case 3:
                 return jogador4;
             default:
                 return jogador1;
