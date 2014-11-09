@@ -17,6 +17,7 @@ public class TelaDeCartas extends javax.swing.JFrame {
      */
     public TelaDeCartas() {
         initComponents();
+        System.out.println(conteudo.getText());
     }
 
     /**
@@ -29,30 +30,55 @@ public class TelaDeCartas extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        tipoNome = new javax.swing.JLabel();
+        conteudo = new javax.swing.JTextArea();
+        background = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(null);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(170, 260));
+        setMinimumSize(new java.awt.Dimension(167, 257));
+        setModalExclusionType(null);
+        setResizable(false);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/warproject/cartaWar.png"))); // NOI18N
+        jPanel1.setLayout(null);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 10, Short.MAX_VALUE))
+        tipoNome.setBackground(new java.awt.Color(255, 255, 255));
+        tipoNome.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        tipoNome.setForeground(new java.awt.Color(255, 255, 255));
+        tipoNome.setText("Território");
+        jPanel1.add(tipoNome);
+        tipoNome.setBounds(50, 0, 79, 30);
+
+        conteudo.setEditable(false);
+        conteudo.setColumns(20);
+        conteudo.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        conteudo.setForeground(new java.awt.Color(255, 255, 255));
+        conteudo.setLineWrap(true);
+        conteudo.setRows(5);
+        conteudo.setText("CONQUISTAR NA \nTOTALIDADE A\nAMERICA DO SUL\nA ASIA \nE MAIS UM CONTINENTE\nA SUA ESCOLHA.");
+        conteudo.setDisabledTextColor(new java.awt.Color(255, 255, 255));
+        conteudo.setEnabled(false);
+        conteudo.setOpaque(false);
+        jPanel1.add(conteudo);
+        conteudo.setBounds(20, 40, 140, 150);
+
+        background.setForeground(new java.awt.Color(255, 255, 255));
+        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/warproject/cartawar.png"))); // NOI18N
+        background.setMinimumSize(new java.awt.Dimension(175, 240));
+        background.setName(""); // NOI18N
+        jPanel1.add(background);
+        background.setBounds(0, 0, 175, 242);
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addComponent(jLabel1)
-                .addGap(0, 0, Short.MAX_VALUE))
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 246, Short.MAX_VALUE)
         );
-
-        getContentPane().add(jPanel1);
-        jPanel1.setBounds(0, 0, 200, 250);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -93,7 +119,9 @@ public class TelaDeCartas extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel background;
+    private javax.swing.JTextArea conteudo;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel tipoNome;
     // End of variables declaration//GEN-END:variables
 }
