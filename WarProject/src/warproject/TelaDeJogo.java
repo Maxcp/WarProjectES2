@@ -574,11 +574,13 @@ public class TelaDeJogo extends javax.swing.JFrame {
         painelOpcoes.addTab("Defender", defender);
 
         btnTrocar.setText("Trocar");
+        btnTrocar.setBorder(null);
 
         btnCartaObjetivo.setText("Objetivo");
+        btnCartaObjetivo.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         btnCartaObjetivo.setMaximumSize(new java.awt.Dimension(97, 23));
         btnCartaObjetivo.setMinimumSize(new java.awt.Dimension(97, 23));
-        btnCartaObjetivo.setPreferredSize(new java.awt.Dimension(97, 23));
+        btnCartaObjetivo.setPreferredSize(new java.awt.Dimension(106, 40));
         btnCartaObjetivo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCartaObjetivoActionPerformed(evt);
@@ -586,9 +588,10 @@ public class TelaDeJogo extends javax.swing.JFrame {
         });
 
         btnCartaUm.setText("Carta Um");
+        btnCartaUm.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         btnCartaUm.setMaximumSize(new java.awt.Dimension(97, 23));
         btnCartaUm.setMinimumSize(new java.awt.Dimension(97, 23));
-        btnCartaUm.setPreferredSize(new java.awt.Dimension(97, 23));
+        btnCartaUm.setPreferredSize(new java.awt.Dimension(106, 40));
         btnCartaUm.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCartaUmActionPerformed(evt);
@@ -596,9 +599,10 @@ public class TelaDeJogo extends javax.swing.JFrame {
         });
 
         btnCartaDois.setText("Carta Dois");
+        btnCartaDois.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         btnCartaDois.setMaximumSize(new java.awt.Dimension(97, 23));
         btnCartaDois.setMinimumSize(new java.awt.Dimension(97, 23));
-        btnCartaDois.setPreferredSize(new java.awt.Dimension(97, 23));
+        btnCartaDois.setPreferredSize(new java.awt.Dimension(106, 40));
         btnCartaDois.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCartaDoisActionPerformed(evt);
@@ -606,9 +610,10 @@ public class TelaDeJogo extends javax.swing.JFrame {
         });
 
         btnCartaTres.setText("Carta Três");
+        btnCartaTres.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         btnCartaTres.setMaximumSize(new java.awt.Dimension(97, 23));
         btnCartaTres.setMinimumSize(new java.awt.Dimension(97, 23));
-        btnCartaTres.setPreferredSize(new java.awt.Dimension(97, 23));
+        btnCartaTres.setPreferredSize(new java.awt.Dimension(106, 40));
         btnCartaTres.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCartaTresActionPerformed(evt);
@@ -616,6 +621,8 @@ public class TelaDeJogo extends javax.swing.JFrame {
         });
 
         btnCartaQuatro.setText("Carta Quatro");
+        btnCartaQuatro.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        btnCartaQuatro.setPreferredSize(new java.awt.Dimension(106, 40));
         btnCartaQuatro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCartaQuatroActionPerformed(evt);
@@ -623,8 +630,10 @@ public class TelaDeJogo extends javax.swing.JFrame {
         });
 
         btnCartaCinco.setText("Carta Cinco");
+        btnCartaCinco.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         btnCartaCinco.setMaximumSize(new java.awt.Dimension(97, 23));
         btnCartaCinco.setMinimumSize(new java.awt.Dimension(97, 23));
+        btnCartaCinco.setPreferredSize(new java.awt.Dimension(106, 40));
         btnCartaCinco.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCartaCincoActionPerformed(evt);
@@ -636,39 +645,44 @@ public class TelaDeJogo extends javax.swing.JFrame {
         cartasLayout.setHorizontalGroup(
             cartasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(cartasLayout.createSequentialGroup()
+                .addContainerGap(49, Short.MAX_VALUE)
                 .addGroup(cartasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnCartaTres, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnCartaObjetivo, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(cartasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(cartasLayout.createSequentialGroup()
-                        .addComponent(btnCartaUm, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cartasLayout.createSequentialGroup()
+                        .addGroup(cartasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(btnCartaObjetivo, javax.swing.GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
+                            .addComponent(btnCartaTres, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnCartaDois, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(cartasLayout.createSequentialGroup()
-                        .addGroup(cartasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(btnTrocar)
-                            .addComponent(btnCartaQuatro))
+                        .addGroup(cartasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btnCartaUm, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnCartaQuatro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnCartaCinco, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(103, Short.MAX_VALUE))
+                        .addGroup(cartasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btnCartaDois, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnCartaCinco, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(51, 51, 51))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cartasLayout.createSequentialGroup()
+                        .addComponent(btnTrocar, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(180, 180, 180))))
         );
         cartasLayout.setVerticalGroup(
             cartasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(cartasLayout.createSequentialGroup()
-                .addGap(15, 15, 15)
-                .addGroup(cartasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnCartaDois, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnCartaUm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnCartaObjetivo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(35, 35, 35)
-                .addGroup(cartasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnCartaTres, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnCartaCinco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnCartaQuatro))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
-                .addComponent(btnTrocar)
-                .addGap(22, 22, 22))
+                .addContainerGap()
+                .addGroup(cartasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnCartaUm, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnCartaDois, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnCartaObjetivo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(cartasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnCartaQuatro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(cartasLayout.createSequentialGroup()
+                        .addGroup(cartasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btnCartaCinco, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnCartaTres, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnTrocar, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(19, 19, 19))
         );
 
         painelOpcoes.addTab("Cartas", cartas);
@@ -1479,31 +1493,37 @@ public class TelaDeJogo extends javax.swing.JFrame {
     private void btnCartaCincoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCartaCincoActionPerformed
         TelaDeCartas telCartaCinco = new TelaDeCartas("Território",gerenciador.pegaJogadorDaRodada().getStringDescricaoCartaTerritorio(5), gerenciador.pegaJogadorDaRodada().getStringTipoCartaTerritorio(5));
         telCartaCinco.setVisible(true);
+        telCartaCinco.setLocationRelativeTo(null);
     }//GEN-LAST:event_btnCartaCincoActionPerformed
 
     private void btnCartaQuatroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCartaQuatroActionPerformed
         TelaDeCartas telCartaQuatro = new TelaDeCartas("Território",gerenciador.pegaJogadorDaRodada().getStringDescricaoCartaTerritorio(4), gerenciador.pegaJogadorDaRodada().getStringTipoCartaTerritorio(4));
         telCartaQuatro.setVisible(true);
+        telCartaQuatro.setLocationRelativeTo(null);
     }//GEN-LAST:event_btnCartaQuatroActionPerformed
 
     private void btnCartaTresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCartaTresActionPerformed
         TelaDeCartas telCartaTres = new TelaDeCartas("Território",gerenciador.pegaJogadorDaRodada().getStringDescricaoCartaTerritorio(3),gerenciador.pegaJogadorDaRodada().getStringTipoCartaTerritorio(3));
         telCartaTres.setVisible(true);
+        telCartaTres.setLocationRelativeTo(null);
     }//GEN-LAST:event_btnCartaTresActionPerformed
 
     private void btnCartaDoisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCartaDoisActionPerformed
         TelaDeCartas telCartaDois = new TelaDeCartas("Território",gerenciador.pegaJogadorDaRodada().getStringDescricaoCartaTerritorio(2), gerenciador.pegaJogadorDaRodada().getStringTipoCartaTerritorio(2));
         telCartaDois.setVisible(true);
+        telCartaDois.setLocationRelativeTo(null);
     }//GEN-LAST:event_btnCartaDoisActionPerformed
 
     private void btnCartaUmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCartaUmActionPerformed
         TelaDeCartas telCartaUm = new TelaDeCartas("Território",gerenciador.pegaJogadorDaRodada().getStringDescricaoCartaTerritorio(1), gerenciador.pegaJogadorDaRodada().getStringTipoCartaTerritorio(1));
         telCartaUm.setVisible(true);
+        telCartaUm.setLocationRelativeTo(null);
     }//GEN-LAST:event_btnCartaUmActionPerformed
 
     private void btnCartaObjetivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCartaObjetivoActionPerformed
         TelaDeCartas telaObjetivo = new TelaDeCartas("Objetivo",gerenciador.pegaJogadorDaRodada().getObjetivo().getDescricao(),"");
         telaObjetivo.setVisible(true);
+        telaObjetivo.setLocationRelativeTo(null); 
     }//GEN-LAST:event_btnCartaObjetivoActionPerformed
 
     private void dadoUmDefesa1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dadoUmDefesa1ActionPerformed
