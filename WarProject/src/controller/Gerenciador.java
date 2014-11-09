@@ -170,4 +170,21 @@ public class Gerenciador {
         qtdExercitosParaDistribuirJogadorAtual++;
     }
 
+    public int[] geraDadosDadosOrdenados() {
+        int[] dados = {((int)(Math.random() * 5)+1),((int)(Math.random() * 5)+1), ((int)(Math.random() * 5)+1)};
+        return ordena(dados);
+    }
+    public int[] ordena(int[] vet){
+        int aux = 0;
+        for(int i = 0; i<vet.length; i++){ 
+            for(int j = 0; j<vet.length-1; j++){ 
+                if(vet[j] > vet[j + 1]){ 
+                    aux = vet[j]; 
+                    vet[j] = vet[j+1]; 
+                    vet[j+1] = aux; 
+                } 
+            } 
+        }
+        return vet;
+    }
 }
