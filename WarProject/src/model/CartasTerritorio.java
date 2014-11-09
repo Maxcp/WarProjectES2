@@ -40,5 +40,9 @@ public class CartasTerritorio {
     public void setFormaGeometrica(int formaGeometrica) {
         this.formaGeometrica = formaGeometrica;
     }
+    
+    public String getNomeFormaGeometrica() {
+        return formasGeometricasPossiveis[formaGeometrica];
+    }
 
 }

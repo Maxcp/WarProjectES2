@@ -7,7 +7,6 @@ package model;
 
 import controller.DadosJogo;
 import java.util.List;
-import org.omg.IOP.TAG_MULTIPLE_COMPONENTS;
 
 
 public class Objetivo {

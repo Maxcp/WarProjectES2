@@ -198,5 +198,23 @@ public class Jogador {
         }
         return false;
     }
+    
+    public String getStringDescricaoCartaTerritorio(int indexCarta){
+        if (indexCarta > cartas.size()) {
+            return "Você não possui a carta de numero "+ indexCarta;
+        }
+        else{
+            return cartas.get(indexCarta-1).getTerritorio().getNome();
+        }
+    }
+    
+    public String getStringTipoCartaTerritorio(int indexCarta){
+        if (indexCarta > cartas.size()) {
+            return "";
+        }
+        else{
+            return cartas.get(indexCarta-1).getNomeFormaGeometrica();
+        }
+    }
 
 }

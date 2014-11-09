@@ -532,6 +532,11 @@ public class TelaDeJogo extends javax.swing.JFrame {
         btnCartaObjetivo.setMaximumSize(new java.awt.Dimension(97, 23));
         btnCartaObjetivo.setMinimumSize(new java.awt.Dimension(97, 23));
         btnCartaObjetivo.setPreferredSize(new java.awt.Dimension(97, 23));
+        btnCartaObjetivo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCartaObjetivoActionPerformed(evt);
+            }
+        });
 
         btnCartaUm.setText("Carta Um");
         btnCartaUm.setMaximumSize(new java.awt.Dimension(97, 23));
@@ -547,11 +552,21 @@ public class TelaDeJogo extends javax.swing.JFrame {
         btnCartaDois.setMaximumSize(new java.awt.Dimension(97, 23));
         btnCartaDois.setMinimumSize(new java.awt.Dimension(97, 23));
         btnCartaDois.setPreferredSize(new java.awt.Dimension(97, 23));
+        btnCartaDois.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCartaDoisActionPerformed(evt);
+            }
+        });
 
         btnCartaTres.setText("Carta Três");
         btnCartaTres.setMaximumSize(new java.awt.Dimension(97, 23));
         btnCartaTres.setMinimumSize(new java.awt.Dimension(97, 23));
         btnCartaTres.setPreferredSize(new java.awt.Dimension(97, 23));
+        btnCartaTres.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCartaTresActionPerformed(evt);
+            }
+        });
 
         btnCartaQuatro.setText("Carta Quatro");
         btnCartaQuatro.addActionListener(new java.awt.event.ActionListener() {
@@ -563,6 +578,11 @@ public class TelaDeJogo extends javax.swing.JFrame {
         btnCartaCinco.setText("Carta Cinco");
         btnCartaCinco.setMaximumSize(new java.awt.Dimension(97, 23));
         btnCartaCinco.setMinimumSize(new java.awt.Dimension(97, 23));
+        btnCartaCinco.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCartaCincoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout cartasLayout = new javax.swing.GroupLayout(cartas);
         cartas.setLayout(cartasLayout);
@@ -1426,11 +1446,13 @@ public class TelaDeJogo extends javax.swing.JFrame {
     }//GEN-LAST:event_btnPassarMovimentacaoActionPerformed
 
     private void btnCartaQuatroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCartaQuatroActionPerformed
-        // TODO add your handling code here:
+        TelaDeCartas telCartaQuatro = new TelaDeCartas("Território",gerenciador.pegaJogadorDaRodada().getStringDescricaoCartaTerritorio(4), gerenciador.pegaJogadorDaRodada().getStringTipoCartaTerritorio(4));
+        telCartaQuatro.setVisible(true);
     }//GEN-LAST:event_btnCartaQuatroActionPerformed
 
     private void btnCartaUmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCartaUmActionPerformed
-        // TODO add your handling code here:
+        TelaDeCartas telCartaUm = new TelaDeCartas("Território",gerenciador.pegaJogadorDaRodada().getStringDescricaoCartaTerritorio(1), gerenciador.pegaJogadorDaRodada().getStringTipoCartaTerritorio(1));
+        telCartaUm.setVisible(true);
     }//GEN-LAST:event_btnCartaUmActionPerformed
 
     private void btnPassarAtaqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPassarAtaqueActionPerformed
@@ -1465,6 +1487,26 @@ public class TelaDeJogo extends javax.swing.JFrame {
     private void paisDefesaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_paisDefesaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_paisDefesaActionPerformed
+
+    private void btnCartaObjetivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCartaObjetivoActionPerformed
+        TelaDeCartas telaObjetivo = new TelaDeCartas("Objetivo",gerenciador.pegaJogadorDaRodada().getObjetivo().getDescricao(),"");
+        telaObjetivo.setVisible(true);
+    }//GEN-LAST:event_btnCartaObjetivoActionPerformed
+
+    private void btnCartaDoisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCartaDoisActionPerformed
+        TelaDeCartas telCartaDois = new TelaDeCartas("Território",gerenciador.pegaJogadorDaRodada().getStringDescricaoCartaTerritorio(2), gerenciador.pegaJogadorDaRodada().getStringTipoCartaTerritorio(2));
+        telCartaDois.setVisible(true);
+    }//GEN-LAST:event_btnCartaDoisActionPerformed
+
+    private void btnCartaTresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCartaTresActionPerformed
+        TelaDeCartas telCartaTres = new TelaDeCartas("Território",gerenciador.pegaJogadorDaRodada().getStringDescricaoCartaTerritorio(3),gerenciador.pegaJogadorDaRodada().getStringTipoCartaTerritorio(3));
+        telCartaTres.setVisible(true);
+    }//GEN-LAST:event_btnCartaTresActionPerformed
+
+    private void btnCartaCincoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCartaCincoActionPerformed
+        TelaDeCartas telCartaCinco = new TelaDeCartas("Território",gerenciador.pegaJogadorDaRodada().getStringDescricaoCartaTerritorio(5), gerenciador.pegaJogadorDaRodada().getStringTipoCartaTerritorio(5));
+        telCartaCinco.setVisible(true);
+    }//GEN-LAST:event_btnCartaCincoActionPerformed
 
     /**
      * @param args the command line arguments

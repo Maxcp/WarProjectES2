@@ -15,9 +15,11 @@ public class TelaDeCartas extends javax.swing.JFrame {
     /**
      * Creates new form TelaDeCartas
      */
-    public TelaDeCartas() {
+    public TelaDeCartas(String tipo, String descricao, String tipoDescricao) {
         initComponents();
-        System.out.println(conteudo.getText());
+        tipoNome.setText(tipo);
+        conteudo.setText(descricao);
+        tipoConteudo.setText(tipoDescricao);
     }
 
     /**
@@ -31,11 +33,11 @@ public class TelaDeCartas extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         tipoNome = new javax.swing.JLabel();
+        tipoConteudo = new javax.swing.JTextArea();
         conteudo = new javax.swing.JTextArea();
         background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(170, 260));
         setMinimumSize(new java.awt.Dimension(167, 257));
         setModalExclusionType(null);
         setResizable(false);
@@ -49,9 +51,22 @@ public class TelaDeCartas extends javax.swing.JFrame {
         jPanel1.add(tipoNome);
         tipoNome.setBounds(50, 0, 79, 30);
 
+        tipoConteudo.setEditable(false);
+        tipoConteudo.setColumns(20);
+        tipoConteudo.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        tipoConteudo.setForeground(new java.awt.Color(255, 255, 255));
+        tipoConteudo.setLineWrap(true);
+        tipoConteudo.setRows(5);
+        tipoConteudo.setText("TRIANGULO");
+        tipoConteudo.setDisabledTextColor(new java.awt.Color(255, 255, 255));
+        tipoConteudo.setEnabled(false);
+        tipoConteudo.setOpaque(false);
+        jPanel1.add(tipoConteudo);
+        tipoConteudo.setBounds(50, 210, 80, 20);
+
         conteudo.setEditable(false);
         conteudo.setColumns(20);
-        conteudo.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        conteudo.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         conteudo.setForeground(new java.awt.Color(255, 255, 255));
         conteudo.setLineWrap(true);
         conteudo.setRows(5);
@@ -83,45 +98,11 @@ public class TelaDeCartas extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TelaDeCartas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TelaDeCartas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TelaDeCartas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TelaDeCartas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new TelaDeCartas().setVisible(true);
-            }
-        });
-    }
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel background;
     private javax.swing.JTextArea conteudo;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextArea tipoConteudo;
     private javax.swing.JLabel tipoNome;
     // End of variables declaration//GEN-END:variables
 }
