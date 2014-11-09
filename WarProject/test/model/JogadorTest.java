@@ -9,6 +9,7 @@ package model;
 import controller.DadosJogo;
 import java.awt.Color;
 import java.util.List;
+import java.util.Random;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -193,30 +194,35 @@ public class JogadorTest {
     /**
      * Test of getPontuacao method, of class Jogador.
      */
-    @Ignore
     @Test
     public void testGetPontuacao() {
         System.out.println("getPontuacao");
-        Jogador instance = null;
+        Jogador instance = new Jogador("", 0, null, null);
         int expResult = 0;
         int result = instance.getPontuacao();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
      * Test of setPontuacao method, of class Jogador.
      */
-    @Ignore
     @Test
     public void testSetPontuacao() {
         System.out.println("setPontuacao");
         int pontuacao = 0;
-        Jogador instance = null;
-        instance.setPontuacao(pontuacao);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        Jogador instance = new Jogador("", 0, null, null);
+        int result;
+        
+        for(int i = 0; i < 20; i++)
+        {
+            pontuacao = new Random().nextInt();
+            instance.setPontuacao(pontuacao);
+            result = instance.getPontuacao();
+            if(pontuacao < 0)
+                assertTrue(result >= 0);
+            else
+                assertEquals(pontuacao, result);
+        }
     }
 
     /**

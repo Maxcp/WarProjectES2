@@ -32,59 +32,51 @@ public class ContinenteTest {
     /**
      * Test of getTerritorios method, of class Continente.
      */
-    @Ignore
     @Test
     public void testGetTerritorios() {
         System.out.println("getTerritorios");
-        Continente instance = null;
-        Territorio[] expResult = null;
+        Territorio[] expResult = new Territorio[10];
+        Continente instance = new Continente("", expResult);
         Territorio[] result = instance.getTerritorios();
         assertArrayEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
      * Test of setTerritorios method, of class Continente.
      */
-    @Ignore
     @Test
     public void testSetTerritorios() {
         System.out.println("setTerritorios");
-        Territorio[] territorios = null;
-        Continente instance = null;
-        instance.setTerritorios(territorios);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        Territorio[] territorios1 = new Territorio[10];
+        Territorio[] territorios2 = new Territorio[10];
+        Continente instance = new Continente("", territorios1);
+        instance.setTerritorios(territorios2);
+        assertArrayEquals(territorios2, instance.getTerritorios());
     }
 
     /**
      * Test of getNome method, of class Continente.
      */
-    @Ignore
     @Test
     public void testGetNome() {
         System.out.println("getNome");
-        Continente instance = null;
-        String expResult = "";
+        Continente instance = new Continente("Teste", null);
+        String expResult = "Teste";
         String result = instance.getNome();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
      * Test of setNome method, of class Continente.
      */
-    @Ignore
     @Test
     public void testSetNome() {
         System.out.println("setNome");
-        String nome = "";
-        Continente instance = null;
+        String nome = "Teste";
+        Continente instance = new Continente("Continente", null);
         instance.setNome(nome);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        String result = instance.getNome();
+        assertEquals(nome, result);
     }
     
 }

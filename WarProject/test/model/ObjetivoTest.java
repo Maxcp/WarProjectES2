@@ -48,16 +48,16 @@ public class ObjetivoTest {
     /**
      * Test of getID method, of class Objetivo.
      */
-    @Ignore
     @Test
     public void testGetID() {
         System.out.println("getID");
-        Objetivo instance = null;
-        int expResult = 0;
-        int result = instance.getID();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
+        for(int i = 0; i < 20; i++)
+        {
+            Objetivo instance = new Objetivo(null);
+            int result = instance.getID();
+            assertTrue((0 <= result) && (result <= 13));
+        }
     }
 
     /**

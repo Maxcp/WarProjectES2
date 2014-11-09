@@ -32,30 +32,26 @@ public class CartasTerritorioTest {
     /**
      * Test of getTerritorio method, of class CartasTerritorio.
      */
-    @Ignore
     @Test
     public void testGetTerritorio() {
         System.out.println("getTerritorio");
-        CartasTerritorio instance = null;
-        Territorio expResult = null;
+        Territorio expResult = new Territorio(1, "", null, null, 1);
+        CartasTerritorio instance = new CartasTerritorio(expResult, 0);
         Territorio result = instance.getTerritorio();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
      * Test of setTerritorio method, of class CartasTerritorio.
      */
-    @Ignore
     @Test
     public void testSetTerritorio() {
         System.out.println("setTerritorio");
-        Territorio territorio = null;
-        CartasTerritorio instance = null;
-        instance.setTerritorio(territorio);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        Territorio territorio1 = new Territorio(1, "1", null, null, 1);
+        Territorio territorio2 = new Territorio(2, "2", null, null, 1);
+        CartasTerritorio instance = new CartasTerritorio(territorio1, 0);
+        instance.setTerritorio(territorio2);
+        assertEquals(territorio2, instance.getTerritorio());
     }
 
     /**
