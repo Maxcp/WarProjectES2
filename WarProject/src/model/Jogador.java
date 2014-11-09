@@ -189,4 +189,14 @@ public class Jogador {
         return listaTerritorioInt;
     }
 
+    public boolean territorioPertence(int indice) {
+        List<Integer> listaTerritorioInt = territoriosPorId();
+        for(int i: listaTerritorioInt){
+            if(indice == i){
+                return true;
+            }
+        }
+        return false;
+    }
+
 }

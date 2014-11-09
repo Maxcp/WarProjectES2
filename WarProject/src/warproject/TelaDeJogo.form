@@ -69,17 +69,17 @@
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jScrollPane1" min="-2" pref="452" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Component id="lblAtual" min="-2" max="-2" attributes="0"/>
-                                  <Component id="textNomeDoJogador" min="-2" pref="226" max="-2" attributes="0"/>
-                                  <Component id="textCorDoJogador" alignment="0" min="-2" pref="226" max="-2" attributes="0"/>
                                   <Component id="lblAtual1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="textNomeDoJogador" alignment="0" pref="194" max="32767" attributes="0"/>
+                                  <Component id="textCorDoJogador" alignment="0" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="painelOpcoes" min="-2" pref="388" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="painelOpcoes" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -154,7 +154,7 @@
                               <Component id="qntExercitos" min="-2" pref="23" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="labelSoldados" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="167" max="32767" attributes="0"/>
+                              <EmptySpace pref="194" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
                               <Component id="reverter" min="-2" max="-2" attributes="0"/>
@@ -172,7 +172,7 @@
                                   <Component id="qntExercitos" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="labelSoldados" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace pref="131" max="32767" attributes="0"/>
+                              <EmptySpace pref="142" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -233,69 +233,80 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="25" pref="25" max="-2" attributes="0"/>
-                                      <Component id="lPais" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="paisAtaque" min="-2" pref="122" max="-2" attributes="0"/>
+                                  <Group type="102" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <EmptySpace min="-2" pref="154" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="1" attributes="0">
+                                                  <Component id="dadoTresAtaque" alignment="0" min="-2" pref="20" max="-2" attributes="0"/>
+                                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                      <Component id="dadoDoisAtaque" pref="20" max="32767" attributes="0"/>
+                                                      <Component id="dadoUmAtaque" max="32767" attributes="0"/>
+                                                  </Group>
+                                              </Group>
+                                          </Group>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+                                              <Component id="lPais" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="paisAtaque" min="-2" pref="122" max="-2" attributes="0"/>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <Component id="x" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="x" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="154" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="1" attributes="0">
-                                          <Component id="dadoTresAtaque" alignment="0" min="-2" pref="20" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                              <Component id="dadoDoisAtaque" pref="20" max="32767" attributes="0"/>
-                                              <Component id="dadoUmAtaque" max="32767" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="102" attributes="0">
+                                              <Component id="paisDefesa" min="-2" pref="122" max="-2" attributes="0"/>
+                                              <EmptySpace min="0" pref="62" max="32767" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" attributes="0">
+                                              <Group type="103" groupAlignment="1" attributes="0">
+                                                  <Component id="dadpDoisDefesa" alignment="1" min="-2" pref="20" max="-2" attributes="0"/>
+                                                  <Component id="dadoUmDefesa" alignment="0" min="-2" pref="20" max="-2" attributes="0"/>
+                                                  <Component id="dadoTresDefesa" alignment="1" min="-2" pref="20" max="-2" attributes="0"/>
+                                              </Group>
+                                              <EmptySpace max="32767" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="btnAtacar" alignment="1" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="btnPassarAtaque" alignment="1" min="-2" max="-2" attributes="0"/>
+                                              </Group>
                                           </Group>
                                       </Group>
                                   </Group>
-                              </Group>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
-                                      <Component id="paisDefesa" min="-2" pref="122" max="-2" attributes="0"/>
-                                      <EmptySpace pref="45" max="32767" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="jLabel1" max="32767" attributes="0"/>
                                   </Group>
-                                  <Group type="102" attributes="0">
-                                      <Group type="103" groupAlignment="1" attributes="0">
-                                          <Component id="dadpDoisDefesa" alignment="1" min="-2" pref="20" max="-2" attributes="0"/>
-                                          <Component id="dadoUmDefesa" alignment="0" min="-2" pref="20" max="-2" attributes="0"/>
-                                          <Component id="dadoTresDefesa" alignment="1" min="-2" pref="20" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace max="32767" attributes="0"/>
-                                      <Component id="btnAtacar" min="-2" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
+                                      <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
-                          </Group>
-                          <Group type="102" attributes="0">
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                              <Component id="btnPassarAtaque" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
+                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace pref="18" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="lPais" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="paisAtaque" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="x" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="paisDefesa" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                              <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="dadoUmAtaque" min="-2" max="-2" attributes="0"/>
-                                  <Component id="dadoUmDefesa" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="lPais" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="paisAtaque" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="dadoUmAtaque" min="-2" max="-2" attributes="0"/>
+                                          <Component id="dadoUmDefesa" min="-2" max="-2" attributes="0"/>
+                                      </Group>
                                       <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
                                           <Component id="dadoDoisAtaque" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -306,16 +317,19 @@
                                           <Component id="dadoTresAtaque" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="dadoTresDefesa" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                                   </Group>
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="x" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="paisDefesa" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                                       <Component id="btnAtacar" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="btnPassarAtaque" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace pref="11" max="32767" attributes="0"/>
-                              <Component id="btnPassarAtaque" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -334,13 +348,14 @@
                     <Component class="javax.swing.JTextField" name="paisDefesa">
                       <Properties>
                         <Property name="editable" type="boolean" value="false"/>
-                        <Property name="text" type="java.lang.String" value="Aegyptus"/>
                       </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="paisDefesaActionPerformed"/>
+                      </Events>
                     </Component>
                     <Component class="javax.swing.JTextField" name="paisAtaque">
                       <Properties>
                         <Property name="editable" type="boolean" value="false"/>
-                        <Property name="text" type="java.lang.String" value="Cyrenaica"/>
                       </Properties>
                       <Events>
                         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="paisAtaqueActionPerformed"/>
@@ -389,6 +404,9 @@
                       <Properties>
                         <Property name="text" type="java.lang.String" value="Atacar"/>
                       </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAtacarActionPerformed"/>
+                      </Events>
                     </Component>
                     <Component class="javax.swing.JButton" name="btnPassarAtaque">
                       <Properties>
@@ -397,6 +415,22 @@
                       <Events>
                         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnPassarAtaqueActionPerformed"/>
                       </Events>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="jLabel1">
+                      <Properties>
+                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="99" green="99" red="99" type="rgb"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="Clique no primeiro territorio para seleciona o pais que ira atacar e depois"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="jLabel2">
+                      <Properties>
+                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="99" green="99" red="99" type="rgb"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="clique em outro territorio para selecionar o pais atacado"/>
+                      </Properties>
                     </Component>
                   </SubComponents>
                 </Container>
@@ -438,7 +472,7 @@
                                       </Group>
                                   </Group>
                               </Group>
-                              <EmptySpace pref="134" max="32767" attributes="0"/>
+                              <EmptySpace pref="161" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -464,7 +498,7 @@
                                   <Component id="qtdExercitos" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="enviaExercitos" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace pref="59" max="32767" attributes="0"/>
+                              <EmptySpace pref="70" max="32767" attributes="0"/>
                               <Component id="btnPassarMovimentacao" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -567,7 +601,7 @@
                                           <Component id="dadoUmDefesa1" alignment="0" min="-2" max="-2" attributes="0"/>
                                           <Component id="dadpDoisDefesaD" alignment="0" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <EmptySpace pref="73" max="32767" attributes="0"/>
+                                      <EmptySpace pref="100" max="32767" attributes="0"/>
                                   </Group>
                                   <Group type="102" attributes="0">
                                       <Component id="dadoTresDefesaD" min="-2" max="-2" attributes="0"/>
@@ -599,7 +633,7 @@
                                           <Component id="dadpDoisDefesaD" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="dadoDoisAtaqueD" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <EmptySpace pref="54" max="32767" attributes="0"/>
+                                      <EmptySpace pref="65" max="32767" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
                                           <Component id="dadoTresDefesaD" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="dadoTresAtaqueD" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -710,7 +744,7 @@
                                       <Component id="btnCartaDois" min="-2" pref="120" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace pref="57" max="32767" attributes="0"/>
+                              <EmptySpace pref="84" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -729,7 +763,7 @@
                                   <Component id="btnCartaCinco" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="btnCartaQuatro" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace pref="43" max="32767" attributes="0"/>
+                              <EmptySpace pref="54" max="32767" attributes="0"/>
                               <Component id="btnTrocar" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>

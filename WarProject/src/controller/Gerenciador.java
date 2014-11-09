@@ -139,6 +139,11 @@ public class Gerenciador {
             btnterritorios[t.getId()].setEnabled(true);
         }
     }
+    public void setEditavelTodosOsTerritorios(JButton[] btnterritorios){
+        for (int i = 0; i < btnterritorios.length; i++) {
+            btnterritorios[i].setEnabled(true);
+        }
+    }
     public void setTerritoriosJogadores(JButton[] btnterritorios) {
         for (Jogador jogador : jogadores) {
             for (int i = 0; i < jogador.getTerritorios().size(); i++) {
