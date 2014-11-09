@@ -7,6 +7,7 @@ package warproject;
 
 import controller.DadosJogo;
 import controller.Gerenciador;
+import java.awt.event.MouseEvent;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
 
@@ -52,7 +53,9 @@ public class TelaDeJogo extends javax.swing.JFrame {
         qntExercitos = new javax.swing.JTextField();
         labelSoldados = new javax.swing.JLabel();
         Continuar = new javax.swing.JButton();
-        reverter = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
         atacar = new javax.swing.JPanel();
         lPais = new javax.swing.JLabel();
         x = new javax.swing.JLabel();
@@ -68,6 +71,7 @@ public class TelaDeJogo extends javax.swing.JFrame {
         btnPassarAtaque = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        lPais1 = new javax.swing.JLabel();
         movimentar = new javax.swing.JPanel();
         lbMovimentacao = new javax.swing.JLabel();
         btnPassarMovimentacao = new javax.swing.JButton();
@@ -156,6 +160,9 @@ public class TelaDeJogo extends javax.swing.JFrame {
 
         console.setText("Console");
 
+        distribuir.setMaximumSize(new java.awt.Dimension(375, 180));
+        distribuir.setPreferredSize(new java.awt.Dimension(375, 180));
+
         labelPossui.setText("Você possui:");
 
         qntExercitos.setEditable(false);
@@ -175,44 +182,63 @@ public class TelaDeJogo extends javax.swing.JFrame {
             }
         });
 
-        reverter.setText("Reverter");
+        jLabel3.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel3.setText("Dica: Clique com o BOTAO ESQUERDO do mouse para aumentar os");
+
+        jLabel5.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel5.setText("exercitos do territorio escolhido ou com o BOTAO DIREITO do mouse ");
+
+        jLabel6.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel6.setText("para diminui-los.");
 
         javax.swing.GroupLayout distribuirLayout = new javax.swing.GroupLayout(distribuir);
         distribuir.setLayout(distribuirLayout);
         distribuirLayout.setHorizontalGroup(
             distribuirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(distribuirLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(labelPossui)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(qntExercitos, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(labelSoldados)
-                .addContainerGap(194, Short.MAX_VALUE))
-            .addGroup(distribuirLayout.createSequentialGroup()
-                .addComponent(reverter)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(Continuar))
+                .addGroup(distribuirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(distribuirLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(distribuirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(distribuirLayout.createSequentialGroup()
+                                .addGroup(distribuirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(distribuirLayout.createSequentialGroup()
+                                        .addComponent(labelPossui)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(qntExercitos, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(labelSoldados)))
+                                .addGap(126, 126, 126))))
+                    .addGroup(distribuirLayout.createSequentialGroup()
+                        .addGap(159, 159, 159)
+                        .addComponent(Continuar)))
+                .addContainerGap(33, Short.MAX_VALUE))
         );
         distribuirLayout.setVerticalGroup(
             distribuirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(distribuirLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, distribuirLayout.createSequentialGroup()
                 .addContainerGap()
+                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel6)
+                .addGap(14, 14, 14)
                 .addGroup(distribuirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelPossui)
                     .addComponent(qntExercitos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(labelSoldados))
-                .addContainerGap(142, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, distribuirLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(distribuirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Continuar)
-                    .addComponent(reverter)))
+                .addGap(18, 18, 18)
+                .addComponent(Continuar)
+                .addContainerGap(33, Short.MAX_VALUE))
         );
 
         painelOpcoes.addTab("Distribuir", distribuir);
 
-        lPais.setText("Pais:");
+        lPais.setText("Ataque:");
 
         x.setText("X");
 
@@ -268,69 +294,70 @@ public class TelaDeJogo extends javax.swing.JFrame {
         });
 
         jLabel1.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel1.setText("Clique no primeiro territorio para seleciona o pais que ira atacar e depois");
+        jLabel1.setText("Dica: clique no BOTAO DIREITO para selecionar o pais de ataque");
 
         jLabel2.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel2.setText("clique em outro territorio para selecionar o pais atacado");
+        jLabel2.setText("e com o BOTAO ESQUERDO para selecionar o pais de defesa.");
+
+        lPais1.setText("Defesa:");
 
         javax.swing.GroupLayout atacarLayout = new javax.swing.GroupLayout(atacar);
         atacar.setLayout(atacarLayout);
         atacarLayout.setHorizontalGroup(
             atacarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(atacarLayout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(atacarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(atacarLayout.createSequentialGroup()
-                        .addGroup(atacarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(atacarLayout.createSequentialGroup()
-                                .addGap(154, 154, 154)
-                                .addGroup(atacarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(dadoTresAtaque, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(atacarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(dadoDoisAtaque, javax.swing.GroupLayout.DEFAULT_SIZE, 20, Short.MAX_VALUE)
-                                        .addComponent(dadoUmAtaque))))
-                            .addGroup(atacarLayout.createSequentialGroup()
-                                .addGap(25, 25, 25)
-                                .addComponent(lPais)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(paisAtaque, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(x)))
-                        .addGap(18, 18, 18)
-                        .addGroup(atacarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(atacarLayout.createSequentialGroup()
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(atacarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(atacarLayout.createSequentialGroup()
+                            .addGroup(atacarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(atacarLayout.createSequentialGroup()
+                                    .addGap(102, 102, 102)
+                                    .addGroup(atacarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(dadoTresAtaque, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGroup(atacarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(dadoDoisAtaque)
+                                            .addComponent(dadoUmAtaque, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addGroup(atacarLayout.createSequentialGroup()
+                                    .addGap(43, 43, 43)
+                                    .addComponent(paisAtaque, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(x)))
+                            .addGap(18, 18, 18)
+                            .addGroup(atacarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(paisDefesa, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 62, Short.MAX_VALUE))
-                            .addGroup(atacarLayout.createSequentialGroup()
-                                .addGroup(atacarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(dadpDoisDefesa, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(dadoUmDefesa, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(dadoTresDefesa, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(atacarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(btnAtacar, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(btnPassarAtaque, javax.swing.GroupLayout.Alignment.TRAILING)))))
-                    .addGroup(atacarLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(atacarLayout.createSequentialGroup()
-                        .addGap(52, 52, 52)
+                                .addGroup(atacarLayout.createSequentialGroup()
+                                    .addGroup(atacarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(dadpDoisDefesa, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(dadoUmDefesa, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(dadoTresDefesa, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addGroup(atacarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(btnAtacar, javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(btnPassarAtaque, javax.swing.GroupLayout.Alignment.TRAILING)))))
                         .addComponent(jLabel2)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGroup(atacarLayout.createSequentialGroup()
+                            .addGap(10, 10, 10)
+                            .addComponent(lPais)
+                            .addGap(134, 134, 134)
+                            .addComponent(lPais1))))
                 .addContainerGap())
         );
         atacarLayout.setVerticalGroup(
             atacarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, atacarLayout.createSequentialGroup()
-                .addContainerGap()
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
+                .addGroup(atacarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lPais)
+                    .addComponent(lPais1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(atacarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(atacarLayout.createSequentialGroup()
-                        .addGroup(atacarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lPais)
-                            .addComponent(paisAtaque, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(paisAtaque, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(6, 6, 6)
                         .addGroup(atacarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(dadoUmAtaque, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -410,11 +437,11 @@ public class TelaDeJogo extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(movimentarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(paisPara, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(enviaExercitos))))
-                .addContainerGap(161, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, movimentarLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(btnPassarMovimentacao))
+                            .addComponent(enviaExercitos)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, movimentarLayout.createSequentialGroup()
+                        .addComponent(btnPassarMovimentacao)
+                        .addGap(21, 21, 21)))
+                .addContainerGap(126, Short.MAX_VALUE))
         );
         movimentarLayout.setVerticalGroup(
             movimentarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -432,8 +459,9 @@ public class TelaDeJogo extends javax.swing.JFrame {
                     .addComponent(numEx)
                     .addComponent(qtdExercitos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(enviaExercitos))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
-                .addComponent(btnPassarMovimentacao))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
+                .addComponent(btnPassarMovimentacao)
+                .addGap(30, 30, 30))
         );
 
         painelOpcoes.addTab("Movimentar", movimentar);
@@ -490,11 +518,14 @@ public class TelaDeJogo extends javax.swing.JFrame {
                             .addComponent(paisDefesaD, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(dadoUmDefesa1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(dadpDoisDefesaD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(100, Short.MAX_VALUE))
+                        .addContainerGap(65, Short.MAX_VALUE))
                     .addGroup(defenderLayout.createSequentialGroup()
                         .addComponent(dadoTresDefesaD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnDefenderD))))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, defenderLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(btnDefenderD)
+                        .addGap(39, 39, 39))))
         );
         defenderLayout.setVerticalGroup(
             defenderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -520,8 +551,9 @@ public class TelaDeJogo extends javax.swing.JFrame {
                             .addComponent(dadoTresAtaqueD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, defenderLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(btnDefenderD))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnDefenderD)
+                        .addGap(47, 47, 47))))
         );
 
         painelOpcoes.addTab("Defender", defender);
@@ -589,23 +621,22 @@ public class TelaDeJogo extends javax.swing.JFrame {
         cartasLayout.setHorizontalGroup(
             cartasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(cartasLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnTrocar))
-            .addGroup(cartasLayout.createSequentialGroup()
                 .addGroup(cartasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnCartaTres, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnCartaObjetivo, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(cartasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(cartasLayout.createSequentialGroup()
-                        .addComponent(btnCartaQuatro)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnCartaCinco, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(cartasLayout.createSequentialGroup()
                         .addComponent(btnCartaUm, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnCartaDois, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(84, Short.MAX_VALUE))
+                        .addComponent(btnCartaDois, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(cartasLayout.createSequentialGroup()
+                        .addGroup(cartasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(btnTrocar)
+                            .addComponent(btnCartaQuatro))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnCartaCinco, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(49, Short.MAX_VALUE))
         );
         cartasLayout.setVerticalGroup(
             cartasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -620,8 +651,9 @@ public class TelaDeJogo extends javax.swing.JFrame {
                     .addComponent(btnCartaTres, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnCartaCinco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnCartaQuatro))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
-                .addComponent(btnTrocar))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
+                .addComponent(btnTrocar)
+                .addGap(22, 22, 22))
         );
 
         painelOpcoes.addTab("Cartas", cartas);
@@ -651,8 +683,8 @@ public class TelaDeJogo extends javax.swing.JFrame {
                             .addComponent(textNomeDoJogador, javax.swing.GroupLayout.DEFAULT_SIZE, 194, Short.MAX_VALUE)
                             .addComponent(textCorDoJogador))))
                 .addGap(18, 18, 18)
-                .addComponent(painelOpcoes)
-                .addContainerGap())
+                .addComponent(painelOpcoes, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(45, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -686,9 +718,9 @@ public class TelaDeJogo extends javax.swing.JFrame {
         btnTaurica.setBorderPainted(false);
         btnTaurica.setFocusable(false);
         btnTaurica.setName("btnTaurica"); // NOI18N
-        btnTaurica.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnTauricaActionPerformed(evt);
+        btnTaurica.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnTauricaMouseClicked(evt);
             }
         });
         telaInteira.add(btnTaurica, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 130, 18, 18));
@@ -699,9 +731,9 @@ public class TelaDeJogo extends javax.swing.JFrame {
         btnBithynia.setBorderPainted(false);
         btnBithynia.setFocusable(false);
         btnBithynia.setName("btnBithynia"); // NOI18N
-        btnBithynia.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBithyniaActionPerformed(evt);
+        btnBithynia.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnBithyniaMouseClicked(evt);
             }
         });
         telaInteira.add(btnBithynia, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 190, 18, 18));
@@ -712,9 +744,9 @@ public class TelaDeJogo extends javax.swing.JFrame {
         btnDacia.setBorderPainted(false);
         btnDacia.setFocusable(false);
         btnDacia.setName("btnDacia"); // NOI18N
-        btnDacia.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnDaciaActionPerformed(evt);
+        btnDacia.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnDaciaMouseClicked(evt);
             }
         });
         telaInteira.add(btnDacia, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 140, 18, 18));
@@ -725,9 +757,9 @@ public class TelaDeJogo extends javax.swing.JFrame {
         btnMoesia.setBorderPainted(false);
         btnMoesia.setFocusable(false);
         btnMoesia.setName("btnMoesia"); // NOI18N
-        btnMoesia.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnMoesiaActionPerformed(evt);
+        btnMoesia.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnMoesiaMouseClicked(evt);
             }
         });
         telaInteira.add(btnMoesia, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 180, 18, 18));
@@ -738,9 +770,9 @@ public class TelaDeJogo extends javax.swing.JFrame {
         btnThracia.setBorderPainted(false);
         btnThracia.setFocusable(false);
         btnThracia.setName("btnThracia"); // NOI18N
-        btnThracia.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnThraciaActionPerformed(evt);
+        btnThracia.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnThraciaMouseClicked(evt);
             }
         });
         telaInteira.add(btnThracia, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 200, 18, 18));
@@ -751,9 +783,9 @@ public class TelaDeJogo extends javax.swing.JFrame {
         btnMacedonia.setBorderPainted(false);
         btnMacedonia.setFocusable(false);
         btnMacedonia.setName("btnMacedonia"); // NOI18N
-        btnMacedonia.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnMacedoniaActionPerformed(evt);
+        btnMacedonia.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnMacedoniaMouseClicked(evt);
             }
         });
         telaInteira.add(btnMacedonia, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 230, 18, 18));
@@ -764,9 +796,9 @@ public class TelaDeJogo extends javax.swing.JFrame {
         btnAchaca.setBorderPainted(false);
         btnAchaca.setFocusable(false);
         btnAchaca.setName("btnAchaca"); // NOI18N
-        btnAchaca.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAchacaActionPerformed(evt);
+        btnAchaca.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnAchacaMouseClicked(evt);
             }
         });
         telaInteira.add(btnAchaca, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 280, 18, 18));
@@ -777,9 +809,9 @@ public class TelaDeJogo extends javax.swing.JFrame {
         btnCreta.setBorderPainted(false);
         btnCreta.setFocusable(false);
         btnCreta.setName("btnCreta"); // NOI18N
-        btnCreta.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCretaActionPerformed(evt);
+        btnCreta.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnCretaMouseClicked(evt);
             }
         });
         telaInteira.add(btnCreta, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 320, 18, 18));
@@ -790,9 +822,9 @@ public class TelaDeJogo extends javax.swing.JFrame {
         btnAsia.setBorderPainted(false);
         btnAsia.setFocusable(false);
         btnAsia.setName("btnAsia"); // NOI18N
-        btnAsia.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAsiaActionPerformed(evt);
+        btnAsia.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnAsiaMouseClicked(evt);
             }
         });
         telaInteira.add(btnAsia, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 260, 18, 18));
@@ -803,9 +835,9 @@ public class TelaDeJogo extends javax.swing.JFrame {
         btnAssyria.setBorderPainted(false);
         btnAssyria.setFocusable(false);
         btnAssyria.setName("btnAssyria"); // NOI18N
-        btnAssyria.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAssyriaActionPerformed(evt);
+        btnAssyria.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnAssyriaMouseClicked(evt);
             }
         });
         telaInteira.add(btnAssyria, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 250, 18, 18));
@@ -816,9 +848,9 @@ public class TelaDeJogo extends javax.swing.JFrame {
         btnGalatia.setBorderPainted(false);
         btnGalatia.setFocusable(false);
         btnGalatia.setName("btnGalatia"); // NOI18N
-        btnGalatia.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnGalatiaActionPerformed(evt);
+        btnGalatia.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnGalatiaMouseClicked(evt);
             }
         });
         telaInteira.add(btnGalatia, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 220, 18, 18));
@@ -829,9 +861,9 @@ public class TelaDeJogo extends javax.swing.JFrame {
         btnCappadocia.setBorderPainted(false);
         btnCappadocia.setFocusable(false);
         btnCappadocia.setName("btnCappadocia"); // NOI18N
-        btnCappadocia.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCappadociaActionPerformed(evt);
+        btnCappadocia.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnCappadociaMouseClicked(evt);
             }
         });
         telaInteira.add(btnCappadocia, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 220, 18, 18));
@@ -842,9 +874,9 @@ public class TelaDeJogo extends javax.swing.JFrame {
         btnPonfus.setBorderPainted(false);
         btnPonfus.setFocusable(false);
         btnPonfus.setName("btnPonfus"); // NOI18N
-        btnPonfus.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPonfusActionPerformed(evt);
+        btnPonfus.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnPonfusMouseClicked(evt);
             }
         });
         telaInteira.add(btnPonfus, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 180, 18, 18));
@@ -855,9 +887,9 @@ public class TelaDeJogo extends javax.swing.JFrame {
         btnArmenia.setBorderPainted(false);
         btnArmenia.setFocusable(false);
         btnArmenia.setName("btnArmenia"); // NOI18N
-        btnArmenia.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnArmeniaActionPerformed(evt);
+        btnArmenia.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnArmeniaMouseClicked(evt);
             }
         });
         telaInteira.add(btnArmenia, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 200, 18, 18));
@@ -868,9 +900,9 @@ public class TelaDeJogo extends javax.swing.JFrame {
         btnMesopotamia.setBorderPainted(false);
         btnMesopotamia.setFocusable(false);
         btnMesopotamia.setName("btnMesopotamia"); // NOI18N
-        btnMesopotamia.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnMesopotamiaActionPerformed(evt);
+        btnMesopotamia.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnMesopotamiaMouseClicked(evt);
             }
         });
         telaInteira.add(btnMesopotamia, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 270, 18, 18));
@@ -881,9 +913,9 @@ public class TelaDeJogo extends javax.swing.JFrame {
         btnSyria.setBorderPainted(false);
         btnSyria.setFocusable(false);
         btnSyria.setName("btnSyria"); // NOI18N
-        btnSyria.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSyriaActionPerformed(evt);
+        btnSyria.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnSyriaMouseClicked(evt);
             }
         });
         telaInteira.add(btnSyria, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 290, 18, 18));
@@ -894,9 +926,9 @@ public class TelaDeJogo extends javax.swing.JFrame {
         btnArabiaPetrae.setBorderPainted(false);
         btnArabiaPetrae.setFocusable(false);
         btnArabiaPetrae.setName("btnArabiaPetrae"); // NOI18N
-        btnArabiaPetrae.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnArabiaPetraeActionPerformed(evt);
+        btnArabiaPetrae.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnArabiaPetraeMouseClicked(evt);
             }
         });
         telaInteira.add(btnArabiaPetrae, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 340, 18, 18));
@@ -907,9 +939,9 @@ public class TelaDeJogo extends javax.swing.JFrame {
         btnJudaca.setBorderPainted(false);
         btnJudaca.setFocusable(false);
         btnJudaca.setName("btnJudaca"); // NOI18N
-        btnJudaca.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnJudacaActionPerformed(evt);
+        btnJudaca.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnJudacaMouseClicked(evt);
             }
         });
         telaInteira.add(btnJudaca, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 340, 18, 18));
@@ -920,9 +952,9 @@ public class TelaDeJogo extends javax.swing.JFrame {
         btnAegyptus.setBorderPainted(false);
         btnAegyptus.setFocusable(false);
         btnAegyptus.setName("btnAegyptus"); // NOI18N
-        btnAegyptus.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAegyptusActionPerformed(evt);
+        btnAegyptus.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnAegyptusMouseClicked(evt);
             }
         });
         telaInteira.add(btnAegyptus, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 410, 18, 18));
@@ -933,9 +965,9 @@ public class TelaDeJogo extends javax.swing.JFrame {
         btnCyrenaica.setBorderPainted(false);
         btnCyrenaica.setFocusable(false);
         btnCyrenaica.setName("btnCyrenaica"); // NOI18N
-        btnCyrenaica.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCyrenaicaActionPerformed(evt);
+        btnCyrenaica.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnCyrenaicaMouseClicked(evt);
             }
         });
         telaInteira.add(btnCyrenaica, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 390, 18, 18));
@@ -946,9 +978,9 @@ public class TelaDeJogo extends javax.swing.JFrame {
         btnNumidia.setBorderPainted(false);
         btnNumidia.setFocusable(false);
         btnNumidia.setName("btnNumidia"); // NOI18N
-        btnNumidia.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnNumidiaActionPerformed(evt);
+        btnNumidia.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnNumidiaMouseClicked(evt);
             }
         });
         telaInteira.add(btnNumidia, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 330, 18, 18));
@@ -959,9 +991,9 @@ public class TelaDeJogo extends javax.swing.JFrame {
         btnMauritania.setBorderPainted(false);
         btnMauritania.setFocusable(false);
         btnMauritania.setName("btnMauritania"); // NOI18N
-        btnMauritania.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnMauritaniaActionPerformed(evt);
+        btnMauritania.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnMauritaniaMouseClicked(evt);
             }
         });
         telaInteira.add(btnMauritania, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 310, 18, 18));
@@ -972,9 +1004,9 @@ public class TelaDeJogo extends javax.swing.JFrame {
         btnAfrica.setBorderPainted(false);
         btnAfrica.setFocusable(false);
         btnAfrica.setName("btnAfrica"); // NOI18N
-        btnAfrica.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAfricaActionPerformed(evt);
+        btnAfrica.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnAfricaMouseClicked(evt);
             }
         });
         telaInteira.add(btnAfrica, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 320, 18, 18));
@@ -985,9 +1017,9 @@ public class TelaDeJogo extends javax.swing.JFrame {
         btnSicilia.setBorderPainted(false);
         btnSicilia.setFocusable(false);
         btnSicilia.setName("btnSicilia"); // NOI18N
-        btnSicilia.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSiciliaActionPerformed(evt);
+        btnSicilia.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnSiciliaMouseClicked(evt);
             }
         });
         telaInteira.add(btnSicilia, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 290, 18, 18));
@@ -998,9 +1030,9 @@ public class TelaDeJogo extends javax.swing.JFrame {
         btnItalia.setBorderPainted(false);
         btnItalia.setFocusable(false);
         btnItalia.setName("btnItalia"); // NOI18N
-        btnItalia.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnItaliaActionPerformed(evt);
+        btnItalia.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnItaliaMouseClicked(evt);
             }
         });
         telaInteira.add(btnItalia, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 190, 18, 18));
@@ -1011,9 +1043,9 @@ public class TelaDeJogo extends javax.swing.JFrame {
         btnSardina.setBorderPainted(false);
         btnSardina.setFocusable(false);
         btnSardina.setName("btnSardina"); // NOI18N
-        btnSardina.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSardinaActionPerformed(evt);
+        btnSardina.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnSardinaMouseClicked(evt);
             }
         });
         telaInteira.add(btnSardina, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 250, 18, 18));
@@ -1024,9 +1056,9 @@ public class TelaDeJogo extends javax.swing.JFrame {
         btnCorsica.setBorderPainted(false);
         btnCorsica.setFocusable(false);
         btnCorsica.setName("btnCorsica"); // NOI18N
-        btnCorsica.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCorsicaActionPerformed(evt);
+        btnCorsica.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnCorsicaMouseClicked(evt);
             }
         });
         telaInteira.add(btnCorsica, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 210, 18, 18));
@@ -1037,9 +1069,9 @@ public class TelaDeJogo extends javax.swing.JFrame {
         btnRaetia.setBorderPainted(false);
         btnRaetia.setFocusable(false);
         btnRaetia.setName("btnRaetia"); // NOI18N
-        btnRaetia.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRaetiaActionPerformed(evt);
+        btnRaetia.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnRaetiaMouseClicked(evt);
             }
         });
         telaInteira.add(btnRaetia, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 130, 18, 18));
@@ -1050,9 +1082,9 @@ public class TelaDeJogo extends javax.swing.JFrame {
         btnGermaniaInferior.setBorderPainted(false);
         btnGermaniaInferior.setFocusable(false);
         btnGermaniaInferior.setName("btnGermaniaInferior"); // NOI18N
-        btnGermaniaInferior.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnGermaniaInferiorActionPerformed(evt);
+        btnGermaniaInferior.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnGermaniaInferiorMouseClicked(evt);
             }
         });
         telaInteira.add(btnGermaniaInferior, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 100, 18, 18));
@@ -1063,9 +1095,9 @@ public class TelaDeJogo extends javax.swing.JFrame {
         btnBelgica.setBorderPainted(false);
         btnBelgica.setFocusable(false);
         btnBelgica.setName("btnBelgica"); // NOI18N
-        btnBelgica.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBelgicaActionPerformed(evt);
+        btnBelgica.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnBelgicaMouseClicked(evt);
             }
         });
         telaInteira.add(btnBelgica, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 90, 18, 18));
@@ -1076,9 +1108,9 @@ public class TelaDeJogo extends javax.swing.JFrame {
         btnLugdunensis.setBorderPainted(false);
         btnLugdunensis.setFocusable(false);
         btnLugdunensis.setName("btnLugdunensis"); // NOI18N
-        btnLugdunensis.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLugdunensisActionPerformed(evt);
+        btnLugdunensis.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnLugdunensisMouseClicked(evt);
             }
         });
         telaInteira.add(btnLugdunensis, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 110, 18, 18));
@@ -1089,9 +1121,9 @@ public class TelaDeJogo extends javax.swing.JFrame {
         btnAquitania.setBorderPainted(false);
         btnAquitania.setFocusable(false);
         btnAquitania.setName("btnAquitania"); // NOI18N
-        btnAquitania.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAquitaniaActionPerformed(evt);
+        btnAquitania.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnAquitaniaMouseClicked(evt);
             }
         });
         telaInteira.add(btnAquitania, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 160, 18, 18));
@@ -1102,9 +1134,9 @@ public class TelaDeJogo extends javax.swing.JFrame {
         btnLusitania.setBorderPainted(false);
         btnLusitania.setFocusable(false);
         btnLusitania.setName("btnLusitania"); // NOI18N
-        btnLusitania.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLusitaniaActionPerformed(evt);
+        btnLusitania.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnLusitaniaMouseClicked(evt);
             }
         });
         telaInteira.add(btnLusitania, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, 18, 18));
@@ -1115,9 +1147,9 @@ public class TelaDeJogo extends javax.swing.JFrame {
         btnTarraconensis.setBorderPainted(false);
         btnTarraconensis.setFocusable(false);
         btnTarraconensis.setName("btnTarraconensis"); // NOI18N
-        btnTarraconensis.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnTarraconensisActionPerformed(evt);
+        btnTarraconensis.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnTarraconensisMouseClicked(evt);
             }
         });
         telaInteira.add(btnTarraconensis, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 210, 18, 18));
@@ -1128,9 +1160,9 @@ public class TelaDeJogo extends javax.swing.JFrame {
         btnBaetica.setBorderPainted(false);
         btnBaetica.setFocusable(false);
         btnBaetica.setName("btnBaetica"); // NOI18N
-        btnBaetica.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBaeticaActionPerformed(evt);
+        btnBaetica.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnBaeticaMouseClicked(evt);
             }
         });
         telaInteira.add(btnBaetica, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 270, 18, 18));
@@ -1141,9 +1173,9 @@ public class TelaDeJogo extends javax.swing.JFrame {
         btnNarbonensis.setBorderPainted(false);
         btnNarbonensis.setFocusable(false);
         btnNarbonensis.setName("btnNarbonensis"); // NOI18N
-        btnNarbonensis.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnNarbonensisActionPerformed(evt);
+        btnNarbonensis.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnNarbonensisMouseClicked(evt);
             }
         });
         telaInteira.add(btnNarbonensis, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 190, 18, 18));
@@ -1154,9 +1186,9 @@ public class TelaDeJogo extends javax.swing.JFrame {
         btnBritania.setBorderPainted(false);
         btnBritania.setFocusable(false);
         btnBritania.setName("btnBritania"); // NOI18N
-        btnBritania.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBritaniaActionPerformed(evt);
+        btnBritania.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnBritaniaMouseClicked(evt);
             }
         });
         telaInteira.add(btnBritania, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 50, 18, 18));
@@ -1167,9 +1199,9 @@ public class TelaDeJogo extends javax.swing.JFrame {
         btnGermaniaSuperior.setBorderPainted(false);
         btnGermaniaSuperior.setFocusable(false);
         btnGermaniaSuperior.setName("btnGermaniaSuperior"); // NOI18N
-        btnGermaniaSuperior.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnGermaniaSuperiorActionPerformed(evt);
+        btnGermaniaSuperior.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnGermaniaSuperiorMouseClicked(evt);
             }
         });
         telaInteira.add(btnGermaniaSuperior, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 60, 18, 18));
@@ -1180,9 +1212,9 @@ public class TelaDeJogo extends javax.swing.JFrame {
         btnPandomia.setBorderPainted(false);
         btnPandomia.setFocusable(false);
         btnPandomia.setName("btnPandomia"); // NOI18N
-        btnPandomia.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPandomiaActionPerformed(evt);
+        btnPandomia.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnPandomiaMouseClicked(evt);
             }
         });
         telaInteira.add(btnPandomia, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 150, 18, 18));
@@ -1193,9 +1225,9 @@ public class TelaDeJogo extends javax.swing.JFrame {
         btnIllyricum.setBorderPainted(false);
         btnIllyricum.setFocusable(false);
         btnIllyricum.setName("btnIllyricum"); // NOI18N
-        btnIllyricum.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnIllyricumActionPerformed(evt);
+        btnIllyricum.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnIllyricumMouseClicked(evt);
             }
         });
         telaInteira.add(btnIllyricum, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 180, 18, 18));
@@ -1206,9 +1238,9 @@ public class TelaDeJogo extends javax.swing.JFrame {
         btnLycia.setBorderPainted(false);
         btnLycia.setFocusable(false);
         btnLycia.setName("btnLycia"); // NOI18N
-        btnLycia.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLyciaActionPerformed(evt);
+        btnLycia.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnLyciaMouseClicked(evt);
             }
         });
         telaInteira.add(btnLycia, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 270, 18, 18));
@@ -1219,9 +1251,9 @@ public class TelaDeJogo extends javax.swing.JFrame {
         btnCyprus.setBorderPainted(false);
         btnCyprus.setFocusable(false);
         btnCyprus.setName("btnCyprus"); // NOI18N
-        btnCyprus.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCyprusActionPerformed(evt);
+        btnCyprus.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnCyprusMouseClicked(evt);
             }
         });
         telaInteira.add(btnCyprus, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 310, 18, 18));
@@ -1247,185 +1279,173 @@ public class TelaDeJogo extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void qntExercitosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_qntExercitosActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_qntExercitosActionPerformed
+    private void btnBritaniaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBritaniaMouseClicked
+        metodoDosBotoes(btnBritania, evt);
+    }//GEN-LAST:event_btnBritaniaMouseClicked
 
-    private void paisParaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_paisParaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_paisParaActionPerformed
+    private void btnGermaniaSuperiorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnGermaniaSuperiorMouseClicked
+        metodoDosBotoes(btnGermaniaSuperior, evt);
+    }//GEN-LAST:event_btnGermaniaSuperiorMouseClicked
 
-    private void dadoUmDefesa1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dadoUmDefesa1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_dadoUmDefesa1ActionPerformed
+    private void btnBelgicaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBelgicaMouseClicked
+        metodoDosBotoes(btnBelgica, evt);
+    }//GEN-LAST:event_btnBelgicaMouseClicked
 
-    private void btnTauricaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTauricaActionPerformed
-        metodoDosBotoes(btnTaurica);
-    }//GEN-LAST:event_btnTauricaActionPerformed
+    private void btnLugdunensisMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLugdunensisMouseClicked
+        metodoDosBotoes(btnLugdunensis, evt);
+    }//GEN-LAST:event_btnLugdunensisMouseClicked
 
-    private void btnBithyniaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBithyniaActionPerformed
-        metodoDosBotoes(btnBithynia);
-    }//GEN-LAST:event_btnBithyniaActionPerformed
+    private void btnAquitaniaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAquitaniaMouseClicked
+        metodoDosBotoes(btnAquitania, evt);
+    }//GEN-LAST:event_btnAquitaniaMouseClicked
 
-    private void btnDaciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDaciaActionPerformed
-        metodoDosBotoes(btnDacia);
-    }//GEN-LAST:event_btnDaciaActionPerformed
+    private void btnNarbonensisMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnNarbonensisMouseClicked
+        metodoDosBotoes(btnNarbonensis, evt);
+    }//GEN-LAST:event_btnNarbonensisMouseClicked
 
-    private void btnMoesiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMoesiaActionPerformed
-        metodoDosBotoes(btnMoesia);
-    }//GEN-LAST:event_btnMoesiaActionPerformed
+    private void btnTarraconensisMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnTarraconensisMouseClicked
+        metodoDosBotoes(btnTarraconensis, evt);
+    }//GEN-LAST:event_btnTarraconensisMouseClicked
 
-    private void btnThraciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThraciaActionPerformed
-        metodoDosBotoes(btnThracia);
-    }//GEN-LAST:event_btnThraciaActionPerformed
+    private void btnBaeticaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBaeticaMouseClicked
+        metodoDosBotoes(btnBaetica, evt);
+    }//GEN-LAST:event_btnBaeticaMouseClicked
 
-    private void btnMacedoniaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMacedoniaActionPerformed
-        metodoDosBotoes(btnMacedonia);
-    }//GEN-LAST:event_btnMacedoniaActionPerformed
+    private void btnLusitaniaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLusitaniaMouseClicked
+        metodoDosBotoes(btnLusitania, evt);
+    }//GEN-LAST:event_btnLusitaniaMouseClicked
 
-    private void btnAchacaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAchacaActionPerformed
-        metodoDosBotoes(btnAchaca);
-    }//GEN-LAST:event_btnAchacaActionPerformed
+    private void btnGermaniaInferiorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnGermaniaInferiorMouseClicked
+        metodoDosBotoes(btnGermaniaInferior, evt);
+    }//GEN-LAST:event_btnGermaniaInferiorMouseClicked
 
-    private void btnCretaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCretaActionPerformed
-        metodoDosBotoes(btnCreta);
-    }//GEN-LAST:event_btnCretaActionPerformed
+    private void btnRaetiaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRaetiaMouseClicked
+        metodoDosBotoes(btnRaetia, evt);
+    }//GEN-LAST:event_btnRaetiaMouseClicked
 
-    private void btnAsiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAsiaActionPerformed
-        metodoDosBotoes(btnAsia);
-    }//GEN-LAST:event_btnAsiaActionPerformed
+    private void btnPandomiaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPandomiaMouseClicked
+        metodoDosBotoes(btnPandomia, evt);
+    }//GEN-LAST:event_btnPandomiaMouseClicked
 
-    private void btnAssyriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAssyriaActionPerformed
-        metodoDosBotoes(btnAssyria);
-    }//GEN-LAST:event_btnAssyriaActionPerformed
+    private void btnIllyricumMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnIllyricumMouseClicked
+        metodoDosBotoes(btnIllyricum, evt);
+    }//GEN-LAST:event_btnIllyricumMouseClicked
 
-    private void btnGalatiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGalatiaActionPerformed
-        metodoDosBotoes(btnGalatia);
-    }//GEN-LAST:event_btnGalatiaActionPerformed
+    private void btnItaliaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnItaliaMouseClicked
+        metodoDosBotoes(btnItalia, evt);
+    }//GEN-LAST:event_btnItaliaMouseClicked
 
-    private void btnCappadociaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCappadociaActionPerformed
-        metodoDosBotoes(btnCappadocia);
-    }//GEN-LAST:event_btnCappadociaActionPerformed
+    private void btnCorsicaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCorsicaMouseClicked
+        metodoDosBotoes(btnCorsica, evt);
+    }//GEN-LAST:event_btnCorsicaMouseClicked
 
-    private void btnPonfusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPonfusActionPerformed
-        metodoDosBotoes(btnPonfus);
-    }//GEN-LAST:event_btnPonfusActionPerformed
+    private void btnSardinaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSardinaMouseClicked
+        metodoDosBotoes(btnSardina, evt);
+    }//GEN-LAST:event_btnSardinaMouseClicked
 
-    private void btnArmeniaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnArmeniaActionPerformed
-        metodoDosBotoes(btnArmenia);
-    }//GEN-LAST:event_btnArmeniaActionPerformed
+    private void btnSiciliaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSiciliaMouseClicked
+        metodoDosBotoes(btnSicilia, evt);
+    }//GEN-LAST:event_btnSiciliaMouseClicked
 
-    private void btnMesopotamiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMesopotamiaActionPerformed
-        metodoDosBotoes(btnMesopotamia);
-    }//GEN-LAST:event_btnMesopotamiaActionPerformed
+    private void btnDaciaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDaciaMouseClicked
+        metodoDosBotoes(btnDacia, evt);
+    }//GEN-LAST:event_btnDaciaMouseClicked
 
-    private void btnSyriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSyriaActionPerformed
-        metodoDosBotoes(btnSyria);
-    }//GEN-LAST:event_btnSyriaActionPerformed
+    private void btnMoesiaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMoesiaMouseClicked
+        metodoDosBotoes(btnMoesia, evt);
+    }//GEN-LAST:event_btnMoesiaMouseClicked
 
-    private void btnArabiaPetraeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnArabiaPetraeActionPerformed
-        metodoDosBotoes(btnArabiaPetrae);
-    }//GEN-LAST:event_btnArabiaPetraeActionPerformed
+    private void btnThraciaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnThraciaMouseClicked
+        metodoDosBotoes(btnThracia, evt);
+    }//GEN-LAST:event_btnThraciaMouseClicked
 
-    private void btnJudacaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnJudacaActionPerformed
-        metodoDosBotoes(btnJudaca);
-    }//GEN-LAST:event_btnJudacaActionPerformed
+    private void btnMacedoniaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMacedoniaMouseClicked
+        metodoDosBotoes(btnMacedonia, evt);
+    }//GEN-LAST:event_btnMacedoniaMouseClicked
 
-    private void btnAegyptusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAegyptusActionPerformed
-        metodoDosBotoes(btnAegyptus);
-    }//GEN-LAST:event_btnAegyptusActionPerformed
+    private void btnAchacaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAchacaMouseClicked
+        metodoDosBotoes(btnAchaca, evt);
+    }//GEN-LAST:event_btnAchacaMouseClicked
 
-    private void btnCyrenaicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCyrenaicaActionPerformed
-        metodoDosBotoes(btnCyrenaica);
-    }//GEN-LAST:event_btnCyrenaicaActionPerformed
+    private void btnCretaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCretaMouseClicked
+        metodoDosBotoes(btnCreta, evt);
+    }//GEN-LAST:event_btnCretaMouseClicked
 
-    private void btnNumidiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNumidiaActionPerformed
-        metodoDosBotoes(btnNumidia);
-    }//GEN-LAST:event_btnNumidiaActionPerformed
+    private void btnAsiaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAsiaMouseClicked
+        metodoDosBotoes(btnAsia, evt);
+    }//GEN-LAST:event_btnAsiaMouseClicked
 
-    private void btnMauritaniaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMauritaniaActionPerformed
-        metodoDosBotoes(btnMauritania);
-    }//GEN-LAST:event_btnMauritaniaActionPerformed
+    private void btnGalatiaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnGalatiaMouseClicked
+        metodoDosBotoes(btnGalatia, evt);
+    }//GEN-LAST:event_btnGalatiaMouseClicked
 
-    private void btnAfricaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAfricaActionPerformed
-        metodoDosBotoes(btnAfrica);
-    }//GEN-LAST:event_btnAfricaActionPerformed
+    private void btnBithyniaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBithyniaMouseClicked
+        metodoDosBotoes(btnBithynia, evt);
+    }//GEN-LAST:event_btnBithyniaMouseClicked
 
-    private void btnSiciliaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSiciliaActionPerformed
-        metodoDosBotoes(btnSicilia);
-    }//GEN-LAST:event_btnSiciliaActionPerformed
+    private void btnTauricaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnTauricaMouseClicked
+        metodoDosBotoes(btnTaurica, evt);
+    }//GEN-LAST:event_btnTauricaMouseClicked
 
-    private void btnItaliaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnItaliaActionPerformed
-        metodoDosBotoes(btnItalia);
-    }//GEN-LAST:event_btnItaliaActionPerformed
+    private void btnPonfusMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPonfusMouseClicked
+        metodoDosBotoes(btnPonfus, evt);
+    }//GEN-LAST:event_btnPonfusMouseClicked
 
-    private void btnSardinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSardinaActionPerformed
-        metodoDosBotoes(btnSardina);
-    }//GEN-LAST:event_btnSardinaActionPerformed
+    private void btnArmeniaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnArmeniaMouseClicked
+        metodoDosBotoes(btnArmenia, evt); 
+    }//GEN-LAST:event_btnArmeniaMouseClicked
 
-    private void btnCorsicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCorsicaActionPerformed
-        metodoDosBotoes(btnCorsica);
-    }//GEN-LAST:event_btnCorsicaActionPerformed
+    private void btnAssyriaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAssyriaMouseClicked
+        metodoDosBotoes(btnAssyria, evt);
+    }//GEN-LAST:event_btnAssyriaMouseClicked
 
-    private void btnRaetiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRaetiaActionPerformed
-        metodoDosBotoes(btnRaetia);
-    }//GEN-LAST:event_btnRaetiaActionPerformed
+    private void btnMesopotamiaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMesopotamiaMouseClicked
+        metodoDosBotoes(btnMesopotamia, evt);
+    }//GEN-LAST:event_btnMesopotamiaMouseClicked
 
-    private void btnGermaniaInferiorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGermaniaInferiorActionPerformed
-        metodoDosBotoes(btnGermaniaInferior);
-    }//GEN-LAST:event_btnGermaniaInferiorActionPerformed
+    private void btnCappadociaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCappadociaMouseClicked
+        metodoDosBotoes(btnCappadocia, evt);
+    }//GEN-LAST:event_btnCappadociaMouseClicked
 
-    private void btnBelgicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBelgicaActionPerformed
-        metodoDosBotoes(btnBelgica);
-    }//GEN-LAST:event_btnBelgicaActionPerformed
+    private void btnLyciaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLyciaMouseClicked
+        metodoDosBotoes(btnLycia, evt);
+    }//GEN-LAST:event_btnLyciaMouseClicked
 
-    private void btnLugdunensisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLugdunensisActionPerformed
-        metodoDosBotoes(btnLugdunensis);
-    }//GEN-LAST:event_btnLugdunensisActionPerformed
+    private void btnCyprusMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCyprusMouseClicked
+        metodoDosBotoes(btnCyprus, evt);
+    }//GEN-LAST:event_btnCyprusMouseClicked
 
-    private void btnAquitaniaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAquitaniaActionPerformed
-        metodoDosBotoes(btnAquitania);
-    }//GEN-LAST:event_btnAquitaniaActionPerformed
+    private void btnSyriaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSyriaMouseClicked
+        metodoDosBotoes(btnSyria, evt);
+    }//GEN-LAST:event_btnSyriaMouseClicked
 
-    private void btnTarraconensisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTarraconensisActionPerformed
-        metodoDosBotoes(btnTarraconensis);
-    }//GEN-LAST:event_btnTarraconensisActionPerformed
+    private void btnArabiaPetraeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnArabiaPetraeMouseClicked
+        metodoDosBotoes(btnArabiaPetrae, evt);
+    }//GEN-LAST:event_btnArabiaPetraeMouseClicked
 
-    private void btnLusitaniaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLusitaniaActionPerformed
-        metodoDosBotoes(btnLusitania);
-    }//GEN-LAST:event_btnLusitaniaActionPerformed
+    private void btnJudacaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnJudacaMouseClicked
+        metodoDosBotoes(btnJudaca, evt);
+    }//GEN-LAST:event_btnJudacaMouseClicked
 
-    private void btnBaeticaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBaeticaActionPerformed
-        metodoDosBotoes(btnBaetica);
-    }//GEN-LAST:event_btnBaeticaActionPerformed
+    private void btnAegyptusMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAegyptusMouseClicked
+        metodoDosBotoes(btnAegyptus, evt);
+    }//GEN-LAST:event_btnAegyptusMouseClicked
 
-    private void btnNarbonensisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNarbonensisActionPerformed
-        metodoDosBotoes(btnNarbonensis);
-    }//GEN-LAST:event_btnNarbonensisActionPerformed
+    private void btnCyrenaicaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCyrenaicaMouseClicked
+        metodoDosBotoes(btnCyrenaica, evt);
+    }//GEN-LAST:event_btnCyrenaicaMouseClicked
 
-    private void btnBritaniaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBritaniaActionPerformed
-        metodoDosBotoes(btnBritania);
-    }//GEN-LAST:event_btnBritaniaActionPerformed
+    private void btnNumidiaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnNumidiaMouseClicked
+        metodoDosBotoes(btnNumidia, evt);
+    }//GEN-LAST:event_btnNumidiaMouseClicked
 
-    private void btnGermaniaSuperiorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGermaniaSuperiorActionPerformed
-        metodoDosBotoes(btnGermaniaSuperior);
-    }//GEN-LAST:event_btnGermaniaSuperiorActionPerformed
+    private void btnAfricaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAfricaMouseClicked
+        metodoDosBotoes(btnAfrica, evt);
+    }//GEN-LAST:event_btnAfricaMouseClicked
 
-    private void btnPandomiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPandomiaActionPerformed
-        metodoDosBotoes(btnPandomia);
-    }//GEN-LAST:event_btnPandomiaActionPerformed
-
-    private void btnIllyricumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIllyricumActionPerformed
-        metodoDosBotoes(btnIllyricum);
-    }//GEN-LAST:event_btnIllyricumActionPerformed
-
-    private void btnLyciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLyciaActionPerformed
-        metodoDosBotoes(btnLycia);
-    }//GEN-LAST:event_btnLyciaActionPerformed
-
-    private void btnCyprusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCyprusActionPerformed
-        metodoDosBotoes(btnCyprus);
-    }//GEN-LAST:event_btnCyprusActionPerformed
+    private void btnMauritaniaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMauritaniaMouseClicked
+        metodoDosBotoes(btnMauritania, evt);
+    }//GEN-LAST:event_btnMauritaniaMouseClicked
 
     private void ContinuarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ContinuarActionPerformed
         if (gerenciador.getQtdExercitosParaDistribuirJogadorAtual() == 0) {
@@ -1439,21 +1459,53 @@ public class TelaDeJogo extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_ContinuarActionPerformed
 
-    private void btnPassarMovimentacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPassarMovimentacaoActionPerformed
-        painelOpcoes.setEnabledAt(2, false);
-        painelOpcoes.setEnabledAt(0, true);
-        painelOpcoes.setSelectedIndex(0);
-    }//GEN-LAST:event_btnPassarMovimentacaoActionPerformed
+    private void qntExercitosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_qntExercitosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_qntExercitosActionPerformed
+
+    private void btnCartaCincoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCartaCincoActionPerformed
+        TelaDeCartas telCartaCinco = new TelaDeCartas("Território",gerenciador.pegaJogadorDaRodada().getStringDescricaoCartaTerritorio(5), gerenciador.pegaJogadorDaRodada().getStringTipoCartaTerritorio(5));
+        telCartaCinco.setVisible(true);
+    }//GEN-LAST:event_btnCartaCincoActionPerformed
 
     private void btnCartaQuatroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCartaQuatroActionPerformed
         TelaDeCartas telCartaQuatro = new TelaDeCartas("Território",gerenciador.pegaJogadorDaRodada().getStringDescricaoCartaTerritorio(4), gerenciador.pegaJogadorDaRodada().getStringTipoCartaTerritorio(4));
         telCartaQuatro.setVisible(true);
     }//GEN-LAST:event_btnCartaQuatroActionPerformed
 
+    private void btnCartaTresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCartaTresActionPerformed
+        TelaDeCartas telCartaTres = new TelaDeCartas("Território",gerenciador.pegaJogadorDaRodada().getStringDescricaoCartaTerritorio(3),gerenciador.pegaJogadorDaRodada().getStringTipoCartaTerritorio(3));
+        telCartaTres.setVisible(true);
+    }//GEN-LAST:event_btnCartaTresActionPerformed
+
+    private void btnCartaDoisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCartaDoisActionPerformed
+        TelaDeCartas telCartaDois = new TelaDeCartas("Território",gerenciador.pegaJogadorDaRodada().getStringDescricaoCartaTerritorio(2), gerenciador.pegaJogadorDaRodada().getStringTipoCartaTerritorio(2));
+        telCartaDois.setVisible(true);
+    }//GEN-LAST:event_btnCartaDoisActionPerformed
+
     private void btnCartaUmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCartaUmActionPerformed
         TelaDeCartas telCartaUm = new TelaDeCartas("Território",gerenciador.pegaJogadorDaRodada().getStringDescricaoCartaTerritorio(1), gerenciador.pegaJogadorDaRodada().getStringTipoCartaTerritorio(1));
         telCartaUm.setVisible(true);
     }//GEN-LAST:event_btnCartaUmActionPerformed
+
+    private void btnCartaObjetivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCartaObjetivoActionPerformed
+        TelaDeCartas telaObjetivo = new TelaDeCartas("Objetivo",gerenciador.pegaJogadorDaRodada().getObjetivo().getDescricao(),"");
+        telaObjetivo.setVisible(true);
+    }//GEN-LAST:event_btnCartaObjetivoActionPerformed
+
+    private void dadoUmDefesa1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dadoUmDefesa1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_dadoUmDefesa1ActionPerformed
+
+    private void paisParaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_paisParaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_paisParaActionPerformed
+
+    private void btnPassarMovimentacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPassarMovimentacaoActionPerformed
+        painelOpcoes.setEnabledAt(2, false);
+        painelOpcoes.setEnabledAt(0, true);
+        painelOpcoes.setSelectedIndex(0);
+    }//GEN-LAST:event_btnPassarMovimentacaoActionPerformed
 
     private void btnPassarAtaqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPassarAtaqueActionPerformed
         painelOpcoes.setEnabledAt(1, false);
@@ -1464,16 +1516,16 @@ public class TelaDeJogo extends javax.swing.JFrame {
     private void btnAtacarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtacarActionPerformed
         boolean vizinho = false;
         for (int i = 0; i < DadosJogo.vinzihosDoTerritorio[indiceTerritorioAtaque].length; i++) {
-         if(DadosJogo.vinzihosDoTerritorio[indiceTerritorioAtaque][i] == indiceTerritorioDefesa){
-             vizinho = true;
-         }   
+            if(DadosJogo.vinzihosDoTerritorio[indiceTerritorioAtaque][i] == indiceTerritorioDefesa){
+                vizinho = true;
+            }
         }
         if(!vizinho){
             JOptionPane.showMessageDialog(null, "Para realizar um ataque os territorios devem ser vizinhos ou deve haver caminho por agua entre eles!");
         }else{
             //gerenciador.setFaseDaRodada(2);
         }
-       
+
     }//GEN-LAST:event_btnAtacarActionPerformed
 
     private void dadoUmDefesaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dadoUmDefesaActionPerformed
@@ -1487,26 +1539,6 @@ public class TelaDeJogo extends javax.swing.JFrame {
     private void paisDefesaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_paisDefesaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_paisDefesaActionPerformed
-
-    private void btnCartaObjetivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCartaObjetivoActionPerformed
-        TelaDeCartas telaObjetivo = new TelaDeCartas("Objetivo",gerenciador.pegaJogadorDaRodada().getObjetivo().getDescricao(),"");
-        telaObjetivo.setVisible(true);
-    }//GEN-LAST:event_btnCartaObjetivoActionPerformed
-
-    private void btnCartaDoisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCartaDoisActionPerformed
-        TelaDeCartas telCartaDois = new TelaDeCartas("Território",gerenciador.pegaJogadorDaRodada().getStringDescricaoCartaTerritorio(2), gerenciador.pegaJogadorDaRodada().getStringTipoCartaTerritorio(2));
-        telCartaDois.setVisible(true);
-    }//GEN-LAST:event_btnCartaDoisActionPerformed
-
-    private void btnCartaTresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCartaTresActionPerformed
-        TelaDeCartas telCartaTres = new TelaDeCartas("Território",gerenciador.pegaJogadorDaRodada().getStringDescricaoCartaTerritorio(3),gerenciador.pegaJogadorDaRodada().getStringTipoCartaTerritorio(3));
-        telCartaTres.setVisible(true);
-    }//GEN-LAST:event_btnCartaTresActionPerformed
-
-    private void btnCartaCincoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCartaCincoActionPerformed
-        TelaDeCartas telCartaCinco = new TelaDeCartas("Território",gerenciador.pegaJogadorDaRodada().getStringDescricaoCartaTerritorio(5), gerenciador.pegaJogadorDaRodada().getStringTipoCartaTerritorio(5));
-        telCartaCinco.setVisible(true);
-    }//GEN-LAST:event_btnCartaCincoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1619,9 +1651,13 @@ public class TelaDeJogo extends javax.swing.JFrame {
     private javax.swing.JButton enviaExercitos;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lPais;
+    private javax.swing.JLabel lPais1;
     private javax.swing.JLabel lPaisD;
     private javax.swing.JLabel labelPossui;
     private javax.swing.JLabel labelSoldados;
@@ -1643,7 +1679,6 @@ public class TelaDeJogo extends javax.swing.JFrame {
     private javax.swing.JTextField paisPara;
     private javax.swing.JTextField qntExercitos;
     private javax.swing.JFormattedTextField qtdExercitos;
-    private javax.swing.JButton reverter;
     private javax.swing.JPanel telaInteira;
     private javax.swing.JTextField textCorDoJogador;
     private javax.swing.JTextField textNomeDoJogador;
@@ -1708,7 +1743,7 @@ public class TelaDeJogo extends javax.swing.JFrame {
         painelOpcoes.setEnabledAt(2, false);
         painelOpcoes.setEnabledAt(3, false);  
     }
-    public void metodoDosBotoes(JButton button){
+    public void metodoDosBotoes(JButton button, MouseEvent evt){
         //Pega o indice
         int indice=0;
         for (int i = 0; i < btnterritorios.length; i++) {
@@ -1718,19 +1753,33 @@ public class TelaDeJogo extends javax.swing.JFrame {
         }
         faseDaRodada = gerenciador.getFaseDaRodada();
         if (faseDaRodada == 0){
-            int quantidadeAtual;
-            int aux;
-            int quantidadeDeTerritorios = gerenciador.getQtdExercitosParaDistribuirJogadorAtual();
-            if(quantidadeDeTerritorios >0){
-                quantidadeAtual = Integer.parseInt(button.getText());
-                aux = quantidadeAtual+1;
-                button.setText(aux + "");
-                quantidadeDeTerritorios--;
-                gerenciador.reduzQtdExercitosParaDistribuirJogadorAtual();
-                atualizaQntExercitos();
-            }
+            if(button.isEnabled()){
+                int quantidadeAtual;
+                int aux;
+                int quantidadeDeTerritorios = gerenciador.getQtdExercitosParaDistribuirJogadorAtual();
+                if(evt.getButton() == MouseEvent.BUTTON1){//left -> aumenta exercito p distrubuir
+                    if(quantidadeDeTerritorios >0){
+                    quantidadeAtual = Integer.parseInt(button.getText());
+                    aux = quantidadeAtual+1;
+                    button.setText(aux + "");
+                    quantidadeDeTerritorios--;
+                    gerenciador.reduzQtdExercitosParaDistribuirJogadorAtual();
+                    atualizaQntExercitos();
+                    }
+                }else{
+                    if(evt.getButton() == MouseEvent.BUTTON3){//right -> diminui exercitos pra distribuir
+                        quantidadeAtual = Integer.parseInt(button.getText());
+                        if(quantidadeAtual > 1){
+                        aux = quantidadeAtual-1;
+                        button.setText(aux + "");
+                        quantidadeDeTerritorios++;
+                        gerenciador.aumentaQtdExercitosParaDistribuirJogadorAtual();
+                        atualizaQntExercitos();
+                        }    
+                    }
+                }
         }
-        else{
+        }else{
             if(faseDaRodada == 1){
                 boolean territorioSeu = gerenciador.pegaJogadorDaRodada().territorioPertence(indice);
                 if(cliqueAtaque){

@@ -166,5 +166,8 @@ public class Gerenciador {
     public void reduzQtdExercitosParaDistribuirJogadorAtual() {
         qtdExercitosParaDistribuirJogadorAtual--;
     }
+    public void aumentaQtdExercitosParaDistribuirJogadorAtual() {
+        qtdExercitosParaDistribuirJogadorAtual++;
+    }
 
 }
