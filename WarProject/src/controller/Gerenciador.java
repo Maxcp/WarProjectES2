@@ -171,7 +171,7 @@ public class Gerenciador {
     }
 
     public int[] geraDadosDadosOrdenados() {
-        int[] dados = {((int)(Math.random() * 5)+1),((int)(Math.random() * 5)+1), ((int)(Math.random() * 5)+1)};
+        int[] dados = {((int)(Math.random() * 5)+1),((int)(Math.random() * 6)+1), ((int)(Math.random() * 5)+1)};
         return ordena(dados);
     }
     public int[] ordena(int[] vet){
