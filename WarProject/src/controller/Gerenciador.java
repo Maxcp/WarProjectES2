@@ -96,6 +96,12 @@ public class Gerenciador {
         Jogador jogador2 = new Jogador(nome2, cor2, objetivo2, territorios2);
         Jogador jogador3 = new Jogador(nome3, cor3, objetivo3, territorios3);
         Jogador jogador4 = new Jogador(nome4, cor4, objetivo4, territorios4);
+        
+        setDonoTerritorios(jogador1, territorios1);
+        setDonoTerritorios(jogador2, territorios2);
+        setDonoTerritorios(jogador3, territorios3);
+        setDonoTerritorios(jogador4, territorios4);
+        
         jogadores[0] = jogador1;
         jogadores[1] = jogador2;
         jogadores[2] = jogador3;
@@ -205,5 +211,15 @@ public class Gerenciador {
             }
         }
         return vet;
+    }
+    public void ataca(int[] dados_ataque, int[] dados_defesa, int indiceTerritorioAtaque, int indiceTerritorioDefesa){
+        //territorios[indiceTerritorioAtaque].getConquistador()
+        //DadosJogo.
+    }
+
+    private void setDonoTerritorios(Jogador jogador, List<Territorio> territorios) {
+        for (Territorio territorio : territorios) {
+            territorio.setConquistador(jogador);
+        }
     }
 }
