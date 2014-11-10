@@ -1577,35 +1577,24 @@ public class TelaDeJogo extends javax.swing.JFrame {
     }
 
     public void realizaAtque(int[] dados_ataque, int[] dados_defesa, Territorio territorio_ataque, Territorio territorio_defesa) {
-        boolean[] resultado = gerenciador.comparaSeAtaqueGanhouNoDado(dados_ataque, dados_defesa, indiceTerritorioAtaque, indiceTerritorioDefesa);//true quando ataque ganhou
+        boolean[] resultado = gerenciador.comparaSeAtaqueGanhouNoDado(dados_ataque, dados_defesa);//true quando ataque ganhou
 
-        int quantidade_exercitos_ataque = territorio_ataque.getExercitosPosicionados();
-        int quantidade_exercitos_defesa = territorio_defesa.getExercitosPosicionados();
-        if ((quantidade_exercitos_defesa >= 1) && (quantidade_exercitos_ataque - 1) >= 1) {//ambos possuem pelo menos 1
-            if (resultado[0] == true) {//defesa perde um territorio
-                territorio_defesa.setExercitosPosicionados(territorio_defesa.getExercitosPosicionados() - 1);
+        for(int i = 0; i < resultado.length; i++)
+        {
+            int exercitoQtd;
+            if(resultado[i])
+            {
+                exercitoQtd = territorio_defesa.getExercitosPosicionados();
+                territorio_defesa.setExercitosPosicionados(exercitoQtd - 1);
             }
-            if (resultado[0] == false) {//defesa perde um territorio
-                territorio_ataque.setExercitosPosicionados(territorio_ataque.getExercitosPosicionados() - 1);
-            }
-        }
-        if ((quantidade_exercitos_defesa >= 2) && (quantidade_exercitos_ataque - 1) >= 2) {//ambos possuem pelo menos 1
-            if (resultado[1] == true) {//defesa perde um territorio
-                territorio_defesa.setExercitosPosicionados(territorio_defesa.getExercitosPosicionados() - 1);
-            }
-            if (resultado[1] == false) {//defesa perde um territorio
-                territorio_ataque.setExercitosPosicionados(territorio_ataque.getExercitosPosicionados() - 1);
-            }
-        }
-        if ((quantidade_exercitos_defesa >= 3) && (quantidade_exercitos_ataque - 1) >= 3) {//ambos possuem pelo menos 1
-            if (resultado[2] == true) {//defesa perde um territorio
-                territorio_defesa.setExercitosPosicionados(territorio_defesa.getExercitosPosicionados() - 1);
-            }
-            if (resultado[2] == false) {//defesa perde um territorio
-                territorio_ataque.setExercitosPosicionados(territorio_ataque.getExercitosPosicionados() - 1);
+            else
+            {
+                exercitoQtd = territorio_ataque.getExercitosPosicionados();
+                territorio_ataque.setExercitosPosicionados(exercitoQtd - 1);
             }
         }
     }
+    
     private void btnAtacarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtacarActionPerformed
         boolean vizinho = false;
         for (int i = 0; i < DadosJogo.vinzihosDoTerritorio[indiceTerritorioAtaque].length; i++) {
