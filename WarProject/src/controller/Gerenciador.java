@@ -206,4 +206,16 @@ public class Gerenciador {
         }
         return vet;
     }
+
+    public void reduzQtdExercitosDoTerritorio(int indice, int qtd) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void aumentaQtdExercitosDoTerritorio(int indice, int qtd) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public boolean territorioPossuiExercitosParaMovimentar(int indiceTerritorioDe, int qtdExercitosApassar) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

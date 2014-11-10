@@ -22,6 +22,8 @@ public class TelaDeJogo extends javax.swing.JFrame {
     int faseDaRodada = 0;
     int indiceTerritorioAtaque;
     int indiceTerritorioDefesa;
+    int indiceTerritorioDe;
+    int indiceTerritorioPara;
     JButton btnterritorios[];
 
     /**
@@ -407,10 +409,8 @@ public class TelaDeJogo extends javax.swing.JFrame {
         lbPais.setText("Do pais");
 
         paisDe.setEditable(false);
-        paisDe.setText("Africa");
 
         paisPara.setEditable(false);
-        paisPara.setText("Sicilia");
         paisPara.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 paisParaActionPerformed(evt);
@@ -425,6 +425,11 @@ public class TelaDeJogo extends javax.swing.JFrame {
         qtdExercitos.setText("0");
 
         enviaExercitos.setText("Enviar");
+        enviaExercitos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                enviaExercitosActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout movimentarLayout = new javax.swing.GroupLayout(movimentar);
         movimentar.setLayout(movimentarLayout);
@@ -1547,7 +1552,7 @@ public class TelaDeJogo extends javax.swing.JFrame {
         gerenciador.autalizaFaseDaRodada();
         textNomeDoJogador.setText(gerenciador.pegaJogadorDaRodada().getNome());
         textCorDoJogador.setText(gerenciador.pegaJogadorDaRodada().getNomeCor());
-        qntExercitos.setText(""+gerenciador.getQtdExercitosParaDistribuirJogadorAtual());
+        qntExercitos.setText("" + gerenciador.getQtdExercitosParaDistribuirJogadorAtual());
         gerenciador.setEditavelApenasTerritoriosDoJogadorAtual(btnterritorios);
     }//GEN-LAST:event_btnPassarMovimentacaoActionPerformed
 
@@ -1556,6 +1561,7 @@ public class TelaDeJogo extends javax.swing.JFrame {
         painelOpcoes.setEnabledAt(2, true);
         painelOpcoes.setSelectedIndex(2);
         gerenciador.autalizaFaseDaRodada();
+        gerenciador.setEditavelApenasTerritoriosDoJogadorAtual(btnterritorios);
     }//GEN-LAST:event_btnPassarAtaqueActionPerformed
 
     private void btnAtacarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtacarActionPerformed
@@ -1597,6 +1603,24 @@ public class TelaDeJogo extends javax.swing.JFrame {
     private void textNomeDoJogadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textNomeDoJogadorActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_textNomeDoJogadorActionPerformed
+
+    private void enviaExercitosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enviaExercitosActionPerformed
+        boolean vizinho = false;
+        for (int i = 0; i < DadosJogo.vinzihosDoTerritorio[indiceTerritorioDe].length; i++) {
+            if (DadosJogo.vinzihosDoTerritorio[indiceTerritorioDe][i] == indiceTerritorioPara) {
+                vizinho = true;
+            }
+        }
+        if (vizinho) {
+            int qtdExercitosApassar = Integer.parseInt(qtdExercitos.getText());
+            if (gerenciador.territorioPossuiExercitosParaMovimentar(indiceTerritorioDe, qtdExercitosApassar)) {
+                gerenciador.reduzQtdExercitosDoTerritorio(indiceTerritorioDe, qtdExercitosApassar);
+                gerenciador.aumentaQtdExercitosDoTerritorio(indiceTerritorioPara, qtdExercitosApassar);
+            } else {
+                JOptionPane.showMessageDialog(null, "O territorio selecionado não possui a quantidade de exercitos suficientes para movimentar!");
+            }
+        }
+    }//GEN-LAST:event_enviaExercitosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1813,7 +1837,7 @@ public class TelaDeJogo extends javax.swing.JFrame {
             }
         }
         faseDaRodada = gerenciador.getFaseDaRodada();
-        if (faseDaRodada == 0) {
+        if (faseDaRodada == 0) { //FASE DE DISTRIBUIÇÃO
             if (button.isEnabled()) {
                 int quantidadeAtual;
                 int aux;
@@ -1824,6 +1848,7 @@ public class TelaDeJogo extends javax.swing.JFrame {
                         aux = quantidadeAtual + 1;
                         button.setText(aux + "");
                         quantidadeDeTerritorios--;
+                        gerenciador.reduzQtdExercitosDoTerritorio(indice, 1);
                         gerenciador.reduzQtdExercitosParaDistribuirJogadorAtual();
                         atualizaQntExercitos();
                     }
@@ -1834,6 +1859,7 @@ public class TelaDeJogo extends javax.swing.JFrame {
                             aux = quantidadeAtual - 1;
                             button.setText(aux + "");
                             quantidadeDeTerritorios++;
+                            gerenciador.aumentaQtdExercitosDoTerritorio(indice, 1);
                             gerenciador.aumentaQtdExercitosParaDistribuirJogadorAtual();
                             atualizaQntExercitos();
                         }
@@ -1841,7 +1867,7 @@ public class TelaDeJogo extends javax.swing.JFrame {
                 }
             }
         } else {
-            if (faseDaRodada == 1) {
+            if (faseDaRodada == 1) { // FASE DE ATAQUES
                 boolean territorioSeu = gerenciador.pegaJogadorDaRodada().territorioPertence(indice);
                 if (evt.getButton() == MouseEvent.BUTTON1) {//left -> escolhe territorio de ataque
                     if (territorioSeu) {
@@ -1861,6 +1887,26 @@ public class TelaDeJogo extends javax.swing.JFrame {
                         }
                     }
                 }
+            } else {
+                if (faseDaRodada == 2) { // FASE DE MOVIMENTAÇÃO
+                    boolean territorioSeu = gerenciador.pegaJogadorDaRodada().territorioPertence(indice);
+                    if (territorioSeu) {
+                        if (evt.getButton() == MouseEvent.BUTTON1) {
+                            indiceTerritorioDe = indice;
+                            paisDe.setText(DadosJogo.nomeTerritorios[indice]);
+                        } else {
+                            if (evt.getButton() == MouseEvent.BUTTON3) {
+                                indiceTerritorioPara = indice;
+                                paisPara.setText(DadosJogo.nomeTerritorios[indice]);
+                            }
+                        }
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Selecione um territorio seu para movimentar.");
+                    }
+                } else {
+                    JOptionPane.showMessageDialog(null, "OPS! ouve algum problema.:/ ");
+                }
+
             }
         }
     }
