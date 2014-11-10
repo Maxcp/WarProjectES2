@@ -581,13 +581,11 @@
                     <Component class="javax.swing.JTextField" name="paisDe">
                       <Properties>
                         <Property name="editable" type="boolean" value="false"/>
-                        <Property name="text" type="java.lang.String" value="Africa"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JTextField" name="paisPara">
                       <Properties>
                         <Property name="editable" type="boolean" value="false"/>
-                        <Property name="text" type="java.lang.String" value="Sicilia"/>
                       </Properties>
                       <Events>
                         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="paisParaActionPerformed"/>
@@ -615,6 +613,9 @@
                       <Properties>
                         <Property name="text" type="java.lang.String" value="Enviar"/>
                       </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="enviaExercitosActionPerformed"/>
+                      </Events>
                     </Component>
                   </SubComponents>
                 </Container>
