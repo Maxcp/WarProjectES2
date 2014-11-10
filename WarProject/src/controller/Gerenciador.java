@@ -50,9 +50,11 @@ public class Gerenciador {
         parametrosDosJogadores = parametros;
         gerenciaJogo();
     }
-    public Territorio[] getTerritorios(){
+
+    public Territorio[] getTerritorios() {
         return territorios;
     }
+
     public int getFaseDaRodada() {
         return faseDaRodada;
     }
@@ -98,12 +100,12 @@ public class Gerenciador {
         Jogador jogador2 = new Jogador(nome2, cor2, objetivo2, territorios2);
         Jogador jogador3 = new Jogador(nome3, cor3, objetivo3, territorios3);
         Jogador jogador4 = new Jogador(nome4, cor4, objetivo4, territorios4);
-        
+
         setDonoTerritorios(jogador1, territorios1);
         setDonoTerritorios(jogador2, territorios2);
         setDonoTerritorios(jogador3, territorios3);
         setDonoTerritorios(jogador4, territorios4);
-        
+
         jogadores[0] = jogador1;
         jogadores[1] = jogador2;
         jogadores[2] = jogador3;
@@ -180,6 +182,21 @@ public class Gerenciador {
         }
     }
 
+    public Territorio[] getTerritoriosAtaqueDefesa(int indiceAtaque, int indiceDefesa) {
+        Territorio t[] = new Territorio[2];
+        for (Jogador jogador : jogadores) {
+            for (int i = 0; i < jogador.getTerritorios().size(); i++) {
+                if (jogador.getTerritorios().get(i).getId() == indiceAtaque) {
+                    t[0] = jogador.getTerritorios().get(i);
+                }
+                if (jogador.getTerritorios().get(i).getId() == indiceDefesa) {
+                    t[1] = jogador.getTerritorios().get(i);
+                }
+            }
+        }
+        return t;
+    }
+
     public int getQtdExercitosParaDistribuirJogadorAtual() {
         return qtdExercitosParaDistribuirJogadorAtual;
     }
@@ -197,20 +214,20 @@ public class Gerenciador {
     }
 
     public int[] geraDadosDadosOrdenados(int quantidade_exercitos) {
-        int num1=-1;
-        int num2=-1;
-        int num3=-1;
-        if(quantidade_exercitos==1){
-            num1=((int) (Math.random() * 5) + 1);
+        int num1 = -1;
+        int num2 = -1;
+        int num3 = -1;
+        if (quantidade_exercitos == 1) {
+            num1 = ((int) (Math.random() * 5) + 1);
         }
-        if(quantidade_exercitos==2){
-            num1=((int) (Math.random() * 5) + 1);
-            num2=((int) (Math.random() * 5) + 1);
+        if (quantidade_exercitos == 2) {
+            num1 = ((int) (Math.random() * 5) + 1);
+            num2 = ((int) (Math.random() * 5) + 1);
         }
-        if(quantidade_exercitos==3){
-            num1=((int) (Math.random() * 5) + 1);
-            num2=((int) (Math.random() * 5) + 1);
-            num3=((int) (Math.random() * 5) + 1);
+        if (quantidade_exercitos == 3) {
+            num1 = ((int) (Math.random() * 5) + 1);
+            num2 = ((int) (Math.random() * 5) + 1);
+            num3 = ((int) (Math.random() * 5) + 1);
         }
         int[] dados = {num1, num2, num3};
         return ordena(dados);
@@ -229,22 +246,23 @@ public class Gerenciador {
         }
         return vet;
     }
-    public boolean[] comparaSeAtaqueGanhouNoDado(int[] dados_ataque, int[] dados_defesa, int indiceTerritorioAtaque, int indiceTerritorioDefesa){
+
+    public boolean[] comparaSeAtaqueGanhouNoDado(int[] dados_ataque, int[] dados_defesa, int indiceTerritorioAtaque, int indiceTerritorioDefesa) {
         int quantidade_exercitos_ataque_total = territorios[indiceTerritorioAtaque].getExercitosPosicionados();
-        int quantidade_exercitos_ataque = quantidade_exercitos_ataque_total-1;
-        
-        boolean[] resultado = {false,false,false};
-        if(dados_ataque[2] > dados_defesa[2]){
+        int quantidade_exercitos_ataque = quantidade_exercitos_ataque_total - 1;
+
+        boolean[] resultado = {false, false, false};
+        if (dados_ataque[2] > dados_defesa[2]) {
             resultado[0] = true;
         }
         switch (quantidade_exercitos_ataque) {
             case 2://se tem 2 exercitos para atacar, olha o segundo dado
-                if(dados_ataque[1] > dados_defesa[1]){
-                    resultado[1]=true;
+                if (dados_ataque[1] > dados_defesa[1]) {
+                    resultado[1] = true;
                 }
             case 3:
-                if(dados_ataque[0] > dados_defesa[0]){
-                    resultado[2]=true;
+                if (dados_ataque[0] > dados_defesa[0]) {
+                    resultado[2] = true;
                 }
         }
         return resultado;
@@ -254,5 +272,59 @@ public class Gerenciador {
         for (Territorio territorio : territorios) {
             territorio.setConquistador(jogador);
         }
+    }
+
+    public boolean territorioPossuiExercitosParaMovimentar(int indiceTerritorioDe, int qtdExercitosApassar) {
+        return true;//TODO
+    }
+
+    public void reduzQtdExercitosDoTerritorio(int indiceTerritorioDe, int qtdExercitosApassar) {
+       //TODO
+    }
+
+    public void aumentaQtdExercitosDoTerritorio(int indiceTerritorioPara, int qtdExercitosApassar) {
+        //TODO
+    }
+
+    public void realizaAtaque(int indiceTerritorioAtaque, int indiceTerritorioDefesa) {
+        Territorio t[] = getTerritoriosAtaqueDefesa(indiceTerritorioAtaque, indiceTerritorioDefesa);
+
+        Territorio territorio_ataque = t[0];
+        Territorio territorio_defesa = t[1];
+        int quantidade_exercitos_participantes_ataque = territorio_ataque.getExercitosPosicionados() - 1;
+        int quantidade_exercitos_defesa = territorio_defesa.getExercitosPosicionados();
+
+        int[] dados_ataque;
+         dados_ataque = geraDadosDadosOrdenados(quantidade_exercitos_participantes_ataque);
+        int[] dados_defesa;
+        dados_defesa = geraDadosDadosOrdenados(quantidade_exercitos_defesa);
+
+        boolean[] resultado = comparaSeAtaqueGanhouNoDado(dados_ataque, dados_defesa, indiceTerritorioAtaque, indiceTerritorioDefesa);//true quando ataque ganhou
+
+        if ((quantidade_exercitos_defesa >= 1) && quantidade_exercitos_participantes_ataque >= 1) {//ambos possuem pelo menos 1
+            if (resultado[0] == true) {//defesa perde um territorio
+                territorio_defesa.setExercitosPosicionados(territorio_defesa.getExercitosPosicionados() - 1);
+            }
+            if (resultado[0] == false) {//defesa perde um territorio
+                territorio_ataque.setExercitosPosicionados(territorio_ataque.getExercitosPosicionados() - 1);
+            }
+        }
+        if ((quantidade_exercitos_defesa >= 2) && quantidade_exercitos_participantes_ataque >= 2) {//ambos possuem pelo menos 1
+            if (resultado[1] == true) {//defesa perde um territorio
+                territorio_defesa.setExercitosPosicionados(territorio_defesa.getExercitosPosicionados() - 1);
+            }
+            if (resultado[1] == false) {//defesa perde um territorio
+                territorio_ataque.setExercitosPosicionados(territorio_ataque.getExercitosPosicionados() - 1);
+            }
+        }
+        if ((quantidade_exercitos_defesa >= 3) && quantidade_exercitos_participantes_ataque >= 3) {//ambos possuem pelo menos 1
+            if (resultado[2] == true) {//defesa perde um territorio
+                territorio_defesa.setExercitosPosicionados(territorio_defesa.getExercitosPosicionados() - 1);
+            }
+            if (resultado[2] == false) {//defesa perde um territorio
+                territorio_ataque.setExercitosPosicionados(territorio_ataque.getExercitosPosicionados() - 1);
+            }
+        }
+
     }
 }
