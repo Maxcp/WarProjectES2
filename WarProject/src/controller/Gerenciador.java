@@ -197,22 +197,14 @@ public class Gerenciador {
     }
 
     public int[] geraDadosDadosOrdenados(int quantidade_exercitos) {
-        int num1=-1;
-        int num2=-1;
-        int num3=-1;
-        if(quantidade_exercitos==1){
-            num1=((int) (Math.random() * 5) + 1);
-        }
-        if(quantidade_exercitos==2){
-            num1=((int) (Math.random() * 5) + 1);
-            num2=((int) (Math.random() * 5) + 1);
-        }
-        if(quantidade_exercitos==3){
-            num1=((int) (Math.random() * 5) + 1);
-            num2=((int) (Math.random() * 5) + 1);
-            num3=((int) (Math.random() * 5) + 1);
-        }
-        int[] dados = {num1, num2, num3};
+        if(quantidade_exercitos <= 0)
+            return null;
+        
+        int size = quantidade_exercitos <= 3 ? quantidade_exercitos : 3;
+        
+        int[] dados = {0, 0, 0};
+        for(int i = 0; i < size; i++)   dados[i] = ((int) (Math.random() * 5) + 1);
+        
         return ordena(dados);
     }
 
@@ -220,7 +212,7 @@ public class Gerenciador {
         int aux = 0;
         for (int i = 0; i < vet.length; i++) {
             for (int j = 0; j < vet.length - 1; j++) {
-                if (vet[j] > vet[j + 1]) {
+                if (vet[j] < vet[j + 1]) {
                     aux = vet[j];
                     vet[j] = vet[j + 1];
                     vet[j + 1] = aux;
@@ -229,24 +221,20 @@ public class Gerenciador {
         }
         return vet;
     }
-    public boolean[] comparaSeAtaqueGanhouNoDado(int[] dados_ataque, int[] dados_defesa, int indiceTerritorioAtaque, int indiceTerritorioDefesa){
-        int quantidade_exercitos_ataque_total = territorios[indiceTerritorioAtaque].getExercitosPosicionados();
-        int quantidade_exercitos_ataque = quantidade_exercitos_ataque_total-1;
+    public boolean[] comparaSeAtaqueGanhouNoDado(int[] dados_ataque, int[] dados_defesa) {
+        int size;
         
-        boolean[] resultado = {false,false,false};
-        if(dados_ataque[2] > dados_defesa[2]){
-            resultado[0] = true;
-        }
-        switch (quantidade_exercitos_ataque) {
-            case 2://se tem 2 exercitos para atacar, olha o segundo dado
-                if(dados_ataque[1] > dados_defesa[1]){
-                    resultado[1]=true;
-                }
-            case 3:
-                if(dados_ataque[0] > dados_defesa[0]){
-                    resultado[2]=true;
-                }
-        }
+        if((dados_ataque[1] == 0) || (dados_defesa[1] == 0))
+            size = 1;
+        else if((dados_ataque[2] == 0) || (dados_defesa[2] == 0))
+            size = 2;
+        else
+            size = 3;
+        
+        boolean[] resultado = new boolean[size];
+        for(int i = 0; i < size; i++)
+            resultado[i] = dados_ataque[i] > dados_defesa[i];
+        
         return resultado;
     }
 
