@@ -50,7 +50,9 @@ public class Gerenciador {
         parametrosDosJogadores = parametros;
         gerenciaJogo();
     }
-
+    public Territorio[] getTerritorios(){
+        return territorios;
+    }
     public int getFaseDaRodada() {
         return faseDaRodada;
     }
@@ -194,8 +196,23 @@ public class Gerenciador {
         qtdExercitosParaDistribuirJogadorAtual++;
     }
 
-    public int[] geraDadosDadosOrdenados() {
-        int[] dados = {((int) (Math.random() * 5) + 1), ((int) (Math.random() * 6) + 1), ((int) (Math.random() * 5) + 1)};
+    public int[] geraDadosDadosOrdenados(int quantidade_exercitos) {
+        int num1=-1;
+        int num2=-1;
+        int num3=-1;
+        if(quantidade_exercitos==1){
+            num1=((int) (Math.random() * 5) + 1);
+        }
+        if(quantidade_exercitos==2){
+            num1=((int) (Math.random() * 5) + 1);
+            num2=((int) (Math.random() * 5) + 1);
+        }
+        if(quantidade_exercitos==3){
+            num1=((int) (Math.random() * 5) + 1);
+            num2=((int) (Math.random() * 5) + 1);
+            num3=((int) (Math.random() * 5) + 1);
+        }
+        int[] dados = {num1, num2, num3};
         return ordena(dados);
     }
 
@@ -212,9 +229,25 @@ public class Gerenciador {
         }
         return vet;
     }
-    public void ataca(int[] dados_ataque, int[] dados_defesa, int indiceTerritorioAtaque, int indiceTerritorioDefesa){
-        //territorios[indiceTerritorioAtaque].getConquistador()
-        //DadosJogo.
+    public boolean[] comparaSeAtaqueGanhouNoDado(int[] dados_ataque, int[] dados_defesa, int indiceTerritorioAtaque, int indiceTerritorioDefesa){
+        int quantidade_exercitos_ataque_total = territorios[indiceTerritorioAtaque].getExercitosPosicionados();
+        int quantidade_exercitos_ataque = quantidade_exercitos_ataque_total-1;
+        
+        boolean[] resultado = {false,false,false};
+        if(dados_ataque[2] > dados_defesa[2]){
+            resultado[0] = true;
+        }
+        switch (quantidade_exercitos_ataque) {
+            case 2://se tem 2 exercitos para atacar, olha o segundo dado
+                if(dados_ataque[1] > dados_defesa[1]){
+                    resultado[1]=true;
+                }
+            case 3:
+                if(dados_ataque[0] > dados_defesa[0]){
+                    resultado[2]=true;
+                }
+        }
+        return resultado;
     }
 
     private void setDonoTerritorios(Jogador jogador, List<Territorio> territorios) {
