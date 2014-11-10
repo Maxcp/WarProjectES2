@@ -50,13 +50,28 @@ public class Gerenciador {
         parametrosDosJogadores = parametros;
         gerenciaJogo();
     }
-    
-    public int getFaseDaRodada(){
+
+    public int getFaseDaRodada() {
         return faseDaRodada;
     }
-    public void setFaseDaRodada(int novaFase){
-        faseDaRodada = novaFase;
+
+    public void autalizaFaseDaRodada() {
+        faseDaRodada++;
+        if (faseDaRodada > 2) {
+            faseDaRodada = 0;
+            atualizaJogadorDaRodada();
+        }
     }
+
+    public void atualizaJogadorDaRodada() {
+        jogadorDaRodada++;
+
+        if (jogadorDaRodada > 3) {
+            jogadorDaRodada = 0;
+        }
+        atualizaQtdExercitosParaDistribuirJogadorAtual();
+    }
+
     private void gerenciaJogo() {
         inicializaTerritorios();
         inicializaContinentes();
@@ -126,10 +141,10 @@ public class Gerenciador {
     }
 
     public Jogador pegaJogadorDaRodada() {
-                return jogadores[jogadorDaRodada];
+        return jogadores[jogadorDaRodada];
     }
-    
-    public void setEditavelApenasTerritoriosDoJogadorAtual(JButton[] btnterritorios){
+
+    public void setEditavelApenasTerritoriosDoJogadorAtual(JButton[] btnterritorios) {
         Jogador jogador_atual = pegaJogadorDaRodada();
         for (int i = 0; i < btnterritorios.length; i++) {
             btnterritorios[i].setEnabled(false);
@@ -139,11 +154,13 @@ public class Gerenciador {
             btnterritorios[t.getId()].setEnabled(true);
         }
     }
-    public void setEditavelTodosOsTerritorios(JButton[] btnterritorios){
+
+    public void setEditavelTodosOsTerritorios(JButton[] btnterritorios) {
         for (int i = 0; i < btnterritorios.length; i++) {
             btnterritorios[i].setEnabled(true);
         }
     }
+
     public void setTerritoriosJogadores(JButton[] btnterritorios) {
         for (Jogador jogador : jogadores) {
             for (int i = 0; i < jogador.getTerritorios().size(); i++) {
@@ -166,24 +183,26 @@ public class Gerenciador {
     public void reduzQtdExercitosParaDistribuirJogadorAtual() {
         qtdExercitosParaDistribuirJogadorAtual--;
     }
+
     public void aumentaQtdExercitosParaDistribuirJogadorAtual() {
         qtdExercitosParaDistribuirJogadorAtual++;
     }
 
     public int[] geraDadosDadosOrdenados() {
-        int[] dados = {((int)(Math.random() * 5)+1),((int)(Math.random() * 6)+1), ((int)(Math.random() * 5)+1)};
+        int[] dados = {((int) (Math.random() * 5) + 1), ((int) (Math.random() * 6) + 1), ((int) (Math.random() * 5) + 1)};
         return ordena(dados);
     }
-    public int[] ordena(int[] vet){
+
+    public int[] ordena(int[] vet) {
         int aux = 0;
-        for(int i = 0; i<vet.length; i++){ 
-            for(int j = 0; j<vet.length-1; j++){ 
-                if(vet[j] > vet[j + 1]){ 
-                    aux = vet[j]; 
-                    vet[j] = vet[j+1]; 
-                    vet[j+1] = aux; 
-                } 
-            } 
+        for (int i = 0; i < vet.length; i++) {
+            for (int j = 0; j < vet.length - 1; j++) {
+                if (vet[j] > vet[j + 1]) {
+                    aux = vet[j];
+                    vet[j] = vet[j + 1];
+                    vet[j + 1] = aux;
+                }
+            }
         }
         return vet;
     }

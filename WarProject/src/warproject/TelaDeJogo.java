@@ -23,6 +23,7 @@ public class TelaDeJogo extends javax.swing.JFrame {
     int indiceTerritorioAtaque;
     int indiceTerritorioDefesa;
     JButton btnterritorios[];
+
     /**
      * Creates new form TelaInicial
      */
@@ -30,7 +31,7 @@ public class TelaDeJogo extends javax.swing.JFrame {
         initComponents();
         meuInitComponents();
         gerenciador.atualizaQtdExercitosParaDistribuirJogadorAtual();
-        qntExercitos.setText(""+gerenciador.getQtdExercitosParaDistribuirJogadorAtual());
+        qntExercitos.setText("" + gerenciador.getQtdExercitosParaDistribuirJogadorAtual());
     }
 
     /**
@@ -312,20 +313,19 @@ public class TelaDeJogo extends javax.swing.JFrame {
             .addGroup(atacarLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(atacarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(atacarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 419, Short.MAX_VALUE)
-                        .addGroup(atacarLayout.createSequentialGroup()
-                            .addGroup(atacarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(atacarLayout.createSequentialGroup()
-                                    .addComponent(lPais)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(paisAtaque, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(10, 10, 10)
-                                    .addComponent(lPais1)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(paisDefesa, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addComponent(jLabel2))
-                            .addGap(0, 0, Short.MAX_VALUE)))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 419, Short.MAX_VALUE)
+                    .addGroup(atacarLayout.createSequentialGroup()
+                        .addGroup(atacarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(atacarLayout.createSequentialGroup()
+                                .addComponent(lPais)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(paisAtaque, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(10, 10, 10)
+                                .addComponent(lPais1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(paisDefesa, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel2))
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(atacarLayout.createSequentialGroup()
                         .addGap(57, 57, 57)
                         .addComponent(jLabel7)
@@ -449,10 +449,8 @@ public class TelaDeJogo extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(movimentarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(paisPara, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(enviaExercitos)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, movimentarLayout.createSequentialGroup()
-                        .addComponent(btnPassarMovimentacao)
-                        .addGap(21, 21, 21)))
+                            .addComponent(enviaExercitos)
+                            .addComponent(btnPassarMovimentacao))))
                 .addContainerGap(180, Short.MAX_VALUE))
         );
         movimentarLayout.setVerticalGroup(
@@ -471,9 +469,9 @@ public class TelaDeJogo extends javax.swing.JFrame {
                     .addComponent(numEx)
                     .addComponent(qtdExercitos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(enviaExercitos))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnPassarMovimentacao)
-                .addGap(30, 30, 30))
+                .addContainerGap(38, Short.MAX_VALUE))
         );
 
         painelOpcoes.addTab("Movimentar", movimentar);
@@ -687,6 +685,11 @@ public class TelaDeJogo extends javax.swing.JFrame {
         lblAtual.setText("Jogador Atual:");
 
         textNomeDoJogador.setEditable(false);
+        textNomeDoJogador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textNomeDoJogadorActionPerformed(evt);
+            }
+        });
 
         lblAtual1.setText("Cor:");
 
@@ -1422,7 +1425,7 @@ public class TelaDeJogo extends javax.swing.JFrame {
     }//GEN-LAST:event_btnPonfusMouseClicked
 
     private void btnArmeniaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnArmeniaMouseClicked
-        metodoDosBotoes(btnArmenia, evt); 
+        metodoDosBotoes(btnArmenia, evt);
     }//GEN-LAST:event_btnArmeniaMouseClicked
 
     private void btnAssyriaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAssyriaMouseClicked
@@ -1483,7 +1486,7 @@ public class TelaDeJogo extends javax.swing.JFrame {
             painelOpcoes.setEnabledAt(1, true);
             painelOpcoes.setSelectedIndex(1);
             gerenciador.setEditavelTodosOsTerritorios(btnterritorios);
-            gerenciador.setFaseDaRodada(1);
+            gerenciador.autalizaFaseDaRodada();
         } else {
             JOptionPane.showMessageDialog(null, "Para começar o ataque distribua todos os Exercitos.");
         }
@@ -1494,39 +1497,39 @@ public class TelaDeJogo extends javax.swing.JFrame {
     }//GEN-LAST:event_qntExercitosActionPerformed
 
     private void btnCartaCincoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCartaCincoActionPerformed
-        TelaDeCartas telCartaCinco = new TelaDeCartas("Território",gerenciador.pegaJogadorDaRodada().getStringDescricaoCartaTerritorio(5), gerenciador.pegaJogadorDaRodada().getStringTipoCartaTerritorio(5));
+        TelaDeCartas telCartaCinco = new TelaDeCartas("Território", gerenciador.pegaJogadorDaRodada().getStringDescricaoCartaTerritorio(5), gerenciador.pegaJogadorDaRodada().getStringTipoCartaTerritorio(5));
         telCartaCinco.setVisible(true);
         telCartaCinco.setLocationRelativeTo(null);
     }//GEN-LAST:event_btnCartaCincoActionPerformed
 
     private void btnCartaQuatroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCartaQuatroActionPerformed
-        TelaDeCartas telCartaQuatro = new TelaDeCartas("Território",gerenciador.pegaJogadorDaRodada().getStringDescricaoCartaTerritorio(4), gerenciador.pegaJogadorDaRodada().getStringTipoCartaTerritorio(4));
+        TelaDeCartas telCartaQuatro = new TelaDeCartas("Território", gerenciador.pegaJogadorDaRodada().getStringDescricaoCartaTerritorio(4), gerenciador.pegaJogadorDaRodada().getStringTipoCartaTerritorio(4));
         telCartaQuatro.setVisible(true);
         telCartaQuatro.setLocationRelativeTo(null);
     }//GEN-LAST:event_btnCartaQuatroActionPerformed
 
     private void btnCartaTresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCartaTresActionPerformed
-        TelaDeCartas telCartaTres = new TelaDeCartas("Território",gerenciador.pegaJogadorDaRodada().getStringDescricaoCartaTerritorio(3),gerenciador.pegaJogadorDaRodada().getStringTipoCartaTerritorio(3));
+        TelaDeCartas telCartaTres = new TelaDeCartas("Território", gerenciador.pegaJogadorDaRodada().getStringDescricaoCartaTerritorio(3), gerenciador.pegaJogadorDaRodada().getStringTipoCartaTerritorio(3));
         telCartaTres.setVisible(true);
         telCartaTres.setLocationRelativeTo(null);
     }//GEN-LAST:event_btnCartaTresActionPerformed
 
     private void btnCartaDoisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCartaDoisActionPerformed
-        TelaDeCartas telCartaDois = new TelaDeCartas("Território",gerenciador.pegaJogadorDaRodada().getStringDescricaoCartaTerritorio(2), gerenciador.pegaJogadorDaRodada().getStringTipoCartaTerritorio(2));
+        TelaDeCartas telCartaDois = new TelaDeCartas("Território", gerenciador.pegaJogadorDaRodada().getStringDescricaoCartaTerritorio(2), gerenciador.pegaJogadorDaRodada().getStringTipoCartaTerritorio(2));
         telCartaDois.setVisible(true);
         telCartaDois.setLocationRelativeTo(null);
     }//GEN-LAST:event_btnCartaDoisActionPerformed
 
     private void btnCartaUmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCartaUmActionPerformed
-        TelaDeCartas telCartaUm = new TelaDeCartas("Território",gerenciador.pegaJogadorDaRodada().getStringDescricaoCartaTerritorio(1), gerenciador.pegaJogadorDaRodada().getStringTipoCartaTerritorio(1));
+        TelaDeCartas telCartaUm = new TelaDeCartas("Território", gerenciador.pegaJogadorDaRodada().getStringDescricaoCartaTerritorio(1), gerenciador.pegaJogadorDaRodada().getStringTipoCartaTerritorio(1));
         telCartaUm.setVisible(true);
         telCartaUm.setLocationRelativeTo(null);
     }//GEN-LAST:event_btnCartaUmActionPerformed
 
     private void btnCartaObjetivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCartaObjetivoActionPerformed
-        TelaDeCartas telaObjetivo = new TelaDeCartas("Objetivo",gerenciador.pegaJogadorDaRodada().getObjetivo().getDescricao(),"");
+        TelaDeCartas telaObjetivo = new TelaDeCartas("Objetivo", gerenciador.pegaJogadorDaRodada().getObjetivo().getDescricao(), "");
         telaObjetivo.setVisible(true);
-        telaObjetivo.setLocationRelativeTo(null); 
+        telaObjetivo.setLocationRelativeTo(null);
     }//GEN-LAST:event_btnCartaObjetivoActionPerformed
 
     private void dadoUmDefesa1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dadoUmDefesa1ActionPerformed
@@ -1541,33 +1544,39 @@ public class TelaDeJogo extends javax.swing.JFrame {
         painelOpcoes.setEnabledAt(2, false);
         painelOpcoes.setEnabledAt(0, true);
         painelOpcoes.setSelectedIndex(0);
+        gerenciador.autalizaFaseDaRodada();
+        textNomeDoJogador.setText(gerenciador.pegaJogadorDaRodada().getNome());
+        textCorDoJogador.setText(gerenciador.pegaJogadorDaRodada().getNomeCor());
+        qntExercitos.setText(""+gerenciador.getQtdExercitosParaDistribuirJogadorAtual());
+        gerenciador.setEditavelApenasTerritoriosDoJogadorAtual(btnterritorios);
     }//GEN-LAST:event_btnPassarMovimentacaoActionPerformed
 
     private void btnPassarAtaqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPassarAtaqueActionPerformed
         painelOpcoes.setEnabledAt(1, false);
         painelOpcoes.setEnabledAt(2, true);
         painelOpcoes.setSelectedIndex(2);
+        gerenciador.autalizaFaseDaRodada();
     }//GEN-LAST:event_btnPassarAtaqueActionPerformed
 
     private void btnAtacarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtacarActionPerformed
         boolean vizinho = false;
         for (int i = 0; i < DadosJogo.vinzihosDoTerritorio[indiceTerritorioAtaque].length; i++) {
-            if(DadosJogo.vinzihosDoTerritorio[indiceTerritorioAtaque][i] == indiceTerritorioDefesa){
+            if (DadosJogo.vinzihosDoTerritorio[indiceTerritorioAtaque][i] == indiceTerritorioDefesa) {
                 vizinho = true;
             }
         }
-        if(!vizinho){
+        if (!vizinho) {
             JOptionPane.showMessageDialog(null, "Para realizar um ataque os territorios devem ser vizinhos ou deve haver caminho por agua entre eles!");
-        }else{
+        } else {
             int dados_ataque[] = gerenciador.geraDadosDadosOrdenados();
             int dados_defesa[] = gerenciador.geraDadosDadosOrdenados();
-            dadoUmAtaque.setText(dados_ataque[2]+"");
-            dadoDoisAtaque.setText(dados_ataque[1]+"");
-            dadoTresAtaque.setText(dados_ataque[0]+"");
-            dadoUmDefesa.setText(dados_defesa[2]+"");
-            dadoDoisDefesa.setText(dados_defesa[1]+"");
-            dadoTresDefesa.setText(dados_defesa[0]+"");
-            logConsole.append("Voce atacou de " + DadosJogo.nomeTerritorios[indiceTerritorioAtaque] + " para "+DadosJogo.nomeTerritorios[indiceTerritorioDefesa] + ".");
+            dadoUmAtaque.setText(dados_ataque[2] + "");
+            dadoDoisAtaque.setText(dados_ataque[1] + "");
+            dadoTresAtaque.setText(dados_ataque[0] + "");
+            dadoUmDefesa.setText(dados_defesa[2] + "");
+            dadoDoisDefesa.setText(dados_defesa[1] + "");
+            dadoTresDefesa.setText(dados_defesa[0] + "");
+            logConsole.append("Voce atacou de " + DadosJogo.nomeTerritorios[indiceTerritorioAtaque] + " para " + DadosJogo.nomeTerritorios[indiceTerritorioDefesa] + ".");
             //gerenciador.setFaseDaRodada(2);
         }
 
@@ -1584,6 +1593,10 @@ public class TelaDeJogo extends javax.swing.JFrame {
     private void paisDefesaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_paisDefesaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_paisDefesaActionPerformed
+
+    private void textNomeDoJogadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textNomeDoJogadorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textNomeDoJogadorActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1732,11 +1745,11 @@ public class TelaDeJogo extends javax.swing.JFrame {
     private javax.swing.JLabel x;
     private javax.swing.JLabel xD;
     // End of variables declaration//GEN-END:variables
-   
+
     private void meuInitComponents() {
         textNomeDoJogador.setText(gerenciador.pegaJogadorDaRodada().getNome());
         textCorDoJogador.setText(gerenciador.pegaJogadorDaRodada().getNomeCor());
-        
+
         JButton btnterritorios[] = {
             btnBaetica,
             btnLusitania,
@@ -1782,67 +1795,68 @@ public class TelaDeJogo extends javax.swing.JFrame {
             btnAegyptus
         };
         this.btnterritorios = btnterritorios;
-        
+
         gerenciador.setTerritoriosJogadores(btnterritorios);
         gerenciador.setEditavelApenasTerritoriosDoJogadorAtual(btnterritorios);
-        
+
         painelOpcoes.setEnabledAt(1, false);
         painelOpcoes.setEnabledAt(2, false);
-        painelOpcoes.setEnabledAt(3, false);  
+        painelOpcoes.setEnabledAt(3, false);
     }
-    public void metodoDosBotoes(JButton button, MouseEvent evt){
+
+    public void metodoDosBotoes(JButton button, MouseEvent evt) {
         //Pega o indice
-        int indice=0;
+        int indice = 0;
         for (int i = 0; i < btnterritorios.length; i++) {
-            if(button.equals(btnterritorios[i])){
+            if (button.equals(btnterritorios[i])) {
                 indice = i;
             }
         }
         faseDaRodada = gerenciador.getFaseDaRodada();
-        if (faseDaRodada == 0){
-            if(button.isEnabled()){
+        if (faseDaRodada == 0) {
+            if (button.isEnabled()) {
                 int quantidadeAtual;
                 int aux;
                 int quantidadeDeTerritorios = gerenciador.getQtdExercitosParaDistribuirJogadorAtual();
-                if(evt.getButton() == MouseEvent.BUTTON1){//left -> aumenta exercito p distrubuir
-                    if(quantidadeDeTerritorios >0){
-                    quantidadeAtual = Integer.parseInt(button.getText());
-                    aux = quantidadeAtual+1;
-                    button.setText(aux + "");
-                    quantidadeDeTerritorios--;
-                    gerenciador.reduzQtdExercitosParaDistribuirJogadorAtual();
-                    atualizaQntExercitos();
-                    }
-                }else{
-                    if(evt.getButton() == MouseEvent.BUTTON3){//right -> diminui exercitos pra distribuir
+                if (evt.getButton() == MouseEvent.BUTTON1) {//left -> aumenta exercito p distrubuir
+                    if (quantidadeDeTerritorios > 0) {
                         quantidadeAtual = Integer.parseInt(button.getText());
-                        if(quantidadeAtual > 1){
-                        aux = quantidadeAtual-1;
+                        aux = quantidadeAtual + 1;
                         button.setText(aux + "");
-                        quantidadeDeTerritorios++;
-                        gerenciador.aumentaQtdExercitosParaDistribuirJogadorAtual();
+                        quantidadeDeTerritorios--;
+                        gerenciador.reduzQtdExercitosParaDistribuirJogadorAtual();
                         atualizaQntExercitos();
-                        }    
+                    }
+                } else {
+                    if (evt.getButton() == MouseEvent.BUTTON3) {//right -> diminui exercitos pra distribuir
+                        quantidadeAtual = Integer.parseInt(button.getText());
+                        if (quantidadeAtual > 1) {
+                            aux = quantidadeAtual - 1;
+                            button.setText(aux + "");
+                            quantidadeDeTerritorios++;
+                            gerenciador.aumentaQtdExercitosParaDistribuirJogadorAtual();
+                            atualizaQntExercitos();
+                        }
                     }
                 }
-        }
-        }else{
-            if(faseDaRodada == 1){
+            }
+        } else {
+            if (faseDaRodada == 1) {
                 boolean territorioSeu = gerenciador.pegaJogadorDaRodada().territorioPertence(indice);
-                if(evt.getButton() == MouseEvent.BUTTON1){//left -> escolhe territorio de ataque
-                    if(territorioSeu){
+                if (evt.getButton() == MouseEvent.BUTTON1) {//left -> escolhe territorio de ataque
+                    if (territorioSeu) {
                         indiceTerritorioAtaque = indice;
                         paisAtaque.setText(DadosJogo.nomeTerritorios[indice]);
-                    }else{
+                    } else {
                         JOptionPane.showMessageDialog(null, "Voce deve selecionar um territorio seu para comecar um ataque!");
-                    }    
-                }else{
-                    if(evt.getButton() == MouseEvent.BUTTON3){//right -> escolhe territorio de defesa
-                        
-                        if(territorioSeu){
+                    }
+                } else {
+                    if (evt.getButton() == MouseEvent.BUTTON3) {//right -> escolhe territorio de defesa
+
+                        if (territorioSeu) {
                             JOptionPane.showMessageDialog(null, "Voce nao pode atacar um territorio seu!");
-                        }else{
-                            indiceTerritorioDefesa= indice;
+                        } else {
+                            indiceTerritorioDefesa = indice;
                             paisDefesa.setText(DadosJogo.nomeTerritorios[indice]);
                         }
                     }
@@ -1852,6 +1866,6 @@ public class TelaDeJogo extends javax.swing.JFrame {
     }
 
     private void atualizaQntExercitos() {
-        qntExercitos.setText(""+gerenciador.getQtdExercitosParaDistribuirJogadorAtual());
+        qntExercitos.setText("" + gerenciador.getQtdExercitosParaDistribuirJogadorAtual());
     }
 }
