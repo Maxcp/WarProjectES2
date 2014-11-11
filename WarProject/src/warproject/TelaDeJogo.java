@@ -1569,12 +1569,12 @@ public class TelaDeJogo extends javax.swing.JFrame {
     public void atualizaDados(Ataque ataqueGerado) {
         int dados_ataque[] = ataqueGerado.getDadosAtaque();
         int dados_defesa[] = ataqueGerado.getDadosDefesa();
-        dadoUmAtaque.setText(dados_ataque[2] + "");
+        dadoUmAtaque.setText(dados_ataque[0] + "");
         dadoDoisAtaque.setText(dados_ataque[1] + "");
-        dadoTresAtaque.setText(dados_ataque[0] + "");
-        dadoUmDefesa.setText(dados_defesa[2] + "");
+        dadoTresAtaque.setText(dados_ataque[2] + "");
+        dadoUmDefesa.setText(dados_defesa[0] + "");
         dadoDoisDefesa.setText(dados_defesa[1] + "");
-        dadoTresDefesa.setText(dados_defesa[0] + "");
+        dadoTresDefesa.setText(dados_defesa[2] + "");
     }
 
     private void btnAtacarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtacarActionPerformed
