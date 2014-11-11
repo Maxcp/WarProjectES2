@@ -5,44 +5,221 @@
  */
 package model;
 
+import java.awt.Color;
+
 /**
  *
  * @author giseleafreitas
  */
-
 public class Ataque {
-    public static boolean[] comparaSeAtaqueGanhouNoDado(int[] dados_ataque, int[] dados_defesa) {
-        int size;
-        
-        if((dados_ataque[1] == 0) || (dados_defesa[1] == 0))
-            size = 1;
-        else if((dados_ataque[2] == 0) || (dados_defesa[2] == 0))
-            size = 2;
-        else
-            size = 3;
-        
-        boolean[] resultado = new boolean[size];
-        for(int i = 0; i < size; i++)
-            resultado[i] = dados_ataque[i] > dados_defesa[i];
+
+    private String mensagemErro;
+    private boolean aconteceuErro;
+
+    private int dadosAtaque[] = new int[3];
+    private int dadosDefesa[] = new int[3];
+    private int indiceAtaque;
+    private int indiceDefesa;
+    
+    private int indiceJogadorAtaque;
+
+    private boolean ataqueConquistou;
+    private Color corDoAtacante;
+
+    private String qtdExercitosDoAtacante;
+
+    public String getQtdExercitosDoAtacante() {
+        return qtdExercitosDoAtacante;
+    }
+
+    public Color getCorDoAtacante() {
+        return corDoAtacante;
+    }
+
+    public int[] getDadosAtaque() {
+        return dadosAtaque;
+    }
+
+    public int[] getDadosDefesa() {
+        return dadosDefesa;
+    }
+
+    public int getIndiceAtaque() {
+        return indiceAtaque;
+    }
+
+    public int getIndiceDefesa() {
+        return indiceDefesa;
+    }
+
+    public boolean ataqueConquistou() {
+        return ataqueConquistou;
+    }
+
+    public String getMensagemErro() {
+        return mensagemErro;
+    }
+
+    public int getIndiceJogadorAtaque() {
+        return indiceJogadorAtaque;
+    }
+
+    public boolean AconteceuErro() {
+        return aconteceuErro;
+    }
+
+    //SE 1 ataque ganhou, se 0 defesa ganhou se 2 nada acontece
+    private int[] comparaSeAtaqueGanhouNoDado() {
+        int size_ataque;
+        int size_defesa;
+
+        if (dadosAtaque[1] == 0) {
+            size_ataque = 1;
+        } else if (dadosAtaque[2] == 0) {
+            size_ataque = 2;
+        } else {
+            size_ataque = 3;
+        }
+
+        if (dadosDefesa[1] == 0) {
+            size_defesa = 1;
+        } else if (dadosDefesa[2] == 0) {
+            size_defesa = 2;
+        } else {
+            size_defesa = 3;
+        }
+
+        int[] resultado = new int[Math.max(size_defesa, size_ataque)];
+
+        for (int i = resultado.length - 1; i >= 0; i--) {
+
+            if (dadosAtaque[i] > 0 && dadosDefesa[i] > 0) {
+                if (dadosAtaque[i] > dadosDefesa[i]) {
+                    resultado[i] = 1;
+                } else {
+                    resultado[i] = 0;
+                }
+            } else {
+                resultado[i] = 2;
+            }
+        }
         return resultado;
     }
-    public static void realizaAtque(int[] dados_ataque, int[] dados_defesa, Territorio territorio_ataque, Territorio territorio_defesa) {
-        boolean[] resultado = comparaSeAtaqueGanhouNoDado(dados_ataque, dados_defesa);//true quando ataque ganhou
 
-        for(int i = 0; i < resultado.length; i++)
-        {
-            int exercitoQtd;
-            if(resultado[i])
-            {
-                exercitoQtd = territorio_defesa.getExercitosPosicionados();
-                territorio_defesa.setExercitosPosicionados(exercitoQtd - 1);
-            }
-            else
-            {
-                exercitoQtd = territorio_ataque.getExercitosPosicionados();
-                territorio_ataque.setExercitosPosicionados(exercitoQtd - 1);
+    private void realizaAtaque(Territorio territorio_ataque, Territorio territorio_defesa) {
+        int[] resultado = comparaSeAtaqueGanhouNoDado();//true quando ataque ganhou
+
+        for (int i = 0; i < resultado.length; i++) {
+            if (resultado[i] == 1) {
+                territorio_defesa.reduzExercitos(1);
+            } else {
+                if (resultado[i] == 0) {
+                    territorio_ataque.reduzExercitos(1);
+                }
             }
         }
     }
-    
+
+    private int[] geraDadosDadosOrdenados(int quantidade_exercitos) {
+        if (quantidade_exercitos <= 0) {
+            return null;
+        }
+
+        int size = quantidade_exercitos <= 3 ? quantidade_exercitos : 3;
+
+        int[] dados = {0, 0, 0};
+        for (int i = 0; i < size; i++) {
+            dados[i] = ((int) (Math.random() * 5) + 1);
+        }
+
+        return ordenaDecrescente(dados);
+    }
+
+    private int[] ordenaDecrescente(int[] vet) {
+        int aux;
+        for (int i = 0; i < vet.length; i++) {
+            for (int j = 0; j < vet.length - 1; j++) {
+                if (vet[j] < vet[j + 1]) {
+                    aux = vet[j];
+                    vet[j] = vet[j + 1];
+                    vet[j + 1] = aux;
+                }
+            }
+        }
+        return vet;
+    }
+
+    private Territorio[] getTerritoriosAtaqueDefesa(int indiceAtaque, int indiceDefesa, Jogador[] jogadores) {
+        Territorio t[] = new Territorio[2];
+        for (Jogador jogador : jogadores) {
+            for (int i = 0; i < jogador.getTerritorios().size(); i++) {
+                if (jogador.getTerritorios().get(i).getId() == indiceAtaque) {
+                    t[0] = jogador.getTerritorios().get(i);
+                }
+                if (jogador.getTerritorios().get(i).getId() == indiceDefesa) {
+                    t[1] = jogador.getTerritorios().get(i);
+                }
+            }
+        }
+        return t;
+    }
+
+    private Jogador[] getJogadoresAtaqueDefesa(int indiceAtaque, int indiceDefesa, Jogador[] jogadores) {
+        Jogador j[] = new Jogador[2];
+        for (Jogador jogador : jogadores) {
+            for (int i = 0; i < jogador.getTerritorios().size(); i++) {
+                if (jogador.getTerritorios().get(i).getId() == indiceAtaque) {
+                    j[0] = jogador;
+                    indiceJogadorAtaque = i;
+                }
+                if (jogador.getTerritorios().get(i).getId() == indiceDefesa) {
+                    j[1] = jogador;
+                }
+            }
+        }
+        return j;
+    }
+
+    public Ataque(int indiceTerritorioAtaque, int indiceTerritorioDefesa, Jogador[] jogadores) {
+        indiceAtaque = indiceTerritorioAtaque;
+        indiceDefesa = indiceTerritorioDefesa;
+
+        Territorio t[];
+        Jogador j[];
+
+        t = getTerritoriosAtaqueDefesa(indiceTerritorioAtaque, indiceTerritorioDefesa, jogadores);
+        j = getJogadoresAtaqueDefesa(indiceTerritorioAtaque, indiceTerritorioDefesa, jogadores);
+
+        Territorio territorioAtaque = t[0];
+        Territorio territorioDefesa = t[1];
+        if (territorioAtaque.exercitosPosicionados > 1) {
+            Jogador jogadorAtaque = j[0];
+            Jogador jogadorDefesa = j[1];
+
+            corDoAtacante = jogadorAtaque.getColor();
+
+            int qtdExercitosAtaque = territorioAtaque.exercitosPosicionados - 1;
+            int qtdExercitosDefesa = territorioDefesa.exercitosPosicionados;
+
+            dadosAtaque = geraDadosDadosOrdenados(qtdExercitosAtaque);
+            dadosDefesa = geraDadosDadosOrdenados(qtdExercitosDefesa);
+
+            realizaAtaque(territorioAtaque, territorioDefesa);
+
+            ataqueConquistou = (territorioDefesa.getExercitosPosicionados() == 0);
+
+            if (ataqueConquistou) {
+                jogadorDefesa.removeTerritorio(territorioDefesa);
+                territorioDefesa.setConquistador(jogadorAtaque);
+                territorioDefesa.setExercitosPosicionados(1);
+                territorioAtaque.reduzExercitos(1);
+                jogadorAtaque.addTerritorio(territorioDefesa);
+            }
+            qtdExercitosDoAtacante = "" + territorioAtaque.getExercitosPosicionados();
+        } else {
+            aconteceuErro = true;
+            mensagemErro = "Você precisa ter mais de um exercito dentro do territorio para realizar um ataque.";
+        }
+    }
+
 }

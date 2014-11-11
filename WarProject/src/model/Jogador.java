@@ -128,20 +128,20 @@ public class Jogador {
         int continenteID = 0;
         List<Integer> listaContinentesDominados = new ArrayList();
         for (int[] territoriosDoContinente : DadosJogo.territoriosDoContinente) {
-            
+
             boolean dominouContinente = true;
             for (int j = 0; j < territoriosDoContinente.length; j++) {
-                if(!territoriosPorId().contains(territoriosDoContinente[j])){
+                if (!territoriosPorId().contains(territoriosDoContinente[j])) {
                     dominouContinente = false;
                 }
             }
-            if (dominouContinente){
+            if (dominouContinente) {
                 listaContinentesDominados.add(continenteID);
             }
             continenteID++;
         }
         int continentes[] = new int[listaContinentesDominados.size()];
-        
+
         for (int i = 0; i < listaContinentesDominados.size(); i++) {
             continentes[i] = listaContinentesDominados.get(i);
         }
@@ -180,10 +180,10 @@ public class Jogador {
         }
         return qtd;
     }
-    
-    private List<Integer> territoriosPorId(){
+
+    private List<Integer> territoriosPorId() {
         List<Integer> listaTerritorioInt = new ArrayList();
-        for(Territorio t: territorios){
+        for (Territorio t : territorios) {
             listaTerritorioInt.add(t.id);
         }
         return listaTerritorioInt;
@@ -191,29 +191,27 @@ public class Jogador {
 
     public boolean territorioPertence(int indice) {
         List<Integer> listaTerritorioInt = territoriosPorId();
-        for(int i: listaTerritorioInt){
-            if(indice == i){
+        for (int i : listaTerritorioInt) {
+            if (indice == i) {
                 return true;
             }
         }
         return false;
     }
-    
-    public String getStringDescricaoCartaTerritorio(int indexCarta){
+
+    public String getStringDescricaoCartaTerritorio(int indexCarta) {
         if (indexCarta > cartas.size()) {
-            return "Você não possui a carta de numero "+ indexCarta;
-        }
-        else{
-            return cartas.get(indexCarta-1).getTerritorio().getNome();
+            return "Você não possui a carta de numero " + indexCarta;
+        } else {
+            return cartas.get(indexCarta - 1).getTerritorio().getNome();
         }
     }
-    
-    public String getStringTipoCartaTerritorio(int indexCarta){
+
+    public String getStringTipoCartaTerritorio(int indexCarta) {
         if (indexCarta > cartas.size()) {
             return "";
-        }
-        else{
-            return cartas.get(indexCarta-1).getNomeFormaGeometrica();
+        } else {
+            return cartas.get(indexCarta - 1).getNomeFormaGeometrica();
         }
     }
 

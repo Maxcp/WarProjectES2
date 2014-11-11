@@ -7,7 +7,9 @@ package controller;
 
 import java.awt.Color;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.Random;
 import javax.swing.JButton;
 import model.*;
 
@@ -25,6 +27,7 @@ public class Gerenciador {
     int jogadorDaRodada = 0;
     int faseDaRodada = 0;
     int qtdExercitosParaDistribuirJogadorAtual = 0;
+    boolean jogadorDaRodadaPegouCarta = false;
 
     private static Gerenciador instancia;
 
@@ -73,6 +76,7 @@ public class Gerenciador {
         if (jogadorDaRodada > 3) {
             jogadorDaRodada = 0;
         }
+        jogadorDaRodadaPegouCarta = false;
         atualizaQtdExercitosParaDistribuirJogadorAtual();
     }
 
@@ -148,6 +152,8 @@ public class Gerenciador {
                 formatoGeometrico = 0;
             }
         }
+        long seed = System.nanoTime();
+        Collections.shuffle(cartasDisponiveis, new Random(seed));
     }
 
     public Jogador pegaJogadorDaRodada() {
@@ -182,19 +188,10 @@ public class Gerenciador {
         }
     }
 
-    public Territorio[] getTerritoriosAtaqueDefesa(int indiceAtaque, int indiceDefesa) {
-        Territorio t[] = new Territorio[2];
-        for (Jogador jogador : jogadores) {
-            for (int i = 0; i < jogador.getTerritorios().size(); i++) {
-                if (jogador.getTerritorios().get(i).getId() == indiceAtaque) {
-                    t[0] = jogador.getTerritorios().get(i);
-                }
-                if (jogador.getTerritorios().get(i).getId() == indiceDefesa) {
-                    t[1] = jogador.getTerritorios().get(i);
-                }
-            }
+    private void setDonoTerritorios(Jogador jogador, List<Territorio> territorios) {
+        for (Territorio territorio : territorios) {
+            territorio.setConquistador(jogador);
         }
-        return t;
     }
 
     public int getQtdExercitosParaDistribuirJogadorAtual() {
@@ -211,41 +208,6 @@ public class Gerenciador {
 
     public void aumentaQtdExercitosParaDistribuirJogadorAtual() {
         qtdExercitosParaDistribuirJogadorAtual++;
-    }
-
-    public int[] geraDadosDadosOrdenados(int quantidade_exercitos) {
-        if (quantidade_exercitos <= 0) {
-            return null;
-        }
-
-        int size = quantidade_exercitos <= 3 ? quantidade_exercitos : 3;
-
-        int[] dados = {0, 0, 0};
-        for (int i = 0; i < size; i++) {
-            dados[i] = ((int) (Math.random() * 5) + 1);
-        }
-
-        return ordenaDecrescente(dados);
-    }
-
-    public int[] ordenaDecrescente(int[] vet) {
-        int aux = 0;
-        for (int i = 0; i < vet.length; i++) {
-            for (int j = 0; j < vet.length - 1; j++) {
-                if (vet[j] < vet[j + 1]) {
-                    aux = vet[j];
-                    vet[j] = vet[j + 1];
-                    vet[j + 1] = aux;
-                }
-            }
-        }
-        return vet;
-    }
-
-    private void setDonoTerritorios(Jogador jogador, List<Territorio> territorios) {
-        for (Territorio territorio : territorios) {
-            territorio.setConquistador(jogador);
-        }
     }
 
     public boolean territorioPossuiExercitosParaMovimentar(int indiceTerritorioDe, int qtdExercitosApassar) {
@@ -277,5 +239,16 @@ public class Gerenciador {
                 }
             }
         }
+    }
+
+    public Ataque gerarAtaque(int indiceTerritorioAtaque, int indiceTerritorioDefesa) {
+
+        Ataque ataque = new Ataque(indiceTerritorioAtaque, indiceTerritorioDefesa, jogadores);
+        if (ataque.ataqueConquistou() && !jogadorDaRodadaPegouCarta) {
+            jogadorDaRodadaPegouCarta = true;
+           CartasTerritorio ct = cartasDisponiveis.remove(cartasDisponiveis.size()-1);
+           jogadores[ataque.getIndiceJogadorAtaque()].addCarta(ct);
+        }
+        return ataque;
     }
 }
