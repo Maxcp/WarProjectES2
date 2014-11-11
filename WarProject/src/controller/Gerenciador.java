@@ -214,14 +214,17 @@ public class Gerenciador {
     }
 
     public int[] geraDadosDadosOrdenados(int quantidade_exercitos) {
-        if(quantidade_exercitos <= 0)
+        if (quantidade_exercitos <= 0) {
             return null;
-        
+        }
+
         int size = quantidade_exercitos <= 3 ? quantidade_exercitos : 3;
-        
+
         int[] dados = {0, 0, 0};
-        for(int i = 0; i < size; i++)   dados[i] = ((int) (Math.random() * 5) + 1);
-        
+        for (int i = 0; i < size; i++) {
+            dados[i] = ((int) (Math.random() * 5) + 1);
+        }
+
         return ordenaDecrescente(dados);
     }
 
@@ -246,14 +249,32 @@ public class Gerenciador {
     }
 
     public boolean territorioPossuiExercitosParaMovimentar(int indiceTerritorioDe, int qtdExercitosApassar) {
-        return true;//TODO
+        for (Jogador jogador : jogadores) {
+            for (int i = 0; i < jogador.getTerritorios().size(); i++) {
+                if (jogador.getTerritorios().get(i).getId() == indiceTerritorioDe) {
+                    return jogador.getTerritorios().get(i).possuiExercitosPraPassar(qtdExercitosApassar);
+                }
+            }
+        }
     }
 
-    public void reduzQtdExercitosDoTerritorio(int indiceTerritorioDe, int qtdExercitosApassar) {
-       //TODO
+    public void reduzQtdExercitosDoTerritorio(int indiceTerritorio, int qtdExercitosApassar) {
+        for (Jogador jogador : jogadores) {
+            for (int i = 0; i < jogador.getTerritorios().size(); i++) {
+                if (jogador.getTerritorios().get(i).getId() == indiceTerritorio) {
+                    jogador.getTerritorios().get(i).reduzExercitos(qtdExercitosApassar);
+                }
+            }
+        }
     }
 
-    public void aumentaQtdExercitosDoTerritorio(int indiceTerritorioPara, int qtdExercitosApassar) {
-        //TODO
+    public void aumentaQtdExercitosDoTerritorio(int indiceTerritorio, int qtdExercitosApassar) {
+        for (Jogador jogador : jogadores) {
+            for (int i = 0; i < jogador.getTerritorios().size(); i++) {
+                if (jogador.getTerritorios().get(i).getId() == indiceTerritorio) {
+                    jogador.getTerritorios().get(i).aumentaExercitos(qtdExercitosApassar);
+                }
+            }
+        }
     }
 }
