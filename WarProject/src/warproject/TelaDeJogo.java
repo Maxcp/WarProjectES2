@@ -11,6 +11,7 @@ import java.awt.event.MouseEvent;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import model.Ataque;
 import model.Territorio;
 
 /**
@@ -1575,25 +1576,6 @@ public class TelaDeJogo extends javax.swing.JFrame {
         dadoDoisDefesa.setText(dados_defesa[1] + "");
         dadoTresDefesa.setText(dados_defesa[0] + "");
     }
-
-    public void realizaAtque(int[] dados_ataque, int[] dados_defesa, Territorio territorio_ataque, Territorio territorio_defesa) {
-        boolean[] resultado = gerenciador.comparaSeAtaqueGanhouNoDado(dados_ataque, dados_defesa);//true quando ataque ganhou
-
-        for(int i = 0; i < resultado.length; i++)
-        {
-            int exercitoQtd;
-            if(resultado[i])
-            {
-                exercitoQtd = territorio_defesa.getExercitosPosicionados();
-                territorio_defesa.setExercitosPosicionados(exercitoQtd - 1);
-            }
-            else
-            {
-                exercitoQtd = territorio_ataque.getExercitosPosicionados();
-                territorio_ataque.setExercitosPosicionados(exercitoQtd - 1);
-            }
-        }
-    }
     
     private void btnAtacarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtacarActionPerformed
         boolean vizinho = false;
@@ -1610,15 +1592,21 @@ public class TelaDeJogo extends javax.swing.JFrame {
             Territorio[] territorios = gerenciador.getTerritorios();
             Territorio territorio_ataque = territorios[indiceTerritorioAtaque];
             Territorio territorio_defesa = territorios[indiceTerritorioDefesa];
-            geraDadosOrdenados(dados_ataque, dados_defesa, territorio_ataque, territorio_defesa);
-            realizaAtque(dados_ataque, dados_defesa, territorio_ataque, territorio_defesa);
-            //logConsole.append("Voce atacou de " + DadosJogo.nomeTerritorios[indiceTerritorioAtaque] + " para " + DadosJogo.nomeTerritorios[indiceTerritorioDefesa] + ".");
-            //verfica se ataque ganhou
-            if (territorio_defesa.getExercitosPosicionados() == 0) {//se ele perdeu todos os exercitos, vira do novo dono e muda cor do botao
-                territorio_defesa.getConquistador().removeTerritorio(territorio_defesa);//retira o territorio da lista de territorios do jogador
-                territorio_defesa.setConquistador(territorio_ataque.getConquistador());//territorio possui um novo conquistador
-                btnterritorios[territorio_defesa.getId()].setBackground(territorio_defesa.getConquistador().getColor());//muda a cor do botao para a cor do seu novo conquistador
+            if(territorio_ataque.getExercitosPosicionados()>1){
+                geraDadosOrdenados(dados_ataque, dados_defesa, territorio_ataque, territorio_defesa);
+                Ataque.realizaAtque(dados_ataque, dados_defesa, territorio_ataque, territorio_defesa);
+                //logConsole.append("Voce atacou de " + DadosJogo.nomeTerritorios[indiceTerritorioAtaque] + " para " + DadosJogo.nomeTerritorios[indiceTerritorioDefesa] + ".");
+                //verfica se ataque ganhou
+                if (territorio_defesa.getExercitosPosicionados() == 0) {//se ele perdeu todos os exercitos, vira do novo dono e muda cor do botao
+                    territorio_defesa.getConquistador().removeTerritorio(territorio_defesa);//retira o territorio da lista de territorios do jogador
+                    territorio_defesa.setConquistador(territorio_ataque.getConquistador());//territorio possui um novo conquistador
+                    btnterritorios[territorio_defesa.getId()].setBackground(territorio_defesa.getConquistador().getColor());//muda a cor do botao para a cor do seu novo conquistador
+                }
+            }else{
+                JOptionPane.showMessageDialog(null, "Voce precisa ter mais de uma legiao dentro do territorio para realizar um ataque.");
+
             }
+
 
         }
 
