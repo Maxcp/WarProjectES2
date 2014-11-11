@@ -129,7 +129,7 @@ public class Ataque {
 
         int[] dados = {0, 0, 0};
         for (int i = 0; i < size; i++) {
-            dados[i] = ((int) (Math.random() * 5) + 1);
+            dados[i] = ((int) (Math.random() * 6) + 1);
         }
 
         return ordenaDecrescente(dados);
@@ -166,16 +166,18 @@ public class Ataque {
 
     private Jogador[] getJogadoresAtaqueDefesa(int indiceAtaque, int indiceDefesa, Jogador[] jogadores) {
         Jogador j[] = new Jogador[2];
+        int x = 0;
         for (Jogador jogador : jogadores) {
             for (int i = 0; i < jogador.getTerritorios().size(); i++) {
                 if (jogador.getTerritorios().get(i).getId() == indiceAtaque) {
                     j[0] = jogador;
-                    indiceJogadorAtaque = i;
+                    indiceJogadorAtaque = x;
                 }
                 if (jogador.getTerritorios().get(i).getId() == indiceDefesa) {
                     j[1] = jogador;
                 }
             }
+            x++;
         }
         return j;
     }
