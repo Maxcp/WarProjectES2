@@ -256,6 +256,7 @@ public class Gerenciador {
                 }
             }
         }
+        return false;
     }
 
     public void reduzQtdExercitosDoTerritorio(int indiceTerritorio, int qtdExercitosApassar) {
