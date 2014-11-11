@@ -1872,7 +1872,7 @@ public class TelaDeJogo extends javax.swing.JFrame {
                         aux = quantidadeAtual + 1;
                         button.setText(aux + "");
                         quantidadeDeTerritorios--;
-                        gerenciador.reduzQtdExercitosDoTerritorio(indice, 1);
+                        gerenciador.aumentaQtdExercitosDoTerritorio(indice, 1);
                         gerenciador.reduzQtdExercitosParaDistribuirJogadorAtual();
                         atualizaQntExercitos();
                     }
@@ -1883,7 +1883,7 @@ public class TelaDeJogo extends javax.swing.JFrame {
                             aux = quantidadeAtual - 1;
                             button.setText(aux + "");
                             quantidadeDeTerritorios++;
-                            gerenciador.aumentaQtdExercitosDoTerritorio(indice, 1);
+                            gerenciador.reduzQtdExercitosDoTerritorio(indice, 1);
                             gerenciador.aumentaQtdExercitosParaDistribuirJogadorAtual();
                             atualizaQntExercitos();
                         }

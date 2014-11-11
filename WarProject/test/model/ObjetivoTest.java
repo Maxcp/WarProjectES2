@@ -36,7 +36,7 @@ public class ObjetivoTest {
     @Ignore
     @Test
     public void testGetDescricao() {
-        System.out.println("getDescricao");
+        System.out.println("Class Objetivo: Method getDescricao()");
         Objetivo instance = null;
         String expResult = "";
         String result = instance.getDescricao();
@@ -50,7 +50,7 @@ public class ObjetivoTest {
      */
     @Test
     public void testGetID() {
-        System.out.println("getID");
+        System.out.println("Class Objetivo: Method getID()");
         
         for(int i = 0; i < 20; i++)
         {
@@ -66,7 +66,7 @@ public class ObjetivoTest {
     @Ignore
     @Test
     public void testGetTerritoriosNecessarios() {
-        System.out.println("getTerritoriosNecessarios");
+        System.out.println("Class Objetivo: Method getTerritoriosNecessarios()");
         Objetivo instance = null;
         List<Territorio> expResult = null;
         List<Territorio> result = instance.getTerritoriosNecessarios();
@@ -81,7 +81,7 @@ public class ObjetivoTest {
     @Ignore
     @Test
     public void testSetTerritoriosNecessarios() {
-        System.out.println("setTerritoriosNecessarios");
+        System.out.println("Class Objetivo: Method setTerritoriosNecessarios(List<Territorio>)");
         List<Territorio> territoriosNecessarios = null;
         Objetivo instance = null;
         instance.setTerritoriosNecessarios(territoriosNecessarios);
@@ -92,31 +92,54 @@ public class ObjetivoTest {
     /**
      * Test of verificaTipoDoObjetivo method, of class Objetivo.
      */
-    @Ignore
     @Test
     public void testVerificaTipoDoObjetivo() {
-        System.out.println("verificaTipoDoObjetivo");
-        int num = 0;
-        int expResult = 0;
-        int result = Objetivo.verificaTipoDoObjetivo(num);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        System.out.println("Class Objetivo: Method verificaTipoDoObjetivo(int)");
+        
+        for(int i = 0; i < 14; i++)
+        {
+            if(i>=0 && i <=3)
+                assertEquals(1, Objetivo.verificaTipoDoObjetivo(i));
+            if(i>=4 && i <=6)
+                assertEquals(2, Objetivo.verificaTipoDoObjetivo(i));
+            if(i>=7 && i <=10)
+                assertEquals(3, Objetivo.verificaTipoDoObjetivo(i));
+            if(i==11)
+                assertEquals(4, Objetivo.verificaTipoDoObjetivo(i));
+            if(i>=12 && i <=13)
+                assertEquals(1, Objetivo.verificaTipoDoObjetivo(i));
+        }
     }
 
     /**
      * Test of geraObjetivoAleatorio method, of class Objetivo.
      */
-    @Ignore
     @Test
     public void testGeraObjetivoAleatorio() {
-        System.out.println("geraObjetivoAleatorio");
-        int[] restricoes = null;
-        int expResult = 0;
-        int result = Objetivo.geraObjetivoAleatorio(restricoes);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        System.out.println("Class Objetivo: Method geraObjetivoAleatorio(int[])");
+        int[] check = new int[14];
+        int[] result = new int[14];
+        boolean status = false;
+        int objID;
+        
+        for(int i = 0; i < 14; i++)
+        {
+            check[i] = 0;
+            result[i] = 1;
+        }
+        
+        for(int i = 0; i < 200 && (!status); i++)
+        {
+            status = true;
+            objID = Objetivo.geraObjetivoAleatorio(null);
+            assertTrue((0 <= objID) && (objID <= 14));
+            check[i] = 1;
+            
+            for(int k = 0; k < 14; k++)
+                if(check[k] == 0)   status = false;
+        }
+        
+        assertArrayEquals(result, check);
     }
 
     /**
@@ -125,7 +148,7 @@ public class ObjetivoTest {
     @Ignore
     @Test
     public void testVerificaSeObjetivoFoiAtingido() {
-        System.out.println("verificaSeObjetivoFoiAtingido");
+        System.out.println("Class Objetivo: Method verificaSeObjetivoFoiAtingido()");
         Objetivo instance = null;
         boolean expResult = false;
         boolean result = instance.verificaSeObjetivoFoiAtingido();
@@ -140,7 +163,7 @@ public class ObjetivoTest {
     @Ignore
     @Test
     public void testGeraQuatroObjetivos() {
-        System.out.println("geraQuatroObjetivos");
+        System.out.println("Class Objetivo: Method geraQuatroObjetivos(Objetivo, Objetivo, Objetivo, Objetivo)");
         Objetivo objetivo1 = null;
         Objetivo objetivo2 = null;
         Objetivo objetivo3 = null;

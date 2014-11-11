@@ -34,7 +34,7 @@ public class ContinenteTest {
      */
     @Test
     public void testGetTerritorios() {
-        System.out.println("getTerritorios");
+        System.out.println("Class Continente: Method getTerritorios()");
         Territorio[] expResult = new Territorio[10];
         Continente instance = new Continente("", expResult);
         Territorio[] result = instance.getTerritorios();
@@ -46,7 +46,7 @@ public class ContinenteTest {
      */
     @Test
     public void testSetTerritorios() {
-        System.out.println("setTerritorios");
+        System.out.println("Class Continente: Method setTerritorios(Territorio[])");
         Territorio[] territorios1 = new Territorio[10];
         Territorio[] territorios2 = new Territorio[10];
         Continente instance = new Continente("", territorios1);
@@ -59,7 +59,7 @@ public class ContinenteTest {
      */
     @Test
     public void testGetNome() {
-        System.out.println("getNome");
+        System.out.println("Class Continente: Method getNome()");
         Continente instance = new Continente("Teste", null);
         String expResult = "Teste";
         String result = instance.getNome();
@@ -71,7 +71,7 @@ public class ContinenteTest {
      */
     @Test
     public void testSetNome() {
-        System.out.println("setNome");
+        System.out.println("Class Continente: Method setNome(String)");
         String nome = "Teste";
         Continente instance = new Continente("Continente", null);
         instance.setNome(nome);

@@ -38,7 +38,7 @@ public class TerritorioTest {
      */
     @Test
     public void testGetId() {
-        System.out.println("getId");
+        System.out.println("Class Territorio: Method getId()");
         Territorio instance = null;
         int expResult = 0;
         
@@ -55,7 +55,7 @@ public class TerritorioTest {
      */
     @Test
     public void testSetId() {
-        System.out.println("setId");
+        System.out.println("Class Territorio: Method setId(int)");
         int id = 0;
         Territorio instance = new Territorio(0, "", null, null, 1);
         int expResult = 0;
@@ -73,7 +73,7 @@ public class TerritorioTest {
      */
     @Test
     public void testGetNome() {
-        System.out.println("getNome");
+        System.out.println("Class Territorio: Method getNome()");
         Territorio instance = new Territorio(1, "Teste", null, null, 1);
         assertEquals("Teste", instance.getNome());
     }
@@ -83,7 +83,7 @@ public class TerritorioTest {
      */
     @Test
     public void testSetNome() {
-        System.out.println("setNome");
+        System.out.println("Class Territorio: Method setNome(String)");
         String nome = "Teste";
         Territorio instance = new Territorio(1, "Empty", null, null, 1);
         instance.setNome(nome);
@@ -95,7 +95,7 @@ public class TerritorioTest {
      */
     @Test
     public void testGetVizinhos() {
-        System.out.println("getVizinhos");
+        System.out.println("Class Territorio: Method getVizinhos()");
         Territorio[] expResult = new Territorio[10];
         Territorio instance = new Territorio(1, "", expResult, null, 1);
         Territorio[] result = instance.getVizinhos();
@@ -107,7 +107,7 @@ public class TerritorioTest {
      */
     @Test
     public void testIsVizinho() {
-        System.out.println("isVizinho");
+        System.out.println("Class Territorio: Method isVizinho(Territorio)");
         Territorio t = null;
         Territorio[] vizinhos = new Territorio[10];
         Territorio[] distantes = new Territorio[10];
@@ -143,7 +143,7 @@ public class TerritorioTest {
      */
     @Test
     public void testSetVizinhos() {
-        System.out.println("setVizinhos");
+        System.out.println("Class Territorio: Method setVizinhos(Territorio[])");
         Territorio[] vizinhos1 = new Territorio[10];
         Territorio[] vizinhos2 = new Territorio[10];
         Territorio instance = new Territorio(1, "", vizinhos1, null, 1);
@@ -156,7 +156,7 @@ public class TerritorioTest {
      */
     @Test
     public void testGetConquistador() {
-        System.out.println("getConquistador");
+        System.out.println("Class Territorio: Method getConquistador()");
         Jogador expResult = new Jogador("", 0, null, null);
         Territorio instance = new Territorio(1, "", null, expResult, 1);
         Jogador result = instance.getConquistador();
@@ -168,7 +168,7 @@ public class TerritorioTest {
      */
     @Test
     public void testSetConquistador() {
-        System.out.println("setConquistador");
+        System.out.println("Class Territorio: Method setConquistador(Jogador)");
         Jogador conquistador = new Jogador("C", 1, null, null);
         Jogador derrotado = new Jogador("D", 0, null, null);
         Territorio instance = new Territorio(1, "T", null, derrotado, 1);
@@ -181,7 +181,7 @@ public class TerritorioTest {
      */
     @Test
     public void testGetExercitosPosicionados() {
-        System.out.println("getExercitosPosicionados");
+        System.out.println("Class Territorio: Method getExercitosPosicionados()");
         Territorio instance = null;
         int expResult = 0;
         int result = 0;
@@ -203,7 +203,7 @@ public class TerritorioTest {
      */
     @Test
     public void testSetExercitosPosicionados() {
-        System.out.println("setExercitosPosicionados");
+        System.out.println("Class Territorio: Method setExercitosPosicionados(int)");
         Territorio instance = new Territorio(1, "E", null, null, 1);
         int expResult = 0;
         int result = 0;
@@ -225,7 +225,7 @@ public class TerritorioTest {
      */
     @Test
     public void testRetiraUltimoTerritorioDaLista() {
-        System.out.println("retiraUltimoTerritorioDaLista");
+        System.out.println("Class Territorio: Method retiraUltimoTerritorioDaLista(List<Territorio>)");
         List<Territorio> list = new ArrayList<>();
         Territorio expResult = null;
         Territorio result = null;
@@ -248,7 +248,7 @@ public class TerritorioTest {
     @Ignore
     @Test
     public void testEmbaralhaTerritorio() {
-        System.out.println("embaralhaTerritorio");
+        System.out.println("Class Territorio: Method embaralhaTerritorio(List<Territorio>)");
         List<Territorio> list = null;
         Territorio.embaralhaTerritorio(list);
         // TODO review the generated test code and remove the default call to fail.
@@ -261,7 +261,7 @@ public class TerritorioTest {
     @Ignore
     @Test
     public void testDistribuiTerritorio() {
-        System.out.println("distribuiTerritorio");
+        System.out.println("Class Territorio: Method distribuiTerritorio(Territorio[], List<Territorio>, List<Territorio>, List<Territorio>, List<Territorio>)");
         Territorio[] t = null;
         List<Territorio> territorios1 = null;
         List<Territorio> territorios2 = null;
@@ -278,9 +278,53 @@ public class TerritorioTest {
     @Ignore
     @Test
     public void testEscreveNomesTerritorios() {
-        System.out.println("escreveNomesTerritorios");
+        System.out.println("Class Territorio: Method escreveNomesTerritorios(List<Territorio>)");
         List<Territorio> territorios = null;
         Territorio.escreveNomesTerritorios(territorios);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of reduzExercitos method, of class Territorio.
+     */
+    @Ignore
+    @Test
+    public void testReduzExercitos() {
+        System.out.println("Class Territorio: Method reduzExercitos(int)");
+        int i = 0;
+        Territorio instance = null;
+        instance.reduzExercitos(i);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of aumentaExercitos method, of class Territorio.
+     */
+    @Ignore
+    @Test
+    public void testAumentaExercitos() {
+        System.out.println("Class Territorio: Method aumentaExercitos(int)");
+        int i = 0;
+        Territorio instance = null;
+        instance.aumentaExercitos(i);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of possuiExercitosPraPassar method, of class Territorio.
+     */
+    @Ignore
+    @Test
+    public void testPossuiExercitosPraPassar() {
+        System.out.println("Class Territorio: Method possuiExercitosPraPassar(int)");
+        int qtdExercitosApassar = 0;
+        Territorio instance = null;
+        boolean expResult = false;
+        boolean result = instance.possuiExercitosPraPassar(qtdExercitosApassar);
+        assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }

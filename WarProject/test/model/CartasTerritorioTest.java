@@ -6,6 +6,7 @@
 
 package model;
 
+import java.util.Random;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -34,7 +35,7 @@ public class CartasTerritorioTest {
      */
     @Test
     public void testGetTerritorio() {
-        System.out.println("getTerritorio");
+        System.out.println("Class CartasTerritorio: Method getTerritorio()");
         Territorio expResult = new Territorio(1, "", null, null, 1);
         CartasTerritorio instance = new CartasTerritorio(expResult, 0);
         Territorio result = instance.getTerritorio();
@@ -46,7 +47,7 @@ public class CartasTerritorioTest {
      */
     @Test
     public void testSetTerritorio() {
-        System.out.println("setTerritorio");
+        System.out.println("Class CartasTerritorio: Method setTerritorio(Territorio)");
         Territorio territorio1 = new Territorio(1, "1", null, null, 1);
         Territorio territorio2 = new Territorio(2, "2", null, null, 1);
         CartasTerritorio instance = new CartasTerritorio(territorio1, 0);
@@ -57,30 +58,74 @@ public class CartasTerritorioTest {
     /**
      * Test of getFormaGeometrica method, of class CartasTerritorio.
      */
-    @Ignore
     @Test
     public void testGetFormaGeometrica() {
-        System.out.println("getFormaGeometrica");
+        System.out.println("Class CartasTerritorio: Method getFormaGeometrica()");
         CartasTerritorio instance = null;
         int expResult = 0;
-        int result = instance.getFormaGeometrica();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        int result = 0;
+        
+        for(int i = 0; i < 50; i++)
+        {
+            expResult = new Random().nextInt();
+            instance = new CartasTerritorio(null, expResult);
+            result = instance.getFormaGeometrica();
+            
+            if(expResult < 0)
+                assertEquals(0, result);
+            else if(expResult > 3)
+                assertEquals(3, result);
+            else
+                assertEquals(expResult, result);
+        }
     }
 
     /**
      * Test of setFormaGeometrica method, of class CartasTerritorio.
      */
-    @Ignore
     @Test
     public void testSetFormaGeometrica() {
-        System.out.println("setFormaGeometrica");
-        int formaGeometrica = 0;
-        CartasTerritorio instance = null;
-        instance.setFormaGeometrica(formaGeometrica);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        System.out.println("Class CartasTerritorio: Method setFormaGeometrica(int)");
+        CartasTerritorio instance = new CartasTerritorio(null, 0);
+        int expResult = 0;
+        int result = 0;
+        
+        for(int i = 0; i < 50; i++)
+        {
+            expResult = new Random().nextInt();
+            instance.setFormaGeometrica(expResult);
+            result = instance.getFormaGeometrica();
+            
+            if(expResult < 0)
+                assertEquals(0, result);
+            else if(expResult > 3)
+                assertEquals(3, result);
+            else
+                assertEquals(expResult, result);
+        }
+    }
+
+    /**
+     * Test of getNomeFormaGeometrica method, of class CartasTerritorio.
+     */
+    @Test
+    public void testGetNomeFormaGeometrica() {
+        System.out.println("Class CartasTerritorio: Method getNomeFormaGeometrica()");
+        CartasTerritorio instance = new CartasTerritorio(null, 0);
+        
+        String expResult = "Quadrado";
+        String result = instance.getNomeFormaGeometrica();
+        assertEquals(expResult, result);
+        
+        instance.setFormaGeometrica(1);
+        expResult = "Triangulo";
+        result = instance.getNomeFormaGeometrica();
+        assertEquals(expResult, result);
+        
+        instance.setFormaGeometrica(2);
+        expResult = "Circulo";
+        result = instance.getNomeFormaGeometrica();
+        assertEquals(expResult, result);
     }
     
 }

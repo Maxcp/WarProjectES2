@@ -6,7 +6,9 @@
 
 package controller;
 
+import java.util.Random;
 import javax.swing.JButton;
+import model.Ataque;
 import model.Jogador;
 import model.Territorio;
 import org.junit.AfterClass;
@@ -46,7 +48,7 @@ public class GerenciadorTest {
      */
     @Test
     public void testGetInstance_StringArrArr() {
-        System.out.println("getInstance");
+        System.out.println("Class Gerenciador: Method getInstance(String[][])");
         String[][] paramentros =
         {
             {"1", "Player", "0"},
@@ -73,7 +75,7 @@ public class GerenciadorTest {
      */
     @Test
     public void testGetInstance_0args() {
-        System.out.println("getInstance");
+        System.out.println("Class Gerenciador: Method getInstance()");
         String[][] paramentros =
         {
             {"1", "Player", "0"},
@@ -92,7 +94,7 @@ public class GerenciadorTest {
      */
     @Test
     public void testGetTerritorios() {
-        System.out.println("getTerritorios");
+        System.out.println("Class Gerenciador: Method getTerritorios()");
         Territorio[] territorios = instance.getTerritorios();
         assertTrue(territorios.length == DadosJogo.qtdTerritorios);
     }
@@ -102,7 +104,7 @@ public class GerenciadorTest {
      */
     @Test
     public void testGetFaseDaRodada() {
-        System.out.println("getFaseDaRodada");
+        System.out.println("Class Gerenciador: Method getFaseDaRodada()");
         int result = instance.getFaseDaRodada();
         assertTrue((0 <= result) && (result <= 2));
     }
@@ -112,7 +114,7 @@ public class GerenciadorTest {
      */
     @Test
     public void testAutalizaFaseDaRodada() {
-        System.out.println("autalizaFaseDaRodada");
+        System.out.println("Class Gerenciador: Method autalizaFaseDaRodada()");
         int result;
         
         do
@@ -137,7 +139,7 @@ public class GerenciadorTest {
      */
     @Test
     public void testAtualizaJogadorDaRodada() {
-        System.out.println("atualizaJogadorDaRodada");
+        System.out.println("Class Gerenciador: Method atualizaJogadorDaRodada()");
         Jogador[] result = new Jogador[4];
         
         for(int i = 0; i < 4; i++)
@@ -161,7 +163,7 @@ public class GerenciadorTest {
      */
     @Test
     public void testPegaJogadorDaRodada() {
-        System.out.println("pegaJogadorDaRodada");
+        System.out.println("Class Gerenciador: Method pegaJogadorDaRodada()");
         Jogador result = instance.pegaJogadorDaRodada();
         assertTrue(result != null);
     }
@@ -172,7 +174,7 @@ public class GerenciadorTest {
     @Ignore
     @Test
     public void testSetEditavelApenasTerritoriosDoJogadorAtual() {
-        System.out.println("setEditavelApenasTerritoriosDoJogadorAtual");
+        System.out.println("Class Gerenciador: Method setEditavelApenasTerritoriosDoJogadorAtual(JButton[])");
         JButton[] btnterritorios = null;
         Gerenciador instance = null;
         instance.setEditavelApenasTerritoriosDoJogadorAtual(btnterritorios);
@@ -186,7 +188,7 @@ public class GerenciadorTest {
     @Ignore
     @Test
     public void testSetEditavelTodosOsTerritorios() {
-        System.out.println("setEditavelTodosOsTerritorios");
+        System.out.println("Class Gerenciador: Method setEditavelTodosOsTerritorios(JButton[])");
         JButton[] btnterritorios = null;
         Gerenciador instance = null;
         instance.setEditavelTodosOsTerritorios(btnterritorios);
@@ -200,7 +202,7 @@ public class GerenciadorTest {
     @Ignore
     @Test
     public void testSetTerritoriosJogadores() {
-        System.out.println("setTerritoriosJogadores");
+        System.out.println("Class Gerenciador: Method setTerritoriosJogadores(JButton[])");
         JButton[] btnterritorios = null;
         Gerenciador instance = null;
         instance.setTerritoriosJogadores(btnterritorios);
@@ -213,7 +215,7 @@ public class GerenciadorTest {
      */
     @Test
     public void testGetQtdExercitosParaDistribuirJogadorAtual() {
-        System.out.println("getQtdExercitosParaDistribuirJogadorAtual");
+        System.out.println("Class Gerenciador: Method getQtdExercitosParaDistribuirJogadorAtual()");
         int result = instance.getQtdExercitosParaDistribuirJogadorAtual();
         assertTrue(result >= 0);
     }
@@ -223,7 +225,7 @@ public class GerenciadorTest {
      */
     @Test
     public void testAtualizaQtdExercitosParaDistribuirJogadorAtual() {
-        System.out.println("atualizaQtdExercitosParaDistribuirJogadorAtual");
+        System.out.println("Class Gerenciador: Method atualizaQtdExercitosParaDistribuirJogadorAtual()");
         instance.atualizaQtdExercitosParaDistribuirJogadorAtual();
         int result = instance.getQtdExercitosParaDistribuirJogadorAtual();
         assertEquals(result, instance.pegaJogadorDaRodada().qtdExercitosParaDistribuir());
@@ -234,7 +236,7 @@ public class GerenciadorTest {
      */
     @Test
     public void testReduzQtdExercitosParaDistribuirJogadorAtual() {
-        System.out.println("reduzQtdExercitosParaDistribuirJogadorAtual");
+        System.out.println("Class Gerenciador: Method reduzQtdExercitosParaDistribuirJogadorAtual()");
         instance.atualizaQtdExercitosParaDistribuirJogadorAtual();
         int result = instance.getQtdExercitosParaDistribuirJogadorAtual();
         int expResult = result - 1;
@@ -248,7 +250,7 @@ public class GerenciadorTest {
      */
     @Test
     public void testAumentaQtdExercitosParaDistribuirJogadorAtual() {
-        System.out.println("aumentaQtdExercitosParaDistribuirJogadorAtual");
+        System.out.println("Class Gerenciador: Method aumentaQtdExercitosParaDistribuirJogadorAtual()");
         instance.atualizaQtdExercitosParaDistribuirJogadorAtual();
         int result = instance.getQtdExercitosParaDistribuirJogadorAtual();
         int expResult = result + 1;
@@ -262,7 +264,7 @@ public class GerenciadorTest {
      */
     @Test
     public void testGeraDadosDadosOrdenados() {
-        System.out.println("geraDadosDadosOrdenados");
+        System.out.println("Class Gerenciador: Method geraDadosDadosOrdenados(int)");
         int[] dado;
         
         assertNull(instance.geraDadosDadosOrdenados(0));
@@ -288,12 +290,16 @@ public class GerenciadorTest {
      */
     @Test
     public void testOrdena() {
-        System.out.println("ordena");
+        System.out.println("Class Gerenciador: Method ordena(int[])");
         int[] dado;
         
         for(int i = 1; i < 10; i++)
         {
-            dado = instance.geraDadosDadosOrdenados(i);
+            dado = new int[i];
+            for(int k = 0; k < i; k++)
+                dado[k] = new Random().nextInt();
+            
+            dado = instance.ordenaDecrescente(dado);
             
             for(int k = 1; k < dado.length; k++)
                 assertTrue(dado[k - 1] >= dado[k]);
@@ -304,9 +310,10 @@ public class GerenciadorTest {
     /**
      * Test of comparaSeAtaqueGanhouNoDado method, of class Gerenciador.
      */
+    @Ignore
     @Test
     public void testComparaSeAtaqueGanhouNoDado() {
-        System.out.println("comparaSeAtaqueGanhouNoDado");
+        System.out.println("Class Gerenciador: Method comparaSeAtaqueGanhouNoDado(int[], int[])");
         int[] dadoAtaque, dadoDefesa;
         boolean[] result, expResult;
         
@@ -317,7 +324,7 @@ public class GerenciadorTest {
                 dadoAtaque = instance.geraDadosDadosOrdenados(k);
                 dadoDefesa = instance.geraDadosDadosOrdenados(i);
                 
-                result = instance.comparaSeAtaqueGanhouNoDado(dadoAtaque, dadoDefesa);
+                result = Ataque.comparaSeAtaqueGanhouNoDado(dadoAtaque, dadoDefesa);
                 
                 int min;
                 
