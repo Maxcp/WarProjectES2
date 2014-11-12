@@ -577,6 +577,11 @@ public class TelaDeJogo extends javax.swing.JFrame {
 
         btnTrocar.setText("Trocar");
         btnTrocar.setBorder(null);
+        btnTrocar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTrocarActionPerformed(evt);
+            }
+        });
 
         btnCartaObjetivo.setText("Objetivo");
         btnCartaObjetivo.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -1645,6 +1650,13 @@ public class TelaDeJogo extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_enviaExercitosActionPerformed
+
+    private void btnTrocarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTrocarActionPerformed
+        if (gerenciador.getFaseDaRodada()==0 && gerenciador.jogadorDaRodadaPodeTrocarCartas()){
+            gerenciador.trocaCartasDoJogadorAtual();
+            int exercitosTotais = gerenciador.getQtdExercitosParaDistribuirJogadorAtual();
+        }
+    }//GEN-LAST:event_btnTrocarActionPerformed
 
     /**
      * @param args the command line arguments

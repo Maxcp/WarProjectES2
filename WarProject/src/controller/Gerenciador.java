@@ -27,6 +27,7 @@ public class Gerenciador {
     int jogadorDaRodada = 0;
     int faseDaRodada = 0;
     int qtdExercitosParaDistribuirJogadorAtual = 0;
+    int qtdExercitosParaProximaTroca = 5;
     boolean jogadorDaRodadaPegouCarta = false;
 
     private static Gerenciador instancia;
@@ -252,4 +253,18 @@ public class Gerenciador {
         }
         return ataque;
     }
+
+    public boolean jogadorDaRodadaPodeTrocarCartas() {
+        return pegaJogadorDaRodada().podeTrocarCartas();
+        
+    }
+
+    public void trocaCartasDoJogadorAtual() {
+        CartasTerritorio ct[];
+        ct = pegaJogadorDaRodada().TrocarCartas();
+        qtdExercitosParaDistribuirJogadorAtual += qtdExercitosParaProximaTroca;
+        qtdExercitosParaProximaTroca += 5;
+    }
+
+
 }

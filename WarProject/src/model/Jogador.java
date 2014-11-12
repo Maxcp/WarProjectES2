@@ -215,4 +215,78 @@ public class Jogador {
         }
     }
 
+    public boolean podeTrocarCartas() {
+        int indiceQuadrado = 0;
+        int indiceCirculo = 0;
+        int indiceTriangulo = 0;
+        for (int i = 0; i < cartas.size(); i++) {
+            CartasTerritorio cartaTerritorio = cartas.get(i);
+            if (cartaTerritorio.formaGeometricaQuadrada()) {
+                indiceQuadrado += 1;
+            } else {
+                if (cartaTerritorio.formaGeometricaCircular()) {
+                    indiceCirculo += 1;
+                } else {
+                    indiceTriangulo += 1;
+                }
+            }
+        }
+        return (indiceCirculo >= 3 || indiceQuadrado >= 3 || indiceTriangulo >= 3 || (indiceCirculo >= 1 && indiceTriangulo >= 1 && indiceQuadrado >= 1));
+    }
+
+    public CartasTerritorio[] TrocarCartas() {
+        int indiceQuadrados = 0;
+        int indiceCirculos = 0;
+        int indiceTriangulos = 0;
+        int indiceDiferentes = 0;
+
+        int quadrados[] = {-1, -1, -1, -1, -1};
+        int circulos[] = {-1, -1, -1, -1, -1};
+        int triangulos[] = {-1, -1, -1, -1, -1};
+        int diferentes[] = {-1, -1, -1, -1, -1};
+        int arrayDaTroca[] = {-1, -1, -1, -1, -1} ;
+
+        for (int i = 0; i < cartas.size(); i++) {
+            CartasTerritorio cartaTerritorio = cartas.get(i);
+            if (cartaTerritorio.formaGeometricaQuadrada()) {
+                quadrados[indiceQuadrados] = i;
+                indiceQuadrados += 1;
+            } else {
+                if (cartaTerritorio.formaGeometricaCircular()) {
+                    circulos[indiceCirculos] = i;
+                    indiceCirculos += 1;
+                } else {
+                    triangulos[indiceTriangulos] = i;
+                    indiceTriangulos += 1;
+
+                }
+            }
+            diferentes[indiceDiferentes] = i;
+            indiceDiferentes += 1;
+        }
+
+        if (indiceQuadrados >= 3) {
+            arrayDaTroca = quadrados;
+        } else {
+            if (indiceCirculos >= 3) {
+                arrayDaTroca = circulos;
+            } else {
+                if (indiceTriangulos >= 3) {
+                    arrayDaTroca = triangulos;
+                } else {
+                    if (indiceDiferentes >= 3) {
+                        arrayDaTroca = diferentes;
+                    }
+                }
+            }
+        }
+        int indice = 0;
+        CartasTerritorio ct[] = new CartasTerritorio[3];
+        for (int i = 0; i < 3; i++) {
+            ct[indice] = cartas.remove(arrayDaTroca[indice]);
+            indice++;
+        }
+        return ct;
+    }
+
 }
