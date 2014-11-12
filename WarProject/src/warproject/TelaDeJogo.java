@@ -1634,6 +1634,10 @@ public class TelaDeJogo extends javax.swing.JFrame {
             if (gerenciador.territorioPossuiExercitosParaMovimentar(indiceTerritorioDe, qtdExercitosApassar)) {
                 gerenciador.reduzQtdExercitosDoTerritorio(indiceTerritorioDe, qtdExercitosApassar);
                 gerenciador.aumentaQtdExercitosDoTerritorio(indiceTerritorioPara, qtdExercitosApassar);
+                int valorDe = Integer.parseInt(btnterritorios[indiceTerritorioDe].getText());
+                int valorPara = Integer.parseInt(btnterritorios[indiceTerritorioPara].getText());
+                btnterritorios[indiceTerritorioDe].setText(""+(valorDe-qtdExercitosApassar));
+                btnterritorios[indiceTerritorioPara].setText(""+(valorPara+qtdExercitosApassar));
             } else {
                 JOptionPane.showMessageDialog(null, "O territorio selecionado não possui a quantidade de exercitos suficientes para movimentar!");
             }

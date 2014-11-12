@@ -88,7 +88,7 @@ public class Territorio {
     }
 
     public boolean possuiExercitosPraPassar(int qtdExercitosApassar) {
-        return (this.exercitosPosicionados > qtdExercitosApassar+1);
+        return (this.exercitosPosicionados > qtdExercitosApassar);
     }
 
     //---------------------------METODOS ESTATICOS AUXILIARES--------------------------------------------
