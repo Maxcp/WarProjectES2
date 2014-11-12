@@ -1597,7 +1597,9 @@ public class TelaDeJogo extends javax.swing.JFrame {
                 if (ataqueGerado.ataqueConquistou()) {//se ele perdeu todos os exercitos, vira do novo dono e muda cor do botao
                     btnterritorios[ataqueGerado.getIndiceDefesa()].setBackground(ataqueGerado.getCorDoAtacante());//muda a cor do botao para a cor do seu novo conquistador
                 }
-                btnterritorios[ataqueGerado.getIndiceAtaque()].setText(ataqueGerado.getQtdExercitosDoAtacante());
+                btnterritorios[ataqueGerado.getIndiceDefesa()].setText(ataqueGerado.getQtdTerritorioNovoGanhou()+"");
+                btnterritorios[ataqueGerado.getIndiceAtaque()].setText(ataqueGerado.getQtdTerritorioAtaquePerdeu()+"");
+                
             } else {
                 JOptionPane.showMessageDialog(null, ataqueGerado.getMensagemErro());
             }
@@ -1926,7 +1928,7 @@ public class TelaDeJogo extends javax.swing.JFrame {
                         JOptionPane.showMessageDialog(null, "Selecione um territorio seu para movimentar.");
                     }
                 } else {
-                    JOptionPane.showMessageDialog(null, "OPS! ouve algum problema.:/ ");
+                    JOptionPane.showMessageDialog(null, "OPS! houve algum problema.:/ ");
                 }
 
             }

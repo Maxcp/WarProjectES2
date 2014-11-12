@@ -6,6 +6,8 @@
 package model;
 
 import java.awt.Color;
+import javax.swing.JComboBox;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -25,11 +27,20 @@ public class Ataque {
 
     private boolean ataqueConquistou;
     private Color corDoAtacante;
+    
+    private int qtdTerritorioNovoGanhou;
+    private int qtdTerritorioAtaquePerdeu;
 
-    private String qtdExercitosDoAtacante;
+    private String qtdExercitosDoAtacanteParaMover;
 
-    public String getQtdExercitosDoAtacante() {
-        return qtdExercitosDoAtacante;
+    public int getQtdTerritorioNovoGanhou(){
+        return qtdTerritorioNovoGanhou;
+    }
+    public int getQtdTerritorioAtaquePerdeu(){
+        return qtdTerritorioAtaquePerdeu;
+    }
+    public String getQtdExercitosDoAtacanteParaMover() {
+        return qtdExercitosDoAtacanteParaMover;
     }
 
     public Color getCorDoAtacante() {
@@ -213,15 +224,37 @@ public class Ataque {
             if (ataqueConquistou) {
                 jogadorDefesa.removeTerritorio(territorioDefesa);
                 territorioDefesa.setConquistador(jogadorAtaque);
-                territorioDefesa.setExercitosPosicionados(1);
-                territorioAtaque.reduzExercitos(1);
+                int exercitos = verificaQuantosExercicitosJogadorQuerMover(territorioAtaque, territorioDefesa);
+                qtdTerritorioNovoGanhou = exercitos;
+                qtdTerritorioAtaquePerdeu = territorioAtaque.getExercitosPosicionados() - exercitos;
+                territorioDefesa.setExercitosPosicionados(qtdTerritorioNovoGanhou);
+                territorioAtaque.setExercitosPosicionados(qtdTerritorioAtaquePerdeu);
                 jogadorAtaque.addTerritorio(territorioDefesa);
             }
-            qtdExercitosDoAtacante = "" + territorioAtaque.getExercitosPosicionados();
         } else {
             aconteceuErro = true;
             mensagemErro = "Você precisa ter mais de um exercito dentro do territorio para realizar um ataque.";
         }
+    }
+
+    private int verificaQuantosExercicitosJogadorQuerMover(Territorio territorioAtaque, Territorio territorioDefesa) {
+        int totalExercitosParaMovimentar = territorioAtaque.getExercitosPosicionados()-1;
+        totalExercitosParaMovimentar = totalExercitosParaMovimentar >= 3 ? 3 : totalExercitosParaMovimentar;
+        int item = 1;
+        String[] list = new String[totalExercitosParaMovimentar];
+        while(totalExercitosParaMovimentar>0){
+            list[item-1] = item + "";
+            totalExercitosParaMovimentar--;
+            item++;
+        }
+        
+        JComboBox jcb = new JComboBox(list);
+        jcb.setEditable(true);
+        String frase = "Parabens, voce ganhou um territorio!!";
+        JOptionPane.showMessageDialog( null, jcb, frase, JOptionPane.QUESTION_MESSAGE);
+        String item_cb = jcb.getSelectedItem().toString();
+        qtdExercitosDoAtacanteParaMover = item_cb;
+        return Integer.parseInt(item_cb);
     }
 
 }
