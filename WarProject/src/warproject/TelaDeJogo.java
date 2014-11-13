@@ -12,6 +12,7 @@ import java.awt.event.MouseEvent;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.text.DefaultCaret;
 import model.Ataque;
 import model.Jogador;
 import model.Territorio;
@@ -1923,6 +1924,8 @@ public class TelaDeJogo extends javax.swing.JFrame {
         textCorDoJogador.setText(gerenciador.pegaJogadorDaRodada().getNomeCor());
         textCorDoJogador.setForeground(Color.white);
         textCorDoJogador.setBackground(gerenciador.pegaJogadorDaRodada().getColor());
+        DefaultCaret caret = (DefaultCaret)logConsole.getCaret();
+        caret.setUpdatePolicy(DefaultCaret.ALWAYS_UPDATE);
 
         JButton btnterritorios[] = {
             btnBaetica,
