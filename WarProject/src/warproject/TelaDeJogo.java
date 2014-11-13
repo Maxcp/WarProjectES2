@@ -1741,7 +1741,13 @@ public class TelaDeJogo extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSiciliaActionPerformed
 
     private void clamarObjetivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clamarObjetivoActionPerformed
-        gerenciador.verificaObjetivoJogadorAtual();
+       if (gerenciador.verificaObjetivoJogadorAtual()) {
+           TelaFimDeJogo telaFim = new TelaFimDeJogo();
+           telaFim.setVisible(true);
+           this.dispose();
+       } else {
+           JOptionPane.showMessageDialog(null, "Desculpe mas você ainda não atingiu o objetivo.");
+       }
     }//GEN-LAST:event_clamarObjetivoActionPerformed
 
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed

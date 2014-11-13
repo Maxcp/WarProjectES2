@@ -297,14 +297,8 @@ public class Gerenciador {
         return qtdExercitosParaProximaTroca;
     }
 
-    public void verificaObjetivoJogadorAtual() {
-       boolean foiConcluido = Objetivo.foiConcluido(jogadorDaRodada, jogadores);
-       if(foiConcluido){
-           System.out.println("Parabens! Voce ganhou a partida");
-       }else{
-           System.out.println("Que pena, vc ainda nao ganhou!");
-       }
-       
+    public boolean verificaObjetivoJogadorAtual() {
+       return Objetivo.foiConcluido(jogadorDaRodada, jogadores);
     }
 
     public boolean jogadorDaRodadaDeveTrocarCartas() {
@@ -322,4 +316,8 @@ public class Gerenciador {
         return null;
     }
 
+    public void reiniciaGerenciador(){
+        instancia = null;
+        instancia = Gerenciador.getInstance(parametrosDosJogadores);
+    }
 }

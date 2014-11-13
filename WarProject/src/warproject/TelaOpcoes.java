@@ -51,7 +51,6 @@ public class TelaOpcoes extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(102, 0, 0));
-        setMaximumSize(null);
         setMinimumSize(null);
         setResizable(false);
 
@@ -89,6 +88,7 @@ public class TelaOpcoes extends javax.swing.JFrame {
         btnRanking.setForeground(new java.awt.Color(255, 255, 255));
         btnRanking.setText("Ranking");
         btnRanking.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnRanking.setEnabled(false);
         btnRanking.setFocusable(false);
         btnRanking.setMaximumSize(new java.awt.Dimension(73, 21));
         btnRanking.setMinimumSize(new java.awt.Dimension(73, 21));
