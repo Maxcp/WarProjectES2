@@ -89,6 +89,8 @@ public class TelaDeJogo extends javax.swing.JFrame {
         numEx = new javax.swing.JLabel();
         qtdExercitos = new javax.swing.JFormattedTextField();
         enviaExercitos = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
         cartas = new javax.swing.JPanel();
         btnTrocar = new javax.swing.JButton();
         btnCartaObjetivo = new javax.swing.JButton();
@@ -430,6 +432,12 @@ public class TelaDeJogo extends javax.swing.JFrame {
             }
         });
 
+        jLabel8.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel8.setText("Dica: clique no BOTAO DIREITO para selecionar o pais de partida das");
+
+        jLabel9.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel9.setText("suas tropas e no BOTAO ESQUERDO para selecionar o pais final.");
+
         javax.swing.GroupLayout movimentarLayout = new javax.swing.GroupLayout(movimentar);
         movimentar.setLayout(movimentarLayout);
         movimentarLayout.setHorizontalGroup(
@@ -437,56 +445,64 @@ public class TelaDeJogo extends javax.swing.JFrame {
             .addGroup(movimentarLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(movimentarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(movimentarLayout.createSequentialGroup()
-                        .addComponent(lbMovimentacao)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(movimentarLayout.createSequentialGroup()
-                        .addGroup(movimentarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, movimentarLayout.createSequentialGroup()
-                                .addComponent(numEx)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(qtdExercitos))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, movimentarLayout.createSequentialGroup()
-                                .addComponent(lbPais)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(paisDe, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(lbPara)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, movimentarLayout.createSequentialGroup()
                         .addGroup(movimentarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(movimentarLayout.createSequentialGroup()
+                                .addComponent(lbMovimentacao)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(movimentarLayout.createSequentialGroup()
+                                .addGroup(movimentarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, movimentarLayout.createSequentialGroup()
+                                        .addComponent(numEx)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(qtdExercitos))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, movimentarLayout.createSequentialGroup()
+                                        .addComponent(lbPais)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(paisDe, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(lbPara)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(paisPara, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, movimentarLayout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 179, Short.MAX_VALUE)
-                                .addGroup(movimentarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(enviaExercitos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(btnPassarMovimentacao))
-                                .addGap(26, 26, 26))))))
+                                .addComponent(paisPara, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(movimentarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(enviaExercitos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnPassarMovimentacao))
+                        .addGap(26, 26, 26))
+                    .addGroup(movimentarLayout.createSequentialGroup()
+                        .addGroup(movimentarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, 409, Short.MAX_VALUE)
+                            .addGroup(movimentarLayout.createSequentialGroup()
+                                .addComponent(jLabel9)
+                                .addGap(0, 0, Short.MAX_VALUE)))
+                        .addContainerGap())))
         );
         movimentarLayout.setVerticalGroup(
             movimentarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(movimentarLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lbMovimentacao)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, movimentarLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel8)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(movimentarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lbPais)
-                    .addComponent(paisDe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(paisPara, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lbPara))
+                .addComponent(jLabel9)
+                .addGap(18, 18, 18)
                 .addGroup(movimentarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(movimentarLayout.createSequentialGroup()
+                        .addComponent(lbMovimentacao)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(movimentarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lbPais)
+                            .addComponent(paisDe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(paisPara, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lbPara))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(movimentarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(numEx)
-                            .addComponent(qtdExercitos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, movimentarLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                            .addComponent(qtdExercitos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(movimentarLayout.createSequentialGroup()
                         .addComponent(enviaExercitos)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnPassarMovimentacao)
-                        .addGap(39, 39, 39))))
+                        .addComponent(btnPassarMovimentacao)))
+                .addGap(39, 39, 39))
         );
 
         painelOpcoes.addTab("Movimentar", movimentar);
@@ -1505,27 +1521,6 @@ public class TelaDeJogo extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_dadoUmDefesa1ActionPerformed
 
-    private void paisParaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_paisParaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_paisParaActionPerformed
-
-    private void btnPassarMovimentacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPassarMovimentacaoActionPerformed
-        painelOpcoes.setEnabledAt(2, false);
-        painelOpcoes.setEnabledAt(0, true);
-        painelOpcoes.setSelectedIndex(0);
-        gerenciador.autalizaFaseDaRodada();
-        textNomeDoJogador.setText(gerenciador.pegaJogadorDaRodada().getNome());
-        textCorDoJogador.setForeground(Color.white);
-        textCorDoJogador.setBackground(gerenciador.pegaJogadorDaRodada().getColor());
-        textCorDoJogador.setText(gerenciador.pegaJogadorDaRodada().getNomeCor());
-        qntExercitos.setText("" + gerenciador.getQtdExercitosParaDistribuirJogadorAtual());
-        gerenciador.setEditavelApenasTerritoriosDoJogadorAtual(btnterritorios);
-        limpaDadosMovimentacao();
-        logConsole.append("\n");
-        logConsole.append("É a vez do jogador " + gerenciador.pegaJogadorDaRodada().getNomeCor() + ".\n");
-        logConsole.append("O jogador " + gerenciador.pegaJogadorDaRodada().getNomeCor() + " deve inserir " + gerenciador.getQtdExercitosParaDistribuirJogadorAtual() + " exercitos.\n");
-    }//GEN-LAST:event_btnPassarMovimentacaoActionPerformed
-
     private void btnPassarAtaqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPassarAtaqueActionPerformed
         painelOpcoes.setEnabledAt(1, false);
         painelOpcoes.setEnabledAt(2, true);
@@ -1612,29 +1607,6 @@ public class TelaDeJogo extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_textNomeDoJogadorActionPerformed
 
-    private void enviaExercitosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enviaExercitosActionPerformed
-        boolean vizinho = false;
-        for (int i = 0; i < DadosJogo.vinzihosDoTerritorio[indiceTerritorioDe].length; i++) {
-            if (DadosJogo.vinzihosDoTerritorio[indiceTerritorioDe][i] == indiceTerritorioPara) {
-                vizinho = true;
-            }
-        }
-        if (vizinho) {
-            int qtdExercitosApassar = Integer.parseInt(qtdExercitos.getText());
-            if (gerenciador.territorioPossuiExercitosParaMovimentar(indiceTerritorioDe, qtdExercitosApassar)) {
-                gerenciador.reduzQtdExercitosDoTerritorio(indiceTerritorioDe, qtdExercitosApassar);
-                gerenciador.aumentaQtdExercitosDoTerritorio(indiceTerritorioPara, qtdExercitosApassar);
-                int valorDe = Integer.parseInt(btnterritorios[indiceTerritorioDe].getText());
-                int valorPara = Integer.parseInt(btnterritorios[indiceTerritorioPara].getText());
-                btnterritorios[indiceTerritorioDe].setText("" + (valorDe - qtdExercitosApassar));
-                btnterritorios[indiceTerritorioPara].setText("" + (valorPara + qtdExercitosApassar));
-                limpaDadosMovimentacao();
-            } else {
-                JOptionPane.showMessageDialog(null, "O territorio selecionado não possui a quantidade de exercitos suficientes para movimentar!");
-            }
-        }
-    }//GEN-LAST:event_enviaExercitosActionPerformed
-
     private void btnTrocarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTrocarActionPerformed
         if (gerenciador.getFaseDaRodada() == 0 && gerenciador.jogadorDaRodadaPodeTrocarCartas()) {
             int indices[] = gerenciador.trocaCartasDoJogadorAtual();
@@ -1667,6 +1639,50 @@ public class TelaDeJogo extends javax.swing.JFrame {
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
         logConsole.setText("");
     }//GEN-LAST:event_jToggleButton1ActionPerformed
+
+    private void enviaExercitosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enviaExercitosActionPerformed
+        boolean vizinho = false;
+        for (int i = 0; i < DadosJogo.vinzihosDoTerritorio[indiceTerritorioDe].length; i++) {
+            if (DadosJogo.vinzihosDoTerritorio[indiceTerritorioDe][i] == indiceTerritorioPara) {
+                vizinho = true;
+            }
+        }
+        if (vizinho) {
+            int qtdExercitosApassar = Integer.parseInt(qtdExercitos.getText());
+            if (gerenciador.territorioPossuiExercitosParaMovimentar(indiceTerritorioDe, qtdExercitosApassar)) {
+                gerenciador.reduzQtdExercitosDoTerritorio(indiceTerritorioDe, qtdExercitosApassar);
+                gerenciador.aumentaQtdExercitosDoTerritorio(indiceTerritorioPara, qtdExercitosApassar);
+                int valorDe = Integer.parseInt(btnterritorios[indiceTerritorioDe].getText());
+                int valorPara = Integer.parseInt(btnterritorios[indiceTerritorioPara].getText());
+                btnterritorios[indiceTerritorioDe].setText("" + (valorDe - qtdExercitosApassar));
+                btnterritorios[indiceTerritorioPara].setText("" + (valorPara + qtdExercitosApassar));
+                limpaDadosMovimentacao();
+            } else {
+                JOptionPane.showMessageDialog(null, "O territorio selecionado não possui a quantidade de exercitos suficientes para movimentar!");
+            }
+        }
+    }//GEN-LAST:event_enviaExercitosActionPerformed
+
+    private void paisParaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_paisParaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_paisParaActionPerformed
+
+    private void btnPassarMovimentacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPassarMovimentacaoActionPerformed
+        painelOpcoes.setEnabledAt(2, false);
+        painelOpcoes.setEnabledAt(0, true);
+        painelOpcoes.setSelectedIndex(0);
+        gerenciador.autalizaFaseDaRodada();
+        textNomeDoJogador.setText(gerenciador.pegaJogadorDaRodada().getNome());
+        textCorDoJogador.setForeground(Color.white);
+        textCorDoJogador.setBackground(gerenciador.pegaJogadorDaRodada().getColor());
+        textCorDoJogador.setText(gerenciador.pegaJogadorDaRodada().getNomeCor());
+        qntExercitos.setText("" + gerenciador.getQtdExercitosParaDistribuirJogadorAtual());
+        gerenciador.setEditavelApenasTerritoriosDoJogadorAtual(btnterritorios);
+        limpaDadosMovimentacao();
+        logConsole.append("\n");
+        logConsole.append("É a vez do jogador " + gerenciador.pegaJogadorDaRodada().getNomeCor() + ".\n");
+        logConsole.append("O jogador " + gerenciador.pegaJogadorDaRodada().getNomeCor() + " deve inserir " + gerenciador.getQtdExercitosParaDistribuirJogadorAtual() + " exercitos.\n");
+    }//GEN-LAST:event_btnPassarMovimentacaoActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Continuar;
@@ -1741,6 +1757,8 @@ public class TelaDeJogo extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JToggleButton jToggleButton1;
