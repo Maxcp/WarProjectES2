@@ -36,6 +36,10 @@ public class TelaDeJogo extends javax.swing.JFrame {
         meuInitComponents();
         gerenciador.atualizaQtdExercitosParaDistribuirJogadorAtual();
         qntExercitos.setText("" + gerenciador.getQtdExercitosParaDistribuirJogadorAtual());
+        logConsole.append("O jogo começou, os territorios foram distribuidos aleatoriamente.\n");
+        logConsole.append("A ordem dos jogadores é vermelho > verde > azul > preto. boa sorte!\n");
+        logConsole.append("O jogador " + gerenciador.pegaJogadorDaRodada().getNomeCor() + " deve inserir " + gerenciador.getQtdExercitosParaDistribuirJogadorAtual() + " exercitos.\n");
+
     }
 
     /**
@@ -114,6 +118,7 @@ public class TelaDeJogo extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         logConsole = new javax.swing.JTextArea();
         clamarObjetivo = new javax.swing.JToggleButton();
+        jToggleButton1 = new javax.swing.JToggleButton();
         btnTaurica = new javax.swing.JButton();
         btnBithynia = new javax.swing.JButton();
         btnDacia = new javax.swing.JButton();
@@ -221,7 +226,7 @@ public class TelaDeJogo extends javax.swing.JFrame {
                     .addGroup(distribuirLayout.createSequentialGroup()
                         .addGap(159, 159, 159)
                         .addComponent(Continuar)))
-                .addContainerGap(87, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         distribuirLayout.setVerticalGroup(
             distribuirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -239,7 +244,7 @@ public class TelaDeJogo extends javax.swing.JFrame {
                     .addComponent(labelSoldados))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Continuar)
-                .addContainerGap(24, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         painelOpcoes.addTab("Distribuir", distribuir);
@@ -479,7 +484,7 @@ public class TelaDeJogo extends javax.swing.JFrame {
                     .addComponent(enviaExercitos))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnPassarMovimentacao)
-                .addContainerGap(38, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         painelOpcoes.addTab("Movimentar", movimentar);
@@ -563,7 +568,7 @@ public class TelaDeJogo extends javax.swing.JFrame {
                         .addGroup(defenderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(dadpDoisDefesaD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(dadoDoisAtaqueD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(defenderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(dadoTresDefesaD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(dadoTresAtaqueD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -719,6 +724,13 @@ public class TelaDeJogo extends javax.swing.JFrame {
             }
         });
 
+        jToggleButton1.setText("Limpar Console");
+        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -726,7 +738,10 @@ public class TelaDeJogo extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(19, 19, 19)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(console)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(console)
+                        .addGap(18, 18, 18)
+                        .addComponent(jToggleButton1))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 460, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -747,7 +762,9 @@ public class TelaDeJogo extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(painelOpcoes, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(console)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(console)
+                            .addComponent(jToggleButton1))
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGap(6, 6, 6)
@@ -1511,11 +1528,19 @@ public class TelaDeJogo extends javax.swing.JFrame {
     private void ContinuarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ContinuarActionPerformed
         boolean deveTrocar = gerenciador.jogadorDaRodadaDeveTrocarCartas();
         if (gerenciador.getQtdExercitosParaDistribuirJogadorAtual() == 0 && !deveTrocar) {
-            painelOpcoes.setEnabledAt(0, false);
-            painelOpcoes.setEnabledAt(1, true);
-            painelOpcoes.setSelectedIndex(1);
-            gerenciador.setEditavelTodosOsTerritorios(btnterritorios);
-            gerenciador.autalizaFaseDaRodada();
+            if (gerenciador.getNumeroDaRodada() != 0) {
+                painelOpcoes.setEnabledAt(0, false);
+                painelOpcoes.setEnabledAt(1, true);
+                painelOpcoes.setSelectedIndex(1);
+                gerenciador.setEditavelTodosOsTerritorios(btnterritorios);
+                gerenciador.autalizaFaseDaRodada();
+            } else {
+                painelOpcoes.setEnabledAt(0, false);
+                painelOpcoes.setEnabledAt(2, true);
+                painelOpcoes.setSelectedIndex(2);
+                gerenciador.autalizaFaseDaRodada();
+                gerenciador.autalizaFaseDaRodada();
+            }
         } else {
             if (deveTrocar) {
                 JOptionPane.showMessageDialog(null, "Você possui 5 cartas, realize uma troca antes de atacar.");
@@ -1582,6 +1607,10 @@ public class TelaDeJogo extends javax.swing.JFrame {
         textCorDoJogador.setText(gerenciador.pegaJogadorDaRodada().getNomeCor());
         qntExercitos.setText("" + gerenciador.getQtdExercitosParaDistribuirJogadorAtual());
         gerenciador.setEditavelApenasTerritoriosDoJogadorAtual(btnterritorios);
+
+        logConsole.append("\n");
+        logConsole.append("É a vez do jogador " + gerenciador.pegaJogadorDaRodada().getNomeCor() + ".\n");
+        logConsole.append("O jogador " + gerenciador.pegaJogadorDaRodada().getNomeCor() + " deve inserir " + gerenciador.getQtdExercitosParaDistribuirJogadorAtual() + " exercitos.\n");
     }//GEN-LAST:event_btnPassarMovimentacaoActionPerformed
 
     private void btnPassarAtaqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPassarAtaqueActionPerformed
@@ -1630,18 +1659,25 @@ public class TelaDeJogo extends javax.swing.JFrame {
         } else {
 
             Ataque ataqueGerado;
+            String corDoJogadorDefesa = gerenciador.pegarJogadorDoTerritorio(indiceTerritorioDefesa).getNomeCor();
+            logConsole.append("O jogador " + gerenciador.pegaJogadorDaRodada().getNomeCor() + " vai atacar o jogador " + corDoJogadorDefesa + ".\n");
+            logConsole.append("De " + DadosJogo.nomeTerritorios[indiceTerritorioAtaque] + " para " + DadosJogo.nomeTerritorios[indiceTerritorioDefesa] + ".\n");
             ataqueGerado = gerenciador.gerarAtaque(indiceTerritorioAtaque, indiceTerritorioDefesa);
             if (!ataqueGerado.AconteceuErro()) {
-                //logConsole.append("Voce atacou de " + DadosJogo.nomeTerritorios[indiceTerritorioAtaque] + " para " + DadosJogo.nomeTerritorios[indiceTerritorioDefesa] + ".");
+
                 //verfica se ataque ganhou
                 atualizaDados(ataqueGerado);
-                if (ataqueGerado.ataqueConquistou()) {//se ele perdeu todos os exercitos, vira do novo dono e muda cor do botao
-                    btnterritorios[ataqueGerado.getIndiceDefesa()].setBackground(ataqueGerado.getCorDoAtacante());//muda a cor do botao para a cor do seu novo conquistador
-                }
+                logConsole.append("O jogador " + gerenciador.pegaJogadorDaRodada().getNomeCor() + " perdeu: " + ataqueGerado.getQtdExercitosPerdidosAtaque() + " exercitos.\n");
+                logConsole.append("O jogador " + corDoJogadorDefesa + " perdeu: " + ataqueGerado.getQtdExercitosPerdidosDefesa() + " exercitos.\n");
                 btnterritorios[ataqueGerado.getIndiceDefesa()].setText(ataqueGerado.getNovaQtdTerritorioDefesa() + "");
                 btnterritorios[ataqueGerado.getIndiceAtaque()].setText(ataqueGerado.getNovaQtdTerritorioAtaque() + "");
+                if (ataqueGerado.ataqueConquistou()) {//se ele perdeu todos os exercitos, vira do novo dono e muda cor do botao
+                    btnterritorios[ataqueGerado.getIndiceDefesa()].setBackground(ataqueGerado.getCorDoAtacante());//muda a cor do botao para a cor do seu novo conquistador
+                    logConsole.append("Parabéns! você conquistou um território.\n");
+                }
             } else {
                 JOptionPane.showMessageDialog(null, ataqueGerado.getMensagemErro());
+                logConsole.append("Desculpe, mas..." + ataqueGerado.getMensagemErro() + "\n");
             }
         }
 
@@ -1695,6 +1731,7 @@ public class TelaDeJogo extends javax.swing.JFrame {
                 }
 
             }
+            logConsole.append("O jogador " + gerenciador.pegaJogadorDaRodada().getNomeCor() + " fez uma troca e recebeu " + (gerenciador.getQtdExercitosParaProximaTroca() - 5) + " exercitos.\n");
             qntExercitos.setText("" + gerenciador.getQtdExercitosParaDistribuirJogadorAtual());
         }
     }//GEN-LAST:event_btnTrocarActionPerformed
@@ -1706,6 +1743,10 @@ public class TelaDeJogo extends javax.swing.JFrame {
     private void clamarObjetivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clamarObjetivoActionPerformed
         gerenciador.verificaObjetivoJogadorAtual();
     }//GEN-LAST:event_clamarObjetivoActionPerformed
+
+    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
+        logConsole.setText("");
+    }//GEN-LAST:event_jToggleButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1826,6 +1867,7 @@ public class TelaDeJogo extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JLabel lPais;
     private javax.swing.JLabel lPais1;
     private javax.swing.JLabel lPaisD;

@@ -22,23 +22,28 @@ public class Ataque {
     private int dadosDefesa[] = new int[3];
     private int indiceAtaque;
     private int indiceDefesa;
-    
+
     private int indiceJogadorAtaque;
 
     private boolean ataqueConquistou;
     private Color corDoAtacante;
-    
+
+    private int qtdExercitosPerdidosAtaque = 0;
+    private int qtdExercitosPerdidosDefesa = 0;
+
     private int novaQtdTerritorioAtaque;
     private int novaQtdTerritorioDefesa;
 
     private String qtdExercitosDoAtacanteParaMover;
 
-    public int getNovaQtdTerritorioAtaque(){
+    public int getNovaQtdTerritorioAtaque() {
         return novaQtdTerritorioAtaque;
     }
-    public int getNovaQtdTerritorioDefesa(){
+
+    public int getNovaQtdTerritorioDefesa() {
         return novaQtdTerritorioDefesa;
     }
+
     public String getQtdExercitosDoAtacanteParaMover() {
         return qtdExercitosDoAtacanteParaMover;
     }
@@ -77,6 +82,14 @@ public class Ataque {
 
     public boolean AconteceuErro() {
         return aconteceuErro;
+    }
+
+    public int getQtdExercitosPerdidosAtaque() {
+        return qtdExercitosPerdidosAtaque;
+    }
+
+    public int getQtdExercitosPerdidosDefesa() {
+        return qtdExercitosPerdidosDefesa;
     }
 
     //SE 1 ataque ganhou, se 0 defesa ganhou se 2 nada acontece
@@ -123,9 +136,11 @@ public class Ataque {
         for (int i = 0; i < resultado.length; i++) {
             if (resultado[i] == 1) {
                 territorio_defesa.reduzExercitos(1);
+                qtdExercitosPerdidosDefesa++;
             } else {
                 if (resultado[i] == 0) {
                     territorio_ataque.reduzExercitos(1);
+                    qtdExercitosPerdidosAtaque++;
                 }
             }
         }
@@ -230,7 +245,7 @@ public class Ataque {
                 territorioDefesa.setExercitosPosicionados(novaQtdTerritorioDefesa);
                 territorioAtaque.setExercitosPosicionados(novaQtdTerritorioAtaque);
                 jogadorAtaque.addTerritorio(territorioDefesa);
-                }else{
+            } else {
                 novaQtdTerritorioAtaque = territorioAtaque.getExercitosPosicionados();
                 novaQtdTerritorioDefesa = territorioDefesa.getExercitosPosicionados();
             }
@@ -241,20 +256,20 @@ public class Ataque {
     }
 
     private int verificaQuantosExercicitosJogadorQuerMover(Territorio territorioAtaque, Territorio territorioDefesa) {
-        int totalExercitosParaMovimentar = territorioAtaque.getExercitosPosicionados()-1;
+        int totalExercitosParaMovimentar = territorioAtaque.getExercitosPosicionados() - 1;
         totalExercitosParaMovimentar = totalExercitosParaMovimentar >= 3 ? 3 : totalExercitosParaMovimentar;
         int item = 1;
         String[] list = new String[totalExercitosParaMovimentar];
-        while(totalExercitosParaMovimentar>0){
-            list[item-1] = item + "";
+        while (totalExercitosParaMovimentar > 0) {
+            list[item - 1] = item + "";
             totalExercitosParaMovimentar--;
             item++;
         }
-        
+
         JComboBox jcb = new JComboBox(list);
         jcb.setEditable(true);
         String frase = "Parabens, voce ganhou um territorio!!";
-        JOptionPane.showMessageDialog( null, jcb, frase, JOptionPane.QUESTION_MESSAGE);
+        JOptionPane.showMessageDialog(null, jcb, frase, JOptionPane.QUESTION_MESSAGE);
         String item_cb = jcb.getSelectedItem().toString();
         qtdExercitosDoAtacanteParaMover = item_cb;
         return Integer.parseInt(item_cb);

@@ -29,7 +29,8 @@ public class Gerenciador {
     int qtdExercitosParaDistribuirJogadorAtual = 0;
     int qtdExercitosParaProximaTroca = 5;
     boolean jogadorDaRodadaPegouCarta = false;
-
+    int numeroDaRodada = 0;
+    
     private static Gerenciador instancia;
 
     public static Gerenciador getInstance(String[][] paramentros) {//Se ta mandando os parametros do usuario significa
@@ -62,6 +63,9 @@ public class Gerenciador {
     public int getFaseDaRodada() {
         return faseDaRodada;
     }
+    public int getNumeroDaRodada() {
+        return numeroDaRodada;
+    }
 
     public void autalizaFaseDaRodada() {
         faseDaRodada++;
@@ -76,6 +80,14 @@ public class Gerenciador {
 
         if (jogadorDaRodada > 3) {
             jogadorDaRodada = 0;
+            numeroDaRodada++;
+        }
+        if (pegaJogadorDaRodada().naoPossuiTerritorios()) {
+            jogadorDaRodada++;
+            if (jogadorDaRodada > 3) {
+                jogadorDaRodada = 0;
+                numeroDaRodada++;
+            }
         }
         jogadorDaRodadaPegouCarta = false;
         atualizaQtdExercitosParaDistribuirJogadorAtual();
@@ -281,12 +293,27 @@ public class Gerenciador {
         return indices;
     }
 
+    public int getQtdExercitosParaProximaTroca() {
+        return qtdExercitosParaProximaTroca;
+    }
+
     public void verificaObjetivoJogadorAtual() {
-       Objetivo.foiConcluido(jogadorDaRodada, jogadores);
+        Objetivo.foiConcluido(jogadorDaRodada, jogadores);
     }
 
     public boolean jogadorDaRodadaDeveTrocarCartas() {
-       return (pegaJogadorDaRodada().getCartas().size() > 4);
+        return (pegaJogadorDaRodada().getCartas().size() > 4);
+    }
+
+    public Jogador pegarJogadorDoTerritorio(int id) {
+        for (Jogador jogador : jogadores) {
+            for (int i = 0; i < jogador.getTerritorios().size(); i++) {
+                if (jogador.getTerritorios().get(i).getId() == id) {
+                    return jogador;
+                }
+            }
+        }
+        return null;
     }
 
 }

@@ -127,15 +127,15 @@ public class Territorio {
             quantidade--;
         }
         if (sobrou > 0) {
-            territorios1.add(Territorio.retiraUltimoTerritorioDaLista(territoriosEmbaralhados));
-            sobrou--;
-        }
-        if (sobrou > 0) {
-            territorios2.add(Territorio.retiraUltimoTerritorioDaLista(territoriosEmbaralhados));
+            territorios4.add(Territorio.retiraUltimoTerritorioDaLista(territoriosEmbaralhados));
             sobrou--;
         }
         if (sobrou > 0) {
             territorios3.add(Territorio.retiraUltimoTerritorioDaLista(territoriosEmbaralhados));
+            sobrou--;
+        }
+        if (sobrou > 0) {
+            territorios2.add(Territorio.retiraUltimoTerritorioDaLista(territoriosEmbaralhados));
         }
 
     }

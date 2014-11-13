@@ -324,4 +324,8 @@ public class Jogador {
         return territorios.get(indice);
     }
 
+    public boolean naoPossuiTerritorios() {
+        return territorios.isEmpty();
+    }
+
 }
