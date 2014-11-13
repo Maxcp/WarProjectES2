@@ -11,10 +11,73 @@ import java.util.List;
 
 public class Objetivo {
 
-    public static void foiConcluido(int indiceJogadorDaRodada, Jogador[] jogadores) {
+    private static boolean verificaSeObjetivoTipoUmFoiConcluido(Jogador jogador_atual, Jogador[] jogadores) {
+        /*
+        Acabar com as seguintes legioes:
+        public static int[] objetivosTipo1 = {legiaoVermelha,legiaoVerde,legiaoAzul,legiaoPreta};
+        */
+        int id_do_objetivo = jogador_atual.getObjetivo().getID();
+        int objetivo_tipo1 = DadosJogo.objetivosTipo1[id_do_objetivo];
+        //Se a cor do objetivo for igual a cor dele, conquista 24 territorios
+        if(jogador_atual.getCor() == objetivo_tipo1){
+            return jogador_atual.getTerritorios().size()>23;
+        }
+        for (int i = 0; i < jogadores.length; i++) {
+            if(jogadores[i].getCor() == objetivo_tipo1){
+                return jogadores[i].getTerritorios().size()<1;
+            }
+        }
+        return false;
     }
+
+    private static boolean verificaSeObjetivoTipoDoisFoiConcluido(Jogador jogador_atual) {
+        /*
+        Conquistar 2 continentes:
+        public static int[][] objetivosTipo2 = {{0, 5},{4, 2},{4, 3}};
+        */
+        int tamanhos_anteriores = DadosJogo.objetivosTipo1.length;//Tamanhos dos Tipos de Objetivos Anteriores
+        int id_do_objetivo = jogador_atual.getObjetivo().getID();
+        int[] continentes = DadosJogo.objetivosTipo2[id_do_objetivo-tamanhos_anteriores];
+        return (jogador_atual.verificaSePossuiContinente(continentes[0])&&
+                jogador_atual.verificaSePossuiContinente(continentes[1]));
+        
+    }
+
+    private static boolean verificaSeObjetivoTipoTresFoiConcluido(Jogador jogador_atual) {
+        /*
+        public static int[][] objetivosTipo3 = {{0, 6},{1, 6},{1, 3},{5, 2}};
+        */
+        int tamanhos_anteriores = DadosJogo.objetivosTipo1.length+DadosJogo.objetivosTipo2.length;//Tamanhos dos Tipos de Objetivos Anteriores
+        int id_do_objetivo = jogador_atual.getObjetivo().getID();
+        int[] continentes = DadosJogo.objetivosTipo3[id_do_objetivo-tamanhos_anteriores];
+        return (jogador_atual.verificaSePossuiContinente(continentes[0])&&
+                jogador_atual.verificaSePossuiContinente(continentes[1])&&
+                (jogador_atual.continentesDominados().length>2));
+    }
+
+    private static boolean verificaSeObjetivoTipoQuatroFoiConcluido(Jogador jogador_atual) {
+        /*
+        Conquiste 24 provincias:
+        public static int[] objetivosTipo4 = {24};
+        */
+        int tamanhos_anteriores = DadosJogo.objetivosTipo1.length+DadosJogo.objetivosTipo2.length+DadosJogo.objetivosTipo3.length;//Tamanhos dos Tipos de Objetivos Anteriores
+        int id_do_objetivo = jogador_atual.getObjetivo().getID();
+        int numero_de_provincias = DadosJogo.objetivosTipo4[id_do_objetivo-tamanhos_anteriores];
+        
+        return jogador_atual.getTerritorios().size()>= numero_de_provincias;
+    }
+
+    private static boolean verificaSeObjetivoTipoCincoFoiConcluido(Jogador jogador_atual) {
+        int tamanhos_anteriores = DadosJogo.objetivosTipo1.length+DadosJogo.objetivosTipo2.length+DadosJogo.objetivosTipo3.length+DadosJogo.objetivosTipo4.length;//Tamanhos dos Tipos de Objetivos Anteriores
+        int id_do_objetivo = jogador_atual.getObjetivo().getID();
+        int numero_de_provincias = DadosJogo.objetivosTipo5[id_do_objetivo-tamanhos_anteriores];
+        
+        jogador_atual.verificaSePossuiXTerritoriosCom2Legioes(numero_de_provincias);
+        return false;
+    }
+
     int id_objetivo;
-    int tipo_objetivo;
+    private int tipo_objetivo;
     final static int TIPO_UM=1, TIPO_DOIS=2, TIPO_TRES=3, TIPO_QUATRO=4, TIPO_CINCO=5;
     String descricao;
     List<Territorio> territoriosNecessarios;
@@ -22,6 +85,34 @@ public class Objetivo {
     public Objetivo(int[] restricoes){
         id_objetivo = geraObjetivoAleatorio(restricoes);
         tipo_objetivo = verificaTipoDoObjetivo(id_objetivo);
+    }
+    
+    public int getTipoObjetivo(){
+        return tipo_objetivo;
+    }
+    public static boolean foiConcluido(int indiceJogadorDaRodada, Jogador[] jogadores) {
+        Jogador jogador_atual = jogadores[indiceJogadorDaRodada];
+        int tipo_do_objetivo = jogador_atual.getObjetivo().getTipoObjetivo();
+        
+        boolean foiConcluido =false;
+        switch(tipo_do_objetivo){
+            case TIPO_UM:
+                foiConcluido = verificaSeObjetivoTipoUmFoiConcluido(jogador_atual, jogadores);
+                break;
+            case TIPO_DOIS:
+                foiConcluido = verificaSeObjetivoTipoDoisFoiConcluido(jogador_atual);
+                break;
+            case TIPO_TRES:
+                foiConcluido = verificaSeObjetivoTipoTresFoiConcluido(jogador_atual);
+                break;
+            case TIPO_QUATRO:
+                foiConcluido = verificaSeObjetivoTipoQuatroFoiConcluido(jogador_atual);
+                break;
+            case TIPO_CINCO:
+                foiConcluido = verificaSeObjetivoTipoCincoFoiConcluido(jogador_atual);
+                break;
+        }
+        return foiConcluido;   
     }
     
     public String getDescricao() {

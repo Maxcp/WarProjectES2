@@ -21,10 +21,10 @@ public class DadosJogo {
     
     public static String[] descricaoDeObjetivos = {
         //Tipo1
-        "Destrua totalmente as legioes vermelhas",
-        "Destrua totalmente as legioes verdes",
-        "Destrua totalmente as legioes azuis",
-        "Destrua totalmente as legioes pretas",
+        "Destrua totalmente as legioes vermelhas. Caso essa seja sua legiao, conquiste 24 territorios.",
+        "Destrua totalmente as legioes verdes. Caso essa seja sua legiao, conquiste 24 territorios.",
+        "Destrua totalmente as legioes azuis. Caso essa seja sua legiao, conquiste 24 territorios.",
+        "Destrua totalmente as legioes pretas. Caso essa seja sua legiao, conquiste 24 territorios.",
         //Tipo2
         "Conquiste na totalidade a EUROPA OCIDENTAL e a ASIA MENOR",
         "Conquiste na totalidade a EUROPA ORIENTAL e a PENINSULA ITALICA",

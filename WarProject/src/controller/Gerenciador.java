@@ -282,7 +282,13 @@ public class Gerenciador {
     }
 
     public void verificaObjetivoJogadorAtual() {
-       Objetivo.foiConcluido(jogadorDaRodada, jogadores);
+       boolean foiConcluido = Objetivo.foiConcluido(jogadorDaRodada, jogadores);
+       if(foiConcluido){
+           System.out.println("Parabens! Voce ganhou a partida");
+       }else{
+           System.out.println("Que pena, vc ainda nao ganhou!");
+       }
+       
     }
 
     public boolean jogadorDaRodadaDeveTrocarCartas() {

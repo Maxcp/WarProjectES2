@@ -93,6 +93,24 @@ public class Jogador {
         }
     }
 
+    public boolean verificaSePossuiContinente(int id_continente){
+        int[] continentesDominados = continentesDominados();
+        for (int i = 0; i < continentesDominados.length; i++) {
+            if(continentesDominados[i]==id_continente){
+                return true;
+            }
+        }
+        return false;
+    }
+    public boolean verificaSePossuiXTerritoriosCom2Legioes(int numero_de_provincias){
+        int contador=0;
+        for (int i = 0; i < territorios.size(); i++) {
+            if(territorios.get(i).exercitosPosicionados>1){
+                contador++;
+            }
+        }
+        return contador>=numero_de_provincias;
+    }
     public void removeCartaTerritorio(CartasTerritorio cartaTerritorio) {//remove a primeira ocorrencia do territorio
         boolean naoAchou = true;
         Iterator<CartasTerritorio> it = cartas.iterator();
@@ -139,7 +157,7 @@ public class Jogador {
         return cartas;
     }
 
-    private int[] continentesDominados() {
+    public int[] continentesDominados() {
         int continenteID = 0;
         List<Integer> listaContinentesDominados = new ArrayList();
         for (int[] territoriosDoContinente : DadosJogo.territoriosDoContinente) {
