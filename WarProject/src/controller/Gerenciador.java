@@ -107,7 +107,7 @@ public class Gerenciador {
         Territorio.distribuiTerritorio(territorios, territorios1, territorios2, territorios3, territorios4);
         Objetivo.geraQuatroObjetivos(objetivo1, objetivo2, objetivo3, objetivo4);
 
-        String nome1 = parametrosDosJogadores[0][1], nome2 = parametrosDosJogadores[1][1], nome3 = parametrosDosJogadores[2][1], nome4 = parametrosDosJogadores[3][1];
+        String nome1 = parametrosDosJogadores[0][0], nome2 = parametrosDosJogadores[1][0], nome3 = parametrosDosJogadores[2][0], nome4 = parametrosDosJogadores[3][0];
         int cor1 = Integer.parseInt(parametrosDosJogadores[0][1]);
         int cor2 = Integer.parseInt(parametrosDosJogadores[1][1]);
         int cor3 = Integer.parseInt(parametrosDosJogadores[2][1]);
