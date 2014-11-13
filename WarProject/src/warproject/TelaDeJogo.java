@@ -1509,14 +1509,19 @@ public class TelaDeJogo extends javax.swing.JFrame {
     }//GEN-LAST:event_btnMauritaniaMouseClicked
 
     private void ContinuarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ContinuarActionPerformed
-        if (gerenciador.getQtdExercitosParaDistribuirJogadorAtual() == 0) {
+        boolean deveTrocar = gerenciador.jogadorDaRodadaDeveTrocarCartas();
+        if (gerenciador.getQtdExercitosParaDistribuirJogadorAtual() == 0 && !deveTrocar) {
             painelOpcoes.setEnabledAt(0, false);
             painelOpcoes.setEnabledAt(1, true);
             painelOpcoes.setSelectedIndex(1);
             gerenciador.setEditavelTodosOsTerritorios(btnterritorios);
             gerenciador.autalizaFaseDaRodada();
         } else {
-            JOptionPane.showMessageDialog(null, "Para começar o ataque distribua todos os Exercitos.");
+            if (deveTrocar) {
+                JOptionPane.showMessageDialog(null, "Você possui 5 cartas, realize uma troca antes de atacar.");
+            } else {
+                JOptionPane.showMessageDialog(null, "Para começar o ataque distribua todos os Exercitos.");
+            }
         }
     }//GEN-LAST:event_ContinuarActionPerformed
 
@@ -1598,7 +1603,8 @@ public class TelaDeJogo extends javax.swing.JFrame {
         dadoDoisDefesa.setText(dados_defesa[1] + "");
         dadoTresDefesa.setText(dados_defesa[2] + "");
     }
-    public void limpaDadosAtaqueDaTela(){
+
+    public void limpaDadosAtaqueDaTela() {
         indiceTerritorioAtaque = -1;
         indiceTerritorioDefesa = -1;
         paisAtaque.setText("");
@@ -1632,8 +1638,8 @@ public class TelaDeJogo extends javax.swing.JFrame {
                 if (ataqueGerado.ataqueConquistou()) {//se ele perdeu todos os exercitos, vira do novo dono e muda cor do botao
                     btnterritorios[ataqueGerado.getIndiceDefesa()].setBackground(ataqueGerado.getCorDoAtacante());//muda a cor do botao para a cor do seu novo conquistador
                 }
-                btnterritorios[ataqueGerado.getIndiceDefesa()].setText(ataqueGerado.getNovaQtdTerritorioDefesa()+"");
-                btnterritorios[ataqueGerado.getIndiceAtaque()].setText(ataqueGerado.getNovaQtdTerritorioAtaque()+"");
+                btnterritorios[ataqueGerado.getIndiceDefesa()].setText(ataqueGerado.getNovaQtdTerritorioDefesa() + "");
+                btnterritorios[ataqueGerado.getIndiceAtaque()].setText(ataqueGerado.getNovaQtdTerritorioAtaque() + "");
             } else {
                 JOptionPane.showMessageDialog(null, ataqueGerado.getMensagemErro());
             }
@@ -1671,8 +1677,8 @@ public class TelaDeJogo extends javax.swing.JFrame {
                 gerenciador.aumentaQtdExercitosDoTerritorio(indiceTerritorioPara, qtdExercitosApassar);
                 int valorDe = Integer.parseInt(btnterritorios[indiceTerritorioDe].getText());
                 int valorPara = Integer.parseInt(btnterritorios[indiceTerritorioPara].getText());
-                btnterritorios[indiceTerritorioDe].setText(""+(valorDe-qtdExercitosApassar));
-                btnterritorios[indiceTerritorioPara].setText(""+(valorPara+qtdExercitosApassar));
+                btnterritorios[indiceTerritorioDe].setText("" + (valorDe - qtdExercitosApassar));
+                btnterritorios[indiceTerritorioPara].setText("" + (valorPara + qtdExercitosApassar));
             } else {
                 JOptionPane.showMessageDialog(null, "O territorio selecionado não possui a quantidade de exercitos suficientes para movimentar!");
             }
@@ -1680,16 +1686,16 @@ public class TelaDeJogo extends javax.swing.JFrame {
     }//GEN-LAST:event_enviaExercitosActionPerformed
 
     private void btnTrocarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTrocarActionPerformed
-        if (gerenciador.getFaseDaRodada()==0 && gerenciador.jogadorDaRodadaPodeTrocarCartas()){
+        if (gerenciador.getFaseDaRodada() == 0 && gerenciador.jogadorDaRodadaPodeTrocarCartas()) {
             int indices[] = gerenciador.trocaCartasDoJogadorAtual();
             for (int i = 0; i < indices.length; i++) {
                 if (indices[i] != -1) {
-                    int valor = Integer.parseInt(btnterritorios[indices[i]].getText())+1;
-                    btnterritorios[indices[i]].setText(""+valor);
+                    int valor = Integer.parseInt(btnterritorios[indices[i]].getText()) + 1;
+                    btnterritorios[indices[i]].setText("" + valor);
                 }
-                
+
             }
-            qntExercitos.setText(""+gerenciador.getQtdExercitosParaDistribuirJogadorAtual());
+            qntExercitos.setText("" + gerenciador.getQtdExercitosParaDistribuirJogadorAtual());
         }
     }//GEN-LAST:event_btnTrocarActionPerformed
 

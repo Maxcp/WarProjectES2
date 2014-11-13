@@ -105,6 +105,7 @@ public class TelaInicial extends javax.swing.JFrame {
         jPanel1.add(apelido2, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 240, -1, -1));
 
         cbEscolhaCor1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Vermelho", "Verde", "Azul", "Preto" }));
+        cbEscolhaCor1.setEnabled(false);
         cbEscolhaCor1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbEscolhaCor1ActionPerformed(evt);
@@ -161,6 +162,7 @@ public class TelaInicial extends javax.swing.JFrame {
 
         cbEscolhaCor2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Vermelho", "Verde", "Azul", "Preto" }));
         cbEscolhaCor2.setSelectedIndex(1);
+        cbEscolhaCor2.setEnabled(false);
         cbEscolhaCor2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbEscolhaCor2ActionPerformed(evt);
@@ -206,6 +208,7 @@ public class TelaInicial extends javax.swing.JFrame {
 
         cbEscolhaCor3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Vermelho", "Verde", "Azul", "Preto" }));
         cbEscolhaCor3.setSelectedIndex(2);
+        cbEscolhaCor3.setEnabled(false);
         cbEscolhaCor3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbEscolhaCor3ActionPerformed(evt);
@@ -249,6 +252,7 @@ public class TelaInicial extends javax.swing.JFrame {
 
         cbEscolhaCor4.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Vermelho", "Verde", "Azul", "Preto" }));
         cbEscolhaCor4.setSelectedIndex(3);
+        cbEscolhaCor4.setEnabled(false);
         cbEscolhaCor4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbEscolhaCor4ActionPerformed(evt);

@@ -146,6 +146,7 @@
                 <StringItem index="3" value="Preto"/>
               </StringArray>
             </Property>
+            <Property name="enabled" type="boolean" value="false"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbEscolhaCor1ActionPerformed"/>
@@ -286,6 +287,7 @@
               </StringArray>
             </Property>
             <Property name="selectedIndex" type="int" value="1"/>
+            <Property name="enabled" type="boolean" value="false"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbEscolhaCor2ActionPerformed"/>
@@ -400,6 +402,7 @@
               </StringArray>
             </Property>
             <Property name="selectedIndex" type="int" value="2"/>
+            <Property name="enabled" type="boolean" value="false"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbEscolhaCor3ActionPerformed"/>
@@ -508,6 +511,7 @@
               </StringArray>
             </Property>
             <Property name="selectedIndex" type="int" value="3"/>
+            <Property name="enabled" type="boolean" value="false"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbEscolhaCor4ActionPerformed"/>

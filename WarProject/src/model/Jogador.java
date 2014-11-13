@@ -135,6 +135,10 @@ public class Jogador {
         return objetivo;
     }
 
+    public List<CartasTerritorio> getCartas() {
+        return cartas;
+    }
+
     private int[] continentesDominados() {
         int continenteID = 0;
         List<Integer> listaContinentesDominados = new ArrayList();

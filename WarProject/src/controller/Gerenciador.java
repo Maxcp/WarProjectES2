@@ -285,4 +285,8 @@ public class Gerenciador {
        Objetivo.foiConcluido(jogadorDaRodada, jogadores);
     }
 
+    public boolean jogadorDaRodadaDeveTrocarCartas() {
+       return (pegaJogadorDaRodada().getCartas().size() > 4);
+    }
+
 }
