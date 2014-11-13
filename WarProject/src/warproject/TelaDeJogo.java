@@ -7,6 +7,7 @@ package warproject;
 
 import controller.DadosJogo;
 import controller.Gerenciador;
+import java.awt.Color;
 import java.awt.event.MouseEvent;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
@@ -1514,10 +1515,12 @@ public class TelaDeJogo extends javax.swing.JFrame {
         painelOpcoes.setSelectedIndex(0);
         gerenciador.autalizaFaseDaRodada();
         textNomeDoJogador.setText(gerenciador.pegaJogadorDaRodada().getNome());
+        textCorDoJogador.setForeground(Color.white);
+        textCorDoJogador.setBackground(gerenciador.pegaJogadorDaRodada().getColor());
         textCorDoJogador.setText(gerenciador.pegaJogadorDaRodada().getNomeCor());
         qntExercitos.setText("" + gerenciador.getQtdExercitosParaDistribuirJogadorAtual());
         gerenciador.setEditavelApenasTerritoriosDoJogadorAtual(btnterritorios);
-
+        limpaDadosMovimentacao();
         logConsole.append("\n");
         logConsole.append("É a vez do jogador " + gerenciador.pegaJogadorDaRodada().getNomeCor() + ".\n");
         logConsole.append("O jogador " + gerenciador.pegaJogadorDaRodada().getNomeCor() + " deve inserir " + gerenciador.getQtdExercitosParaDistribuirJogadorAtual() + " exercitos.\n");
@@ -1625,6 +1628,7 @@ public class TelaDeJogo extends javax.swing.JFrame {
                 int valorPara = Integer.parseInt(btnterritorios[indiceTerritorioPara].getText());
                 btnterritorios[indiceTerritorioDe].setText("" + (valorDe - qtdExercitosApassar));
                 btnterritorios[indiceTerritorioPara].setText("" + (valorPara + qtdExercitosApassar));
+                limpaDadosMovimentacao();
             } else {
                 JOptionPane.showMessageDialog(null, "O territorio selecionado não possui a quantidade de exercitos suficientes para movimentar!");
             }
@@ -1769,6 +1773,8 @@ public class TelaDeJogo extends javax.swing.JFrame {
     private void meuInitComponents() {
         textNomeDoJogador.setText(gerenciador.pegaJogadorDaRodada().getNome());
         textCorDoJogador.setText(gerenciador.pegaJogadorDaRodada().getNomeCor());
+        textCorDoJogador.setForeground(Color.white);
+        textCorDoJogador.setBackground(gerenciador.pegaJogadorDaRodada().getColor());
 
         JButton btnterritorios[] = {
             btnBaetica,
@@ -1905,7 +1911,11 @@ public class TelaDeJogo extends javax.swing.JFrame {
             }
         }
     }
-
+    private void limpaDadosMovimentacao(){
+        paisDe.setText("");
+        paisPara.setText("");
+        qtdExercitos.setText("");
+    }
     private void atualizaQntExercitos() {
         qntExercitos.setText("" + gerenciador.getQtdExercitosParaDistribuirJogadorAtual());
     }
