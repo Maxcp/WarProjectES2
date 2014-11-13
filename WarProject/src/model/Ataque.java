@@ -28,16 +28,16 @@ public class Ataque {
     private boolean ataqueConquistou;
     private Color corDoAtacante;
     
-    private int qtdTerritorioNovoGanhou;
-    private int qtdTerritorioAtaquePerdeu;
+    private int novaQtdTerritorioAtaque;
+    private int novaQtdTerritorioDefesa;
 
     private String qtdExercitosDoAtacanteParaMover;
 
-    public int getQtdTerritorioNovoGanhou(){
-        return qtdTerritorioNovoGanhou;
+    public int getNovaQtdTerritorioAtaque(){
+        return novaQtdTerritorioAtaque;
     }
-    public int getQtdTerritorioAtaquePerdeu(){
-        return qtdTerritorioAtaquePerdeu;
+    public int getNovaQtdTerritorioDefesa(){
+        return novaQtdTerritorioDefesa;
     }
     public String getQtdExercitosDoAtacanteParaMover() {
         return qtdExercitosDoAtacanteParaMover;
@@ -225,11 +225,14 @@ public class Ataque {
                 jogadorDefesa.removeTerritorio(territorioDefesa);
                 territorioDefesa.setConquistador(jogadorAtaque);
                 int exercitos = verificaQuantosExercicitosJogadorQuerMover(territorioAtaque, territorioDefesa);
-                qtdTerritorioNovoGanhou = exercitos;
-                qtdTerritorioAtaquePerdeu = territorioAtaque.getExercitosPosicionados() - exercitos;
-                territorioDefesa.setExercitosPosicionados(qtdTerritorioNovoGanhou);
-                territorioAtaque.setExercitosPosicionados(qtdTerritorioAtaquePerdeu);
+                novaQtdTerritorioDefesa = exercitos;
+                novaQtdTerritorioAtaque = territorioAtaque.getExercitosPosicionados() - exercitos;
+                territorioDefesa.setExercitosPosicionados(novaQtdTerritorioDefesa);
+                territorioAtaque.setExercitosPosicionados(novaQtdTerritorioAtaque);
                 jogadorAtaque.addTerritorio(territorioDefesa);
+                }else{
+                novaQtdTerritorioAtaque = territorioAtaque.getExercitosPosicionados();
+                novaQtdTerritorioDefesa = territorioDefesa.getExercitosPosicionados();
             }
         } else {
             aconteceuErro = true;

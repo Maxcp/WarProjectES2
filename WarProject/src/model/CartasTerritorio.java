@@ -46,11 +46,11 @@ public class CartasTerritorio {
     }
 
     boolean formaGeometricaQuadrada() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return formaGeometrica == 0;
     }
 
     boolean formaGeometricaCircular() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return formaGeometrica == 2;
     }
 
 }

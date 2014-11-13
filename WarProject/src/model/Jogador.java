@@ -238,13 +238,12 @@ public class Jogador {
         int indiceQuadrados = 0;
         int indiceCirculos = 0;
         int indiceTriangulos = 0;
-        int indiceDiferentes = 0;
 
         int quadrados[] = {-1, -1, -1, -1, -1};
         int circulos[] = {-1, -1, -1, -1, -1};
         int triangulos[] = {-1, -1, -1, -1, -1};
         int diferentes[] = {-1, -1, -1, -1, -1};
-        int arrayDaTroca[] = {-1, -1, -1, -1, -1} ;
+        int arrayDaTroca[] = {-1, -1, -1, -1, -1};
 
         for (int i = 0; i < cartas.size(); i++) {
             CartasTerritorio cartaTerritorio = cartas.get(i);
@@ -261,8 +260,7 @@ public class Jogador {
 
                 }
             }
-            diferentes[indiceDiferentes] = i;
-            indiceDiferentes += 1;
+            diferentes[i] = i;
         }
 
         if (indiceQuadrados >= 3) {
@@ -274,19 +272,32 @@ public class Jogador {
                 if (indiceTriangulos >= 3) {
                     arrayDaTroca = triangulos;
                 } else {
-                    if (indiceDiferentes >= 3) {
+                    if (indiceQuadrados >= 1 && indiceCirculos >= 1 && indiceTriangulos >= 1) {
                         arrayDaTroca = diferentes;
                     }
                 }
             }
         }
-        int indice = 0;
         CartasTerritorio ct[] = new CartasTerritorio[3];
-        for (int i = 0; i < 3; i++) {
-            ct[indice] = cartas.remove(arrayDaTroca[indice]);
-            indice++;
+        for (int i = 0; i < ct.length; i++) { //1 e //1
+            ct[i] = cartas.remove(arrayDaTroca[i]);
         }
         return ct;
+    }
+
+    public int possuiTerritorioDaCartaTerritorio(CartasTerritorio cartasTerritorio) {
+        Territorio t = cartasTerritorio.getTerritorio();
+        for (int i = 0; i < territorios.size(); i++) {
+            if (territorios.get(i) == t) {
+                return i;
+            }
+        }
+
+        return -1;
+    }
+
+    public Territorio getTerritorio(int indice) {
+        return territorios.get(indice);
     }
 
 }

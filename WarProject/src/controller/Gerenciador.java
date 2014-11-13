@@ -247,24 +247,39 @@ public class Gerenciador {
         Ataque ataque = new Ataque(indiceTerritorioAtaque, indiceTerritorioDefesa, jogadores);
         if (ataque.ataqueConquistou() && !jogadorDaRodadaPegouCarta) {
             jogadorDaRodadaPegouCarta = true;
-           CartasTerritorio ct = cartasDisponiveis.remove(cartasDisponiveis.size()-1);
-           int indice = ataque.getIndiceJogadorAtaque();
-           jogadores[ataque.getIndiceJogadorAtaque()].addCarta(ct);
+            CartasTerritorio ct = cartasDisponiveis.remove(cartasDisponiveis.size() - 1);
+            int indice = ataque.getIndiceJogadorAtaque();
+            jogadores[ataque.getIndiceJogadorAtaque()].addCarta(ct);
         }
         return ataque;
     }
 
     public boolean jogadorDaRodadaPodeTrocarCartas() {
         return pegaJogadorDaRodada().podeTrocarCartas();
-        
+
     }
 
-    public void trocaCartasDoJogadorAtual() {
+    public int[] trocaCartasDoJogadorAtual() {
         CartasTerritorio ct[];
         ct = pegaJogadorDaRodada().TrocarCartas();
+        int indices[] = {-1, -1, -1};
+        int aux = 0;
+        for (int i = 0; i < ct.length; i++) {
+            cartasDisponiveis.add(ct[i]);
+            int indice = pegaJogadorDaRodada().possuiTerritorioDaCartaTerritorio(ct[i]);
+            if (indice != -1) {
+                pegaJogadorDaRodada().getTerritorio(indice).aumentaExercitos(1);
+                indices[aux] = pegaJogadorDaRodada().getTerritorio(indice).getId();
+
+            }
+        }
         qtdExercitosParaDistribuirJogadorAtual += qtdExercitosParaProximaTroca;
         qtdExercitosParaProximaTroca += 5;
-    }
 
+        long seed = System.nanoTime();
+        Collections.shuffle(cartasDisponiveis, new Random(seed));
+
+        return indices;
+    }
 
 }

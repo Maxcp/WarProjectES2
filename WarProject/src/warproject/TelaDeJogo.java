@@ -1067,6 +1067,11 @@ public class TelaDeJogo extends javax.swing.JFrame {
                 btnSiciliaMouseClicked(evt);
             }
         });
+        btnSicilia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSiciliaActionPerformed(evt);
+            }
+        });
         telaInteira.add(btnSicilia, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 290, 18, 18));
 
         btnItalia.setBackground(new java.awt.Color(255, 255, 255));
@@ -1569,6 +1574,7 @@ public class TelaDeJogo extends javax.swing.JFrame {
         painelOpcoes.setSelectedIndex(2);
         gerenciador.autalizaFaseDaRodada();
         gerenciador.setEditavelApenasTerritoriosDoJogadorAtual(btnterritorios);
+        limpaDadosAtaqueDaTela();
     }//GEN-LAST:event_btnPassarAtaqueActionPerformed
 
     public void atualizaDados(Ataque ataqueGerado) {
@@ -1581,8 +1587,21 @@ public class TelaDeJogo extends javax.swing.JFrame {
         dadoDoisDefesa.setText(dados_defesa[1] + "");
         dadoTresDefesa.setText(dados_defesa[2] + "");
     }
+    public void limpaDadosAtaqueDaTela(){
+        indiceTerritorioAtaque = -1;
+        indiceTerritorioDefesa = -1;
+        paisAtaque.setText("");
+        paisDefesa.setText("");
+        dadoUmAtaque.setText("");
+        dadoDoisAtaque.setText("");
+        dadoTresAtaque.setText("");
+        dadoUmDefesa.setText("");
+        dadoDoisDefesa.setText("");
+        dadoTresDefesa.setText("");
+    }
 
     private void btnAtacarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtacarActionPerformed
+
         boolean vizinho = false;
         for (int i = 0; i < DadosJogo.vinzihosDoTerritorio[indiceTerritorioAtaque].length; i++) {
             if (DadosJogo.vinzihosDoTerritorio[indiceTerritorioAtaque][i] == indiceTerritorioDefesa) {
@@ -1602,13 +1621,11 @@ public class TelaDeJogo extends javax.swing.JFrame {
                 if (ataqueGerado.ataqueConquistou()) {//se ele perdeu todos os exercitos, vira do novo dono e muda cor do botao
                     btnterritorios[ataqueGerado.getIndiceDefesa()].setBackground(ataqueGerado.getCorDoAtacante());//muda a cor do botao para a cor do seu novo conquistador
                 }
-                btnterritorios[ataqueGerado.getIndiceDefesa()].setText(ataqueGerado.getQtdTerritorioNovoGanhou()+"");
-                btnterritorios[ataqueGerado.getIndiceAtaque()].setText(ataqueGerado.getQtdTerritorioAtaquePerdeu()+"");
-                
+                btnterritorios[ataqueGerado.getIndiceDefesa()].setText(ataqueGerado.getNovaQtdTerritorioDefesa()+"");
+                btnterritorios[ataqueGerado.getIndiceAtaque()].setText(ataqueGerado.getNovaQtdTerritorioAtaque()+"");
             } else {
                 JOptionPane.showMessageDialog(null, ataqueGerado.getMensagemErro());
             }
-
         }
 
     }//GEN-LAST:event_btnAtacarActionPerformed
@@ -1653,10 +1670,21 @@ public class TelaDeJogo extends javax.swing.JFrame {
 
     private void btnTrocarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTrocarActionPerformed
         if (gerenciador.getFaseDaRodada()==0 && gerenciador.jogadorDaRodadaPodeTrocarCartas()){
-            gerenciador.trocaCartasDoJogadorAtual();
-            int exercitosTotais = gerenciador.getQtdExercitosParaDistribuirJogadorAtual();
+            int indices[] = gerenciador.trocaCartasDoJogadorAtual();
+            for (int i = 0; i < indices.length; i++) {
+                if (indices[i] != -1) {
+                    int valor = Integer.parseInt(btnterritorios[indices[i]].getText())+1;
+                    btnterritorios[indices[i]].setText(""+valor);
+                }
+                
+            }
+            qntExercitos.setText(""+gerenciador.getQtdExercitosParaDistribuirJogadorAtual());
         }
     }//GEN-LAST:event_btnTrocarActionPerformed
+
+    private void btnSiciliaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSiciliaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnSiciliaActionPerformed
 
     /**
      * @param args the command line arguments
