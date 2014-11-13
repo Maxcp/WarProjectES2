@@ -93,6 +93,17 @@ public class Jogador {
         }
     }
 
+    public void removeCartaTerritorio(CartasTerritorio cartaTerritorio) {//remove a primeira ocorrencia do territorio
+        boolean naoAchou = true;
+        Iterator<CartasTerritorio> it = cartas.iterator();
+        while (it.hasNext() && naoAchou) {
+            if (it.next().equals(cartaTerritorio)) {
+                it.remove();
+                naoAchou = false;
+            }
+        }
+    }
+
     public void addCartas(List<CartasTerritorio> cartas) {
         this.cartas.addAll(cartas);//Adiciona todas as novas cartas territorios para a lista atual
     }
@@ -239,28 +250,36 @@ public class Jogador {
         int indiceCirculos = 0;
         int indiceTriangulos = 0;
 
-        int quadrados[] = {-1, -1, -1, -1, -1};
-        int circulos[] = {-1, -1, -1, -1, -1};
-        int triangulos[] = {-1, -1, -1, -1, -1};
-        int diferentes[] = {-1, -1, -1, -1, -1};
-        int arrayDaTroca[] = {-1, -1, -1, -1, -1};
+        CartasTerritorio quadrados[] = new CartasTerritorio[5];
+        CartasTerritorio circulos[] = new CartasTerritorio[5];
+        CartasTerritorio triangulos[] = new CartasTerritorio[5];
+        CartasTerritorio diferentes[] = new CartasTerritorio[5];
+        CartasTerritorio arrayDaTroca[] = new CartasTerritorio[5];
 
         for (int i = 0; i < cartas.size(); i++) {
             CartasTerritorio cartaTerritorio = cartas.get(i);
             if (cartaTerritorio.formaGeometricaQuadrada()) {
-                quadrados[indiceQuadrados] = i;
+                quadrados[indiceQuadrados] = cartaTerritorio;
+                if (indiceQuadrados == 0) {
+                    diferentes[0] = cartaTerritorio;
+                }
                 indiceQuadrados += 1;
             } else {
                 if (cartaTerritorio.formaGeometricaCircular()) {
-                    circulos[indiceCirculos] = i;
+                    circulos[indiceCirculos] = cartaTerritorio;
+                    if (indiceCirculos == 0) {
+                        diferentes[1] = cartaTerritorio;
+                    }
                     indiceCirculos += 1;
                 } else {
-                    triangulos[indiceTriangulos] = i;
+                    triangulos[indiceTriangulos] = cartaTerritorio;
+                    if (indiceTriangulos == 0) {
+                        diferentes[2] = cartaTerritorio;
+                    }
                     indiceTriangulos += 1;
 
                 }
             }
-            diferentes[i] = i;
         }
 
         if (indiceQuadrados >= 3) {
@@ -279,8 +298,9 @@ public class Jogador {
             }
         }
         CartasTerritorio ct[] = new CartasTerritorio[3];
-        for (int i = 0; i < ct.length; i++) { //1 e //1
-            ct[i] = cartas.remove(arrayDaTroca[i]);
+        for (int i = 0; i < ct.length; i++) {
+            removeCarta(arrayDaTroca[i]);
+            ct[i] = arrayDaTroca[i];
         }
         return ct;
     }

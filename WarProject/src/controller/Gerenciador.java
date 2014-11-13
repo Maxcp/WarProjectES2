@@ -246,9 +246,8 @@ public class Gerenciador {
 
         Ataque ataque = new Ataque(indiceTerritorioAtaque, indiceTerritorioDefesa, jogadores);
         if (ataque.ataqueConquistou() && !jogadorDaRodadaPegouCarta) {
-            jogadorDaRodadaPegouCarta = true;
+            jogadorDaRodadaPegouCarta = false;
             CartasTerritorio ct = cartasDisponiveis.remove(cartasDisponiveis.size() - 1);
-            int indice = ataque.getIndiceJogadorAtaque();
             jogadores[ataque.getIndiceJogadorAtaque()].addCarta(ct);
         }
         return ataque;
