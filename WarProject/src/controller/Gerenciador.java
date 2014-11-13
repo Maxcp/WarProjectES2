@@ -281,4 +281,8 @@ public class Gerenciador {
         return indices;
     }
 
+    public void verificaObjetivoJogadorAtual() {
+       Objetivo.foiConcluido(jogadorDaRodada, jogadores);
+    }
+
 }

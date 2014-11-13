@@ -10,6 +10,9 @@ import java.util.List;
 
 
 public class Objetivo {
+
+    public static void foiConcluido(int indiceJogadorDaRodada, Jogador[] jogadores) {
+    }
     int id_objetivo;
     int tipo_objetivo;
     final static int TIPO_UM=1, TIPO_DOIS=2, TIPO_TRES=3, TIPO_QUATRO=4, TIPO_CINCO=5;

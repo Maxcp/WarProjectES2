@@ -74,6 +74,7 @@
                                   <Component id="lblAtual1" min="-2" max="-2" attributes="0"/>
                                   <Component id="textNomeDoJogador" alignment="0" pref="175" max="32767" attributes="0"/>
                                   <Component id="textCorDoJogador" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="clamarObjetivo" alignment="0" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -91,7 +92,7 @@
                           <Component id="painelOpcoes" alignment="1" min="-2" pref="180" max="-2" attributes="0"/>
                           <Group type="102" attributes="0">
                               <Component id="console" min="-2" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Group type="102" attributes="0">
                                       <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
                                       <Component id="lblAtual" min="-2" max="-2" attributes="0"/>
@@ -101,6 +102,8 @@
                                       <Component id="lblAtual1" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="textCorDoJogador" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="clamarObjetivo" max="32767" attributes="0"/>
                                   </Group>
                                   <Group type="102" attributes="0">
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -1018,6 +1021,14 @@
                 </Component>
               </SubComponents>
             </Container>
+            <Component class="javax.swing.JToggleButton" name="clamarObjetivo">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Clamar Objetivo"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="clamarObjetivoActionPerformed"/>
+              </Events>
+            </Component>
           </SubComponents>
         </Container>
         <Component class="javax.swing.JButton" name="btnTaurica">

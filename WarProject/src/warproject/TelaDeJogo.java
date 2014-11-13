@@ -113,6 +113,7 @@ public class TelaDeJogo extends javax.swing.JFrame {
         textCorDoJogador = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
         logConsole = new javax.swing.JTextArea();
+        clamarObjetivo = new javax.swing.JToggleButton();
         btnTaurica = new javax.swing.JButton();
         btnBithynia = new javax.swing.JButton();
         btnDacia = new javax.swing.JButton();
@@ -711,6 +712,13 @@ public class TelaDeJogo extends javax.swing.JFrame {
         logConsole.setRows(5);
         jScrollPane2.setViewportView(logConsole);
 
+        clamarObjetivo.setText("Clamar Objetivo");
+        clamarObjetivo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clamarObjetivoActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -726,7 +734,8 @@ public class TelaDeJogo extends javax.swing.JFrame {
                             .addComponent(lblAtual)
                             .addComponent(lblAtual1)
                             .addComponent(textNomeDoJogador, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
-                            .addComponent(textCorDoJogador))))
+                            .addComponent(textCorDoJogador)
+                            .addComponent(clamarObjetivo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addGap(18, 18, 18)
                 .addComponent(painelOpcoes)
                 .addContainerGap())
@@ -739,7 +748,7 @@ public class TelaDeJogo extends javax.swing.JFrame {
                     .addComponent(painelOpcoes, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(console)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGap(6, 6, 6)
                                 .addComponent(lblAtual)
@@ -748,7 +757,9 @@ public class TelaDeJogo extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(lblAtual1)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(textCorDoJogador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(textCorDoJogador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(clamarObjetivo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)))))
@@ -1686,6 +1697,10 @@ public class TelaDeJogo extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnSiciliaActionPerformed
 
+    private void clamarObjetivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clamarObjetivoActionPerformed
+        gerenciador.verificaObjetivoJogadorAtual();
+    }//GEN-LAST:event_clamarObjetivoActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1779,6 +1794,7 @@ public class TelaDeJogo extends javax.swing.JFrame {
     private javax.swing.JButton btnThracia;
     private javax.swing.JButton btnTrocar;
     private javax.swing.JPanel cartas;
+    private javax.swing.JToggleButton clamarObjetivo;
     private javax.swing.JLabel console;
     private javax.swing.JTextField dadoDoisAtaque;
     private javax.swing.JTextField dadoDoisAtaqueD;
