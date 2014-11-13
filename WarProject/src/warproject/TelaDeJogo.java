@@ -1821,7 +1821,6 @@ public class TelaDeJogo extends javax.swing.JFrame {
 
         painelOpcoes.setEnabledAt(1, false);
         painelOpcoes.setEnabledAt(2, false);
-        painelOpcoes.setEnabledAt(3, false);
     }
 
     public void metodoDosBotoes(JButton button, MouseEvent evt) {
