@@ -94,18 +94,6 @@ public class TelaDeJogo extends javax.swing.JFrame {
         numEx = new javax.swing.JLabel();
         qtdExercitos = new javax.swing.JFormattedTextField();
         enviaExercitos = new javax.swing.JButton();
-        defender = new javax.swing.JPanel();
-        dadoTresAtaqueD = new javax.swing.JTextField();
-        paisDefesaD = new javax.swing.JTextField();
-        dadoUmAtaqueD = new javax.swing.JTextField();
-        xD = new javax.swing.JLabel();
-        lPaisD = new javax.swing.JLabel();
-        paisAtaqueD = new javax.swing.JTextField();
-        btnDefenderD = new javax.swing.JButton();
-        dadoTresDefesaD = new javax.swing.JTextField();
-        dadoDoisAtaqueD = new javax.swing.JTextField();
-        dadpDoisDefesaD = new javax.swing.JTextField();
-        dadoUmDefesa1 = new javax.swing.JTextField();
         cartas = new javax.swing.JPanel();
         btnTrocar = new javax.swing.JButton();
         btnCartaObjetivo = new javax.swing.JButton();
@@ -257,7 +245,7 @@ public class TelaDeJogo extends javax.swing.JFrame {
 
         lPais.setText("De:");
 
-        x.setText("X");
+        x.setText("  X");
 
         paisDefesa.setEditable(false);
         paisDefesa.addActionListener(new java.awt.event.ActionListener() {
@@ -338,11 +326,7 @@ public class TelaDeJogo extends javax.swing.JFrame {
                             .addGroup(atacarLayout.createSequentialGroup()
                                 .addComponent(lPais)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(paisAtaque, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(10, 10, 10)
-                                .addComponent(lPais1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(paisDefesa, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(paisAtaque, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(atacarLayout.createSequentialGroup()
                                 .addGap(57, 57, 57)
                                 .addComponent(jLabel7)
@@ -351,9 +335,15 @@ public class TelaDeJogo extends javax.swing.JFrame {
                                     .addComponent(dadoTresAtaque, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(atacarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                         .addComponent(dadoDoisAtaque, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(dadoUmAtaque, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(45, 45, 45)
-                                .addComponent(x)
+                                        .addComponent(dadoUmAtaque, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addGap(10, 10, 10)
+                        .addGroup(atacarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(atacarLayout.createSequentialGroup()
+                                .addComponent(lPais1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(paisDefesa, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(atacarLayout.createSequentialGroup()
+                                .addComponent(x, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(34, 34, 34)
                                 .addGroup(atacarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(dadoDoisDefesa, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -383,25 +373,23 @@ public class TelaDeJogo extends javax.swing.JFrame {
                             .addGroup(atacarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(paisAtaque, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(lPais)))
+                        .addGap(11, 11, 11)
                         .addGroup(atacarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(atacarLayout.createSequentialGroup()
-                                .addGap(11, 11, 11)
                                 .addGroup(atacarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(atacarLayout.createSequentialGroup()
-                                        .addGroup(atacarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(dadoUmAtaque, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(dadoUmDefesa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGap(7, 7, 7)
-                                        .addGroup(atacarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                            .addComponent(dadoDoisAtaque, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(dadoDoisDefesa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                    .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(dadoUmAtaque, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(dadoUmDefesa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(7, 7, 7)
                                 .addGroup(atacarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(dadoTresAtaque, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(dadoTresDefesa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(x)))
+                                    .addComponent(dadoDoisAtaque, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(dadoDoisDefesa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(x)))
+                            .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(atacarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(dadoTresAtaque, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(dadoTresDefesa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(atacarLayout.createSequentialGroup()
                         .addGap(27, 27, 27)
                         .addComponent(btnAtacar)
@@ -506,98 +494,6 @@ public class TelaDeJogo extends javax.swing.JFrame {
         );
 
         painelOpcoes.addTab("Movimentar", movimentar);
-
-        dadoTresAtaqueD.setText("0");
-
-        paisDefesaD.setText("Cappadocia");
-
-        dadoUmAtaqueD.setText("0");
-
-        xD.setText("X");
-
-        lPaisD.setText("Pais:");
-
-        paisAtaqueD.setText("Asia");
-
-        btnDefenderD.setText("Defender");
-
-        dadoTresDefesaD.setText("0");
-
-        dadoDoisAtaqueD.setText("0");
-
-        dadpDoisDefesaD.setText("0");
-
-        dadoUmDefesa1.setText("0");
-        dadoUmDefesa1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                dadoUmDefesa1ActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout defenderLayout = new javax.swing.GroupLayout(defender);
-        defender.setLayout(defenderLayout);
-        defenderLayout.setHorizontalGroup(
-            defenderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(defenderLayout.createSequentialGroup()
-                .addGroup(defenderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(defenderLayout.createSequentialGroup()
-                        .addGap(25, 25, 25)
-                        .addGroup(defenderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(dadoUmAtaqueD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(defenderLayout.createSequentialGroup()
-                                .addComponent(lPaisD)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(paisAtaqueD, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(dadoDoisAtaqueD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(dadoTresAtaqueD, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(xD)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(defenderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(defenderLayout.createSequentialGroup()
-                        .addGroup(defenderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(paisDefesaD, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(dadoUmDefesa1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(dadpDoisDefesaD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(119, Short.MAX_VALUE))
-                    .addGroup(defenderLayout.createSequentialGroup()
-                        .addComponent(dadoTresDefesaD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, defenderLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(btnDefenderD)
-                        .addGap(39, 39, 39))))
-        );
-        defenderLayout.setVerticalGroup(
-            defenderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(defenderLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(defenderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lPaisD)
-                    .addComponent(xD)
-                    .addComponent(paisDefesaD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(paisAtaqueD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(defenderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(defenderLayout.createSequentialGroup()
-                        .addGroup(defenderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(dadoUmAtaqueD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(dadoUmDefesa1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(defenderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(dadpDoisDefesaD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(dadoDoisAtaqueD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(defenderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(dadoTresDefesaD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(dadoTresAtaqueD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, defenderLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnDefenderD)
-                        .addGap(47, 47, 47))))
-        );
-
-        painelOpcoes.addTab("Defender", defender);
 
         btnTrocar.setText("Trocar");
         btnTrocar.setBorder(null);
@@ -735,6 +631,7 @@ public class TelaDeJogo extends javax.swing.JFrame {
         logConsole.setRows(5);
         jScrollPane2.setViewportView(logConsole);
 
+        clamarObjetivo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/warproject/Trophy.png"))); // NOI18N
         clamarObjetivo.setText("Clamar Objetivo");
         clamarObjetivo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -793,11 +690,11 @@ public class TelaDeJogo extends javax.swing.JFrame {
                                 .addComponent(lblAtual1)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(textCorDoJogador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(clamarObjetivo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(7, 7, 7)
+                                .addComponent(clamarObjetivo))
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(jScrollPane2)))))
                 .addContainerGap(25, Short.MAX_VALUE))
         );
 
@@ -1543,34 +1440,48 @@ public class TelaDeJogo extends javax.swing.JFrame {
         metodoDosBotoes(btnMauritania, evt);
     }//GEN-LAST:event_btnMauritaniaMouseClicked
 
-    private void ContinuarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ContinuarActionPerformed
-        boolean deveTrocar = gerenciador.jogadorDaRodadaDeveTrocarCartas();
-        if (gerenciador.getQtdExercitosParaDistribuirJogadorAtual() == 0 && !deveTrocar) {
-            if (gerenciador.getNumeroDaRodada() != 0) {
-                painelOpcoes.setEnabledAt(0, false);
-                painelOpcoes.setEnabledAt(1, true);
-                painelOpcoes.setSelectedIndex(1);
-                gerenciador.setEditavelTodosOsTerritorios(btnterritorios);
-                gerenciador.autalizaFaseDaRodada();
-            } else {
-                painelOpcoes.setEnabledAt(0, false);
-                painelOpcoes.setEnabledAt(2, true);
-                painelOpcoes.setSelectedIndex(2);
-                gerenciador.autalizaFaseDaRodada();
-                gerenciador.autalizaFaseDaRodada();
-            }
-        } else {
-            if (deveTrocar) {
-                JOptionPane.showMessageDialog(null, "Você possui 5 cartas, realize uma troca antes de atacar.");
-            } else {
-                JOptionPane.showMessageDialog(null, "Para começar o ataque distribua todos os Exercitos.");
-            }
-        }
-    }//GEN-LAST:event_ContinuarActionPerformed
+    public void atualizaDados(Ataque ataqueGerado) {
+        int dados_ataque[] = ataqueGerado.getDadosAtaque();
+        int dados_defesa[] = ataqueGerado.getDadosDefesa();
+        dadoUmAtaque.setText(dados_ataque[0] + "");
+        dadoDoisAtaque.setText(dados_ataque[1] + "");
+        dadoTresAtaque.setText(dados_ataque[2] + "");
+        dadoUmDefesa.setText(dados_defesa[0] + "");
+        dadoDoisDefesa.setText(dados_defesa[1] + "");
+        dadoTresDefesa.setText(dados_defesa[2] + "");
+    }
 
-    private void qntExercitosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_qntExercitosActionPerformed
+    public void limpaValoresDosDadosDaTela(){
+        paisAtaque.setText("");
+        paisDefesa.setText("");
+        dadoUmAtaque.setText("");
+        dadoDoisAtaque.setText("");
+        dadoTresAtaque.setText("");
+        dadoUmDefesa.setText("");
+        dadoDoisDefesa.setText("");
+        dadoTresDefesa.setText("");
+    }
+    public void limpaDadosAtaqueDaTela() {
+        indiceTerritorioAtaque = -1;
+        indiceTerritorioDefesa = -1;
+        limpaValoresDosDadosDaTela();
+    }
+
+    private void btnSiciliaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSiciliaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_qntExercitosActionPerformed
+    }//GEN-LAST:event_btnSiciliaActionPerformed
+
+    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
+        logConsole.setText("");
+    }//GEN-LAST:event_jToggleButton1ActionPerformed
+
+    private void clamarObjetivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clamarObjetivoActionPerformed
+        gerenciador.verificaObjetivoJogadorAtual();
+    }//GEN-LAST:event_clamarObjetivoActionPerformed
+
+    private void textNomeDoJogadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textNomeDoJogadorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textNomeDoJogadorActionPerformed
 
     private void btnCartaCincoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCartaCincoActionPerformed
         TelaDeCartas telCartaCinco = new TelaDeCartas("Território", gerenciador.pegaJogadorDaRodada().getStringDescricaoCartaTerritorio(5), gerenciador.pegaJogadorDaRodada().getStringTipoCartaTerritorio(5));
@@ -1608,15 +1519,50 @@ public class TelaDeJogo extends javax.swing.JFrame {
         telaObjetivo.setLocationRelativeTo(null);
     }//GEN-LAST:event_btnCartaObjetivoActionPerformed
 
-    private void dadoUmDefesa1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dadoUmDefesa1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_dadoUmDefesa1ActionPerformed
+    private void btnTrocarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTrocarActionPerformed
+        if (gerenciador.getFaseDaRodada() == 0 && gerenciador.jogadorDaRodadaPodeTrocarCartas()) {
+            int indices[] = gerenciador.trocaCartasDoJogadorAtual();
+            for (int i = 0; i < indices.length; i++) {
+                if (indices[i] != -1) {
+                    int valor = Integer.parseInt(btnterritorios[indices[i]].getText()) + 1;
+                    btnterritorios[indices[i]].setText("" + valor);
+                }
+
+            }
+            logConsole.append("O jogador " + gerenciador.pegaJogadorDaRodada().getNomeCor() + " fez uma troca e recebeu " + (gerenciador.getQtdExercitosParaProximaTroca() - 5) + " exercitos.\n");
+            qntExercitos.setText("" + gerenciador.getQtdExercitosParaDistribuirJogadorAtual());
+        }
+    }//GEN-LAST:event_btnTrocarActionPerformed
+
+    private void enviaExercitosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enviaExercitosActionPerformed
+        boolean vizinho = false;
+        for (int i = 0; i < DadosJogo.vinzihosDoTerritorio[indiceTerritorioDe].length; i++) {
+            if (DadosJogo.vinzihosDoTerritorio[indiceTerritorioDe][i] == indiceTerritorioPara) {
+                vizinho = true;
+            }
+        }
+        if (vizinho) {
+            int qtdExercitosApassar = Integer.parseInt(qtdExercitos.getText());
+            if (gerenciador.territorioPossuiExercitosParaMovimentar(indiceTerritorioDe, qtdExercitosApassar)) {
+                gerenciador.reduzQtdExercitosDoTerritorio(indiceTerritorioDe, qtdExercitosApassar);
+                gerenciador.aumentaQtdExercitosDoTerritorio(indiceTerritorioPara, qtdExercitosApassar);
+                int valorDe = Integer.parseInt(btnterritorios[indiceTerritorioDe].getText());
+                int valorPara = Integer.parseInt(btnterritorios[indiceTerritorioPara].getText());
+                btnterritorios[indiceTerritorioDe].setText("" + (valorDe - qtdExercitosApassar));
+                btnterritorios[indiceTerritorioPara].setText("" + (valorPara + qtdExercitosApassar));
+                limpaDadosMovimentacao();
+            } else {
+                JOptionPane.showMessageDialog(null, "O territorio selecionado não possui a quantidade de exercitos suficientes para movimentar!");
+            }
+        }
+    }//GEN-LAST:event_enviaExercitosActionPerformed
 
     private void paisParaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_paisParaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_paisParaActionPerformed
 
     private void btnPassarMovimentacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPassarMovimentacaoActionPerformed
+        limpaDadosMovimentacao();
         painelOpcoes.setEnabledAt(2, false);
         painelOpcoes.setEnabledAt(0, true);
         painelOpcoes.setSelectedIndex(0);
@@ -1642,30 +1588,6 @@ public class TelaDeJogo extends javax.swing.JFrame {
         gerenciador.setEditavelApenasTerritoriosDoJogadorAtual(btnterritorios);
         limpaDadosAtaqueDaTela();
     }//GEN-LAST:event_btnPassarAtaqueActionPerformed
-
-    public void atualizaDados(Ataque ataqueGerado) {
-        int dados_ataque[] = ataqueGerado.getDadosAtaque();
-        int dados_defesa[] = ataqueGerado.getDadosDefesa();
-        dadoUmAtaque.setText(dados_ataque[0] + "");
-        dadoDoisAtaque.setText(dados_ataque[1] + "");
-        dadoTresAtaque.setText(dados_ataque[2] + "");
-        dadoUmDefesa.setText(dados_defesa[0] + "");
-        dadoDoisDefesa.setText(dados_defesa[1] + "");
-        dadoTresDefesa.setText(dados_defesa[2] + "");
-    }
-
-    public void limpaDadosAtaqueDaTela() {
-        indiceTerritorioAtaque = -1;
-        indiceTerritorioDefesa = -1;
-        paisAtaque.setText("");
-        paisDefesa.setText("");
-        dadoUmAtaque.setText("");
-        dadoDoisAtaque.setText("");
-        dadoTresAtaque.setText("");
-        dadoUmDefesa.setText("");
-        dadoDoisDefesa.setText("");
-        dadoTresDefesa.setText("");
-    }
 
     private void btnAtacarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtacarActionPerformed
 
@@ -1701,7 +1623,6 @@ public class TelaDeJogo extends javax.swing.JFrame {
                 logConsole.append("Desculpe, mas..." + ataqueGerado.getMensagemErro() + "\n");
             }
         }
-
     }//GEN-LAST:event_btnAtacarActionPerformed
 
     private void dadoUmDefesaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dadoUmDefesaActionPerformed
@@ -1716,59 +1637,40 @@ public class TelaDeJogo extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_paisDefesaActionPerformed
 
-    private void textNomeDoJogadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textNomeDoJogadorActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_textNomeDoJogadorActionPerformed
-
-    private void enviaExercitosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enviaExercitosActionPerformed
-        boolean vizinho = false;
-        for (int i = 0; i < DadosJogo.vinzihosDoTerritorio[indiceTerritorioDe].length; i++) {
-            if (DadosJogo.vinzihosDoTerritorio[indiceTerritorioDe][i] == indiceTerritorioPara) {
-                vizinho = true;
-            }
-        }
-        if (vizinho) {
-            int qtdExercitosApassar = Integer.parseInt(qtdExercitos.getText());
-            if (gerenciador.territorioPossuiExercitosParaMovimentar(indiceTerritorioDe, qtdExercitosApassar)) {
-                gerenciador.reduzQtdExercitosDoTerritorio(indiceTerritorioDe, qtdExercitosApassar);
-                gerenciador.aumentaQtdExercitosDoTerritorio(indiceTerritorioPara, qtdExercitosApassar);
-                int valorDe = Integer.parseInt(btnterritorios[indiceTerritorioDe].getText());
-                int valorPara = Integer.parseInt(btnterritorios[indiceTerritorioPara].getText());
-                btnterritorios[indiceTerritorioDe].setText("" + (valorDe - qtdExercitosApassar));
-                btnterritorios[indiceTerritorioPara].setText("" + (valorPara + qtdExercitosApassar));
+    private void ContinuarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ContinuarActionPerformed
+        boolean deveTrocar = gerenciador.jogadorDaRodadaDeveTrocarCartas();
+        if (gerenciador.getQtdExercitosParaDistribuirJogadorAtual() == 0 && !deveTrocar) {
+            if (gerenciador.getNumeroDaRodada() != 0) {
+                painelOpcoes.setEnabledAt(0, false);
+                painelOpcoes.setEnabledAt(1, true);
+                painelOpcoes.setSelectedIndex(1);
+                gerenciador.setEditavelTodosOsTerritorios(btnterritorios);
+                gerenciador.autalizaFaseDaRodada();
             } else {
-                JOptionPane.showMessageDialog(null, "O territorio selecionado não possui a quantidade de exercitos suficientes para movimentar!");
+                painelOpcoes.setEnabledAt(0, false);
+                painelOpcoes.setEnabledAt(2, true);
+                painelOpcoes.setSelectedIndex(2);
+                gerenciador.autalizaFaseDaRodada();
+                gerenciador.autalizaFaseDaRodada();
+            }
+        } else {
+            if (deveTrocar) {
+                JOptionPane.showMessageDialog(null, "Você possui 5 cartas, realize uma troca antes de atacar.");
+            } else {
+                JOptionPane.showMessageDialog(null, "Para começar o ataque distribua todos os Exercitos.");
             }
         }
-    }//GEN-LAST:event_enviaExercitosActionPerformed
+    }//GEN-LAST:event_ContinuarActionPerformed
 
-    private void btnTrocarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTrocarActionPerformed
-        if (gerenciador.getFaseDaRodada() == 0 && gerenciador.jogadorDaRodadaPodeTrocarCartas()) {
-            int indices[] = gerenciador.trocaCartasDoJogadorAtual();
-            for (int i = 0; i < indices.length; i++) {
-                if (indices[i] != -1) {
-                    int valor = Integer.parseInt(btnterritorios[indices[i]].getText()) + 1;
-                    btnterritorios[indices[i]].setText("" + valor);
-                }
-
-            }
-            logConsole.append("O jogador " + gerenciador.pegaJogadorDaRodada().getNomeCor() + " fez uma troca e recebeu " + (gerenciador.getQtdExercitosParaProximaTroca() - 5) + " exercitos.\n");
-            qntExercitos.setText("" + gerenciador.getQtdExercitosParaDistribuirJogadorAtual());
-        }
-    }//GEN-LAST:event_btnTrocarActionPerformed
-
-    private void btnSiciliaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSiciliaActionPerformed
+    private void qntExercitosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_qntExercitosActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnSiciliaActionPerformed
+    }//GEN-LAST:event_qntExercitosActionPerformed
 
-    private void clamarObjetivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clamarObjetivoActionPerformed
-        gerenciador.verificaObjetivoJogadorAtual();
-    }//GEN-LAST:event_clamarObjetivoActionPerformed
-
-    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
-        logConsole.setText("");
-    }//GEN-LAST:event_jToggleButton1ActionPerformed
-
+    private void limpaDadosMovimentacao(){
+        paisDe.setText("");
+        paisPara.setText("");
+        qtdExercitos.setText("");
+    }
     /**
      * @param args the command line arguments
      */
@@ -1833,7 +1735,6 @@ public class TelaDeJogo extends javax.swing.JFrame {
     private javax.swing.JButton btnCyprus;
     private javax.swing.JButton btnCyrenaica;
     private javax.swing.JButton btnDacia;
-    private javax.swing.JButton btnDefenderD;
     private javax.swing.JButton btnGalatia;
     private javax.swing.JButton btnGermaniaInferior;
     private javax.swing.JButton btnGermaniaSuperior;
@@ -1865,18 +1766,11 @@ public class TelaDeJogo extends javax.swing.JFrame {
     private javax.swing.JToggleButton clamarObjetivo;
     private javax.swing.JLabel console;
     private javax.swing.JTextField dadoDoisAtaque;
-    private javax.swing.JTextField dadoDoisAtaqueD;
     private javax.swing.JTextField dadoDoisDefesa;
     private javax.swing.JTextField dadoTresAtaque;
-    private javax.swing.JTextField dadoTresAtaqueD;
     private javax.swing.JTextField dadoTresDefesa;
-    private javax.swing.JTextField dadoTresDefesaD;
     private javax.swing.JTextField dadoUmAtaque;
-    private javax.swing.JTextField dadoUmAtaqueD;
     private javax.swing.JTextField dadoUmDefesa;
-    private javax.swing.JTextField dadoUmDefesa1;
-    private javax.swing.JTextField dadpDoisDefesaD;
-    private javax.swing.JPanel defender;
     private javax.swing.JPanel distribuir;
     private javax.swing.JButton enviaExercitos;
     private javax.swing.JLabel jLabel1;
@@ -1891,7 +1785,6 @@ public class TelaDeJogo extends javax.swing.JFrame {
     private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JLabel lPais;
     private javax.swing.JLabel lPais1;
-    private javax.swing.JLabel lPaisD;
     private javax.swing.JLabel labelPossui;
     private javax.swing.JLabel labelSoldados;
     private javax.swing.JLabel lbMovimentacao;
@@ -1905,10 +1798,8 @@ public class TelaDeJogo extends javax.swing.JFrame {
     private javax.swing.JLabel numEx;
     private javax.swing.JTabbedPane painelOpcoes;
     private javax.swing.JTextField paisAtaque;
-    private javax.swing.JTextField paisAtaqueD;
     private javax.swing.JTextField paisDe;
     private javax.swing.JTextField paisDefesa;
-    private javax.swing.JTextField paisDefesaD;
     private javax.swing.JTextField paisPara;
     private javax.swing.JTextField qntExercitos;
     private javax.swing.JFormattedTextField qtdExercitos;
@@ -1916,7 +1807,6 @@ public class TelaDeJogo extends javax.swing.JFrame {
     private javax.swing.JTextField textCorDoJogador;
     private javax.swing.JTextField textNomeDoJogador;
     private javax.swing.JLabel x;
-    private javax.swing.JLabel xD;
     // End of variables declaration//GEN-END:variables
 
     private void meuInitComponents() {
@@ -2021,6 +1911,7 @@ public class TelaDeJogo extends javax.swing.JFrame {
             }
         } else {
             if (faseDaRodada == 1) { // FASE DE ATAQUES
+                limpaValoresDosDadosDaTela();
                 boolean territorioSeu = gerenciador.pegaJogadorDaRodada().territorioPertence(indice);
                 if (evt.getButton() == MouseEvent.BUTTON1) {//left -> escolhe territorio de ataque
                     if (territorioSeu) {
