@@ -108,10 +108,10 @@ public class Gerenciador {
         Objetivo.geraQuatroObjetivos(objetivo1, objetivo2, objetivo3, objetivo4);
 
         String nome1 = parametrosDosJogadores[0][1], nome2 = parametrosDosJogadores[1][1], nome3 = parametrosDosJogadores[2][1], nome4 = parametrosDosJogadores[3][1];
-        int cor1 = Integer.parseInt(parametrosDosJogadores[0][2]);
-        int cor2 = Integer.parseInt(parametrosDosJogadores[1][2]);
-        int cor3 = Integer.parseInt(parametrosDosJogadores[2][2]);
-        int cor4 = Integer.parseInt(parametrosDosJogadores[3][2]);
+        int cor1 = Integer.parseInt(parametrosDosJogadores[0][1]);
+        int cor2 = Integer.parseInt(parametrosDosJogadores[1][1]);
+        int cor3 = Integer.parseInt(parametrosDosJogadores[2][1]);
+        int cor4 = Integer.parseInt(parametrosDosJogadores[3][1]);
 
         Jogador jogador1 = new Jogador(nome1, cor1, objetivo1, territorios1);
         Jogador jogador2 = new Jogador(nome2, cor2, objetivo2, territorios2);
