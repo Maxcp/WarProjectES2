@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package warproject;
 
 import controller.Gerenciador;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -16,12 +16,13 @@ public class TelaInicial extends javax.swing.JFrame {
 
     int Maquina = 0;
     int Player = 1;
+
     /**
      * Creates new form TelaInicial
      */
     public TelaInicial() {
         initComponents();
-        this.setLocationRelativeTo(null); 
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -224,28 +225,31 @@ public class TelaInicial extends javax.swing.JFrame {
     }//GEN-LAST:event_textoApelido1ActionPerformed
 
     private void iniciarJogoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iniciarJogoActionPerformed
-       
-       String escolhaCor1 = cbEscolhaCor1.getSelectedIndex() + "";  
-       String escolhaCor2 = cbEscolhaCor2.getSelectedIndex() + "";  
-       String escolhaCor3 = cbEscolhaCor3.getSelectedIndex() + "";  
-       String escolhaCor4 = cbEscolhaCor4.getSelectedIndex() + "";  
-       
-       String apelido1 = textoApelido1.getText();
-       String apelido2 = textoApelido2.getText();
-       String apelido3 = textoApelido3.getText();
-       String apelido4 = textoApelido4.getText();
-       
-       String[][] paramentros ={
-           {apelido1, escolhaCor1},
-           {apelido2, escolhaCor2},
-           {apelido3, escolhaCor3},
-           {apelido4, escolhaCor4}
-       };       
-       Gerenciador gerenciador = Gerenciador.getInstance(paramentros);
-       TelaOpcoes tela = new TelaOpcoes();
-       tela.setVisible(true);
-       tela.setLocationRelativeTo(null); 
-       dispose();
+        if ((textoApelido1.getText().isEmpty()) || (textoApelido2.getText().isEmpty()) || (textoApelido3.getText().isEmpty()) || (textoApelido4.getText().isEmpty())) {
+            JOptionPane.showMessageDialog(null, "Os nomes nao podem ficar vazios!");
+        } else {
+            String escolhaCor1 = cbEscolhaCor1.getSelectedIndex() + "";
+            String escolhaCor2 = cbEscolhaCor2.getSelectedIndex() + "";
+            String escolhaCor3 = cbEscolhaCor3.getSelectedIndex() + "";
+            String escolhaCor4 = cbEscolhaCor4.getSelectedIndex() + "";
+
+            String apelido1 = textoApelido1.getText();
+            String apelido2 = textoApelido2.getText();
+            String apelido3 = textoApelido3.getText();
+            String apelido4 = textoApelido4.getText();
+
+            String[][] paramentros = {
+                {apelido1, escolhaCor1},
+                {apelido2, escolhaCor2},
+                {apelido3, escolhaCor3},
+                {apelido4, escolhaCor4}
+            };
+            Gerenciador gerenciador = Gerenciador.getInstance(paramentros);
+            TelaOpcoes tela = new TelaOpcoes();
+            tela.setVisible(true);
+            tela.setLocationRelativeTo(null);
+            dispose();
+        }
     }//GEN-LAST:event_iniciarJogoActionPerformed
 
     private void textoApelido2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textoApelido2ActionPerformed

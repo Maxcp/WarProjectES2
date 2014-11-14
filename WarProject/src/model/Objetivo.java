@@ -72,8 +72,7 @@ public class Objetivo {
         int id_do_objetivo = jogador_atual.getObjetivo().getID();
         int numero_de_provincias = DadosJogo.objetivosTipo5[id_do_objetivo-tamanhos_anteriores];
         
-        jogador_atual.verificaSePossuiXTerritoriosCom2Legioes(numero_de_provincias);
-        return false;
+        return jogador_atual.verificaSePossuiXTerritoriosCom2Legioes(numero_de_provincias);
     }
 
     int id_objetivo;
@@ -141,18 +140,18 @@ public class Objetivo {
         if(num==11)
             return TIPO_QUATRO;
         if(num>=12 && num <=13)
-            return TIPO_UM;
+            return TIPO_CINCO;
         return -1;
     }
     
     public static int geraObjetivoAleatorio(int[] restricoes){ //SE NAO TEM RESTRICAO, PARAMETRO TEM QUE SER NULO
         boolean valido = false;
-        int num = (int)(Math.random() * 14);//GERA VALOR ENTRE 0-14;
+        int num = (int)(Math.random() * 14);//GERA VALOR ENTRE 0-13;
         if(restricoes == null){ //Ou seja, nao tem restricao
             valido = true;
         }
         while(!valido){
-            num =(int)(Math.random() * 14);//GERA NOVO VALORE ENTRE 0-14
+            num =(int)(Math.random() * 14);//GERA NOVO VALORE ENTRE 0-13
             valido = true;//ASSUME QUE EH VERDADEIRO
             for (int j = 0; j < restricoes.length; j++) {//VE SE EH UM NUMERO RESTRITO
                 if(num==restricoes[j]){

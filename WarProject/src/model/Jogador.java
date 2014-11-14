@@ -105,11 +105,11 @@ public class Jogador {
     public boolean verificaSePossuiXTerritoriosCom2Legioes(int numero_de_provincias){
         int contador=0;
         for (int i = 0; i < territorios.size(); i++) {
-            if(territorios.get(i).exercitosPosicionados>1){
+            if(territorios.get(i).getExercitosPosicionados()>1){
                 contador++;
             }
         }
-        return contador>=numero_de_provincias;
+        return (contador>=numero_de_provincias);
     }
     public void removeCartaTerritorio(CartasTerritorio cartaTerritorio) {//remove a primeira ocorrencia do territorio
         boolean naoAchou = true;
