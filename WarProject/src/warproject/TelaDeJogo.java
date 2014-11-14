@@ -447,9 +447,7 @@ public class TelaDeJogo extends javax.swing.JFrame {
                 .addGroup(movimentarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, movimentarLayout.createSequentialGroup()
                         .addGroup(movimentarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(movimentarLayout.createSequentialGroup()
-                                .addComponent(lbMovimentacao)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(lbMovimentacao)
                             .addGroup(movimentarLayout.createSequentialGroup()
                                 .addGroup(movimentarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, movimentarLayout.createSequentialGroup()
@@ -1660,6 +1658,8 @@ public class TelaDeJogo extends javax.swing.JFrame {
             } else {
                 JOptionPane.showMessageDialog(null, "O territorio selecionado não possui a quantidade de exercitos suficientes para movimentar!");
             }
+        }else{
+            JOptionPane.showMessageDialog(null, "Voce precisa escolher territorios que sejam vizinhos para poder movimentar os exercitos!");
         }
     }//GEN-LAST:event_enviaExercitosActionPerformed
 
