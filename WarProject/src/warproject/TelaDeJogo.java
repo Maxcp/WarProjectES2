@@ -1611,17 +1611,20 @@ public class TelaDeJogo extends javax.swing.JFrame {
     }//GEN-LAST:event_textNomeDoJogadorActionPerformed
 
     private void btnTrocarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTrocarActionPerformed
-        if (gerenciador.getFaseDaRodada() == 0 && gerenciador.jogadorDaRodadaPodeTrocarCartas()) {
-            int indices[] = gerenciador.trocaCartasDoJogadorAtual();
-            for (int i = 0; i < indices.length; i++) {
-                if (indices[i] != -1) {
-                    int valor = Integer.parseInt(btnterritorios[indices[i]].getText()) + 1;
-                    btnterritorios[indices[i]].setText("" + valor);
+        if (gerenciador.getFaseDaRodada() == 0) {
+            if (gerenciador.jogadorDaRodadaPodeTrocarCartas()) {
+                int indices[] = gerenciador.trocaCartasDoJogadorAtual();
+                for (int i = 0; i < indices.length; i++) {
+                    if (indices[i] != -1) {
+                        int valor = Integer.parseInt(btnterritorios[indices[i]].getText()) + 1;
+                        btnterritorios[indices[i]].setText("" + valor);
+                    }
                 }
-
+                logConsole.append("O jogador " + gerenciador.pegaJogadorDaRodada().getNomeCor() + " fez uma troca e recebeu " + (gerenciador.getQtdExercitosParaProximaTroca() - 5) + " exercitos.\n");
+                qntExercitos.setText("" + gerenciador.getQtdExercitosParaDistribuirJogadorAtual());
+            }else{
+                JOptionPane.showMessageDialog(null, "Desculpe mas você ainda não possui cartas para trocar.");
             }
-            logConsole.append("O jogador " + gerenciador.pegaJogadorDaRodada().getNomeCor() + " fez uma troca e recebeu " + (gerenciador.getQtdExercitosParaProximaTroca() - 5) + " exercitos.\n");
-            qntExercitos.setText("" + gerenciador.getQtdExercitosParaDistribuirJogadorAtual());
         }
     }//GEN-LAST:event_btnTrocarActionPerformed
 
@@ -1670,7 +1673,7 @@ public class TelaDeJogo extends javax.swing.JFrame {
                     } else {
                         JOptionPane.showMessageDialog(null, "O territorio selecionado não possui a quantidade de exercitos suficientes para movimentar!");
                     }
-                }else{
+                } else {
                     JOptionPane.showMessageDialog(null, "Insira a quantidade de exercitos que deseja movimentar!");
 
                 }
