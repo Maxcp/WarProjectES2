@@ -27,10 +27,10 @@ public class GerenciadorTest {
     public GerenciadorTest() {
         String[][] paramentros =
         {
-            {"1", "Player", "0"},
-            {"0", "Maquina 1", "1"},
-            {"0", "Maquina 2", "2"},
-            {"0", "Maquina 3", "3"}
+            {"Player", "0"},
+            {"Maquina 1", "1"},
+            {"Maquina 2", "2"},
+            {"Maquina 3", "3"}
         };
         instance = Gerenciador.getInstance(paramentros);
     }
@@ -51,20 +51,20 @@ public class GerenciadorTest {
         System.out.println("Class Gerenciador: Method getInstance(String[][])");
         String[][] paramentros =
         {
-            {"1", "Player", "0"},
-            {"0", "Maquina 1", "1"},
-            {"0", "Maquina 2", "2"},
-            {"0", "Maquina 3", "3"}
+            {"Player", "0"},
+            {"Maquina 1", "1"},
+            {"Maquina 2", "2"},
+            {"Maquina 3", "3"}
         };
         Gerenciador expResult = Gerenciador.getInstance(paramentros);
         assertNotNull(expResult);
         
         paramentros = new String[][]
         {
-            {"1", "Player", "0"},
-            {"0", "Maquina 1", "1"},
-            {"0", "Maquina 2", "2"},
-            {"0", "Maquina 3", "3"}
+            {"Player", "0"},
+            {"Maquina 1", "1"},
+            {"Maquina 2", "2"},
+            {"Maquina 3", "3"}
         };
         Gerenciador result = Gerenciador.getInstance(paramentros);
         assertNotSame(expResult, result);
@@ -78,10 +78,10 @@ public class GerenciadorTest {
         System.out.println("Class Gerenciador: Method getInstance()");
         String[][] paramentros =
         {
-            {"1", "Player", "0"},
-            {"0", "Maquina 1", "1"},
-            {"0", "Maquina 2", "2"},
-            {"0", "Maquina 3", "3"}
+            {"Player", "0"},
+            { "Maquina 1", "1"},
+            {"Maquina 2", "2"},
+            {"Maquina 3", "3"}
         };
         Gerenciador expResult = Gerenciador.getInstance(paramentros);
         assertNotNull(expResult);

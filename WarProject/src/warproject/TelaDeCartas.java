@@ -78,7 +78,7 @@ public class TelaDeCartas extends javax.swing.JFrame {
         conteudo.setBounds(20, 40, 140, 150);
 
         background.setForeground(new java.awt.Color(255, 255, 255));
-        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/warproject/cartawar.png"))); // NOI18N
+        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/warproject/carta.png"))); // NOI18N
         background.setMinimumSize(new java.awt.Dimension(175, 240));
         background.setName(""); // NOI18N
         jPanel1.add(background);

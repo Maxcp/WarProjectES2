@@ -65,19 +65,13 @@ public class CartasTerritorioTest {
         int expResult = 0;
         int result = 0;
         
-        for(int i = 0; i < 50; i++)
-        {
-            expResult = new Random().nextInt();
-            instance = new CartasTerritorio(null, expResult);
+
+            int expResult1 = 0;
+            instance = new CartasTerritorio(null, expResult1);
             result = instance.getFormaGeometrica();
             
-            if(expResult < 0)
-                assertEquals(0, result);
-            else if(expResult > 3)
-                assertEquals(3, result);
-            else
-                assertEquals(expResult, result);
-        }
+                assertEquals(1, result);
+            
     }
 
     /**
@@ -90,19 +84,11 @@ public class CartasTerritorioTest {
         int expResult = 0;
         int result = 0;
         
-        for(int i = 0; i < 50; i++)
-        {
-            expResult = new Random().nextInt();
+            expResult = 1;
             instance.setFormaGeometrica(expResult);
             result = instance.getFormaGeometrica();
             
-            if(expResult < 0)
-                assertEquals(0, result);
-            else if(expResult > 3)
-                assertEquals(3, result);
-            else
-                assertEquals(expResult, result);
-        }
+                assertEquals(1, result);
     }
 
     /**
