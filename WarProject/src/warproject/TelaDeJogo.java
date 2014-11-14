@@ -12,6 +12,7 @@ import java.awt.event.MouseEvent;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
 import model.Ataque;
+
 /**
  *
  * @author 13221098774
@@ -21,9 +22,11 @@ public class TelaDeJogo extends javax.swing.JFrame {
     Gerenciador gerenciador = Gerenciador.getInstance();
     int faseDaRodada = 0;
     int indiceTerritorioAtaque;
-    int indiceTerritorioDefesa;
-    int indiceTerritorioDe;
+    int indiceTerritorioDefesa = -1;
+    int indiceTerritorioDe = -1;
     int indiceTerritorioPara;
+    int IndiceDoUltimoTerritorioMexido;
+    int numDeExercitosDoUltimoTerritorioMexido = 0;
     JButton btnterritorios[];
 
     /**
@@ -1452,6 +1455,7 @@ public class TelaDeJogo extends javax.swing.JFrame {
 
     private void ContinuarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ContinuarActionPerformed
         boolean deveTrocar = gerenciador.jogadorDaRodadaDeveTrocarCartas();
+        limpaDadosDistribuicao();
         if (gerenciador.getQtdExercitosParaDistribuirJogadorAtual() == 0 && !deveTrocar) {
             if (gerenciador.getNumeroDaRodada() != 0) {
                 painelOpcoes.setEnabledAt(0, false);
@@ -1625,13 +1629,13 @@ public class TelaDeJogo extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSiciliaActionPerformed
 
     private void clamarObjetivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clamarObjetivoActionPerformed
-       if (gerenciador.verificaObjetivoJogadorAtual()) {
-           TelaFimDeJogo telaFim = new TelaFimDeJogo();
-           telaFim.setVisible(true);
-           this.dispose();
-       } else {
-           JOptionPane.showMessageDialog(null, "Desculpe mas você ainda não atingiu o objetivo.");
-       }
+        if (gerenciador.verificaObjetivoJogadorAtual()) {
+            TelaFimDeJogo telaFim = new TelaFimDeJogo();
+            telaFim.setVisible(true);
+            this.dispose();
+        } else {
+            JOptionPane.showMessageDialog(null, "Desculpe mas você ainda não atingiu o objetivo.");
+        }
     }//GEN-LAST:event_clamarObjetivoActionPerformed
 
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
@@ -1639,27 +1643,42 @@ public class TelaDeJogo extends javax.swing.JFrame {
     }//GEN-LAST:event_jToggleButton1ActionPerformed
 
     private void enviaExercitosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enviaExercitosActionPerformed
-        boolean vizinho = false;
-        for (int i = 0; i < DadosJogo.vinzihosDoTerritorio[indiceTerritorioDe].length; i++) {
-            if (DadosJogo.vinzihosDoTerritorio[indiceTerritorioDe][i] == indiceTerritorioPara) {
-                vizinho = true;
+
+        if ((indiceTerritorioDe == -1) || (indiceTerritorioPara == -1)) {
+            JOptionPane.showMessageDialog(null, "Voce precisa escolher os territorios!");
+        } else {
+            boolean vizinho = false;
+            for (int i = 0; i < DadosJogo.vinzihosDoTerritorio[indiceTerritorioDe].length; i++) {
+                if (DadosJogo.vinzihosDoTerritorio[indiceTerritorioDe][i] == indiceTerritorioPara) {
+                    vizinho = true;
+                }
             }
-        }
-        if (vizinho) {
-            int qtdExercitosApassar = Integer.parseInt(qtdExercitos.getText());
-            if (gerenciador.territorioPossuiExercitosParaMovimentar(indiceTerritorioDe, qtdExercitosApassar)) {
-                gerenciador.reduzQtdExercitosDoTerritorio(indiceTerritorioDe, qtdExercitosApassar);
-                gerenciador.aumentaQtdExercitosDoTerritorio(indiceTerritorioPara, qtdExercitosApassar);
-                int valorDe = Integer.parseInt(btnterritorios[indiceTerritorioDe].getText());
-                int valorPara = Integer.parseInt(btnterritorios[indiceTerritorioPara].getText());
-                btnterritorios[indiceTerritorioDe].setText("" + (valorDe - qtdExercitosApassar));
-                btnterritorios[indiceTerritorioPara].setText("" + (valorPara + qtdExercitosApassar));
-                limpaDadosMovimentacao();
+            if (vizinho) {
+
+                if (!qtdExercitos.getText().isEmpty()) {
+                    int qtdExercitosApassar = Integer.parseInt(qtdExercitos.getText());
+                    if (gerenciador.territorioPossuiExercitosParaMovimentar(indiceTerritorioDe, qtdExercitosApassar)) {
+                        gerenciador.reduzQtdExercitosDoTerritorio(indiceTerritorioDe, qtdExercitosApassar);
+                        gerenciador.aumentaQtdExercitosDoTerritorio(indiceTerritorioPara, qtdExercitosApassar);
+                        int valorDe = Integer.parseInt(btnterritorios[indiceTerritorioDe].getText());
+                        int valorPara = Integer.parseInt(btnterritorios[indiceTerritorioPara].getText());
+                        btnterritorios[indiceTerritorioDe].setText("" + (valorDe - qtdExercitosApassar));
+                        btnterritorios[indiceTerritorioPara].setText("" + (valorPara + qtdExercitosApassar));
+                        limpaDadosMovimentacao();
+
+                    } else {
+                        JOptionPane.showMessageDialog(null, "O territorio selecionado não possui a quantidade de exercitos suficientes para movimentar!");
+
+                    }
+                }else{
+                    JOptionPane.showMessageDialog(null, "Insira a quantidade de exercitos que deseja movimentar!");
+
+                }
             } else {
-                JOptionPane.showMessageDialog(null, "O territorio selecionado não possui a quantidade de exercitos suficientes para movimentar!");
+                JOptionPane.showMessageDialog(null, "Voce precisa escolher territorios que sejam vizinhos para poder movimentar os exercitos!");
+                limpaDadosMovimentacao();
+
             }
-        }else{
-            JOptionPane.showMessageDialog(null, "Voce precisa escolher territorios que sejam vizinhos para poder movimentar os exercitos!");
         }
     }//GEN-LAST:event_enviaExercitosActionPerformed
 
@@ -1847,6 +1866,10 @@ public class TelaDeJogo extends javax.swing.JFrame {
         painelOpcoes.setEnabledAt(2, false);
     }
 
+    public void limpaDadosDistribuicao() {
+        IndiceDoUltimoTerritorioMexido = -1;
+    }
+
     public void metodoDosBotoes(JButton button, MouseEvent evt) {
         //Pega o indice
         int indice = 0;
@@ -1870,17 +1893,32 @@ public class TelaDeJogo extends javax.swing.JFrame {
                         gerenciador.aumentaQtdExercitosDoTerritorio(indice, 1);
                         gerenciador.reduzQtdExercitosParaDistribuirJogadorAtual();
                         atualizaQntExercitos();
+                        if (IndiceDoUltimoTerritorioMexido == indice) {
+                            numDeExercitosDoUltimoTerritorioMexido++;
+                        } else {
+                            IndiceDoUltimoTerritorioMexido = indice;
+                            numDeExercitosDoUltimoTerritorioMexido = 1;
+                        }
                     }
                 } else {
                     if (evt.getButton() == MouseEvent.BUTTON3) {//right -> diminui exercitos pra distribuir
-                        quantidadeAtual = Integer.parseInt(button.getText());
-                        if (quantidadeAtual > 1) {
-                            aux = quantidadeAtual - 1;
-                            button.setText(aux + "");
-                            quantidadeDeTerritorios++;
-                            gerenciador.reduzQtdExercitosDoTerritorio(indice, 1);
-                            gerenciador.aumentaQtdExercitosParaDistribuirJogadorAtual();
-                            atualizaQntExercitos();
+                        if (IndiceDoUltimoTerritorioMexido == indice) {
+                            quantidadeAtual = Integer.parseInt(button.getText());
+                            if ((numDeExercitosDoUltimoTerritorioMexido > 0) && (quantidadeAtual > 1)) {
+                                numDeExercitosDoUltimoTerritorioMexido--;
+                                aux = quantidadeAtual - 1;
+                                button.setText(aux + "");
+                                quantidadeDeTerritorios++;
+                                gerenciador.reduzQtdExercitosDoTerritorio(indice, 1);
+                                gerenciador.aumentaQtdExercitosParaDistribuirJogadorAtual();
+                                atualizaQntExercitos();
+                            } else {
+                                JOptionPane.showMessageDialog(null, "Voce so pode diminuir a mesma quantidade de exercitos que inseriu nessa rodada!");
+
+                            }
+                        } else {
+                            JOptionPane.showMessageDialog(null, "Voce so pode diminuir exercitos do ultimo local que colocou!");
+
                         }
                     }
                 }
@@ -1929,11 +1967,15 @@ public class TelaDeJogo extends javax.swing.JFrame {
             }
         }
     }
-    private void limpaDadosMovimentacao(){
+
+    private void limpaDadosMovimentacao() {
+        indiceTerritorioPara = -1;
+        indiceTerritorioDe = -1;
         paisDe.setText("");
         paisPara.setText("");
         qtdExercitos.setText("");
     }
+
     private void atualizaQntExercitos() {
         qntExercitos.setText("" + gerenciador.getQtdExercitosParaDistribuirJogadorAtual());
     }
